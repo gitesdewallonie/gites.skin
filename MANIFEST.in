@@ -1,0 +1,2 @@
+recursive-include gites *
+global-exclude *pyc
