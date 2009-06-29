@@ -1,244 +1,30 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="gites">
+    i18n_domain="gites.skin">
 
   <!-- 'Gites Skin' Zope 3 browser layer -->
   <interface
-      interface=".interfaces.IGitesTheme"
+      interface=".interfaces.IThemeSpecific"
       type="zope.publisher.interfaces.browser.IBrowserSkinType"
-      name="GitesSkin"
+      name="Gites Skin"
+      />
+  
+  <!-- Viewlets registration -->
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="gites.skin.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
       />
 
-  <include package="plone.app.portlets" />
-  <include file="hebergement.zcml"/>
-
-  <adapter
-      for="gites.db.interfaces.ITypeHebergement
-           gites.db.interfaces.ICommune
-           zope.publisher.interfaces.browser.IDefaultBrowserLayer"
-     factory=".typehebcommune.TypeHebCommuneView"
-     provides=".interfaces.ITypeHebCommuneView"
-     name="index.html"
-     />
-
-  <!-- gites viewlet header -->
-  <browser:viewlet
-      name="gites.header"
-      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-      class=".viewlets.GitesSectionsViewlet"
-      layer=".interfaces.IGitesTheme"
-      permission="zope.Public"
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="gites.skin.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
       />
-
-  <!-- gites moteur recherche-->
-  <browser:viewlet
-      name="gites.moteur-recherche"
-      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
-      class=".viewlets.GitesMoteurRechercheViewlet"
-      layer=".interfaces.IGitesTheme"
-      permission="zope.Public"
-      />
-
-  <!-- gites viewlet header -->
-  <browser:viewlet
-      name="gites.footer"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-      class=".viewlets.GitesFooterViewlet"
-      layer=".interfaces.IGitesTheme"
-      permission="zope.Public"
-      />
-
-  <browser:page
-      for="*"
-      name="getTranslatedObjectUrl"
-      attribute="getTranslatedObjectUrl"
-      class=".translations.Translate"
-      permission="zope.Public"
-      />
-
-  <browser:page
-      for="*"
-      name="logo_view"
-      class=".LogoView.LogoView"
-      permission="zope.Public"
-      allowed_interface=".interfaces.ILogoView"
-      />
-
-  <browser:page
-      for="*"
-      name="moteur_recherche_view"
-      class=".moteur_recherche.MoteurRecherche"
-      permission="zope.Public"
-      allowed_interface=".interfaces.IMoteurRecherche"
-      />
-
-  <browser:page
-      for="*"
-      name="meubles_view"
-      class=".meubles.MeublesView"
-      permission="zope.Public"
-      allowed_interface=".interfaces.IMeublesView" />
-
-   <browser:page
-      for="*"
-      name="unknown_gites"
-      permission="zope.Public"
-      template="templates/unknown_gites.pt"
-      />
-
-   <browser:page
-      for="*"
-      name="form_contact_proprio"
-      template="templates/form_contact_proprio.pt"
-      permission="zope.Public"
-      allowed_interface=".interfaces.ISendMail"
-      class=".SendMail.SendMail"
-      />
-
-   <browser:page
-      for="*"
-      name="blog_newsletter_subscribe"
-      permission="zope.Public"
-      allowed_interface=".interfaces.ISendMail"
-      class=".SendMail.SendMail"
-      attribute="sendBlogSubscriptionMail"
-      />
-
-   <browser:page
-      name="sejourfute_root"
-      for="gites.skin.interfaces.ISejourFuteRootFolder"
-      class=".sejourfute.SejourFuteRootFolder"
-      template="templates/sejourfuteroot.pt"
-      permission="zope.Public"
-      />
-
-   <browser:page
-      name="ideesejour_root"
-      for="gites.skin.interfaces.ISejourFuteRootFolder"
-      class=".ideesejour.IdeeSejourRootFolder"
-      template="templates/ideesejourroot.pt"
-      permission="zope.Public"
-      />
-
-   <browser:page
-      name="search.html"
-      for="*"
-      class=".SearchHebergement.SearchHebergement"
-      permission="zope.Public"
-      />
-
-   <browser:page
-      name="findPk.html"
-      for="*"
-      class=".searchPk.SearchPk"
-      permission="cmf.ManagePortal"
-      />
-
-   <browser:page
-      name="basic_search.html"
-      for="*"
-      class=".SearchHebergement.BasicSearchHebergement"
-      permission="zope.Public"
-      />
-
-   <browser:viewlet
-      name="plone.app.i18n.locales.languageselector"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
-      class=".viewlets.ApplicaTranslatableLanguageSelector"
-      permission="zope2.View"
-      layer=".interfaces.IGitesTheme"
-      />
-
-   <browser:page
-        for="*"
-        class=".hebergement.HebergementMapView"
-        name="hebergement_map"
-        template="templates/hebergement_map.pt"
-        permission="zope.Public"
-        />
-
-
-<!-- GALERIE HBE-->
-   <browser:page
-        for="*"
-        class=".HebergementGallery.HebergementGallery"
-        name="gallery"
-        template="templates/description_galerie.pt"
-        permission="zope.Public"
-        />
-
-
-<!-- MAJ PROPRIO -->
-   <browser:page
-         for="*"
-         name="proprioInfo"
-         class=".proprio.ProprioInfo"
-         allowed_interface=".proprio.IProprioInfo"
-         permission="zope.Public"
-         />
-
-   <browser:page
-        for="*"
-        name="proprio-info"
-        template="templates/maj_info_proprio.pt"
-        class=".proprio.ProprioInfo"
-        allowed_interface=".proprio.IProprioInfo"
-        permission="zope.Public"
-        />
-
-   <browser:page
-        for="*"
-        name="maj-info_proprio-insertion"
-        template="templates/maj_info_proprio_insert.pt"
-        class=".proprio.ProprioInfo"
-        allowed_interface=".proprio.IProprioInfo"
-        permission="zope.Public"
-        />
-
-<!-- MAJ HEBERGEMENT -->
-    <browser:page
-         for="*"
-         name="hebergementInfo"
-         class=".hebergement.HebergementInfo"
-         allowed_interface=".hebergement.IHebergementInfo"
-         permission="zope.Public"
-         />
-         
-   <browser:page
-        for="*"
-        name="hebergement-info"
-        template="templates/maj_info_hebergement.pt"
-        class=".hebergement.HebergementInfo"
-        allowed_interface=".interfaces.IHebergementInfo"
-        permission="zope.Public"
-        />
-
-   <browser:page
-        for="*"
-        name="extern-calendar"
-        class=".hebergement.HebergementExternCalendarView"
-        allowed_interface=".interfaces.IHebergementView"
-        permission="zope.Public"
-        template="templates/externcalendar.pt"
-        />
-
-   <browser:page
-        for="*"
-        name="maj-hebergement-insertion"
-        template="templates/maj_info_hebergement_insert.pt"
-        class=".hebergement.HebergementInfo"
-        allowed_interface=".interfaces.IHebergementInfo"
-        permission="zope.Public"
-        />
-        
-<!-- Moved document actions -->
-    <browser:viewlet
-        name="plone.abovecontenttitle.documentactions"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
-        class="plone.app.layout.viewlets.content.DocumentActionsViewlet"
-        permission="zope2.View"
-        layer=".interfaces.IGitesTheme"
-        />
 
 </configure>

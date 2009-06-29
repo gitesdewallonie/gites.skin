@@ -2,9 +2,10 @@
 <import-steps>
   <import-step id="gites.skin.various"
                version="20090629-01"
-               handler="gites.skin.setuphandlers.setupgites"
-               title="GitesSkin: miscellaneous import steps">
+               handler="gites.skin.setuphandlers.setupVarious"
+               title="Gites Skin: miscellaneous import steps">
     <dependency step="skins" />
-    Setup portal for gdw skin
+    Various import steps that are not handled by GS import/export
+    handlers.
   </import-step>
 </import-steps>

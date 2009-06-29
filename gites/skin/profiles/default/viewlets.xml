@@ -1,39 +1,4 @@
 <?xml version="1.0"?>
 <object>
-    <hidden manager="plone.portalfooter" skinname="GitesSkin">
-        <viewlet name="plone.footer"/>
-        <viewlet name="plone.colophon"/>
-    </hidden>
-    <hidden manager="plone.portaltop" skinname="GitesSkin">
-        <viewlet name="plone.personal_bar"/>
-        <viewlet name="plone.path_bar" /> 
-        <viewlet name="plone.header"/>
-        <viewlet name="plone.app.i18n.locales.languageselector" />
-    </hidden>
-
-    <order manager="plone.portaltop" skinname="GitesSkin">
-        <viewlet name="gites.header"/>
-        <viewlet name="plone.app.i18n.locales.languageselector" />
-    </order>
-
-    <order manager="plone.abovecontenttitle" skinname="GitesSkin">
-        <viewlet name="plone.app.i18n.locales.languageselector" />
-    </order>
-        
-    <order manager="plone.belowcontent" skinname="GitesSkin">
-        <viewlet name="gites.moteur-recherche" />
-    </order>
-
-    <order manager="plone.portalfooter" skinname="GitesSkin">
-        <viewlet name="gites.footer" />
-    </order>
-
-    <hidden manager="plone.belowcontentbody" skinname="GitesSkin">
-        <viewlet name="plone.abovecontenttitle.documentactions" />
-    </hidden>
-
-    <order manager="plone.abovecontenttitle" skinname="GitesSkin">
-        <viewlet name="plone.abovecontenttitle.documentactions" />
-    </order>
 
 </object>

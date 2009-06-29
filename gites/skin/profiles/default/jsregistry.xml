@@ -1,24 +1,4 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""
-    id="swfobject.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression=""
-    id="validate_forms.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'de'"
-    id="calendar-de.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'en'"
-    id="calendar-en.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'fr'"
-    id="calendar-fr.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'it'"
-    id="calendar-it.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
-    enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'nl'"
-    id="calendar-nl.js" inline="False"/>
+
 </object>

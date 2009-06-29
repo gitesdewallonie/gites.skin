@@ -1,12 +1,11 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:cmf="http://namespaces.zope.org/cmf"
-    i18n_domain="gites">
+    i18n_domain="gites.skin">
 
   <!-- File System Directory Views registration -->
-  <cmf:registerDirectory name="gites_images"/>
-  <cmf:registerDirectory name="gites_templates"/>
-  <cmf:registerDirectory name="gites_styles"/>
-  <cmf:registerDirectory name="gitesmap"/>
+  <cmf:registerDirectory name="gites_skin_custom_images"/>
+  <cmf:registerDirectory name="gites_skin_custom_templates"/>
+  <cmf:registerDirectory name="gites_skin_styles"/>
 
 </configure>
