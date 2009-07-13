@@ -4,8 +4,8 @@
     i18n_domain="gites.skin">
 
   <!-- File System Directory Views registration -->
-  <cmf:registerDirectory name="gites_skin_custom_images"/>
-  <cmf:registerDirectory name="gites_skin_custom_templates"/>
-  <cmf:registerDirectory name="gites_skin_styles"/>
+  <cmf:registerDirectory name="gites_images"/>
+  <cmf:registerDirectory name="gites_templates"/>
+  <cmf:registerDirectory name="gites_styles"/>
 
 </configure>

@@ -5,26 +5,12 @@
 
   <!-- 'Gites Skin' Zope 3 browser layer -->
   <interface
-      interface=".interfaces.IThemeSpecific"
+      interface=".interfaces.IGites"
       type="zope.publisher.interfaces.browser.IBrowserSkinType"
-      name="Gites Skin"
+      name="GitesSkin"
       />
   
   <!-- Viewlets registration -->
   <!-- Zope 3 browser resources -->
-
-  <!-- Resource directory for images -->
-  <browser:resourceDirectory
-      name="gites.skin.images"
-      directory="images"
-      layer=".interfaces.IThemeSpecific"
-      />
-
-  <!-- Resource directory for stylesheets -->
-  <browser:resourceDirectory
-      name="gites.skin.stylesheets"
-      directory="stylesheets"
-      layer=".interfaces.IThemeSpecific"
-      />
 
 </configure>

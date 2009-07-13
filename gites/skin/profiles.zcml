@@ -5,7 +5,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Gites Skin"
+      title="GitesSkin"
       directory="profiles/default"
       description='Extension profile for the "Gites Skin" Plone theme.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
