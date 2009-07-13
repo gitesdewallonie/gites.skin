@@ -1,40 +1,44 @@
-   <div id="footer-gites"
+   <div id="footer-msmile"
      metal:define-macro="portal_footer"
      i18n:domain="plone"
-     tal:define="portal_url context/portal_url">
+     tal:define="portal_url context/portal_url;
+                 view context/bannerView;">
 
+        <div id="banner" tal:define="banner view/getBanner | nothing">
+            <img tal:condition="banner" 
+                 src="" 
+                 tal:replace="structure banner" />
+        </div>
+        
         <div id="coordonnee">
-            Fédération des Gites de Wallonie asbl. &copy; 2004 -
-            <span tal:define="now modules/DateTime/DateTime"
-                  tal:replace="now/year" />
-            <span i18n:domain="gites"
-                  i18n:translate="gites_copyright">
+            M-SMILE SPRL &copy; 2004 - <span tal:define="now modules/DateTime/DateTime"
+                                             tal:replace="now/year" />
+            <span i18n:domain="cesstex.skin"
+                  i18n:translate="cesstex_copyright">
                -  All rights reserved.
-               - avenue Prince de Liège, 1/21
-               - B5100 Jambes (Namur)
-               <br />
-               <a href="contact-info">info@gitesdewallonie.be</a>
-               <br />
-               Tel: 32(0) 81 311 800
-               - Fax: 32(0) 81 310 200
+               - Chaussée de Dinant, 5 
+               - B5530 Spontin 
+               - <a href="contact-info">info@m-smile.be</a>
+               - Tel: 32(0) 83 690 319
+               - Gsm: 32(0) 496 896 335
            </span>
            <div id="marque">
               <a href="http://plone.org"
                  target="_blank"
-                 title="This site was built using Plone CMS, the Open Source Content Management System.
-Click for more information."
-                 i18n:domain="gites"
+                 title="This site was built using Plone CMS, 
+                        the Open Source Content Management System. 
+                        Click for more information."
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
-                 <img src="plone_powered.gif" /></a>
+                 Powered by Plone</a>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a href="http://www.affinitic.be"
                  target="_blank"
                  title="This site has been developed and is hosted by Affinitic."
-                 i18n:domain="gites"
+                 i18n:domain="clpsbw.skin"
                  i18n:attributes="title title_developed_affinitic;"
                  i18n:translate="label_affinitic">
-                 <img src="affinitic_powered.gif" /></a>
+                 Developped and hosted by Affinitic</a>
            </div>
         </div>
 </div>
