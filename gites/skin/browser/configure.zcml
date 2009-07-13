@@ -5,12 +5,21 @@
 
   <!-- 'Gites Skin' Zope 3 browser layer -->
   <interface
-      interface=".interfaces.IGites"
+      interface=".interfaces.IGitesTheme"
       type="zope.publisher.interfaces.browser.IBrowserSkinType"
       name="GitesSkin"
       />
   
-  <!-- Viewlets registration -->
+
+  <!-- gites viewlet header -->
+  <browser:viewlet
+      name="gites.header"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".viewlets.GitesSectionsViewlet"
+      layer=".interfaces.IGitesTheme"
+      permission="zope.Public"
+      />
+  
   <!-- Zope 3 browser resources -->
 
 </configure>

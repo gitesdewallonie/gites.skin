@@ -1,0 +1,29 @@
+<div id="header-gites">
+    <div id="gites-logo">
+        <a href=""
+           tal:attributes="href string: ${context/portal_url}"></a>
+    </div>
+    <table id="menu-maison"
+           cellpadding="0"
+           cellspacing="0"
+           align="center">
+        <tr>
+            <td id="btn-maison-jaune">
+                <a href="" 
+                   tal:attributes="href string: ${context/portal_url}/mariage-bus">Idées Séjours</a></td>
+            <td id="btn-maison-verte">
+                <a href=""
+                   tal:attributes="href string: ${context/portal_url}/airstream">Gîtes et Meublés</a></td>
+            <td id="btn-maison-bleue">
+                <a href=""
+                   tal:attributes="href string: ${context/portal_url}/yellow-bus">Chambres d'Hôtes'</a></td>
+            <td id="btn-maison-rouge">
+                <a href=""
+                   tal:attributes="href string: ${context/portal_url}/camion-pompier">L'association'</a></td>
+            <td id="btn-maison-rose">
+                <a href=""
+                   tal:attributes="href string: ${context/portal_url}/vip-bus">Contacts</a></td>
+        </tr>
+    </table>
+</div>
+<div class="visualClear"></div>
