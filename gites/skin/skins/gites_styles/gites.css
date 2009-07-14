@@ -1,54 +1,30 @@
 /*
-/*  Gites de Wallonie asbl.
+/*  Gites de wallonie
 /*
 /*  By Affinitic 2009
 /*
 */
-
-body {
-background-color:#e59c11;
-background-image:url(fond_col_lat_droite.png);
-background-repeat: repeat-x;
-background-position: 0px 0px;
-}
 
 
 /*** GITES HEADER ***/
 #header-gites{
 margin-left:auto;
 margin-right:auto;
-background-color:transparent; /*#ecf6eb;*/
+background-color:#ecf6eb;
 background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
-background-position: top center;
-/*width:952px !important;*/
-width:100% !important;
-height:175px;
-/*border-left:2px solid #086038;*/
-/*border-right:2px solid #086038;*/
+width:960px;
+height:177px;
 }
 
 #gites-logo{
-position:relative;
-margin-left:auto;
-margin-right:auto;
-top:13px;
-left:-428px;
-width:88px;
-height:88px;
 }
 
-#gites-logo a{
-display:block;
-width:88px;
-height:88px;
-}
-
-/*** MENU MAISON ***/
+/***menu-maison***/
 
 #menu-maison{
 position:relative;
-top:12px;
+top:107px;
 width:960px;
 height:41px;
 }
@@ -57,1025 +33,92 @@ height:41px;
 text-align:center;
 }
 
-#menu-maison a {
-background-position:center top;
-background-repeat:no-repeat;
-padding:38px 0px 0px 0px;
-text-decoration:none;
-width:200px;
-font-size:1.3em;
-font-variant:small-caps;
-font-weight:bold;
-}
-
 #btn-maison-jaune a{
 display:block;
+width:47px;
+height:41px;
 background-image:url(maison_jaune.png);
+background-repeat:no-repeat;
+border:1px solid #f00; /*#ecf6eb;*/
+margin:auto;
 }
 #btn-maison-jaune a:hover{
 background-image:url(maison_jaune.png);
-color:#f6bd00;
+border:1px solid #d5dfd4;
 }
 
 #btn-maison-verte a{
 display:block;
+width:47px;
+height:41px;
 background-image:url(maison_verte.png);
+border:1px solid #ecf6eb;
+margin:auto;
 }
 #btn-maison-verte a:hover{
 background-image:url(maison_verte.png);
-color:#6ec66f;
+border:1px solid #d5dfd4;
 }
 
 #btn-maison-bleue a{
 display:block;
+width:47px;
+height:41px;
 background-image:url(maison_bleue.png);
+border:1px solid #ecf6eb;
+margin:auto;
 }
 #btn-maison-bleue a:hover{
 background-image:url(maison_bleue.png);
-color:#566bde;
+border:1px solid #d5dfd4;
 }
 
 #btn-maison-rouge a{
 display:block;
+width:47px;
+height:41px;
 background-image:url(maison_rouge.png);
+border:1px solid #ecf6eb;
+margin:auto;
 }
 #btn-maison-rouge a:hover{
 background-image:url(maison_rouge.png);
-color:#fe0000;
+border:1px solid #d5dfd4;
 }
 
 #btn-maison-rose a{
 display:block;
+width:47px;
+height:41px;
 background-image:url(maison_rose.png);
+border:1px solid #ecf6eb;
+margin:auto;
 }
 #btn-maison-rose a:hover{
 background-image:url(maison_rose.png);
-color:#ff8788;
+border:1px solid #d5dfd4;
 }
 
-#bordue-ombre-menu-maison {
-position:relative;
-top:12px;
-margin-left:auto;
-margin-right:auto;
-background-color:transparent;
-background-image:url(pied_bandeau.png);
-background-repeat:repeat-x;
-height:20px;
-/*width:952px !important;*/
-}
 
-/* 
-descendre la barre d'onglets verts en mode edition
-lorsque le titre dans menu maison est sur deux ligne
-en DE par exemple
-*/
-.contentViews {
-background-color:transparent;
-border-color:#74AE0B;
-border-style:solid;
-border-width:0 0 1px;
-line-height:normal;
+
+#portal-personaltools {
+background-color:#999;
+border-bottom:1px solid #8CACBB;
+border-top:1px solid #8CACBB;
+color:Black;
+line-height:1.6em;
 list-style-image:none;
 list-style-position:outside;
 list-style-type:none;
-margin:15px 0 0 0;
-padding-left:1em;
+margin:0;
+padding:0 3em;
+text-align:right;
+text-transform:none;
 }
 
-/*** PLONE ***/
+/*** TABLEAU CONTENU***/
 #portal-columns{
-/*width:954px !important;*/
-width:95% !important;
+width:960px !important;
 margin-left:auto;
 margin-right:auto;
-margin-top:-6px;
-/*border-left:2px solid #086038;*/
-/*border-right:2px solid #086038;*/
-}
-
-#portal-top {
-background-color:transparent;
-/*width:961px;*/
-margin:auto;
-padding:0pt;
-}
-
-#portal-column-one {
-
-width: <dtml-var columnOneWidth missing="16em">;
-border-collapse: collapse;
-padding: 0;
-}
-
-#portal-column-content {
-margin: 0;
-padding:10px 0 0 0;
-border-collapse: collapse;
-}
-
-#portal-column-two {
-
-width: 100px;
-border-collapse: collapse;
-padding: 0px;
-}
-
-#portal-column-one .visualPadding {
-padding: 20px 0em 1em 0em;
-}
-
-#portal-column-two .visualPadding {
-padding: 20px 0em 1em 0em;
-margin: 0 !important;
-margin: 0 0 0 0px;
-}
-
-.documentContent {
-background-color:transparent;
-font-size:110%;
-padding:1em 0em 1em 0em;
-/*height:100%;*/
-}
-
-.documentActions {
-border-top: none;
-float: right;
-}
-
-.documentActions li {
-margin: 0;
-background: none;
-padding: 0 0.1;
-}
-
-#content {
-background-color:#FEFEFE;
-border:2px solid #476D84;
-margin:0;
-padding:1em 1em 2em !important;
-background-image: url(lecoq.png);
-background-repeat: no-repeat;
-background-position: bottom right;
-}
-
-h1 {
-margin-top: 0px;
-}
-
-table.plain, table.plain td, table.plain th {
-border:0px solid #CCCCCC;
-border-collapse:collapse;
-padding:0.5em;
-}
-
-
-/*** FOOTER GITES ***/
-#footer-gites {
-background-color: transparent;
-/*width:943px;*/
-width:98% !important;
-margin-left:auto;
-margin-right:auto;
-margin-bottom:3em;
-border:1px solid #E7C46B;
-/*border-left:2px solid #086038;*/
-/*border-right:2px solid #086038;*/
-/*border-bottom:2px solid #086038;*/
-padding:10px 5px 3px 5px;
-color:#fff;
-text-align:center;
-}
-#footer-gites a {
-text-decoration:none;
-color:#086038;
-}
-#footer-gites a:hover {
-text-decoration:underline;
-color:#fff;
-}
-
-
-#marque{
-margin-top:15px;
-}
-
-/*** DEBUT GESTION MOTEUR RECHERCHE ***/
-.moteur-box{
-margin:0px 0px 5px Opx;
-padding: 4px 0px 3px 0px;
-border: 1px dashed #d7c7ab; /*#e59c09;*/
-}
-
-#moteur-recherche{
-clear:both;
-margin: 0px 0px 5px 0px;
-width:100%;
-text-align:center;
-border-collapse: collapse;
-border-spacing: 0px;
-border: 2px solid #476D84;
-margin-top: 5px;
-padding: 3px;
-}
-
-#moteur-simple{
-margin:0px 0px 5px Opx;
-padding: 0px 0px 3px 0px;
-border: 1px dashed #d7c7ab; /*#e59c09;*/
-}
-
-#moteur-ref{
-margin:0px 0px 5px Opx;
-padding: 4px 0px 3px 0px;
-border: 1px dashed #d7c7ab;  /*#e59c09;*/
-}
-
-#moteur-facebook{
-margin:10px 0px 10px 0px;
-}
-
-.label-recherche{
-font-size:1em;
-font-weight: bold;
-color:#bc0000;
-}
-
-.mot-bord-hor-sup{
-height:6px;
-background-image:url(mot_hor_haut.png);
-background-repeat: repeat-x;
-}
-
-.mot-bord-hor-inf{
-height:6px;
-background-image:url(mot_hor_bas.png);
-background-repeat: repeat-x;
-}
-
-.mot-bord-vert-gch{
-width:6px;
-background-image:url(mot_vert_gch.png);
-background-repeat: repeat-y;
-}
-
-.mot-bord-vert-drt{
-width:6px;
-background-image:url(mot_vert_drt.png);
-background-repeat: repeat-y;
-}
-
-.mot_coin_sup_gauche{
-width:6px;
-height:6px;
-background-image:url(mot_coin_sup_gch.png);
-background-repeat:no-repeat;
-}
-
-.mot_coin_sup_droite{
-width:6px;
-height:6px;
-background-image:url(mot_coin_sup_drt.png);
-background-repeat:no-repeat;
-}
-
-.mot_coin_inf_gauche{
-width:6px;
-height:6px;
-background-image:url(mot_coin_inf_gch.png);
-background-repeat:no-repeat;
-}
-
-.mot_coin_inf_droite{
-width:6px;
-height:6px;
-background-image:url(mot_coin_inf_drt.png);
-background-repeat:no-repeat;
-}
-
-
-#moteur-carte{
-width:230px;
-height:107px;
-background-image:url(carte.gif);
-background-repeat:no-repeat;
-font-size:1.1em;
-font-weight: bold;
-font-variant:small-caps;
-color:#bc0000;
-}
-
-#btn-carto1{
-position:relative;
-top:40px;
-right:10px;
-}
-
-#btn-carto1 a{
-background-image:url(btn-recherche.png);
-background-repeat: no-repeat;
-text-decoration:none;
-padding: 8px 14px 8px 8px !important;
-padding: 8px 8px;
-}
-
-#btn-carto1 a:hover{
-color:#bc0000;
-}
-
-#moteur-avance{
-position:relative;
-right:10px;
-width:192px;
-height:32px;
-background-image:url(btn-recherche.png);
-background-repeat:no-repeat;
-font-size:1.1em;
-font-weight: bold;
-font-variant:small-caps;
-color:#bc0000;
-padding: 0px 0px 0px 0px;
-}
-
-#moteur-avance a{
-position:relative;
-right:8px;
-top:20%;
-text-decoration:none;
-}
-
-#moteur-avance a:hover{
-color:#bc0000;
-}
-
-div.formHelp {
-display: none;
-}
-
-label[for="form.seeResults"] {
-vertical-align: top;
-color: Red;
-}
-
-input[id="form.seeResults"] {
-margin-bottom: 20px;
-}
-
-/*** FIN GESTION MOTEUR RECHERCHE ***/
-
-/*** DEBUT GESTION DES PORTLETS ***/
-.portletHeader a{
-color:#666;
-}
-
-.portletItem {
-border-left:none;
-border-right:none;
-margin:0pt;
-padding:1em;
-}
-
-legend{
-background:transparent;
-}
-
-dl.portlet {
-background-color:transparent;
-border:none;
-/*margin-top: 0px;*/
-margin:0px -5px 9px;
-}
-
-#portlet-menu-association a,
-#portlet-menu-chambres-hotes a,
-#portlet-menu-gites-meubles a,
-#portlet-menu-idee-sejour a{
-text-decoration:none;
-font-weight:bold;
-color:#78756e;
-}
-
-#portlet-menu-association a:hover,
-#portlet-menu-chambres-hotes a:hover,
-#portlet-menu-gites-meubles a:hover,
-#portlet-menu-idee-sejour a:hover{
-background-color:#78756e;
-color:#FFF;
-}
-
-.navTreeItem a, dd.portletItem .navTreeItem a {
-border:1px solid #F9F3E3;
-}
-
-dt.portletHeader {
-border: none;
-font-size:1.2em;
-font-weight: bold;
-font-variant:small-caps;
-color:#bc0000;
-background: url("p_bord_sup.gif") top left no-repeat;
-margin: 0em 11px !important;
-padding-top: 0px;
-padding-left: 9px;
-width:132px; <!-- nécessaire sinon probleme avec IE dans colonne de droite-->
-}
-
-dd.portletItemSingle, dd.portletItem  {
-border:none;
-background: url("p_lat_gauche.gif") top left repeat-y;
-margin: 0em 1em;
-padding:1px 6px;
-width:146px;
-}
-
-dd.portletItemLast {
-border: none;
-background: url("p_bord_inf.gif") bottom left no-repeat;
-margin: 0em 1em;
-padding-bottom: 10px;
-padding-left: 20px;
-padding-top: 5px;
-/*width:123px;*/ <!-- nécessaire sinon problème avec IE dans colonne de droite-->
-}
-
-dd.portletFooter {
-border: none;
-border-top-style: none !important;
-background: url("p_bord_inf.gif") bottom left no-repeat;
-margin: -3px 11px;
-padding-bottom: 10px;
-padding-top: 0px;
-padding-right: 16px;
-width:132px;
-}
-
-.portletItemDetails {
-text-align:center;
-left:auto;
-right:auto;
-margin-left:-5.5px;
-}
-
-
-#portlet-outil{
-margin:7px 5px 5px 20px;
-}
-
-#portlet-outil div{
-padding:3px 0px;
-}
-
-#portlet-partenaires{
-margin:7px 5px 5px 20px;
-}
-
-#portlet-partenaires div{
-margin-top: 3px;
-margin-left:-15px;
-padding:3px 0px;
-color:#fff;
-font-weight: bold;
-text-align: center;
-border:1px solid #e7c46b;
-}
-
-#portlet-partenaires a{
-color:#fff;
-font-weight:bold;
-text-decoration:none;
-}
-
-.texte-feder{
-font-size:0.8em;
-}
-.texte-feder{
-font-size:0.7em;
-}
-
-/* masquage des titres des porlets de bnb */
-#bnb-portlet-title{
-display:none;
-}
-
-
-/*** FIN GESTION PORTLETS ***/
-
-/*** DEBUT PORLET JE SUIS ***/
-a.bouton-je-suis,
-button.bouton-je-suis {
-display:-moz-inline-box;
-display:inline-block;
-margin:0;
-padding:0;
-font-family:Verdana, Arial, Helvetica, sans-serif;
-font-size:10pt;
-font-weight:bold;
-color:#35475e;
-white-space:nowrap;
-text-align:center;
-vertical-align:middle;
-cursor:pointer;
-border:0;
-background:none;
-}
-
-/*arrondi gauche du bouton*/
-a.bouton-je-suis span,
-button.bouton-je-suis span {
-float:left;
-width:101px;
-padding:0 0 0 18px;
-vertical-align:middle;
-background:url(btn_je_suis_gch.gif) left top no-repeat;
-}
-
-/*arrondi droite du bouton*/
-a.bouton-je-suis span span,
-button.bouton-je-suis span span {
-padding:0 18px 0 0;
-background:url(btn_je_suis_drt.gif) right top no-repeat;
-}
-
-/*milieu du bouton*/
-a.bouton-je-suis span span span,
-button.bouton-je-suis span span span {
-height:25px;
-padding:0;
-line-height:24px;
-background:url(btn_je_suis_corps.gif) left top repeat-x;
-}
-
-.bouton-je-suis:hover{
-color:#ffffff;
-}
-
-* html button {width:1%; overflow:visible;}
-*:first-child+html button {overflow:visible;}
-/*** FIN PORTLET JE SUIS ***/
-
-
-
-/*** VIEWLET SELECTOR LANGUAGE ***/
-.code-langue{
-font-weight:bold;
-text-transform:uppercase;
-}
-
-.code-langue a{
-text-decoration:none;
-color:#050;
-}
-
-.code-langue a:hover {
-color:#090;
-}
-
-.documentContent .code-langue a {
-border: 0px;
-}
-
-
-/*** DEBUT DESCRIPTION HEBERGEMENT ***/
-fieldset {
-border:1px solid #8CACBB;
-line-height:1.5em;
-margin:0em;
-width:auto;
-}
-
-#description{
-width: 100%;
-}
-
-/* type hebergement - reference - nbre epis - gites+ - theme - capacite*/
-#des-zone1{
-position:relative;
-height: 30px;
-border-width:0px 0px 1px 0px;
-border-style: solid;
-border-color: #AAA;
-}
-
-#type_heb{
-padding-left:5px;
-float:left;
-font-weight:bold;
-font-size: 1.2em;
-}
-
-#heb_ref{
-float:left;
-margin-top: 5px;
-font-weight:bold;
-font-size: 0.8em;
-}
-
-#heb_epis{
-background-color:transparent;
-position:relative;
-width:150px;
-text-align:left;
-float:left;
-margin-top: 6px;
-padding-left: 60px;
-}
-
-#heb_theme{
-float:left;
-margin-top: 2px;
-padding-left: 20px;
-}
-
-#heb_gites_plus{
-float:left;
-margin-top: 2px;
-padding-left:85px;
-}
-
-#heb_capacite{
-text-align:right;
-padding-right: 5px;
-font-weight:bold;
-font-size: 1.2em;
-padding-top: 7px;
-}
-
-/*** 
-Zone centrale qui contient toutes les infos
-photos, tarifs, icones, confort, literie
-***/  
-#table-description{
-width:100%; 
-clear:both;
-margin-top:10px;
-border:none;
-}
-
-#table-description td{
-border:none;
-}
-
-#col-gauche{
-vertical-align: top;
-text-align: center;
-border:none;
-width:305px;
-}
-
-#col-centre{
-vertical-align: top;
-width: 5em;
-border: none;
-}
-
-#col-droite{
-vertical-align: top;
-}
-
-#heb_photo{
-height:195px;
-text-align:left;
-}
-
-#heb_coordonnee_chambre{
-background-color:#82a7ea;
-width: 93%;
-height: 80px;
-padding: 0.9em 0.9em 0em 1em;
-margin-top: 5px;
-}
-
-#heb_coordonnee_gite{
-background-color:#ace087;
-width: 277px;
-height: 80px;
-padding: 0.9em 0.9em 0em 1em;
-margin-top: 5px;
-}
-
-#heb_nom{
-font-weight:bold;
-font-variant: small-caps;
-font-size: 1.5em;
-}
-
-#btn_outil{
-margin-top: 5px;  
-width: 300px;
-height: 40px;
-text-align:right;
-font-size:-2.8em;
-}
-
-#btn_gallery_back{
-text-align:left;
-margin-top: 5px;
-}
-
-.photo_gallery{
-margin-top:8px;
-}
-
-#heb_activite_icone{
-background-color:#fffd8b;
-font-size:0.8em;
-}
-
-#heb_info{
-padding:2px 2px 0px 4px;
-}
-
-.chambre{
-float:left;
-text-align: center;
-font-weight: bold;
-background-color:#faecd1;
-margin-right: 8px;
-}
-
-.lit{
-float:left;
-text-align: center;
-}
-
-.picto{
-margin:3px 6px;
-}
-
-/*** calendrier ***/
-#calendar-proprio{
-border:1px solid #83aa67;  /*#8CACBB*/
-margin:10px auto;
-padding:3px 0px;
-width:250px;
-background-color:#EEFFEE;
-}
-
-#legend-calendar{
-margin-top:5px;
-border-top:1px solid #ccc;
-padding:9px 0px;
-}
-
-#calendar-sup{
-border:0px;
-background-color:#CCCCCC;
-position:relative;
-left:30px;
-top:50px;
-width:239px;
-height:1px;
-}
-
-/*** tarification ***/
-#heb_tarification{
-margin:auto;
-}
-
-#tarification-chambre{
-background-color:#ced8e2;
-border-collapse: collapse;
-border:1px solid #4f658e;
-width:300px;
-}
-
-#tarification-chambre td.empty-cell { 
-background-color: #FFF;
-}
-
-#tarification-chambre td {
-border:1px solid #4f658e;
-background-color: #CED8E2;
-}
-
-#tarification-chambre tr.bg-chambre td, #tarification-chambre td.bg-chambre {
-background-color: #82A7EA;
-}
-
-.bg-chambre{
-background-color:#82a7ea;
-height:40px;
-}
-
-#tarification-gite{
-background-color:#EEFFEE;
-border-collapse: collapse;
-border:1px solid #83aa67;
-width:100%;
-}
-
-#tarification-gite td{
-border:1px solid #83aa67;
-}
-.bg-gite{
-background-color:#ace087;
-height:40px;
-}
-
-/*** region ***/
-#dans-la-region{
-width:100%;
-margin-top: 10px;
-}
-
-#region-sejour-fute{
-border-style:solid;
-border-width:1px 5px 1px 5px;
-border-color:#d7d3ab;
-background-color:#fffacb;
-margin:7px 0px;
-padding: 5px;
-}
-
-#region-maison-trourisme{
-border-style:solid;
-border-width:1px 5px 1px 5px;
-border-color:#d7d3ab;
-background-color:#fffacb;
-margin:7px 0px;
-padding:5px;
-}
-
-#region-info-tourisme{
-border-style:solid;
-border-width:1px 5px 1px 5px;
-border-color:#d7d3ab;
-background-color:#fffacb;
-margin:7px 0px;
-padding:5px;
-}
-
-#region-autre-heb{
-border-style:solid;
-border-width:1px 5px 1px 5px;
-border-color:#d7d3ab;
-background-color:#fffacb;
-margin:7px 0px;
-padding:5px;
-}
-
-.region-titre{
-font-variant: small-caps;
-font-size:1.2em;
-font-style:italic;
-}
-
-/*** infos proprio ****/
-#info-proprio {
-width:100%;
-margin-top: 10px;
-}
-
-#heb_proprio{
-padding:5px;
-}
-
-#heb_commentaire{
-height:200px;
-margin-left:5px;
-padding:5px;
-display:none;
-}
-
-#contact-proprio{
-background-color:#DDD;
-margin-top: 8px;
-text-align:right;
-padding-right:0.8em;
-height: 1.8em;
-}
-
-#contact-proprio a:hover{
-color:#F00;
-}
-
-.bg-chambre{
-background-color:#82a7ea;
-height:40px;
-}
-
-.bg-chambre-data{
-background-color:#ced8e2;
-}
-.bg-gite{
-background-color:#ace087;
-height:40px;
-}
-
-.field-des{
-margin-left:4px;
-}
-
-.leg-des{
-font-weight:bold;
-font-size:0.8em;
-color:#B37025    /*#CA6E20;*/  /*#17700D;*/
-}
-
-.leg-des-rem{
-font-weight:bold;
-font-size:0.8em;
-color:#F00;
-}
-
-.floatleft{
-float:left;
-}
-
-.floatright{
-float:right;
-}
-
-#navigation_bas{
-border-top:1px solid #8cacbb;
-font-size:0.8em;
-text-align:center;
-}
-
-#gitescal {
-width: 700px;
-margin: auto;
-text-align: center;
-}
-
-/*** FIN DESCRIPTION HEBERGEMENT ***/
-
-
-
-/*** DEBUT MAJ INFO PROPRIO HEB***/
-table.maj-info{
-width:95%;
-margin:auto;
-}
-
-table.maj-info, table.maj-info td, table.maj-info th {
-border:1px solid #CCCCCC;
-border-collapse:collapse;
-padding:0.5em;
-}
-
-.maj-etiquette{
-font-weight:bold;
-color:#666;
-}
-
-.maj-donnee{
-color:#ff7e00;
-font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
-font-weight:bold;
-}
-
-input {
--moz-background-clip:border;
--moz-background-inline-policy:continuous;
--moz-background-origin:padding;
-background:White url(input_background.gif) repeat-x scroll 0 0;
-border:1px solid #8CACBB;
-color:#000;      /*#ff7e00;*/
-font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
-font-weight:bold;
-vertical-align:middle;
-visibility:visible;
-}
-
-select {
-background-color:White;
-border:1px solid #8CACBB;
-color:#000; /*#ff7e00;*/
-font-weight:bold;
-vertical-align:top;
-}
-
-/*** FIN PROPRIO MAJ INFO ***/
-
-#nbrEpis{
-width:85px;
-}
-
-
-/**** MODIF FOOTER PORTLET POUR BNB ***/
-/* masquage du footer des portlets affichés dans bnb */
-.bnbportletFooter{
-visibility:hidden;
-}
-
-
-
-/**** FORM CONTACT PROPRIO ****/
-#table-contact-proprio-form td{
-line-height:2em;
-vertical-align:top;
-}
-
-#help-captcha{
-width:250px;
-font-size:0.9em;
-color:#888;
-line-height:1.3em;
-}
-
-.fieldRequired {
-background: url("required.gif") no-repeat scroll right center transparent;
-color:#fff;
-padding: 0 6px 0 9px;
 }
