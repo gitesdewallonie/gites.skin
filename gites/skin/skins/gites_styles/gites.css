@@ -4,6 +4,12 @@
 /*  By Affinitic 2009
 /*
 */
+body {
+  background-color:#e79e14;
+  background-image:url(fond_col_lat_droite.png);
+  background-repeat: repeat-x;
+  background-position: 0px 100px;
+}
 
 
 /*** GITES HEADER ***/
@@ -14,7 +20,14 @@ background-color:#ecf6eb;
 background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
 width:960px;
-height:177px;
+height:156px;
+}
+#zone-menu-general {
+background-color:#EBF7EB;
+background-image:url(pied_bandeau.png);
+background-position:center bottom;
+background-repeat:repeat-x;
+height:20px;
 }
 
 #gites-logo{
