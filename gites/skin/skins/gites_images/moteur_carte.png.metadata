@@ -1,0 +1,4 @@
+[Default]
+title:string=moteur_carte.png
+content_type:string=image/png
+precondition:string=

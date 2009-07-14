@@ -1,0 +1,4 @@
+[Default]
+title:string=pied_bandeau.png
+content_type:string=image/png
+precondition:string=

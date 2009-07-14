@@ -1,0 +1,4 @@
+[Default]
+title:string=maison_bleue.png
+content_type:string=image/png
+precondition:string=
