@@ -1,0 +1,124 @@
+/*
+/*  Gites de wallonie
+/*
+/*  By Affinitic 2009
+/*
+*/
+
+
+/*** GITES HEADER ***/
+#header-gites{
+margin-left:auto;
+margin-right:auto;
+background-color:#ecf6eb;
+background-image:url(fond-bandeau.png);
+background-repeat:no-repeat;
+width:960px;
+height:177px;
+}
+
+#gites-logo{
+}
+
+/***menu-maison***/
+
+#menu-maison{
+position:relative;
+top:107px;
+width:960px;
+height:41px;
+}
+
+#menu-maison td {
+text-align:center;
+}
+
+#btn-maison-jaune a{
+display:block;
+width:47px;
+height:41px;
+background-image:url(maison_jaune.png);
+background-repeat:no-repeat;
+border:1px solid #f00; /*#ecf6eb;*/
+margin:auto;
+}
+#btn-maison-jaune a:hover{
+background-image:url(maison_jaune.png);
+border:1px solid #d5dfd4;
+}
+
+#btn-maison-verte a{
+display:block;
+width:47px;
+height:41px;
+background-image:url(maison_verte.png);
+border:1px solid #ecf6eb;
+margin:auto;
+}
+#btn-maison-verte a:hover{
+background-image:url(maison_verte.png);
+border:1px solid #d5dfd4;
+}
+
+#btn-maison-bleue a{
+display:block;
+width:47px;
+height:41px;
+background-image:url(maison_bleue.png);
+border:1px solid #ecf6eb;
+margin:auto;
+}
+#btn-maison-bleue a:hover{
+background-image:url(maison_bleue.png);
+border:1px solid #d5dfd4;
+}
+
+#btn-maison-rouge a{
+display:block;
+width:47px;
+height:41px;
+background-image:url(maison_rouge.png);
+border:1px solid #ecf6eb;
+margin:auto;
+}
+#btn-maison-rouge a:hover{
+background-image:url(maison_rouge.png);
+border:1px solid #d5dfd4;
+}
+
+#btn-maison-rose a{
+display:block;
+width:47px;
+height:41px;
+background-image:url(maison_rose.png);
+border:1px solid #ecf6eb;
+margin:auto;
+}
+#btn-maison-rose a:hover{
+background-image:url(maison_rose.png);
+border:1px solid #d5dfd4;
+}
+
+
+
+#portal-personaltools {
+background-color:#999;
+border-bottom:1px solid #8CACBB;
+border-top:1px solid #8CACBB;
+color:Black;
+line-height:1.6em;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+margin:0;
+padding:0 3em;
+text-align:right;
+text-transform:none;
+}
+
+/*** TABLEAU CONTENU***/
+#portal-columns{
+width:960px !important;
+margin-left:auto;
+margin-right:auto;
+}
