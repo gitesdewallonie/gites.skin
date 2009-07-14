@@ -24,6 +24,10 @@
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/vip-bus">Contacts</a></td>
         </tr>
+        <tr>
+            <td colspan="5"><div id="zone-menu-general"></div></td>
+        </tr>
     </table>
+    
 </div>
 <div class="visualClear"></div>
