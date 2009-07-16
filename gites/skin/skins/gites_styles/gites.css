@@ -5,10 +5,10 @@
 /*
 */
 body {
-  background-color:#e79e14;
+ background-color:#df8a20;
   background-image:url(fond_col_lat_droite.png);
   background-repeat: repeat-x;
-  background-position: 0px 100px;
+  background-position: 0px 0px;
 }
 
 
@@ -21,13 +21,18 @@ background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
 width:960px;
 height:156px;
+border-left:1px solid #086038;
+border-right:1px solid #086038;
 }
-#zone-menu-general {
+#bordue-ombre-menu-maison {
 background-color:#EBF7EB;
 background-image:url(pied_bandeau.png);
 background-position:center bottom;
 background-repeat:repeat-x;
 height:20px;
+width:960px;
+/*border-left:1px solid #555;
+border-right:1px solid #555;*/
 }
 
 #gites-logo{
@@ -113,25 +118,22 @@ border:1px solid #d5dfd4;
 }
 
 
-
-#portal-personaltools {
-background-color:#999;
-border-bottom:1px solid #8CACBB;
-border-top:1px solid #8CACBB;
-color:Black;
-line-height:1.6em;
-list-style-image:none;
-list-style-position:outside;
-list-style-type:none;
-margin:0;
-padding:0 3em;
-text-align:right;
-text-transform:none;
-}
-
 /*** TABLEAU CONTENU***/
 #portal-columns{
-width:960px !important;
+width:961px !important;
 margin-left:auto;
 margin-right:auto;
+border-left:1px solid #086038;
+border-right:1px solid #086038;
+}
+
+
+.documentContent {
+  background-color:#fff;
+  background-image: url(lecoq.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  font-size:110%;
+  padding:1em 0em 1em 0em;
+  /*height:100%;*/
 }
