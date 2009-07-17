@@ -23,4 +23,8 @@ class GitesSectionsViewlet(GlobalSectionsViewlet):
 
 class GitesFooterViewlet(GlobalSectionsViewlet):
     render = ViewPageTemplateFile('templates/footer_gites.pt')
+    
+class GitesMoteurRechercheViewlet(GlobalSectionsViewlet):
+        render = ViewPageTemplateFile('templates/moteur_recherche.pt')
+
 

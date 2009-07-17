@@ -1,0 +1,87 @@
+<table id="moteur-recherche"
+       cellspacing="0"
+       cellpadding="4">
+      <tr bgcolor="#f9e7c6">
+         <td>
+            <div id="moteur-form">
+                <div id="moteur-simple">
+                <form action="" method="post"
+                      id="zc.page.browser_form"
+                      enctype="multipart/form-data"
+                      tal:attributes="action string:${here/absolute_url}/basic_search.html">
+                  <div id="type">
+                     <label i18n:translate="label_recherche" class="label-recherche">Je cherche</label><br />
+                     <select name="form.hebergementType">
+<!--
+                        <tal:requete tal:repeat="type here/@@moteur_recherche_view/getGroupedHebergementTypes">
+                           <span tal:define="cle type/pk">
+                              <span tal:condition="python:cle==0">
+                                 <option value="-1"></option>
+                              </span>
+                              <span tal:condition="python:cle!=0">
+                                 <option tal:attributes="value cle"
+                                         i18n:translate=""
+                                         tal:content="type/name">Type d'hébergement</option>
+                              </span>
+                           </span>
+                        </tal:requete>
+-->
+                     </select>
+                   </div>
+                   <div id="pour">
+                     <label class="label-recherche" i18n:translate="label_nombre_personnes">Nombre de personnes :</label>
+                     <input type="text"
+                            id="form.capacityMin" name="form.capacityMin"
+                            value=""
+                            size="4" />
+                   </div>
+                   <div id="chercher">
+                    <input type="hidden" name="form.provinces" value="-1"/>
+                    <input type="hidden" name="form.classification" value="-1"/>
+                    <input type="hidden" name="form.smokers" value=""/>
+                    <input type="hidden" name="form.animals" value=""/>
+                    <input type="hidden" name="form.roomAmount" value=""/>
+
+                    <input type="submit" i18n:attributes="value action_search;" value="Rechercher" id="form.actions.search" name="form.actions.search" />
+                   </div>
+                </form>
+                </div>
+         </td>
+         <td align="center" valign="middle">
+            <div id="moteur-carte">
+               <div id="btn-carto1">
+                  
+                  <a href="hebergement_map"
+                     i18n:translate="recherche_cartographique">recherche cartographique</a>
+                  <!--tal:attributes="href string:${portal/absolute_url}/map"-->
+               </div>
+            </div>
+         </td>
+      </tr>
+      <tr bgcolor="#f9e7c6">
+         <td>
+           <div id="moteur-ref">
+                <form action=""
+                      method="post">
+                      <!--tal:attributes="action string:$portal_url/moteur_recherche_view/getHebergementByPk"-->
+                  <div id="ref_pk">
+                      <label i18n:translate="label_reference"
+                             class="label-recherche">Référence :</label>
+                      <input type="text"
+                             name="heb_pk"
+                             value=""
+                             size="4" />
+                      <input type="submit" value="GO" />
+                  </div>
+               </form>
+           </div>
+         </td>
+         <td align="center">
+            <div id="moteur-avance">
+               <a href=""
+                  i18n:translate="recherche_avancee">
+                  <!--tal:attributes="href string:$portal_url/search.html"-->recherche avancée</a>
+           </div>
+       </td>
+     </tr>
+</table>

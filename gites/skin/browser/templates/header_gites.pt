@@ -12,28 +12,31 @@
             <td id="btn-maison-jaune">
                 <a href="" 
                    tal:attributes="href string: ${context/portal_url}/idee-sejour"
-                   i18n:translate="menu_idee_sejour">Idées Séjours</a></td>
+                   i18n:translate="menu_idee_sejour"><br />Idées Séjours</a></td>
             <td id="btn-maison-verte">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/gites-meubles"
-                   i18n:translate="menu_gites_meubles">Gîtes et Meublés</a></td>
+                   i18n:translate="menu_gites_meubles"><br />Gîtes et Meublés</a></td>
             <td id="btn-maison-bleue">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/chambres-hotes"
-                   i18n:translate="menu_chambres_hotes">Chambres d'Hôtes'</a></td>
+                   i18n:translate="menu_chambres_hotes"><br />Chambres d'Hôtes</a></td>
             <td id="btn-maison-rouge">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/association"
-                   i18n:translate="menu_assocoation">L'association'</a></td>
+                   i18n:translate="menu_assocoation"><br />L'association</a></td>
             <td id="btn-maison-rose">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/contacts"
-                   i18n:translate="menu_contacts">Contacts</a></td>
+                   i18n:translate="menu_contacts"><br />Contacts</a></td>
         </tr>
+        <!--
         <tr>
-            <td colspan="5"><div id="bordue-ombre-menu-maison"></div></td>
+            <td colspan="5" id="bordue-ombre-menu-maison"></td>
         </tr>
+        -->
     </table>
+    <div id="bordue-ombre-menu-maison"></div>
     
 </div>
 <div class="visualClear"></div>

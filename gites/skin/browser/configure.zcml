@@ -9,7 +9,7 @@
       type="zope.publisher.interfaces.browser.IBrowserSkinType"
       name="GitesSkin"
       />
-  
+
 
   <!-- gites viewlet header -->
   <browser:viewlet
@@ -19,7 +19,25 @@
       layer=".interfaces.IGitesTheme"
       permission="zope.Public"
       />
-  
+
+  <!-- gites moteur recherche-->
+  <browser:viewlet
+      name="gites.moteur-recherche"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".viewlets.GitesMoteurRechercheViewlet"
+      layer=".interfaces.IGitesTheme"
+      permission="zope.Public"
+      />
+
+  <!-- gites viewlet header -->
+  <browser:viewlet
+      name="gites.footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.GitesFooterViewlet"
+      layer=".interfaces.IGitesTheme"
+      permission="zope.Public"
+      />
+
   <!-- Zope 3 browser resources -->
 
 </configure>
