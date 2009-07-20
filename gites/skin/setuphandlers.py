@@ -209,20 +209,40 @@ def createContent(portal):
     contactsFolder.setDefaultPage("contacts")
     createTranslationsForObject(contactsFolder)
 
-    coinPresseFolder = createFolder(portal, "coin-presse", "Coin Presse",True)
-    createPage(coinPresseFolder, "coin-presse", "Coin Presse")
-    coinPresseFolder.setDefaultPage("coin-presse")
-    createTranslationsForObject(coinPresseFolder)
-
     coupleFolder = createFolder(portal, "couple", "Couple",True)
     createPage(coupleFolder, "couple", "Couple")
     coupleFolder.setDefaultPage("couple")
     createTranslationsForObject(coupleFolder)
 
+    familleFolder = createFolder(portal, "famille", "Famille",True)
+    createPage(familleFolder, "famille", "Famille")
+    familleFolder.setDefaultPage("famille")
+    createTranslationsForObject(familleFolder)
+
+    groupeFolder = createFolder(portal, "groupe", "Groupe",True)
+    createPage(groupeFolder, "groupe", "Groupe")
+    groupeFolder.setDefaultPage("Groupe")
+    createTranslationsForObject(groupeFolder)
+
+    societeFolder = createFolder(portal, "societe", "Société",True)
+    createPage(societeFolder, "societe", "Société")
+    societeFolder.setDefaultPage("societe")
+    createTranslationsForObject(societeFolder)
+
     decouvrirWallonieFolder = createFolder(portal, "decouvrir-wallonie", "Découvrir la Wallonie",True)
     createPage(decouvrirWallonieFolder, "decouvrir-wallonie", "Découvrir la Wallonie")
     decouvrirWallonieFolder.setDefaultPage("decouvrir-wallonie")
     createTranslationsForObject(decouvrirWallonieFolder)
+
+    proposerHebergementFolder = createFolder(portal, "proposer-hebergement", "Proposer votre Hébergement",True)
+    createPage(proposerHebergementFolder, "proposer-hebergement", "Proposer votre Hébergement")
+    proposerHebergementFolder.setDefaultPage("proposer-hebergement")
+    createTranslationsForObject(proposerHebergementFolder)
+
+    coinPresseFolder = createFolder(portal, "coin-presse", "Coin Presse",True)
+    createPage(coinPresseFolder, "coin-presse", "Coin Presse")
+    coinPresseFolder.setDefaultPage("coin-presse")
+    createTranslationsForObject(coinPresseFolder)
 
     dernieresMinutesFolder = createFolder(portal, "dernieres-minutes", "Dernières Minutes",True)
     createPage(dernieresMinutesFolder, "dernieres-minutes", "Dernières Minutes")
@@ -233,11 +253,6 @@ def createContent(portal):
     createPage(preparerSejourFolder, "preparer-sejour", "Préparer votre Séjour")
     preparerSejourFolder.setDefaultPage("preparer-sejour")
     createTranslationsForObject(preparerSejourFolder)
-
-    proposerHebergementFolder = createFolder(portal, "proposer-hebergement", "Proposer votre Hébergement",True)
-    createPage(proposerHebergementFolder, "proposer-hebergement", "Proposer votre Hébergement")
-    proposerHebergementFolder.setDefaultPage("proposer-hebergement")
-    createTranslationsForObject(proposerHebergementFolder)
 
     proposerHebergementFolder = createFolder(portal, "proposer-hebergement", "Proposer votre Hébergement",True)
     createPage(proposerHebergementFolder, "proposer-hebergement", "Proposer votre Hébergement")
