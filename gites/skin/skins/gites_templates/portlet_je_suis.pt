@@ -44,7 +44,7 @@
                <a href=""
                   i18n:translate="une_societe"
                   tal:attributes="href string:$portal_url/societe"
-                  class="bouton-je-suis"><span><span><span>Une société</span></span></span>
+                  class="bouton-je-suis"><span><span><span>Une soci&eacute;t&eacute;</span></span></span>
                </a>
             </p>
          </dd>

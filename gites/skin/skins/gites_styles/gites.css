@@ -347,3 +347,182 @@ margin-top:15px;
 
 /*** FIN GESTION MOTEUR RECHERCHE ***/
 
+/*** DEBUT GESTION DES PORTLETS ***/
+.portletHeader a{
+  color:#666;
+}
+
+.portletItem {
+  border-left:none;
+  border-right:none;
+  margin:0pt;
+  padding:1em;
+}
+
+legend{
+  background:transparent;
+}
+
+
+
+dl.portlet {
+  background-color:transparent;
+  border:none;
+  /*margin-top: 0px;*/
+  margin:0px -5px 9px;
+}
+
+#portlet-menu-association a,
+#portlet-menu-chambres-hotes a,
+#portlet-menu-gites-meubles a,
+#portlet-menu-idee-sejour a{
+  text-decoration:none;
+  font-weight:bold;
+  color:#78756e;
+}
+
+
+#portlet-menu-association a:hover,
+#portlet-menu-chambres-hotes a:hover,
+#portlet-menu-gites-meubles a:hover,
+#portlet-menu-idee-sejour a:hover{
+  background-color:#78756e;
+  color:#FFF;
+}
+
+.navTreeItem a, dd.portletItem .navTreeItem a {
+  border:1px solid #F9F3E3;
+}
+
+dt.portletHeader {
+  border: none;
+  font-size:1.2em;
+  font-weight: bold;
+  font-variant:small-caps;
+  color:#bc0000;
+  background: url("p_bord_sup.gif") top left no-repeat;
+  margin: 0em 11px !important;
+  padding-top: 0px;
+  padding-left: 9px;
+  width:132px; <!-- nécessaire sinon probleme avec IE dans colonne de droite-->
+}
+
+dd.portletItemSingle, dd.portletItem  {
+  border:none;
+  background: url("p_lat_gauche.gif") top left repeat-y;
+  margin: 0em 1em;
+  padding:1px 6px;
+  width:143px;
+}
+
+dd.portletItemLast {
+  border: none;
+  background: url("p_bord_inf.gif") bottom left no-repeat;
+  margin: 0em 1em;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 5px;
+  /*width:123px;*/ <!-- nécessaire sinon problème avec IE dans colonne de droite-->
+}
+
+dd.portletFooter {
+  border: none;
+  border-top-style: none !important;
+  background: url("p_bord_inf.gif") bottom left no-repeat;
+  margin: -3px 11px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  padding-right: 16px;
+  width:132px;
+}
+
+.portletItemDetails {
+  text-align:center;
+  left:auto;
+  right:auto;
+  margin-left:-5.5px;
+}
+
+
+#portlet-outil{
+  margin:7px 5px 5px 20px;
+}
+
+#portlet-outil div{
+  padding:3px 0px;
+}
+
+#portlet-partenaires{
+  margin:7px 5px 5px 20px;
+}
+
+#portlet-partenaires div{
+  margin-top: 3px;
+  margin-left:-15px;
+  padding:3px 0px;
+  color:#fff;
+  font-weight: bold;
+  text-align: center;
+  border:1px solid #e7c46b;
+}
+
+#portlet-partenaires a{
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+}
+/*** FIN GESTION PORTLETS ***/
+
+/*** DEBUT PORLET JE SUIS ***/
+a.bouton-je-suis,
+button.bouton-je-suis {
+display:-moz-inline-box;
+display:inline-block;
+margin:0;
+padding:0;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10pt;
+font-weight:bold;
+color:#35475e;
+white-space:nowrap;
+text-align:center;
+vertical-align:middle;
+cursor:pointer;
+border:0;
+background:none;
+}
+
+/*arrondi gauche du bouton*/
+a.bouton-je-suis span,
+button.bouton-je-suis span {
+float:left;
+width:101px;
+padding:0 0 0 18px;
+vertical-align:middle;
+background:url(btn_je_suis_gch.gif) left top no-repeat;
+}
+
+/*arrondi droite du bouton*/
+a.bouton-je-suis span span,
+button.bouton-je-suis span span {
+padding:0 18px 0 0;
+background:url(btn_je_suis_drt.gif) right top no-repeat;
+}
+
+/*milieu du bouton*/
+a.bouton-je-suis span span span,
+button.bouton-je-suis span span span {
+height:25px;
+padding:0;
+line-height:24px;
+background:url(btn_je_suis_corps.gif) left top repeat-x;
+}
+
+.bouton-je-suis:hover{
+color:#ffffff;
+}
+
+* html button {width:1%; overflow:visible;}
+*:first-child+html button {overflow:visible;}
+/*** FIN PORTLET JE SUIS ***/
+
