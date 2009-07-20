@@ -20,8 +20,8 @@ class IIdeeSejourFolderPortlet(IPortletDataProvider):
     """A portlet which renders a menu
     """
     title = schema.TextLine(title=u'Title',
-                            description=u'The title of the menu',
-                            required=True)
+                              description=u'The title of the menu',
+                              required=True)
 
 
 class Assignment(base.Assignment):
