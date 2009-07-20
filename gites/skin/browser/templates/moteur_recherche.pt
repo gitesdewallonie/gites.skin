@@ -12,7 +12,6 @@
                   <div id="type">
                      <label i18n:translate="label_recherche" class="label-recherche">Je cherche</label><br />
                      <select name="form.hebergementType">
-<!--
                         <tal:requete tal:repeat="type here/@@moteur_recherche_view/getGroupedHebergementTypes">
                            <span tal:define="cle type/pk">
                               <span tal:condition="python:cle==0">
@@ -25,7 +24,6 @@
                               </span>
                            </span>
                         </tal:requete>
--->
                      </select>
                    </div>
                    <div id="pour">

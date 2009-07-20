@@ -3,7 +3,6 @@ from zope.interface import implements
 from zope.security.interfaces import Unauthorized
 from interfaces import ILogoView
 
-
 class LogoView(BrowserView):
     """
     Logo
@@ -34,12 +33,9 @@ class LogoView(BrowserView):
         """
         Return correct button regarding language
         """
-	try:
-            image = self.safe_getattr(self.context, image, None)
-            if image:
-                image_translation = image.getTranslation()
-                if image_translation:
-                    image = image_translation
-                return image.tag()
-        except:
-	    return ''
+        image = self.safe_getattr(self.context, image, None)
+        if image:
+            image_translation = image.getTranslation()
+            if image_translation:
+                image = image_translation
+            return image.tag()
