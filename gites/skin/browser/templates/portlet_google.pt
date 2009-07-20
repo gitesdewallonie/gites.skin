@@ -1,0 +1,23 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="gites">
+<body>
+<div metal:define-macro="portlet">
+   <div id="portlet-google">
+      <dl class="portlet">
+         <dt class="portletHeader" i18n:translate="annonces_google">
+            Annonces GOOGLE
+         </dt>
+         <dd class="portletItemSingle">
+            ...
+        </dd>
+        <dd class="portletItemSingle">
+            ...
+        </dd>
+        <dd class="portletItemLast">
+            <!--bas-->
+        </dd>
+   </div>
+</div>
+</body>
+</html>

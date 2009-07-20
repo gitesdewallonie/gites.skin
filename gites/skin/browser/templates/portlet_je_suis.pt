@@ -1,0 +1,59 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xml:lang="en"
+      lang="en"
+      i18n:domain="gites">
+<body>
+<div metal:define-macro="portlet">
+   <div id="portlet-je-suis">
+      <dl class="portlet">
+         <dt class="portletHeader"
+             i18n:translate="je_suis">
+           Je suis
+         </dt>
+
+         <dd class="portletItemSingle">
+            <p>
+               <a href=""
+                  i18n:translate="un_couple"
+                  tal:attributes="href string:$portal_url/couple"
+                  class="bouton-je-suis"><span><span><span>Un couple</span></span></span>
+               </a>
+            </p>
+         </dd>
+         <dd class="portletItemSingle">
+            <p>
+               <a href=""
+                  i18n:translate="une_famille"
+                  tal:attributes="href string:$portal_url/famille"
+                  class="bouton-je-suis"><span><span><span>Une famille</span></span></span>
+               </a>
+            </p>
+         </dd>
+         <dd class="portletItemSingle">
+            <p>
+               <a href=""
+                  i18n:translate="un_groupe"
+                  tal:attributes="href string:$portal_url/groupe"
+                  class="bouton-je-suis"><span><span><span>Un groupe</span></span></span>
+               </a>
+            </p>
+         </dd>
+         <dd class="portletItemSingle">
+            <p>
+               <a href=""
+                  i18n:translate="une_societe"
+                  tal:attributes="href string:$portal_url/societe"
+                  class="bouton-je-suis"><span><span><span>Une société</span></span></span>
+               </a>
+            </p>
+         </dd>
+
+         <dd class="portletItemLast">
+            <!--bas-->
+         </dd>
+      </dl>
+   </div>
+</div>
+</body>
+</html>

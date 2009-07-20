@@ -1,0 +1,16 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+<body>
+<div metal:define-macro="portlet">
+    <div id="portlet-outil"
+         tal:define="view context/@@logo_view">
+       <div><a href="" tal:attributes="href string:${portal_url}/newsletter"><img src="" tal:replace="structure python:view.getButton('news_letter.gif')"/></a></div>
+       <div><a href="" tal:attributes="href string:${portal_url}/preparer-sejour"><img src="" tal:replace="structure python:view.getButton('preparer_sejour.gif')"/></a></div>
+       <div><a href="" tal:attributes="href string:${portal_url}/decouvrir-wallonie"><img src="" tal:replace="structure python:view.getButton('decouvrir_wallonie.gif')"/></a></div>
+       <div><a href="" tal:attributes="href string:${portal_url}/association/devenir-membre"><img src="" tal:replace="structure python:view.getButton('proposer_hebergement.gif')"/></a></div>
+       <div><a href="" tal:attributes="href string:${portal_url}/coin-presse"><img src="" tal:replace="structure python:view.getButton('coin_presse.gif')"/></a></div>
+    </div>
+</div>
+</body>
+</html>
