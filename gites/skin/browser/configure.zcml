@@ -38,6 +38,15 @@
       permission="zope.Public"
       />
 
+  <browser:page
+      for="*"
+      name="getTranslatedObjectUrl"
+      attribute="getTranslatedObjectUrl"
+      class=".translations.Translate"
+      permission="zope.Public"
+      />
+
   <!-- Zope 3 browser resources -->
+  <include file="hebergement.zcml"/>
 
 </configure>

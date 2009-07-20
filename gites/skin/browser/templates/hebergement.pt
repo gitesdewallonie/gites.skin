@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gites">
+
+<body>
+
+<div metal:fill-slot="main">
+   <div tal:define="heb context;
+                    hebergementIcons context/@@hebergement_icons;">
+      <div id="description">
+         <div metal:use-macro="here/hebergement_macro/macros/hebEnTete" />
+         <br/>
+      <div metal:use-macro="here/document_actions/macros/document_actions">
+        Document actions (print, sendto etc)
+      </div>
+         <table id="table-description">
+            <tr>
+               <td id="col-gauche">
+                  <div metal:use-macro="here/hebergement_macro/macros/hebPhoto" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebCoordonneeChambre" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebCoordonneeGite" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
+               </td><!-- col gauche-->
+
+               <td id="col-centre">
+                  <div metal:use-macro="here/hebergement_macro/macros/hebActivite" />
+               </td><!-- td col-centre-->
+
+                <td id="col-droite">
+                  <div metal:use-macro="here/hebergement_macro/macros/hebPointFort" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebDescrptif" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebDistribution" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebECR" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebLiterie" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebConfort" />
+                  <div metal:use-macro="here/hebergement_macro/macros/hebSeminaire" />
+                </td><!-- col droite-->
+            </tr>
+         </table><!--table-description-->
+
+         <div id="heb_info_trouristique"
+              tal:define="maisonTourisme heb/getMaisonTourisme">
+            <fieldset>
+               <legend class="leg-des" i18n:translate="dans_la_region">DANS LA REGION</legend>
+               <table id="dans-la-region">
+                  <tr>
+                     <td>
+                        <!--sejour fute-->
+                        <div id="region-sejour-fute"
+                           tal:define="sejourFute view/getRelatedSejourFute"
+                           tal:condition="python: sejourFute">
+                           <img src="picto/o_alerte.png" border="0" />
+                           <span class="region-titre" i18n:translate="sejours_futes">Séjours Futés</span><br />
+                           <tal:bcl tal:repeat="elem sejourFute">
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a href=""
+                                 tal:attributes="href elem/absolute_url"
+                                 tal:content="elem/Title"></a>
+                              <br />
+                           </tal:bcl>
+                           <br /><br />
+                        </div><!--region-sejour-fute-->
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <!-- maison tourisme-->
+                        <div id="region-maison-trourisme">
+                           <img src="picto/o_info.png" border="0" />
+                           <span class="region-titre" i18n:translate="maison_du_tourisme">Maison du Tourisme</span><br />
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <a href=""
+                              tal:attributes="href string:http://${maisonTourisme/mais_url}"
+                              target="_blank"><span tal:content="maisonTourisme/mais_nom" /></a>
+                           <br /><br />
+                        </div><!--region-maison-tourisme-->
+                        <!--infos touristiques-->
+                        <div id="region-info-tourisme"
+                           tal:define="info maisonTourisme/infosTouristique"
+                           tal:condition="python: info">
+                           <img src="picto/o_info_tour.png" border="0" />
+                           <span class="region-titre" i18n:translate="infos_touristiques">Infos Touristiques</span><br />
+                           <tal:bcl tal:repeat="elem info">
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a href="" tal:attributes="href string:http://${elem/infotour_url}"
+                                       tal:content="elem/infotour_nom"
+                                       target="_blank" /><br />
+                           </tal:bcl>
+                        </div><!--region-info-tourisme-->
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <!-- autres hebergement-->
+                        <div id="region-autre-heb">
+                           <a href=""
+                              tal:attributes="href view/getTypeHebInCommuneURL">
+                           <span i18n:translate="autres_a">
+                             Autres <span i18n:name="type_hebergement" tal:content="view/getTypeHebergement"/> à <span i18n:name="commune" tal:content="heb/commune/com_nom"/>
+                           </span>
+                           <img src="flechebulle_bleue.png"
+                                 border="0" /></a>
+                        </div><!--region-autre-heb-->
+                     </td>
+                  </tr>
+               </table><!-- dans-la-region -->
+            </fieldset>
+         </div><!-- info touristique -->
+
+         <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
+
+         <br /><br /><br />
+         <div id="navigation_bas">
+            <a href=""
+               tal:attributes="href string:${heb/@@url}/#top" i18n:translate="haut_de_la_page">Haut de la page</a>
+               <!--a name dans GiteSkin>main_template li 63-->
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href="javascript:history.go(-1)" i18n:translate="retour_page_precedente">Retour à la page précédente</a>
+         </div><!--div navigation_bas-->
+
+      </div><!--div description-->
+   </div><!--heb context-->
+</div><!--div metal-->
+</body>
+</html>
