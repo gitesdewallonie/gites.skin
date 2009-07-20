@@ -8,6 +8,50 @@ class IGitesTheme(IDefaultPloneLayer):
     """
 
 
+class IMeublesView(Interface):
+    """
+    """
+
+    def getMeubles():
+        """
+        return the meubles in the folder
+        """
+
+
+class ILogoView(Interface):
+    """
+    Logo
+    """
+
+    def getLogoUrl():
+        """
+        return the default url of the logo
+        """
+
+    def getButton(image):
+        """
+        Return correct button regarding language
+        """
+
+
+class IMoteurRecherche(Interface):
+
+    def getHebergementByPk(heb_pk):
+        """
+        Get the url of the hebergement by Pk
+        """
+
+    def getHebergementTypes():
+        """
+        retourne les types d hebergements
+        """
+
+    def getGroupedHebergementTypes(self):
+        """
+        retourne les deux groupes de types d hebergements
+        """
+
+
 class IHebergementView(Interface):
     """
     View for the full description of an hebergement

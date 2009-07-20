@@ -46,7 +46,28 @@
       permission="zope.Public"
       />
 
-  <!-- Zope 3 browser resources -->
   <include file="hebergement.zcml"/>
 
+  <browser:page
+      for="*"
+      name="logo_view"
+      class=".LogoView.LogoView"
+      permission="zope.Public"
+      allowed_interface=".interfaces.ILogoView"
+      />
+
+  <browser:page
+      for="*"
+      name="moteur_recherche_view"
+      class=".moteur_recherche.MoteurRecherche"
+      permission="zope.Public"
+      allowed_interface=".interfaces.IMoteurRecherche"
+      />
+
+  <browser:page
+      for="*"
+      name="meubles_view"
+      class=".meubles.MeublesView"
+      permission="zope.Public"
+      allowed_interface=".interfaces.IMeublesView" />
 </configure>
