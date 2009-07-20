@@ -13,40 +13,39 @@
                   <th class="nosort">&nbsp;</th>
                   <th i18n:translate="nom_hebergement" class="" tal:attributes="class thclass">Nom </th>
                   <th i18n:translate="type_hebergement" class="" tal:attributes="class thclass">Type</th>
-                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localit&eacute;</th>
+                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localité</th>
                   <th i18n:translate="epis_hebergement" class="" tal:attributes="class thclass">Classification</th>
                   <th class="" tal:attributes="class thclass">
                     <span id="capacite">
-                      <img src="capacite.png"
-                           title="Capacit&eacute;"
-                           alt="Capacit&eacute;"
+                      <img src="picto/capacite.png"
+                           title="Capacité"
+                           alt="Capacité"
                            i18n:attributes="alt capacite; title capacite" />
                   </th>
                   <th class="" tal:attributes="class thclass">
-                      <img src="lit_double.png"
+                      <img src="picto/lit_double.png"
                            title="Nombre de chambres"
                            alt="Nombre de chambres"
                            i18n:attributes="alt nombre-chambres; title nombre-chambres" />
                   </th>
-                  <th i18n:translate="date_debut" class="" tal:attributes="class thclass">Date de d&eacute;but</th>
+                  <th i18n:translate="date_debut" class="" tal:attributes="class thclass">Date de début</th>
                   <th i18n:translate="date_fin" class="" tal:attributes="class thclass">Date de fin</th>
                   <th i18n:translate="texte_promotion" class="" tal:attributes="class thclass">Promotion</th>
                 </thead>
                 <tbody>
                   <tal:loop tal:repeat="promotion promotions">
                   <tr tal:define="oddrow repeat/promotion/odd;
-                                  promotion_view nocall:promotion/@@dernieres_minutes_view;
-                                  hebergement promotion/getHebergement"
-                      tal:condition="hebergement"
+                                  promotion_view promotion/@@dernieres_minutes_view;
+                                  hebergement promotion/getHebergement;
+                                  hebergementIcons hebergement/@@hebergement_icons;
+                                  heb_url hebergement/@@url"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
-                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
-                    <td><a href="" tal:attributes="href hebergement/@@url" tal:content="hebergement/heb_nom"></a></td>
-                    <td tal:define="hebergementView nocall:hebergement/@@hebergement_view;"
-                        tal:content="hebergementView/getTypeHebergement"/>
+                    <td><a href="" tal:attributes="href heb_url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
+                    <td><a href="" tal:attributes="href heb_url" tal:content="hebergement/heb_nom"></a></td>
+                    <td tal:content="view/getTypeHebergement"/>
                     <td tal:content="hebergement/heb_localite"/>
-                      <td tal:define="hebergementIcons hebergement/@@hebergement_icons"
-                          tal:content="structure hebergementIcons/getEpis">
-                            <span i18n:translate="epis">Les &eacute;pis</span>
+                      <td tal:content="structure hebergementIcons/getEpis">
+                            <span i18n:translate="epis">Les épis</span>
                       </td>
                       <td>
                           <span tal:content="hebergement/heb_cgt_cap_min" />/<span tal:content="hebergement/heb_cgt_cap_max" />
@@ -77,39 +76,38 @@
                   <th class="nosort">&nbsp;</th>
                   <th i18n:translate="nom_hebergement" class="" tal:attributes="class thclass">Nom </th>
                   <th i18n:translate="type_hebergement" class="" tal:attributes="class thclass">Type</th>
-                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localit&eacute;</th>
+                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localité</th>
                   <th i18n:translate="epis_hebergement" class="" tal:attributes="class thclass">Classification</th>
                   <th class="" tal:attributes="class thclass">
                     <span id="capacite">
-                      <img src="capacite.png"
-                           title="Capacit&eacute;"
-                           alt="Capacit&eacute;"
+                      <img src="picto/capacite.png"
+                           title="Capacité"
+                           alt="Capacité"
                            i18n:attributes="alt capacite; title capacite" />
                   </th>
                   <th class="" tal:attributes="class thclass">
-                      <img src="lit_double.png"
+                      <img src="picto/lit_double.png"
                            title="Nombre de chambres"
                            alt="Nombre de chambres"
                            i18n:attributes="alt nombre-chambres; title nombre-chambres" />
                   </th>
-                  <th i18n:translate="date_debut" class="" tal:attributes="class thclass">Date de d&eacute;but</th>
+                  <th i18n:translate="date_debut" class="" tal:attributes="class thclass">Date de début</th>
                   <th i18n:translate="date_fin" class="" tal:attributes="class thclass">Date de fin</th>
                 </thead>
                 <tbody>
                   <tal:loop tal:repeat="lastminute lastminutes">
                   <tr tal:define="oddrow repeat/lastminute/odd;
-                                  lastminute_view nocall:lastminute/@@dernieres_minutes_view;
-                                  hebergement lastminute/getHebergement"
-                      tal:condition="hebergement"
+                                  lastminute_view lastminute/@@dernieres_minutes_view;
+                                  hebergement lastminute/getHebergement;
+                                  hebergementIcons hebergement/@@hebergement_icons;
+                                  heb_url hebergement/@@url"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
-                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
-                    <td><a href="" tal:attributes="href hebergement/@@url" tal:content="hebergement/heb_nom"></a></td>
-                    <td tal:define="hebergementView nocall:hebergement/@@hebergement_view"
-                        tal:content="hebergementView/getTypeHebergement"/>
+                    <td><a href="" tal:attributes="href heb_url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
+                    <td><a href="" tal:attributes="href heb_url" tal:content="hebergement/heb_nom"></a></td>
+                    <td tal:content="view/getTypeHebergement"/>
                     <td tal:content="hebergement/heb_localite"/>
-                      <td tal:define="hebergementIcons hebergement/@@hebergement_icons;"
-                          tal:content="structure hebergementIcons/getEpis">
-                            <span i18n:translate="epis">Les &eacute;pis</span>
+                      <td tal:content="structure hebergementIcons/getEpis">
+                            <span i18n:translate="epis">Les épis</span>
                       </td>
 
                       <td>
@@ -144,16 +142,16 @@
               tal:condition="python:heb.type.type_heb_code in 'CH, CHECR'">
             <span tal:content="view/getTypeHebergement" /><br />
             <div id="heb_ref">
-               n&deg; : <span tal:content="heb/heb_pk" />
+               n° : <span tal:content="heb/heb_pk" />
             </div>
          </div><!--div type_heb-->
 
          <div id="type_heb"
                tal:condition="python:heb.type.type_heb_code == 'MH'">
-               <span tal:content="view/getTypeHebergement">Maison d'h&ocirc;tes</span>
+               <span tal:content="view/getTypeHebergement">Maison d'hôtes</span>
             <br />
             <div id="heb_ref">
-               n : <span tal:content="heb/heb_pk" />
+               n° : <span tal:content="heb/heb_pk" />
             </div>
          </div><!--div type_heb-->
 
@@ -165,86 +163,78 @@
          <div id="heb_gites_plus">
             <span tal:define="label heb/heb_gid_bebe_tendresse"
                   tal:condition="python:label=='oui'">
-               <img src="l_bebe.png"
-                    title="Gîte b&eacute;b&eacute; tendresse"
-                    alt="Gîte b&eacute;b&eacute; tendresse" 
-                    i18n:attributes="alt gite_bebe_tendresse; title gite_bebe_tendresse" />
+               <img src="picto/l_bebe.png"
+                     title="Gîte bébé tendresse"
+                     alt="Gîte bébé tendresse" 
+                     i18n:attributes="alt gite_bebe_tendresse; title gite_bebe_tendresse" />
             </span>
             <span tal:define="label heb/heb_gid_access_tous"
                   tal:condition="python:label=='oui'">
-               <img src="l_accessibilite.png"
-                    title="Gîte accessible à tous"
-                    alt="Gîte accessible à tous"
-                    i18n:attributes="alt gite_accessible_a_tous; title gite_accessible_a_tous" />
+               <img src="picto/l_accessibilite.png"
+                     title="Gîte accessible à tous"
+                     alt="Gîte accessible à tous"
+                     i18n:attributes="alt gite_accessible_a_tous; title gite_accessible_a_tous" />
             </span>
             <span tal:define="label heb/heb_gid_antiallergique"
                   tal:condition="python:label=='oui'">
-               <img src="l_anti_allergique.png"
-                    title="Gîte anti-allergique"
-                    alt="Gîte anti-allergique"
-                    i18n:attributes="alt gite_anti_allergique; title gite_anti_allergique" />
+               <img src="picto/l_anti_allergique.png"
+                     title="Gîte anti-allergique"
+                     alt="Gîte anti-allergique"
+                     i18n:attributes="alt gite_anti_allergique; title gite_anti_allergique" />
             </span>
 
             <span tal:define="label heb/heb_gid_beau_jardin"
                   tal:condition="python:label=='oui'">
-               <img src="l_jardin.png"
-                    title="Gîte au jardin"
-                    alt="Gîte au jardin"
-                    i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
-             </span>
-
-             <span tal:define="label heb/heb_gid_eco_gite"
-                   tal:condition="python:label=='oui'">
-               <img src="l_eco_gite.png"
-                    title="Gite ecologique"
-                    alt="Gite ecologique"
-                    i18n:attributes="alt gite_eco; title gite_eco" />
-             </span>
+               <img src="picto/l_jardin.png"
+                     title="Gîte au jardin"
+                     alt="Gîte au jardin"
+                     i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
+            </span>
          </div><!-- div gitesplus-->
 
          <div id="heb_theme">
             <span tal:define="theme heb/heb_gid_activite_nature"
                   tal:condition="python:theme=='oui'">
-               <img src="t_decouverte.png"
-                    title="Gîte Activit&eacute;s d&eacute;couverte nature"
-                    alt="Gîte Activit&eacute;s d&eacute;couverte nature"
-                    i18n:attributes="alt gite_activite_decouverte_nature; title gite_activite_decouverte_nature" />
+               <img src="picto/t_decouverte.png"
+                     title="Gîte Activités découverte nature"
+                     alt="Gîte Activités découverte nature"
+                     i18n:attributes="alt gite_activite_decouverte_nature; title gite_activite_decouverte_nature" />
             </span>
             <span tal:define="theme heb/heb_gid_panda"
                   tal:condition="python:theme=='oui'">
-               <img src="t_panda.png"
-                    title="Gîte Panda"
-                    alt="Gîte Panda"
-                    i18n:attributes="alt gite_panda; title gite_panda" />
+               <img src="picto/t_panda.png"
+                     title="Gîte Panda"
+                     alt="Gîte Panda"
+                     i18n:attributes="alt gite_panda; title gite_panda" />
             </span>
             <span tal:define="theme heb/heb_gid_theme_equestre"
                   tal:condition="python:theme=='oui'">
-               <img src="t_equestre.png"
-                    title="Gîte &eacute;questre"
-                    alt="Gîte &eacute;questre"
-                    i18n:attributes="alt gite_equestre; title gite_equestre" />
+               <img src="picto/t_equestre.png"
+                     title="Gîte équestre"
+                     alt="Gîte équestre"
+                     i18n:attributes="alt gite_equestre; title gite_equestre" />
             </span>
             <span tal:define="theme heb/heb_gid_peche"
                   tal:condition="python:theme=='oui'">
-               <img src="t_peche.png"
-                    title="Gîte pêche"
-                    alt="Gîte pêche"
-                    i18n:attributes="alt gite_peche; title gite_peche" />
+               <img src="picto/t_peche.png"
+                     title="Gîte pêche"
+                     alt="Gîte pêche"
+                     i18n:attributes="alt gite_peche; title gite_peche" />
             </span>
             <span tal:define="theme heb/heb_gid_patrimoine"
                   tal:condition="python:theme=='oui'">
-               <img src="t_patrimoine.png"
-                    title="Gîte patrimoine"
-                    alt="Gîte patrimoine"
-                    i18n:attributes="alt gite_patrimoine; title gite_patrimoine" />
+               <img src="picto/t_patrimoine.png"
+                     title="Gîte patrimoine"
+                     alt="Gîte patrimoine"
+                     i18n:attributes="alt gite_patrimoine; title gite_patrimoine" />
             </span>
          </div><!--div theme>-->
 
 
          <div id="heb_capacite">
-            <img src="capacite.png"
-                  title="Capacit&eacute;"
-                  alt="Capacit&eacute;"
+            <img src="picto/capacite.png"
+                  title="Capacité"
+                  alt="Capacité"
                   i18n:attributes="alt capacite; title capacite" />
             <span tal:content="string: ${heb/heb_cgt_cap_min}/${heb/heb_cgt_cap_max}" />
          </div><!--div capacite-->
@@ -260,7 +250,7 @@
             <span tal:content="view/getTypeHebergement" />
             <br />
             <div id="heb_ref">
-               n&deg; : <span tal:content="heb/heb_pk" />
+               n° : <span tal:content="heb/heb_pk" />
             </div>
          </div><!--div type-heb-->
 
@@ -272,21 +262,21 @@
          <div id="heb_gites_plus">
             <span tal:define="label heb/heb_gid_bebe_tendresse"
                   tal:condition="python:label=='oui'">
-               <img src="l_bebe.png"
-                     title="Gîte b&eacute;b&eacute; tendresse"
-                     alt="Gîte b&eacute;b&eacute; tendresse"
+               <img src="picto/l_bebe.png"
+                     title="Gîte bébé tendresse"
+                     alt="Gîte bébé tendresse"
                      i18n:attributes="alt gite_bebe_tendresse; title gite_bebe_tendresse" />
             </span>
             <span tal:define="label heb/heb_gid_access_tous"
                   tal:condition="python:label=='oui'">
-               <img src="l_accessibilite.png"
+               <img src="picto/l_accessibilite.png"
                      title="Gîte accessible à tous"
                      alt="Gîte accessible à tous"
                      i18n:attributes="alt gite_accessible_a_tous; title gite_accessible_a_tous" />
             </span>
             <span tal:define="label heb/heb_gid_antiallergique"
                   tal:condition="python:label=='oui'">
-               <img src="l_anti_allergique.png"
+               <img src="picto/l_anti_allergique.png"
                      title="Gîte anti-allergique"
                      alt="Gîte anti-allergique"
                      i18n:attributes="alt gite_anti_allergique; title gite_anti_allergique" />
@@ -294,52 +284,45 @@
 
             <span tal:define="label heb/heb_gid_beau_jardin"
                   tal:condition="python:label=='oui'">
-               <img src="l_jardin.png"
+               <img src="picto/l_jardin.png"
                      title="Gîte au jardin"
                      alt="Gîte au jardin"
                      i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
             </span>
-            <span tal:define="label heb/heb_gid_eco_gite"
-                   tal:condition="python:label=='oui'">
-               <img src="l_eco_gite.png"
-                    title="Gite ecologique"
-                    alt="Gite ecologique"
-                    i18n:attributes="alt gite_eco; title gite_eco" />
-             </span>
          </div><!-- div gitesplus-->
 
          <div id="heb_theme">
             <span tal:define="theme heb/heb_gid_activite_nature"
                   tal:condition="python:theme=='oui'">
-               <img src="t_nature.png"
-                     title="Gîte Activit&eacute;s d&eacute;couverte nature"
-                     alt="Gîte Activit&eacute;s d&eacute;couverte nature"
+               <img src="picto/t_nature.png"
+                     title="Gîte Activités découverte nature"
+                     alt="Gîte Activités découverte nature"
                      i18n:attributes="alt gite_activite_decouverte_nature; title gite_activite_decouverte_nature" />
             </span>
             <span tal:define="theme heb/heb_gid_panda"
                   tal:condition="python:theme=='oui'">
-               <img src="t_panda.png"
+               <img src="picto/t_panda.png"
                      title="Gîte Panda"
                      alt="Gîte Panda"
                      i18n:attributes="alt gite_panda; title gite_panda" />
             </span>
             <span tal:define="theme heb/heb_gid_theme_equestre"
                   tal:condition="python:theme=='oui'">
-               <img src="t_equestre.png"
-                     title="Gîte &eacute;questre"
-                     alt="Gîte &eacute;questre"
+               <img src="picto/t_equestre.png"
+                     title="Gîte équestre"
+                     alt="Gîte équestre"
                      i18n:attributes="alt gite_equestre; title gite_equestre" />
             </span>
             <span tal:define="theme heb/heb_gid_peche"
                   tal:condition="python:theme=='oui'">
-               <img src="t_peche.png"
+               <img src="picto/t_peche.png"
                      title="Gîte pêche"
                      alt="Gîte pêche"
                      i18n:attributes="alt gite_peche; title gite_peche" />
             </span>
             <span tal:define="theme heb/heb_gid_patrimoine"
                   tal:condition="python:theme=='oui'">
-               <img src="t_patrimoine.png"
+               <img src="picto/t_patrimoine.png"
                      title="Patrimoine"
                      alt="Patrimoine"
                      i18n:attributes="alt gite_patrimoine; title gite_patrimoine" />
@@ -347,7 +330,7 @@
          </div><!--div theme>-->
 
          <div id="heb_capacite">
-            <img src="capacite.png"
+            <img src="picto/capacite.png"
                   alt="Capacité"
                   title="Capacité"
                   i18n:attributes="alt capacite; title capacite" />
@@ -390,7 +373,7 @@
    <div id="btn_outil">
       <a href="signaletiques"
          tal:attributes="href hebergementIcons/getSignaletiqueUrl">
-         <img src="o_question.png"
+         <img src="picto/o_question.png"
               border="0"
               alt="question"
               title="question"
@@ -398,7 +381,7 @@
 
       <a href=""
          tal:attributes="href string:${portal_url}/map/hebergement_map?lat=${heb/heb_gps_lat}&long=${heb/heb_gps_long}&pk=${heb/heb_pk}">
-         <img src="o_carte.png"
+         <img src="picto/o_carte.png"
               border="0"
               alt="carte"
               title="carte"
@@ -406,7 +389,7 @@
 
       <a href=""
          tal:attributes="href string:${heb/@@url}/gallery">
-         <img src="o_photo.png"
+         <img src="picto/o_photo.png"
               border="0"
               alt="galerie"
               title="galerie"
@@ -421,27 +404,27 @@
          <table id="tarification-chambre">
             <tr class="bg-chambre">
                <td>&nbsp;</td>
-               <td align="center"><span>1 p.</span></td>
-               <td align="center"><span>2 p.</span></td>
-               <td align="center"><span i18n:translate="personne_supplementaire"> Personne suppl&eacute;mentaire</span></td>
+               <td align="center"><span i18n:translate="1_personne"> 1 personne</span></td>
+               <td align="center"><span i18n:translate="2_personne"> 2 personnes</span></td>
+               <td align="center"><span i18n:translate="personne_supplementaire"> Personne supplémentaire</span></td>
             </tr>
             <tr>
                <td class="bg-chambre">
-                    <span i18n:translate="nuit_avec_petit_dejeuner">Nuit&eacute;e avec petit d&eacute;jeuner</span>
+               <span i18n:translate="nuit_avec_petit_dejeuner">Nuitée avec petit déjeuner</span>
                </td>
                <td align="center">
-                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />&nbsp;
+               <span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />
                </td>
                <td align="center">
-                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />&nbsp;
+               <span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />
                </td>
                <td align="center">
-                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />&nbsp;
+               <span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />
                </td>
             </tr>
             <tr>
                <td class="bg-chambre">
-               <span i18n:translate="deduction_si_pas_petit_dejeuner">D&eacute;duction si pas petit d&eacute;jeuner</span>
+               <span i18n:translate="deduction_si_pas_petit_dejeuner">Déduction si pas petit déjeuner</span>
                </td>
                <td align="center">
                <span tal:condition="exists:heb/heb_tarif_chmbr_sans_dej_1p">
@@ -451,12 +434,12 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" class="empty-cell"></td>
-               <td align="center" class="empty-cell"></td>
+               <td align="center" bgcolor="#FFF"></td>
+               <td align="center" bgcolor="#FFF"></td>
             </tr>
             <tr>
                <td class="bg-chambre">
-               <span i18n:translate="taxes_sejour">Taxes de s&eacute;jour</span>
+               <span i18n:translate="taxes_sejour">Taxes de séjour</span>
                </td>
                <td align="center">
                <span tal:condition="exists:heb/heb_taxe_montant">
@@ -466,8 +449,8 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" class="empty-cell">&nbsp;</td>
-               <td align="center" class="empty-cell">&nbsp;</td>
+               <td align="center" bgcolor="#FFF">&nbsp;</td>
+               <td align="center" bgcolor="#FFF">&nbsp;</td>
             </tr>
             <tr>
                <td class="bg-chambre">
@@ -481,15 +464,15 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" class="empty-cell">&nbsp;</td>
-               <td align="center" class="empty-cell">&nbsp;</td>
+               <td align="center" bgcolor="#FFF">&nbsp;</td>
+               <td align="center" bgcolor="#FFF">&nbsp;</td>
             </tr>
          </table>
          <br />
          <div tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p>''">
             <table id="tarification-chambre">
                <tr align="center">
-                  <td class="bg-chambre"><span i18n:translate="table_d_hote">Table d'h&ocirc;te</span></td>
+                  <td class="bg-chambre"><span i18n:translate="table_d_hote">Table d'hôte</span></td>
                   <td>
                   <span tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p>0">
                      <span tal:content="heb/heb_tarif_chmbr_table_hote_1p" />
@@ -502,7 +485,7 @@
                   <span tal:define="table heb/tableHote">
                      <tal:boucle tal:repeat="elem table">
                      <span tal:condition="python: elem.tabho_pk==1">
-                           <img src="assiette_1.png"
+                           <img src="picto/assiette_1.png"
                               alt=""
                               title=""
                               tal:attributes="alt elem/tabho_type_fr;
@@ -510,7 +493,7 @@
                            <br />
                      </span>
                      <span tal:condition="python: elem.tabho_pk==2">
-                           <img src="assiette_2.png"
+                           <img src="picto/assiette_2.png"
                               alt=""
                               title=""
                               tal:attributes="alt elem/tabho_type_fr;
@@ -518,7 +501,7 @@
                              <br />
                      </span>
                      <span tal:condition="python: elem.tabho_pk==3">
-                           <img src="assiette_3.png"
+                           <img src="picto/assiette_3.png"
                               alt=""
                               title=""
                               tal:attributes="alt elem/tabho_type_fr;
@@ -538,7 +521,7 @@
       <span tal:condition="python:heb.type.type_heb_code not in 'CH, MH, CHECR'">
          <table id="tarification-gite">
             <tr bgcolor="#CCFFCC">
-               <td align="center"><span i18n:translate="periode">P&eacute;riode</span></td>
+               <td align="center"><span i18n:translate="periode">Période</span></td>
                <td align="center"><span i18n:translate="week-end">WE</span></td>
                <td align="center"><span i18n:translate="semaine">Semaine</span></td>
             </tr>
@@ -630,7 +613,7 @@
                <td colspan="3">&nbsp;</td>
             </tr>
             <tr>
-               <td>&nbsp;&nbsp; <span i18n:translate="fin_d_annee">Fin d'ann&eacute;e</span></td>
+               <td>&nbsp;&nbsp; <span i18n:translate="fin_d_annee">Fin d'année</span></td>
                <td align="center" bgcolor="#ACE087">-</td>
                <td align="center" bgcolor="#8BBE67">
                   <span tal:condition="exists: heb/heb_tarif_semaine_fin_annee">
@@ -668,7 +651,7 @@
                </td>
             </tr>
             <tr bgcolor="#ceddce">
-               <td>&nbsp;&nbsp; <span i18n:translate="taxe_sejour">Taxe de s&eacute;jour</span></td>
+               <td>&nbsp;&nbsp; <span i18n:translate="taxe_sejour">Taxe de séjour</span></td>
                <td colspan="2"  align="left">
                   <span tal:condition="exists: heb/heb_taxe_montant">
                      <span tal:content="heb/heb_taxe_montant" />
@@ -700,10 +683,10 @@
       <!-- DEBUT TABLE DES PICTO-->
       <table border="0" width="29" align="center">
          <tr>
-            <td><!--gestion des picto activit&eacute;-->
+            <td><!--gestion des picto activité-->
                <span tal:define="tennis heb/heb_tenis"
                      tal:condition="python:tennis=='oui'">
-                     <img src="a_tennis.png"
+                     <img src="picto/a_tennis.png"
                            title="Tennis"
                            alt="Tennis"
                            i18n:attributes="alt tennis; title tennis" />
@@ -712,7 +695,7 @@
                </span>
                <span tal:define="nautisme heb/heb_nautisme"
                      tal:condition="python:nautisme=='oui'">
-                     <img src="a_voile.png"
+                     <img src="picto/a_voile.png"
                            title="Sports nautiques"
                            alt="Sports nautiques"
                            i18n:attributes="alt sports-nautiques; title sports-nautiques" />
@@ -721,7 +704,7 @@
                </span>
                <span tal:define="sky heb/heb_sky"
                      tal:condition="python:sky=='oui'">
-                     <img src="a_sky.png"
+                     <img src="picto/a_sky.png"
                            title="Ski"
                            alt="Ski"
                            i18n:attributes="alt sky; title sky" />
@@ -730,16 +713,16 @@
                </span>
                <span tal:define="rando heb/heb_rando"
                      tal:condition="python:rando=='oui'">
-                     <img src="a_rando.png"
-                           title="Randonn&eacute;e"
-                           alt="Randonn&eacute;e"
+                     <img src="picto/a_rando.png"
+                           title="Randonnée"
+                           alt="Randonnée"
                            i18n:attributes="alt randonnee; title randonnee" />
                      <span tal:content="heb/heb_rando_distance" />
                      <br />
                </span>
                <span tal:define="piscine heb/heb_piscine"
                      tal:condition="python:piscine=='oui'">
-                     <img src="a_piscine.png"
+                     <img src="picto/a_piscine.png"
                            title="Piscine"
                            alt="Piscine"
                            i18n:attributes="alt piscine; title piscine" />
@@ -748,7 +731,7 @@
                </span>
                <span tal:define="peche heb/heb_peche"
                      tal:condition="python:peche=='oui'">
-                     <img src="a_peche.png"
+                     <img src="picto/a_peche.png"
                            title="Pêche"
                            alt="Pêche"
                            i18n:attributes="alt peche; title peche" />
@@ -757,7 +740,7 @@
                </span>
                <span tal:define="equitation heb/heb_equitation"
                      tal:condition="python:equitation=='oui'">
-                     <img src="a_cheval.png"
+                     <img src="picto/a_cheval.png"
                            title="Equitation"
                            alt="Equitation"
                            i18n:attributes="alt equitation; title equitation" />
@@ -766,16 +749,16 @@
                </span>
                <span tal:define="velo heb/heb_velo"
                      tal:condition="python:velo=='oui'">
-                     <img src="a_velo.png"
-                           title="V&eacute;lo"
-                           alt="V&eacute;lo"
+                     <img src="picto/a_velo.png"
+                           title="Vélo"
+                           alt="Vélo"
                            i18n:attributes="alt velo; title velo" />
                      <span tal:content="heb/heb_velo_distance" />
                      <br />
                </span>
                <span tal:define="vtt heb/heb_vtt"
                      tal:condition="python:vtt=='oui'">
-                     <img src="a_vtt.png"
+                     <img src="picto/a_vtt.png"
                            title="VTT"
                            alt="VTT"
                            i18n:attributes="alt vtt; title vtt" />
@@ -784,7 +767,7 @@
                </span>
                <span tal:define="ravel heb/heb_ravel"
                      tal:condition="python:ravel=='oui'">
-                     <img src="a_ravel.png"
+                     <img src="picto/a_ravel.png"
                            title="RAVEL"
                            alt="RAVEL"
                            i18n:attributes="alt ravel; title ravel" />
@@ -798,7 +781,7 @@
                <br />
                <span tal:define="gare heb/heb_gare"
                      tal:condition="python:gare=='oui'">
-                     <img src="i_gare.png"
+                     <img src="picto/i_gare.png"
                            title="Gare"
                            alt="Gare"
                            i18n:attributes="alt gare; title gare" />
@@ -807,7 +790,7 @@
                </span>
                <span tal:define="commerce heb/heb_commerce"
                      tal:condition="python:commerce=='oui'">
-                     <img src="i_commerce.png"
+                     <img src="picto/i_commerce.png"
                            title="Commerce"
                            alt="Commerce"
                            i18n:attributes="alt commerce; title commerce" />
@@ -816,7 +799,7 @@
                </span>
                <span tal:define="resto heb/heb_restaurant"
                      tal:condition="python:resto=='oui'">
-                     <img src="i_restaurant.png"
+                     <img src="picto/i_restaurant.png"
                            title="Restaurant"
                            alt="Restaurant"
                            i18n:attributes="alt restaurant; title restaurant" />
@@ -875,7 +858,7 @@
       <fieldset class="field-des">
          <legend class="leg-des"><span i18n:translate="literie">LITERIE</span></legend>
          <div class="chambre">
-            <img src="c_chambre.png"
+            <img src="picto/c_chambre.png"
                title="Nombre de chambres"
                alt="Nombre de chambre"
                class="picto"
@@ -885,7 +868,7 @@
          </div>
          <div tal:condition="python: heb.heb_lit_1p > '0'"
             class="lit">
-            <img src="lit_1p.png"
+            <img src="picto/lit_1p.png"
                title="Lit 1 personne"
                alt="Lit 1 personne"
                class="picto"
@@ -895,7 +878,7 @@
          </div>
          <div tal:condition="python: heb.heb_lit_2p > '0'"
             class="lit">
-            <img src="lit_double.png"
+            <img src="picto/lit_double.png"
                title="Lit 2 personnes"
                alt="Lit 2 personnes"
                class="picto"
@@ -905,9 +888,9 @@
          </div>
          <div tal:condition="python: heb.heb_lit_sup > '0'"
             class="lit">
-            <img src="lit_superpose.png"
-               title="Lit superpos&eacute;"
-               alt="Lit superpos&eacute;"
+            <img src="picto/lit_superpose.png"
+               title="Lit superposé"
+               alt="Lit superposé"
                class="picto"
                i18n:attributes="alt lit_superpose; title lit_superpose" />
             <br />
@@ -915,7 +898,7 @@
          </div>
          <div tal:condition="python: heb.heb_lit_enf > '0'"
             class="lit">
-            <img src="lit_enfant.png"
+            <img src="picto/lit_enfant.png"
                title="Lit enfant"
                alt="Lit enfant"
                class="picto"
@@ -934,17 +917,17 @@
          <div tal:define="animal heb/heb_animal"
               tal:condition="python:animal=='oui'"
               class="floatleft">
-            <img src="c_chien.png"
-                 title="Animaux de compagnie accept&eacute;s"
-                 alt="Animaux de compagnie accept&eacute;s"
+            <img src="picto/c_chien.png"
+                 title="Animaux de compagnie acceptés"
+                 alt="Animaux de compagnie acceptés"
                  class="picto"
                  i18n:attributes="alt animaux_de_compagnie_acceptes; title animaux_de_compagnie_acceptes" />
          </div>
 
          <div tal:define="animal heb/heb_animal"
-              tal:condition="python:animal!='oui'"
+s              tal:condition="python:animal!='oui'"
               class="floatleft">
-            <img src="c_nochien.png"
+            <img src="picto/c_nochien.png"
                  title="Pas d'animal de compagnie"
                  alt="Pas d'animal de compagnie"
                  class="picto"
@@ -953,7 +936,7 @@
          <div tal:define="fumeur heb/heb_fumeur"
               tal:condition="python:fumeur=='oui'"
               class="floatleft">
-            <img src="c_fumeur.png"
+            <img src="picto/c_fumeur.png"
                  title="Autorisation de fumer"
                  alt="Autorisation de fumer"
                  class="picto"
@@ -962,7 +945,7 @@
          <div tal:define="fumeur heb/heb_fumeur"
               tal:condition="python:fumeur!='oui'"
                class="floatleft">
-             <img src="c_non_fumeur.png"
+             <img src="picto/c_non_fumeur.png"
                   title="Interdit de fumer"
                   alt="Interdit de fumer"
                   class="picto"
@@ -970,15 +953,15 @@
          </div>
          <div tal:condition="python: heb.heb_confort_tv == 'oui'"
                class="floatleft">
-               <img src="c_tv.png"
-                  title="T&eacute;l&eacute;vision"
-                  alt="T&eacute;l&eacute;vision"
+               <img src="picto/c_tv.png"
+                  title="Télévision"
+                  alt="Télévision"
                   class="picto"
                   i18n:attributes="alt television; title television" />
          </div>
          <div tal:condition="python: heb.heb_confort_feu_ouvert == 'oui'"
               class="floatleft">
-            <img src="c_feu_ouvert.png"
+            <img src="picto/c_feu_ouvert.png"
                  title="Feu ouvert"
                  alt="Feu ouvert"
                  class="picto"
@@ -986,7 +969,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_lave_vaiselle == 'oui'"
               class="floatleft">
-            <img src="c_lave_vaisselle.png"
+            <img src="picto/c_lave_vaisselle.png"
                  title="Lave-vaisselle"
                  alt="Lave-vaisselle"
                  class="picto"
@@ -994,7 +977,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_micro_onde == 'oui'"
               class="floatleft">
-            <img src="c_micro_onde.png"
+            <img src="picto/c_micro_onde.png"
                  title="Micro-onde"
                  alt="Micro-onde"
                  class="picto"
@@ -1002,7 +985,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_lave_linge == 'oui'"
               class="floatleft">
-            <img src="c_lave_linge.png"
+            <img src="picto/c_lave_linge.png"
                  title="Lave-linge"
                  alt="Lave-linge"
                  class="picto"
@@ -1010,15 +993,15 @@
          </div>
          <div tal:condition="python: heb.heb_confort_seche_linge == 'oui'"
               class="floatleft">
-            <img src="c_seche_linge.png"
+            <img src="picto/c_seche_linge.png"
                  title="Sèche-linge"
-                 alt="S&eacute;che-linge"
+                 alt="Séche-linge"
                  class="picto"
                  i18n:attributes="alt seche_linge; title seche_linge" />
          </div>
          <div tal:condition="python: heb.heb_confort_congelateur == 'oui'"
               class="floatleft">
-            <img src="c_congelateur.png"
+            <img src="picto/c_congelateur.png"
                  title="Congelateur"
                  alt="Congelateur"
                  class="picto"
@@ -1026,7 +1009,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_internet == 'oui'"
               class="floatleft">
-            <img src="c_internet.png"
+            <img src="picto/c_internet.png"
                  title="Internet"
                  alt="Internet"
                  class="picto"
@@ -1044,7 +1027,7 @@
          <legend class="leg-des"><span i18n:translate="seminaire">SEMINAIRE</span></legend>
          <div tal:condition="python: heb.heb_confort_internet == 'oui'"
               class="floatleft">
-            <img src="c_internet.png"
+            <img src="picto/c_internet.png"
                  title="Internet"
                  alt="Internet"
                  class="picto"
@@ -1052,7 +1035,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_ecran=='oui'"
               class="floatleft">
-            <img src="c_ecran.png"
+            <img src="picto/c_ecran.png"
                  title="Ecran"
                  alt="Ecran"
                  class="picto"
@@ -1060,7 +1043,7 @@
          </div>
         <div tal:condition="python: heb.heb_confort_projecteur=='oui'"
               class="floatleft">
-            <img src="c_projecteur.png"
+            <img src="picto/c_projecteur.png"
                  title="Projecteurs"
                  alt="Projecteurs"
                  class="picto"
@@ -1068,7 +1051,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_flipchart=='oui'"
               class="floatleft">
-            <img src="c_flipchart.png"
+            <img src="picto/c_flipchart.png"
                  title="Flipchart"
                  alt="Flipchart"
                  class="picto"
@@ -1076,7 +1059,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_terrasse=='oui'"
               class="floatleft">
-            <img src="c_terrasse.png"
+            <img src="picto/c_terrasse.png"
                  title="Terrasse"
                  alt="Terrasse"
                  class="picto"
@@ -1084,7 +1067,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_jardin=='oui'"
                class="floatleft">
-             <img src="c_jardin.png"
+             <img src="picto/c_jardin.png"
                   title="Jardin"
                   alt="Jardin"
                   class="picto"
@@ -1092,7 +1075,7 @@
          </div>
          <div tal:condition="python: heb.heb_piscine=='oui'"
               class="floatleft">
-            <img src="a_piscine.png"
+            <img src="picto/a_piscine.png"
                  title="Piscine"
                  alt="Piscine"
                  class="picto"
@@ -1100,7 +1083,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_jacuzzi=='oui'"
               class="floatleft">
-            <img src="c_jaccuzzi.png"
+            <img src="picto/c_jaccuzzi.png"
                  title="Jaccuzzi"
                  alt="Jaccuzzi"
                  class="picto"
@@ -1108,7 +1091,7 @@
          </div>
          <div tal:condition="python: heb.heb_confort_sauna=='oui'"
                class="floatleft">
-               <img src="c_sauna.png"
+               <img src="picto/c_sauna.png"
                   title="Sauna"
                   alt="Sauna"
                   class="picto"
@@ -1116,7 +1099,7 @@
          </div>
          <div tal:condition="python: heb.heb_tenis=='oui'"
               class="floatleft">
-            <img src="a_tennis.png"
+            <img src="picto/a_tennis.png"
                  title="Tennis"
                  alt="Tennis"
                  class="picto"
@@ -1143,16 +1126,16 @@
                </b>
                <br />
                <span tal:replace="heb/proprio/pro_langue" /><br />
-               <img src="telephone.gif" />
+               <img src="portal_icones/telephone.gif" />
                <span tal:replace="heb/proprio/pro_tel_priv" /><br />
-               <img src="fax.gif" />
+               <img src="portal_icones/fax.gif" />
                <span tal:replace="heb/proprio/pro_fax_priv" /><br />
-               <img src="gsm.gif" />
+               <img src="portal_icones/gsm.gif" />
                <span tal:replace="heb/proprio/pro_gsm1" /><br />
-               <img src="email.gif" />
+               <img src="portal_icones/email.gif" />
                <span tal:replace="heb/proprio/pro_email" /><br>
                <span tal:condition="python: heb.proprio.pro_url!=''">
-                  <img src="lien.gif" />
+                  <img src="portal_icones/lien.gif" />
                   <a href=""
                         tal:attributes="href string: http://${heb/proprio/pro_url}"
                         tal:content="string: http://${heb/proprio/pro_url}"
@@ -1161,14 +1144,14 @@
                <div id="contact-proprio">
                   <a href=""
                      tal:attributes="href string:${portal_url}/form_contact_proprio?heb_pk=${heb/heb_pk}">
-                  <b><span i18n:translate="contactez_le_proprietaire">Contactez le propri&eacute;taire</span></b></a>
+                  <b><span i18n:translate="contactez_le_proprietaire">Contactez le propriétaire</span></b></a>
                </div>
             </td>
          <!--
            <td>
                <legend class="leg-des">LE MOT DU PROPRIETAIRE</legend>
                ici commentaire proprio
-               Le week-end du 2 juin, bivous des troupes de Napol&eacute;on.
+               Le week-end du 2 juin, bivous des troupes de Napoléon.
                <br />
                A cette occasion, week-end camping.
             </td>

@@ -5,22 +5,16 @@
       i18n:domain="gites">
 
 <body>
-<metal:block fill-slot="style_slot">
-  <link rel="stylesheet" href="++resource++timeframe.css" type="text/css" media="screen" title="timeframe" charset="utf-8"/>
-  <script type="text/javascript" charset="utf-8" src="++resource++gitetimeframe.js"></script>
-  <script type="text/javascript" charset="utf-8" tal:condition="view/showCalendar"
-          tal:content="view/calendarJS"/>
-</metal:block>
 
 <div metal:fill-slot="main">
    <div tal:define="heb context;
-                    hebergementIcons context/@@hebergement_icons;
-                    redirection view/redirectInactive;">
+                    hebergementIcons context/@@hebergement_icons;">
       <div id="description">
          <div metal:use-macro="here/hebergement_macro/macros/hebEnTete" />
          <br/>
-
-      <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
+      <div metal:use-macro="here/document_actions/macros/document_actions">
+        Document actions (print, sendto etc)
+      </div>
          <table id="table-description">
             <tr>
                <td id="col-gauche">
@@ -29,20 +23,6 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebCoordonneeGite" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
-                  
-                  <div id="calendar-proprio"
-                       tal:condition="view/showCalendar">
-                      <div id="calendar_form">
-                        <div id="calendars"></div>
-                        <input type="hidden" id="reset"/>
-                        <input type="hidden" name="start" value="" id="start"/>
-                        <input type="hidden" name="end" value="" id="end"/>
-                      </div>
-                      <div id="legend-calendar">
-                          <img src="carre_rouge.gif" /> <tal:trans i18n:translate="nuits_indisponibles">nuits indisponibles</tal:trans>
-                      </div>
-                  </div>
-
                </td><!-- col gauche-->
 
                <td id="col-centre">
@@ -61,10 +41,6 @@
             </tr>
          </table><!--table-description-->
 
-         <!-- infos proprios-->
-         <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
-
-         <!-- infos touristiques -->
          <div id="heb_info_trouristique"
               tal:define="maisonTourisme heb/getMaisonTourisme">
             <fieldset>
@@ -76,7 +52,7 @@
                         <div id="region-sejour-fute"
                            tal:define="sejourFute view/getRelatedSejourFute"
                            tal:condition="python: sejourFute">
-                           <img src="o_alerte.png" border="0" />
+                           <img src="picto/o_alerte.png" border="0" />
                            <span class="region-titre" i18n:translate="sejours_futes">Séjours Futés</span><br />
                            <tal:bcl tal:repeat="elem sejourFute">
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -93,11 +69,8 @@
                      <td>
                         <!-- maison tourisme-->
                         <div id="region-maison-trourisme">
-                           <img src="o_info.png" border="0" />
-                           <span class="region-titre" 
-                                 i18n:translate="maison_du_tourisme">
-                               Maison du Tourisme
-                           </span><br />
+                           <img src="picto/o_info.png" border="0" />
+                           <span class="region-titre" i18n:translate="maison_du_tourisme">Maison du Tourisme</span><br />
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            <a href=""
                               tal:attributes="href string:http://${maisonTourisme/mais_url}"
@@ -108,11 +81,8 @@
                         <div id="region-info-tourisme"
                            tal:define="info maisonTourisme/infosTouristique"
                            tal:condition="python: info">
-                           <img src="o_info_tour.png" border="0" />
-                           <span class="region-titre" 
-                                 i18n:translate="infos_touristiques">
-                                 Infos Touristiques
-                           </span><br />
+                           <img src="picto/o_info_tour.png" border="0" />
+                           <span class="region-titre" i18n:translate="infos_touristiques">Infos Touristiques</span><br />
                            <tal:bcl tal:repeat="elem info">
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               <a href="" tal:attributes="href string:http://${elem/infotour_url}"
@@ -129,10 +99,7 @@
                            <a href=""
                               tal:attributes="href view/getTypeHebInCommuneURL">
                            <span i18n:translate="autres_a">
-                             Autres <span i18n:name="type_hebergement" 
-                                           tal:content="view/getTypeHebergement"/> 
-                             à <span i18n:name="commune" 
-                                      tal:content="heb/commune/com_nom"/>
+                             Autres <span i18n:name="type_hebergement" tal:content="view/getTypeHebergement"/> à <span i18n:name="commune" tal:content="heb/commune/com_nom"/>
                            </span>
                            <img src="flechebulle_bleue.png"
                                  border="0" /></a>
@@ -143,6 +110,7 @@
             </fieldset>
          </div><!-- info touristique -->
 
+         <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
 
          <br /><br /><br />
          <div id="navigation_bas">
