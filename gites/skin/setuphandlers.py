@@ -243,3 +243,19 @@ def createContent(portal):
     createPage(proposerHebergementFolder, "proposer-hebergement", "Proposer votre Hébergement")
     proposerHebergementFolder.setDefaultPage("proposer-hebergement")
     createTranslationsForObject(proposerHebergementFolder)
+
+    mapFolder = createFolder(portal, "map", "Map",True)
+    createPage(mapFolder, "map", "Map")
+    mapFolder.setDefaultPage("map")
+    createTranslationsForObject(mapFolder)
+
+
+
+
+
+
+
+
+
+
+
