@@ -48,6 +48,15 @@
 
   <include file="hebergement.zcml"/>
 
+    <adapter
+        for="gites.db.interfaces.ITypeHebergement
+             gites.db.interfaces.ICommune
+             zope.publisher.interfaces.browser.IDefaultBrowserLayer"
+        factory=".typehebcommune.TypeHebCommuneView"
+        provides=".interfaces.ITypeHebCommuneView"
+        name="index.html"
+        />
+
   <browser:page
       for="*"
       name="logo_view"
