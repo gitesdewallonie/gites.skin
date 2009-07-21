@@ -6,9 +6,6 @@
 
     <div id="portlet-outil"
          tal:define="view context/@@logo_view">
-images à mettre dans plone pour traduction via linguaplone
-
-
        <div>
            <a href="" tal:attributes="href string:${portal_url}/newsletter">
                <img src="" 
