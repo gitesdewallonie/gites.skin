@@ -10,7 +10,18 @@
       name="GitesSkin"
       />
 
+  <include package="plone.app.portlets" />
+  <include file="hebergement.zcml"/>
 
+  <adapter
+      for="gites.db.interfaces.ITypeHebergement
+           gites.db.interfaces.ICommune
+           zope.publisher.interfaces.browser.IDefaultBrowserLayer"
+     factory=".typehebcommune.TypeHebCommuneView"
+     provides=".interfaces.ITypeHebCommuneView"
+     name="index.html"
+     />
+  
   <!-- gites viewlet header -->
   <browser:viewlet
       name="gites.header"
@@ -46,17 +57,6 @@
       permission="zope.Public"
       />
 
-  <include file="hebergement.zcml"/>
-
-    <adapter
-        for="gites.db.interfaces.ITypeHebergement
-             gites.db.interfaces.ICommune
-             zope.publisher.interfaces.browser.IDefaultBrowserLayer"
-        factory=".typehebcommune.TypeHebCommuneView"
-        provides=".interfaces.ITypeHebCommuneView"
-        name="index.html"
-        />
-
   <browser:page
       for="*"
       name="logo_view"
@@ -79,4 +79,5 @@
       class=".meubles.MeublesView"
       permission="zope.Public"
       allowed_interface=".interfaces.IMeublesView" />
+
 </configure>
