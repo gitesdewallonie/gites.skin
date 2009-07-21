@@ -79,5 +79,14 @@
       class=".meubles.MeublesView"
       permission="zope.Public"
       allowed_interface=".interfaces.IMeublesView" />
+      
+   <browser:page
+      for="*"
+      name="form_contact_proprio"
+      template="templates/form_contact_proprio.pt"
+      permission="zope.Public"
+      allowed_interface=".interfaces.ISendMail"
+      class=".SendMail.SendMail"
+      />
 
 </configure>

@@ -1,0 +1,256 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gites">
+
+<head>
+   <script src="validate_forms.js" 
+           type="text/javascript"></script>
+</head>
+
+<body>
+
+<div metal:fill-slot="main">
+
+<h1 i18n:translate="contactez_le_proprietaire">
+Contactez le propriétaire
+</h1>
+
+<div align="center">
+      
+<form action="form_contact_proprio/sendMailToProprio"
+      onsubmit="return validate(this);"
+      method="post">
+    <table width="95%" border="0">
+        <tr>
+           <td Align="right">
+               <label for="contactCivilite" i18n:translate="civilite">Civilité</label>
+           </td>
+           <td>
+              <select name="contactCivilite">
+                 <option>...</option>
+                 <option i18n:translate="madame"> Madame</option>
+                 <option i18n:translate="monsieur"> Monsieur</option>
+              </select>
+           </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactNom" i18n:translate="nom">Nom</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactNom"
+                       size="30"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactPrenom" i18n:translate="prenom">Prénom</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactPrenom"
+                       size="30"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactAdresse" i18n:translate="adresse">Adresse</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactAdresse"
+                       size="30"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactCp" i18n:translate="code_postal">Code postal</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactCp"
+                       size="7"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactLocalite" i18n:translate="localite">Localité</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactLocalite"
+                       size="30"
+                       value="" /></td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactPays" i18n:translate="pays">Pays</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactPays"
+                       size="30"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+           <td align="right">
+               <label for="contactLangue" i18n:translate="langue">Langue</label>
+           </td>
+           <td>
+              <select name="contactLangue">
+                 <option>...</option>
+                 <option i18n:translate="francais"> Français</option>
+                 <option i18n:translate="neerlandais"> Néerlandais</option>
+                 <option i18n:translate="anglais"> Anglais</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactTelephone" i18n:translate="telephone">Téléphone</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactTelephone"
+                       value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="contactFax" i18n:translate="fax">Fax</label>
+            </td>
+            <td>
+                <input type="text"
+                       name="contactFax"
+                       value="" />
+            </td>
+        </tr>
+               
+        <tr class="field">
+            <td align="right">
+                <span class="fieldRequired" 
+                      title="Required"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
+                <label for="contactEmail"  i18n:translate="email">E-mail</label>
+            </td>
+            <td>  
+                <input type="text"
+                       id="contactEmail"
+                       name="contactEmail"
+                       size="30"
+                       class="email required"
+                       value="" />
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="right">
+                <label for="debutJour" i18n:translate="date_debut_sejour">Date début de séjour</label>
+            </td>
+            <td>
+                <select name="debutJour">
+                    <span tal:repeat="jour python:range(1,32)">
+                        <option value=""
+                                tal:attributes="value jour"><span tal:content="jour" /></option>
+                    </span>
+                </select> /
+                <select name="debutMois">
+                    <span tal:repeat="mois python:range(1,13)">
+                        <option value=""
+                                tal:attributes="value mois"><span tal:content="mois" /></option>
+                    </span>
+                </select> /
+                <select name="debutAn">
+                    <span tal:repeat="an python:range(2005,2025)">
+                        <option value=""
+                                tal:attributes="value an"><span tal:content="an" /></option>
+                    </span>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="finJour" i18n:translate="date_fin_sejour">Date fin de séjour</label>
+            </td>
+            <td>
+                <select name="finJour">
+                    <span tal:repeat="jour python:range(1,32)">
+                        <option value=""
+                                tal:attributes="value jour"><span tal:content="jour" /></option>
+                    </span>
+                </select> /
+                <select name="finMois">
+                    <span tal:repeat="mois python:range(1,13)">
+                        <option value=""
+                                tal:attributes="value mois"><span tal:content="mois" /></option>
+                    </span>
+                </select> /
+                <select name="finAn">
+                    <span tal:repeat="an python:range(2005,2025)">
+                        <option value=""
+                                tal:attributes="value an"><span tal:content="an" /></option>
+                    </span>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="nombrePersonne" i18n:translate="nombre_personnes">Nombre de personne</label>
+            </td>
+            <td>
+               <input type="text"
+                      name="nombrePersonne"
+                      size="4"
+                      value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="remarque" i18n:translate="remarques">Remarques</label>
+            </td>
+            <td>
+                <textarea name="remarque"
+                          value=""></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="newsletter" i18n:translate="subscribe_to_newsletter">Inscription à la newsletter</label>
+            </td>
+            <td>
+               <input type="checkbox"
+                      name="newsletter" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <br />
+                <input type="hidden"
+                       name="vecteur"
+                       value="" />
+                <input type="hidden"
+                       name="hebPk"
+                       value=""
+                       tal:attributes="value request/heb_pk">
+                <input type="submit"
+                       i18n:attributes="value envoyer_demande;"
+                       value="Envoyer votre demande" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+</div>
+
+</div><!--div metal-->
+</body>
+</html>

@@ -134,3 +134,14 @@ class ITypeHebCommuneView(Interface):
         Return the concerned hebergements in this Town for the selected
         type of hebergement
         """
+
+
+class ISendMail(Interface):
+    """
+    Send Mail
+    """
+
+    def sendMailToProprio():
+        """
+        Envoi un mail au proprio via le site
+        """
