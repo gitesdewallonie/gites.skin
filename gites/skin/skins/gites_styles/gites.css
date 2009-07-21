@@ -1,5 +1,5 @@
 /*
-/*  Gites de wallonie
+/*  Gites de Wallonie asbl.
 /*
 /*  By Affinitic 2009
 /*
@@ -525,4 +525,327 @@ color:#ffffff;
 * html button {width:1%; overflow:visible;}
 *:first-child+html button {overflow:visible;}
 /*** FIN PORTLET JE SUIS ***/
+
+
+
+
+
+/*** DEBUT DESCRIPTION HEBERGEMENT ***/
+fieldset {
+  border:1px solid #8CACBB;
+  line-height:1.5em;
+  margin:0em;
+  width:auto;
+}
+
+#description{
+  width: 100%;
+}
+
+/* type hebergement - reference - nbre epis - gites+ - theme - capacite*/
+#des-zone1{
+  position:relative;
+  height: 30px;
+  border-width:0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #AAA;
+}
+
+#type_heb{
+  padding-left:5px;
+  float:left;
+  font-weight:bold;
+  font-size: 1.2em;
+}
+
+#heb_ref{
+  float:left;
+  margin-top: 5px;
+  font-weight:bold;
+  font-size: 0.8em;
+}
+
+#heb_epis{
+  background-color:transparent;
+  position:relative;
+  width:150px;
+  text-align:left;
+  float:left;
+  margin-top: 6px;
+  padding-left: 60px;
+}
+
+#heb_theme{
+  float:left;
+  margin-top: 2px;
+  padding-left: 20px;
+}
+
+#heb_gites_plus{
+  float:left;
+  margin-top: 2px;
+  padding-left:85px;
+}
+
+#heb_capacite{
+  text-align:right;
+  padding-right: 5px;
+  font-weight:bold;
+  font-size: 1.2em;
+  padding-top: 7px;
+}
+
+/*** 
+   Zone centrale qui contient toutes les infos
+   photos, tarifs, icones, confort, literie
+***/  
+#table-description{
+width:100%; 
+clear:both;
+margin-top:10px;
+border:none;
+}
+
+#table-description td{
+border:none;
+}
+
+#col-gauche{
+vertical-align: top;
+text-align: center;
+border:none;
+}
+
+#col-centre{
+vertical-align: top;
+width: 5em;
+border: none;
+}
+
+#col-droite{
+vertical-align: top;
+}
+
+#heb_photo{
+  height:195px;
+  text-align:left;
+}
+
+#heb_coordonnee_chambre{
+  background-color:#82a7ea;
+  width: 93%;
+  height: 80px;
+  padding: 0.9em 0.9em 0em 1em;
+  margin-top: 5px;
+}
+
+#heb_coordonnee_gite{
+  background-color:#ace087;
+  width: 277px;
+  height: 80px;
+  padding: 0.9em 0.9em 0em 1em;
+  margin-top: 5px;
+}
+
+#heb_nom{
+  font-weight:bold;
+  font-variant: small-caps;
+  font-size: 1.5em;
+}
+
+#btn_outil{
+  margin-top: 5px;  
+  width: 300px;
+  height: 40px;
+  text-align:right;
+  font-size:-2.8em;
+}
+
+#btn_gallery_back{
+  text-align:left;
+  margin-top: 5px;
+}
+
+.photo_gallery{
+  margin-top:8px;
+}
+
+#heb_activite_icone{
+  background-color:#fffd8b;
+  font-size:0.8em;
+}
+
+#heb_info{
+  padding:2px 2px 0px 4px;
+}
+
+.chambre{
+  float:left;
+  text-align: center;
+  font-weight: bold;
+  background-color:#faecd1;
+  margin-right: 8px;
+}
+
+.lit{
+  float:left;
+  text-align: center;
+}
+
+.picto{
+   margin:3px 6px;
+}
+
+/*** tarification ***/
+#tarification-chambre{
+  background-color:#ced8e2;
+  border-collapse: collapse;
+  border:1px solid #4f658e;
+}
+
+#tarification-chambre td{
+  border:1px solid #4f658e;
+}
+
+.bg-chambre{
+  background-color:#82a7ea;
+  height:40px;
+}
+
+#tarification-gite{
+  background-color:#EEFFEE;
+  border-collapse: collapse;
+  border:1px solid #83aa67;
+}
+
+#tarification-gite td{
+  border:1px solid #83aa67;
+}
+.bg-gite{
+  background-color:#ace087;
+  height:40px;
+}
+
+/*** region ***/
+#dans-la-region{
+ width:100%;
+ margin-top: 10px;
+}
+
+#region-sejour-fute{
+   border-style:solid;
+   border-width:1px 5px 1px 5px;
+   border-color:#d7d3ab;
+   background-color:#fffacb;
+   margin:7px 0px;
+   padding: 5px;
+}
+
+#region-maison-trourisme{
+   border-style:solid;
+   border-width:1px 5px 1px 5px;
+   border-color:#d7d3ab;
+   background-color:#fffacb;
+   margin:7px 0px;
+   padding:5px;
+}
+
+#region-info-tourisme{
+   border-style:solid;
+   border-width:1px 5px 1px 5px;
+   border-color:#d7d3ab;
+   background-color:#fffacb;
+   margin:7px 0px;
+   padding:5px;
+}
+
+#region-autre-heb{
+   border-style:solid;
+   border-width:1px 5px 1px 5px;
+   border-color:#d7d3ab;
+   background-color:#fffacb;
+   margin:7px 0px;
+   padding:5px;
+}
+
+.region-titre{
+   font-variant: small-caps;
+   font-size:1.2em;
+   font-style:italic;
+}
+
+/*** infos proprio ****/
+#info-proprio {
+  width:100%;
+  margin-top: 10px;
+}
+
+#heb_proprio{
+  padding:5px;
+}
+
+#heb_commentaire{
+  height:200px;
+  margin-left:5px;
+  padding:5px;
+  display:none;
+
+}
+
+#contact-proprio{
+  background-color:#DDD;
+  margin-top: 8px;
+  text-align:right;
+  padding-right:0.8em;
+  height: 1.8em;
+}
+
+#contact-proprio a:hover{
+  color:#F00;
+}
+
+.bg-chambre{
+  background-color:#82a7ea;
+  height:40px;
+}
+
+.bg-chambre-data{
+  background-color:#ced8e2;
+}
+.bg-gite{
+  background-color:#ace087;
+  height:40px;
+}
+
+.field-des{
+  margin-left:4px;
+}
+
+.leg-des{
+  font-weight:bold;
+  font-size:0.8em;
+}
+
+.leg-des-rem{
+  font-weight:bold;
+  font-size:0.8em;
+  color:#F00;
+}
+
+.floatleft{
+  float:left;
+}
+
+.floatright{
+  float:right;
+}
+
+#navigation_bas{
+border-top:1px solid #8cacbb;
+font-size:0.8em;
+text-align:center;
+}
+
+/*** FIN DESCRIPTION HEBERGEMENT ***/
+
 
