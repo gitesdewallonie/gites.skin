@@ -263,6 +263,11 @@ def createContent(portal):
     createPage(mapFolder, "map", "Map")
     mapFolder.setDefaultPage("map")
     createTranslationsForObject(mapFolder)
+    	
+    signaletiquesFolder = createFolder(portal, "signaletiques", "Signalétiques",True)
+    createPage(signaletiquesFolder, "signaletique-gites", "Signalétique gites")
+    signaletiquesFolder.setDefaultPage("signaletiques")
+    createTranslationsForObject(signaletiquesFolder)
 
 
 
