@@ -42,62 +42,42 @@ class Mailer:
         recipients = recipients.split(',')
         self.recipients = recipients
 
-    def createMail(self, recipient, text, plaintext=False):
+    def createMail(self, recipient, text):
         """
         """
-        if plaintext:
-            txtin = cStringIO.StringIO(text)
-            out = cStringIO.StringIO()
-            writer = MimeWriter.MimeWriter(out)
-            writer.addheader("From", self.sender)
-            writer.addheader("To", recipient)
-            writer.addheader("Subject", self.subject)
-            writer.addheader("MIME-Version", "1.0")
-            writer.startmultipartbody("mixed")
-            writer.flushheaders()
-            subpart = writer.nextpart()
-            subpart.addheader("Content-Transfer-Encoding", "quoted-printable")
-            pout = subpart.startbody("text/plain", [("charset", 'UTF-8')])
-            mimetools.encode(txtin, pout, 'quoted-printable')
-            txtin.close()
-            writer.lastpart()
-            msg = out.getvalue()
-            out.close()
-            return msg
-        else:
-            txtin = cStringIO.StringIO("Voir message HTML")
-            htmlin = cStringIO.StringIO(text)
-            out = cStringIO.StringIO()
+        txtin = cStringIO.StringIO("Voir message HTML")
+        htmlin = cStringIO.StringIO(text)
+        out = cStringIO.StringIO()
 
-            writer = MimeWriter.MimeWriter(out)
-            writer.addheader("From", self.sender)
-            writer.addheader("To", recipient)
-            writer.addheader("Subject", self.subject)
-            writer.addheader("MIME-Version", "1.0")
-            writer.startmultipartbody("mixed")
-            writer.flushheaders()
-            subpart = writer.nextpart()
-            subpart.addheader("Content-Transfer-Encoding", "quoted-printable")
-            pout = subpart.startbody("text/plain", [("charset", 'UTF-8')])
-            mimetools.encode(txtin, pout, 'quoted-printable')
-            txtin.close()
+        writer = MimeWriter.MimeWriter(out)
+        writer.addheader("From", self.sender)
+        writer.addheader("To", recipient)
+        writer.addheader("Subject", self.subject)
+        writer.addheader("MIME-Version", "1.0")
+        writer.startmultipartbody("mixed")
+        writer.flushheaders()
+        subpart = writer.nextpart()
+        subpart.addheader("Content-Transfer-Encoding", "quoted-printable")
+        pout = subpart.startbody("text/plain", [("charset", 'UTF-8')])
+        mimetools.encode(txtin, pout, 'quoted-printable')
+        txtin.close()
 
-            subpart = writer.nextpart()
-            subpart.addheader("Content-Transfer-Encoding", "quoted-printable")
-            pout = subpart.startbody("text/html", [("charset", 'UTF-8')])
-            mimetools.encode(htmlin, pout, 'quoted-printable')
-            htmlin.close()
+        subpart = writer.nextpart()
+        subpart.addheader("Content-Transfer-Encoding", "quoted-printable")
+        pout = subpart.startbody("text/html", [("charset", 'UTF-8')])
+        mimetools.encode(htmlin, pout, 'quoted-printable')
+        htmlin.close()
 
-            writer.lastpart()
-            msg = out.getvalue()
-            out.close()
-            return msg
+        writer.lastpart()
+        msg = out.getvalue()
+        out.close()
+        return msg
 
-    def sendAllMail(self, text, plaintext=False):
+    def sendAllMail(self, text):
         server = smtplib.SMTP(self.mailhost)
         for recipient in self.getRecipients():
             logging.info("Sending to %s" % recipient)
-            message = self.createMail(recipient, text, plaintext)
+            message = self.createMail(recipient, text)
             server.sendmail(self.sender, recipient, message)
         server.quit()
 

@@ -1,19 +1,13 @@
 # -*- coding: utf-8 -*-
-import time
-from datetime import date
-from zope.component import queryMultiAdapter
-from zope.interface import implements
-from z3c.sqlalchemy import getSAWrapper
-from Products.CMFDefault.utils import checkEmailAddress
-from Products.CMFDefault.exceptions import EmailAddressInvalid
 from Products.Five import BrowserView
-from collective.captcha.browser.captcha import Captcha
-
+from zope.interface import implements
 from interfaces import ISendMail
 from mailer import Mailer
+from Products.CMFCore.utils import getToolByName
+from z3c.sqlalchemy import getSAWrapper
 
 LANG_MAP = {'en': 'Anglais',
-            'fr': 'Français',
+            'fr': 'FranÃ§ais',
             'nl': 'Néerlandais',
             'de': 'Allemand'}
 
@@ -24,69 +18,11 @@ class SendMail(BrowserView):
     """
     implements(ISendMail)
 
-    def sendBlogSubscriptionMail(self):
-        """
-        envoi des informations d'inscription à la newsletter du blog
-        """
-        nom = self.request.get('nom', '')
-        email = self.request.get('email', '')
-        fromMail = "info@gitesdewallonie.be"
-        if not email:
-            return
-        try:
-            checkEmailAddress(email)
-        except EmailAddressInvalid:
-            return
-        mailer = Mailer("localhost", fromMail)
-        mailer.setSubject("[INSCRIPTION NEWSLETTER BLOG]")
-        mailer.setRecipients("michael@gitesdewallonie.be")
-        mail = u""":: INSCRIPTION ::
-
-Une demande d'inscription a été envoyée via le blog :
-
-    * Nom : %s
-    * Email : %s
-""" \
-           %(unicode(nom, 'utf-8'), \
-             unicode(email, 'utf-8'))
-        mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
-
     def sendMailToProprio(self):
         """
-        envoi d'un mail au proprio suite a un contact via hebergement description
+           envoi d'un mail au proprio suite Ã  un contact via hebergement description
         """
-        hebPk = self.request.get('heb_pk')
-        captcha = self.request.get('captcha', '')
-        captchaView = Captcha(self.context, self.request)
-        isCorrectCaptcha = captchaView.verify(captcha)
-        if not isCorrectCaptcha:
-            return self()
-
-        dateDebutStr = self.request.get('fromDate')
-        dateFinStr = self.request.get('toDate')
-        if dateDebutStr and dateFinStr:
-            try:
-                dateDebut = date.fromtimestamp(time.mktime(time.strptime(dateDebutStr, '%d/%m/%Y')))
-                dateFin = date.fromtimestamp(time.mktime(time.strptime(dateFinStr, '%d/%m/%Y')))
-            except ValueError:
-                self.request['fromDate'] = 'error'
-                self.request['toDate'] = ''
-                self.request['captcha'] = ''
-                return self()
-            else:
-                if dateDebut >= dateFin:
-                    self.request['fromDate'] = 'error'
-                    self.request['toDate'] = ''
-                    self.request['captcha'] = ''
-                    return self()
-        else:
-            if dateDebutStr or dateFinStr:
-                # une seule date a été remplie
-                self.request['fromDate'] = 'error'
-                self.request['toDate'] = ''
-                self.request['captcha'] = ''
-                return self()
-
+        hebPk = self.request.get('hebPk')
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         Hebergement = wrapper.getMapper('hebergement')
@@ -108,43 +44,39 @@ Une demande d'inscription a été envoyée via le blog :
             contactLangue = LANG_MAP.get(language, '')
         contactTelephone = self.request.get('contactTelephone', '')
         contactFax = self.request.get('contactFax', '')
-        contactEmail = self.request.get('contactEmail', None)
+        contactEmail = self.request.get('contactEmail', '')
+        debutJour = self.request.get('debutJour')
+        debutMois = self.request.get('debutMois')
+        debutAn = self.request.get('debutAn')
+        finJour = self.request.get('finJour')
+        finMois = self.request.get('finMois')
+        finAn = self.request.get('finAn')
         nombrePersonne = self.request.get('nombrePersonne')
         remarque = self.request.get('remarque', '')
-
-        fromMail = "info@gitesdewallonie.be"
-        if contactEmail is not None:
-            try:
-                checkEmailAddress(contactEmail)
-                fromMail = contactEmail
-            except EmailAddressInvalid:
-                pass
-
-        mailer = Mailer("localhost", fromMail)
-        mailer.setSubject("[DEMANDE D'INFORMATION PAR LE SITE DES GITES DE WALLONIE]")
+        mailer = Mailer("localhost", "info@gitesdewallonie.be")
+        mailer.setSubject("[DEMANDE D'INFORMATION PAR LE SITE]")
         mailer.setRecipients(proprioMail)
-        mail = u""":: DEMANDE D'INFORMATION ::
-
-Une demande d'information vient d'être réalisée via le site des Gîtes de Wallonie pour %s (référence %s).
-
-Il s'agit de :
-
-    * Civilité : %s
-    * Nom : %s
-    * Prénom : %s
-    * Adresse : %s
-    * Localité : %s %s
-    * Pays : %s
-    * Langue : %s
-    * Téléphone : %s
-    * Fax : %s
-    * E-mail : %s
-    * Date début séjour  : %s
-    * Date fin séjour  : %s
-    * Nombre de personne : %s
-    * Remarque : %s
-""" \
-              % (hebNom, \
+        mail = u"""<font color='#FF0000'><b>:: DEMANDE D'INFORMATION ::</b></font><br /><br />
+              Une demande d'information vient d'être réalisée via le site pour %s référence %s.<br/>
+              Il s'agit de :<br />
+              <ul>
+              <li>Civilité : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Nom : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Prénom : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Adresse : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Localit&eacute; : <font color='#ff9c1b'><b>%s</b> <b>%s</b></font></li>
+              <li>Pays : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Langue : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Téléphone : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Fax : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>E-mail : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Date début séjour  : <font color='#ff9c1b'><b>%s</b>-<b>%s</b>-<b>%s</b></font></li>
+              <li>Date fin séjour  : <font color='#ff9c1b'><b>%s</b>-<b>%s</b>-<b>%s</b></font></li>
+              <li>Nombre de personne : <font color='#ff9c1b'><b>%s</b></font></li>
+              <li>Remarque : <font color='#ff9c1b'><b>%s</b></font></li>
+              </ul>
+              """ \
+              %(hebNom, \
                 hebPk, \
                 contactCivilite, \
                 unicode(contactNom, 'utf-8'), \
@@ -157,19 +89,18 @@ Il s'agit de :
                 contactTelephone, \
                 contactFax, \
                 unicode(contactEmail, 'utf-8'), \
-                dateDebutStr, \
-                dateFinStr, \
+                debutJour, \
+                debutMois, \
+                debutAn, \
+                finJour, \
+                finMois, \
+                finAn, \
                 nombrePersonne,\
                 unicode(remarque, 'utf-8'))
-        mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
-
-        translate = queryMultiAdapter((self.context, self.request),
-                                       name='getTranslatedObjectUrl')
-
+        mailer.sendAllMail(mail.encode('utf-8'))
+        portal_url = getToolByName(self.context, 'portal_url')()
         if self.request.get('newsletter', False):
-            url = translate('newsletter')
-            self.request.RESPONSE.redirect(url)
+            self.request.RESPONSE.redirect('%s/newsletter' % portal_url)
         else:
-            url = translate('mailsent')
-            self.request.RESPONSE.redirect(url)
+            self.request.RESPONSE.redirect('%s/mailsent' % portal_url)
         return ''

@@ -22,10 +22,7 @@ Contactez le propriétaire
 <form action="form_contact_proprio/sendMailToProprio"
       onsubmit="return validate(this);"
       method="post">
-    <table width="95%" 
-           border="0"
-           tal:define="captchaView nocall:context/@@captcha"
-           id="table-contact-proprio-form">
+    <table width="95%" border="0">
         <tr>
            <td Align="right">
                <label for="contactCivilite" i18n:translate="civilite">Civilité</label>
@@ -40,38 +37,24 @@ Contactez le propriétaire
         </tr>
         <tr>
             <td align="right">
-                <span class="fieldRequired" 
-                      title="Required"
-                      i18n:attributes="title title_required;"
-                      i18n:translate="label_required">(Required)</span>
                 <label for="contactNom" i18n:translate="nom">Nom</label>
             </td>
             <td>
                 <input type="text"
                        name="contactNom"
                        size="30"
-                       class="required"
-                       value=""
-                       tal:attributes="value request/contactNom | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
             <td align="right">
-                <span class="fieldRequired" 
-                      title="Required"
-                      i18n:attributes="title title_required;"
-                      i18n:translate="label_required">(Required)</span>
                 <label for="contactPrenom" i18n:translate="prenom">Prénom</label>
             </td>
             <td>
                 <input type="text"
                        name="contactPrenom"
                        size="30"
-                       class="required"
-                       value="" 
-                       tal:attributes="value request/contactPrenom | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
@@ -82,9 +65,7 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactAdresse"
                        size="30"
-                       value=""
-                       tal:attributes="value request/contactAdresse | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
@@ -95,9 +76,7 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactCp"
                        size="7"
-                       value=""
-                       tal:attributes="value request/contactCp | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
@@ -108,10 +87,7 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactLocalite"
                        size="30"
-                       value=""
-                       tal:attributes="value request/contactLocalite | nothing"
-                       />
-            </td>
+                       value="" /></td>
         </tr>
         <tr>
             <td align="right">
@@ -121,9 +97,7 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactPays"
                        size="30"
-                       value=""
-                       tal:attributes="value request/contactPays | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
@@ -146,9 +120,7 @@ Contactez le propriétaire
             <td>
                 <input type="text"
                        name="contactTelephone"
-                       value=""
-                       tal:attributes="value request/contactTelephone | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         <tr>
@@ -158,9 +130,7 @@ Contactez le propriétaire
             <td>
                 <input type="text"
                        name="contactFax"
-                       value=""
-                       tal:attributes="value request/contactFax | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
                
@@ -178,59 +148,58 @@ Contactez le propriétaire
                        name="contactEmail"
                        size="30"
                        class="email required"
-                       value=""
-                       tal:attributes="value request/contactEmail | nothing"
-                       />
+                       value="" />
             </td>
         </tr>
         
         <tr>
             <td align="right">
-                <label for="fromDate" i18n:translate="date_debut_sejour">Date début de séjour</label>
+                <label for="debutJour" i18n:translate="date_debut_sejour">Date début de séjour</label>
             </td>
             <td>
-                <div class="error"
-                     tal:condition="python: request.get('fromDate') == 'error'"
-                     i18n:translate="invalid_date">
-                    Remplissez correctement la date de début et de fin du séjour.
-                </div>
-                <input id="fromDate" 
-                       class="textType" 
-                       type="text" 
-                       value=""
-                       tal:attributes="value python:request.get('fromDate', '') != 'error' and request.get('fromDate', None) or None"
-                       size="12" 
-                       name="fromDate"/>
-                <input id="fromDate_trigger" type="button" value="..."/>
-                <script type="text/javascript">
-                    Calendar.setup({
-                    inputField: 'fromDate',
-                    button: 'fromDate_trigger',
-                    ifFormat: '%d/%m/%Y'
-                    });
-                </script>
+                <select name="debutJour">
+                    <span tal:repeat="jour python:range(1,32)">
+                        <option value=""
+                                tal:attributes="value jour"><span tal:content="jour" /></option>
+                    </span>
+                </select> /
+                <select name="debutMois">
+                    <span tal:repeat="mois python:range(1,13)">
+                        <option value=""
+                                tal:attributes="value mois"><span tal:content="mois" /></option>
+                    </span>
+                </select> /
+                <select name="debutAn">
+                    <span tal:repeat="an python:range(2005,2025)">
+                        <option value=""
+                                tal:attributes="value an"><span tal:content="an" /></option>
+                    </span>
+                </select>
             </td>
         </tr>
         <tr>
             <td align="right">
-                <label for="toDate" i18n:translate="date_fin_sejour">Date fin de séjour</label>
+                <label for="finJour" i18n:translate="date_fin_sejour">Date fin de séjour</label>
             </td>
             <td>
-                <input id="toDate" 
-                       class="textType" 
-                       type="text" 
-                       value=""
-                       tal:attributes="value request/toDate | nothing"
-                       size="12" 
-                       name="toDate"/>
-                <input id="toDate_trigger" type="button" value="..."/>
-                <script type="text/javascript">
-                    Calendar.setup({
-                    inputField: 'toDate',
-                    button: 'toDate_trigger',
-                    ifFormat: '%d/%m/%Y'
-                    });
-                </script>
+                <select name="finJour">
+                    <span tal:repeat="jour python:range(1,32)">
+                        <option value=""
+                                tal:attributes="value jour"><span tal:content="jour" /></option>
+                    </span>
+                </select> /
+                <select name="finMois">
+                    <span tal:repeat="mois python:range(1,13)">
+                        <option value=""
+                                tal:attributes="value mois"><span tal:content="mois" /></option>
+                    </span>
+                </select> /
+                <select name="finAn">
+                    <span tal:repeat="an python:range(2005,2025)">
+                        <option value=""
+                                tal:attributes="value an"><span tal:content="an" /></option>
+                    </span>
+                </select>
             </td>
         </tr>
         <tr>
@@ -241,9 +210,7 @@ Contactez le propriétaire
                <input type="text"
                       name="nombrePersonne"
                       size="4"
-                      value=""
-                      tal:attributes="value request/nombrePersonne | nothing"
-                      />
+                      value="" />
             </td>
         </tr>
         <tr>
@@ -252,9 +219,7 @@ Contactez le propriétaire
             </td>
             <td>
                 <textarea name="remarque"
-                          value=""
-                          tal:attributes="value request/remarque | nothing"
-                          ><span tal:replace="request/remarque | nothing"/></textarea>
+                          value=""></textarea>
             </td>
         </tr>
         <tr>
@@ -266,34 +231,6 @@ Contactez le propriétaire
                       name="newsletter" />
             </td>
         </tr>
-
-        <tr>
-            <td align="right">
-                <div  id="help-captcha">
-                    <span class="fieldRequired" 
-                          title="Required"
-                          i18n:attributes="title title_required;"
-                          i18n:translate="label_required">(Required)</span>
-                    <label for="captcha" i18n:translate="help_captcha">
-                        Enter the exact word in the image. This is used to fight robots. 
-                    </label>
-                </div>
-            </td>
-            <td>
-                <div class="error"
-                     tal:condition="request/captcha | nothing"
-                     i18n:translate="invalid_captcha">
-                    Invalid captcha
-                </div>
-                <span tal:replace="structure captchaView/image_tag" />
-                <input type="text" 
-                       class="required"
-                       name="captcha"
-                       value=""
-                       /> 
-            </td>
-        </tr>
-
         <tr>
             <td colspan="2" align="center">
                 <br />
@@ -301,7 +238,7 @@ Contactez le propriétaire
                        name="vecteur"
                        value="" />
                 <input type="hidden"
-                       name="heb_pk"
+                       name="hebPk"
                        value=""
                        tal:attributes="value request/heb_pk">
                 <input type="submit"
