@@ -41,7 +41,7 @@ def setupLanguages(portal):
     lang = getToolByName(portal, 'portal_languages')
     lang.supported_langs = LANGUAGES
     lang.setDefaultLanguage('fr')
-    lang.display_flags = 1
+    lang.display_flags = 0
 
 def setupNewsletter(folder):
     newsletterId = 'newsletter'

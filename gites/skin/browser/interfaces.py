@@ -1,5 +1,8 @@
 from plone.theme.interfaces import IDefaultPloneLayer
 from zope.interface import Interface
+from zope import schema
+from schema import List
+from gites.skin import GitesMessage as _
 
 
 class IGitesTheme(IDefaultPloneLayer):
@@ -145,3 +148,202 @@ class ISendMail(Interface):
         """
         Envoi un mail au proprio via le site
         """
+
+
+class ISearchHebergement(Interface):
+    """
+    A search module to search hebergement
+    """
+
+    hebergementType = List(title=_("Hebergement Type"),
+                           description=_("Select a type of Hebergement"),
+                           unique=True,
+                           required=False,
+                           value_type=schema.Choice(
+                           vocabulary="gitescontent.typehebergement"))
+
+    provinces = List(
+            title=_('Province'),
+            description=_("Select a province"),
+            unique = True,
+            required=False,
+            value_type=schema.Choice(
+            vocabulary="gitescontent.provinces"))
+
+    classification = List(
+            title=_('Classification'),
+            description=_("Select a classification"),
+            unique = True,
+            required=False,
+            value_type=schema.Choice(
+            vocabulary="gitescontent.classification"))
+
+    capacityMin = schema.Int(title=_('Minimum Capacity'),
+                                 description=_('The minimum capacity of your hebergement'),
+                                 required=False)
+
+    roomAmount = schema.Int(title=_('Number of rooms'),
+                                description=_('The number of rooms in hebergement'),
+                                required=False)
+
+    animals = schema.Bool(title=_('Animals authorized'),
+                              description=_('Are animals authorized in the Hebergement'),
+                              required=False)
+
+    smokers = schema.Bool(title=_('Smoking allowed'),
+                              description=_('Are people allowed to smoke in the Hebergement'),
+                              required=False)
+
+
+class IBasicSearchHebergement(Interface):
+    """
+    A basic search module to search hebergement
+    """
+
+    hebergementType = List(
+        title=_("Hebergement Type"),
+        description=_("Select a type of Hebergement"),
+        unique=True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.groupedtypehebergement"))
+
+    provinces = List(
+        title=_('Province'),
+        description=_("Select a province"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.provinces"))
+
+    classification = List(
+        title=_('Classification'),
+        description=_("Select a classification"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.classification"))
+
+    capacityMin = schema.Int(title=_('Minimum Capacity'),
+                             description=_('The minimum capacity of your hebergement'),
+                             required=False)
+
+    roomAmount = schema.Int(title=_('Number of rooms'),
+                            description=_('The number of rooms in hebergement'),
+                            required=False)
+
+    animals = schema.Bool(title=_('Animals authorized'),
+                          description=_('Are animals authorized in the Hebergement'),
+                          required=False)
+
+    smokers = schema.Bool(title=_('Smoking allowed'),
+                          description=_('Are people allowed to smoke in the Hebergement'),
+                          required=False)
+
+
+class IBasicSearchHebergementTooMuch(Interface):
+    """
+    A basic search module to search hebergement
+    """
+    seeResults = schema.Bool(title=_('Show results even if more than 50'),
+                             description=_('Show results even if there are more than 50'),
+                             required=False)
+
+    hebergementType = List(
+        title=_("Hebergement Type"),
+        description=_("Select a type of Hebergement"),
+        unique=True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.groupedtypehebergement"))
+
+    provinces = List(
+        title=_('Province'),
+        description=_("Select a province"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.provinces"))
+
+    classification = List(
+        title=_('Classification'),
+        description=_("Select a classification"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.classification"))
+
+    capacityMin = schema.Int(title=_('Minimum Capacity'),
+                             description=_('The minimum capacity of your hebergement'),
+                             required=False)
+
+    roomAmount = schema.Int(title=_('Number of rooms'),
+                            description=_('The number of rooms in hebergement'),
+                            required=False)
+
+    animals = schema.Bool(title=_('Animals authorized'),
+                          description=_('Are animals authorized in the Hebergement'),
+                          required=False)
+
+    smokers = schema.Bool(title=_('Smoking allowed'),
+                          description=_('Are people allowed to smoke in the Hebergement'),
+                          required=False)
+
+
+class ISearchHebergementTooMuch(Interface):
+    """
+    A search module to search hebergement
+    """
+
+    seeResults = schema.Bool(title=_('Show results even if more than 50'),
+                             description=_('Show results even if there are more than 50'),
+                             required=False)
+
+    hebergementType = List(
+        title=_("Hebergement Type"),
+        description=_("Select a type of Hebergement"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.typehebergement"))
+
+    provinces = List(
+        title=_('Province'),
+        description=_("Select a province"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.provinces"))
+
+    classification = List(
+        title=_('Classification'),
+        description=_("Select a classification"),
+        unique = True,
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="gitescontent.classification"))
+
+    capacityMin = schema.Int(title=_('Minimum Capacity'),
+                             description=_('The minimum capacity of your hebergement'),
+                             required=False)
+
+    roomAmount = schema.Int(title=_('Number of rooms'),
+                            description=_('The number of rooms in hebergement'),
+                            required=False)
+
+    animals = schema.Bool(title=_('Animals authorized'),
+                          description=_('Are animals authorized in the Hebergement'),
+                          required=False)
+
+    smokers = schema.Bool(title=_('Smoking allowed'),
+                          description=_('Are people allowed to smoke in the Hebergement'),
+                          required=False)
+
+
+class ISearchPk(Interface):
+    """
+    Search module to search hebergement among the site content
+    """
+
+    pk = schema.Int(title=_('Heb Pk'),
+                        required=True)
