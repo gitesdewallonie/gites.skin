@@ -29,18 +29,33 @@
                    <div id="pour">
                      <label class="label-recherche" i18n:translate="label_nombre_personnes">Nombre de personnes :</label>
                      <input type="text"
-                            id="form.capacityMin" name="form.capacityMin"
+                            id="form.capacityMin" 
+                            name="form.capacityMin"
                             value=""
                             size="4" />
                    </div>
                    <div id="chercher">
-                    <input type="hidden" name="form.provinces" value="-1"/>
-                    <input type="hidden" name="form.classification" value="-1"/>
-                    <input type="hidden" name="form.smokers" value=""/>
-                    <input type="hidden" name="form.animals" value=""/>
-                    <input type="hidden" name="form.roomAmount" value=""/>
+                    <input type="hidden" 
+                           name="form.provinces" 
+                           value="-1"/>
+                    <input type="hidden" 
+                           name="form.classification" 
+                           value="-1"/>
+                    <input type="hidden" 
+                           name="form.smokers" 
+                           value=""/>
+                    <input type="hidden" 
+                           name="form.animals" 
+                           value=""/>
+                    <input type="hidden" 
+                           name="form.roomAmount" 
+                           value=""/>
 
-                    <input type="submit" i18n:attributes="value action_search;" value="Rechercher" id="form.actions.search" name="form.actions.search" />
+                    <input type="submit" 
+                           i18n:attributes="value action_search;" 
+                           value="Rechercher" 
+                           id="form.actions.search" 
+                           name="form.actions.search" />
                    </div>
                 </form>
                 </div>
@@ -50,8 +65,10 @@
                <div id="btn-carto1">
                   
                   <a href="hebergement_map"
-                     i18n:translate="recherche_cartographique">recherche cartographique</a>
-                  <!--tal:attributes="href string:${portal/absolute_url}/map"-->
+                     i18n:translate="recherche_cartographique"
+                     tal:attributes="href string:${context/absolute_url}/map">
+                     recherche cartographique
+                  </a>
                </div>
             </div>
          </td>
@@ -60,8 +77,8 @@
          <td>
            <div id="moteur-ref">
                 <form action=""
-                      method="post">
-                      <!--tal:attributes="action string:$portal_url/moteur_recherche_view/getHebergementByPk"-->
+                      method="post"
+                      tal:attributes="action string:${context/portal_url}/moteur_recherche_view/getHebergementByPk">
                   <div id="ref_pk">
                       <label i18n:translate="label_reference"
                              class="label-recherche">Référence :</label>
@@ -77,8 +94,8 @@
          <td align="center">
             <div id="moteur-avance">
                <a href=""
-                  i18n:translate="recherche_avancee">
-                  <!--tal:attributes="href string:$portal_url/search.html"-->recherche avancée</a>
+                  i18n:translate="recherche_avancee"
+                  tal:attributes="href string:${context/portal_url}/search.html">recherche avancée</a>
            </div>
        </td>
      </tr>

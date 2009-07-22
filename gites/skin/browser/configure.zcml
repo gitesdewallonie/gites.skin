@@ -89,4 +89,34 @@
       class=".SendMail.SendMail"
       />
 
+   <browser:page
+      name="search.html"
+      for="*"
+      class=".SearchHebergement.SearchHebergement"
+      permission="zope.Public"
+      />
+
+   <browser:page
+      name="findPk.html"
+      for="*"
+      class=".searchPk.SearchPk"
+      permission="cmf.ManagePortal"
+      />
+
+   <browser:page
+      name="basic_search.html"
+      for="*"
+      class=".SearchHebergement.BasicSearchHebergement"
+      permission="zope.Public"
+      />
+
+
+   <browser:viewlet
+      name="plone.app.i18n.locales.languageselector"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      class=".viewlets.ApplicaTranslatableLanguageSelector"
+      permission="zope2.View"
+      layer=".interfaces.IGitesTheme"
+      />
+
 </configure>

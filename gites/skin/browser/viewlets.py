@@ -10,6 +10,8 @@ $Id: viewlets.py 4587 2009-02-22 22:32:37Z alain
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import GlobalSectionsViewlet
 from zope.component import getMultiAdapter
+from Products.LinguaPlone.browser.selector import TranslatableLanguageSelector
+
 
 class GitesSectionsViewlet(GlobalSectionsViewlet):
     render = ViewPageTemplateFile('templates/header_gites.pt')
@@ -21,10 +23,19 @@ class GitesSectionsViewlet(GlobalSectionsViewlet):
         logoName = portal.restrictedTraverse('base_properties').logoName
         return portal.restrictedTraverse(logoName).tag()
 
+
 class GitesFooterViewlet(GlobalSectionsViewlet):
     render = ViewPageTemplateFile('templates/footer_gites.pt')
-    
+
+
 class GitesMoteurRechercheViewlet(GlobalSectionsViewlet):
     render = ViewPageTemplateFile('templates/moteur_recherche.pt')
+
+
+class ApplicaTranslatableLanguageSelector(TranslatableLanguageSelector):
+    """Language selector for translatable content.
+    """
+    render = ViewPageTemplateFile('templates/language_selector.pt')
+
 
 

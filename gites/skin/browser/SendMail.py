@@ -7,7 +7,7 @@ from Products.CMFCore.utils import getToolByName
 from z3c.sqlalchemy import getSAWrapper
 
 LANG_MAP = {'en': 'Anglais',
-            'fr': 'FranÃ§ais',
+            'fr': 'Français',
             'nl': 'Néerlandais',
             'de': 'Allemand'}
 
@@ -20,7 +20,7 @@ class SendMail(BrowserView):
 
     def sendMailToProprio(self):
         """
-           envoi d'un mail au proprio suite Ã  un contact via hebergement description
+           envoi d'un mail au proprio suite a un contact via hebergement description
         """
         hebPk = self.request.get('hebPk')
         wrapper = getSAWrapper('gites_wallons')

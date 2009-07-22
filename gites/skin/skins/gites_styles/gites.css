@@ -20,7 +20,7 @@ background-color:transparent; /*#ecf6eb;*/
 background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
 width:953px;
-height:156px;
+height:175px;
 border-left:2px solid #086038;
 border-right:2px solid #086038;
 }
@@ -116,6 +116,7 @@ width:953px;
 width:955px !important;
 margin-left:auto;
 margin-right:auto;
+margin-top:-6px;
 border-left:2px solid #086038;
 border-right:2px solid #086038;
 }
@@ -363,8 +364,6 @@ legend{
   background:transparent;
 }
 
-
-
 dl.portlet {
   background-color:transparent;
   border:none;
@@ -380,7 +379,6 @@ dl.portlet {
   font-weight:bold;
   color:#78756e;
 }
-
 
 #portlet-menu-association a:hover,
 #portlet-menu-chambres-hotes a:hover,
@@ -528,6 +526,24 @@ color:#ffffff;
 
 
 
+/*** VIEWLET SELECTOR LANGUAGE ***/
+.code-langue{
+font-weight:bold;
+text-transform:uppercase;
+}
+
+.code-langue a{
+text-decoration:none;
+color:#050;
+}
+
+.code-langue a:hover {
+color:#090;
+}
+
+.code-langue a:visited {
+color:#050;
+}
 
 
 /*** DEBUT DESCRIPTION HEBERGEMENT ***/

@@ -8,6 +8,7 @@
         <viewlet name="plone.personal_bar"/>
         <viewlet name="plone.path_bar" /> 
         <viewlet name="plone.header"/>
+        <viewlet name="plone.app.i18n.locales.languageselector" />
     </hidden>
 
     <order manager="plone.portaltop" skinname="GitesSkin">
@@ -15,6 +16,10 @@
         <viewlet name="plone.app.i18n.locales.languageselector" />
     </order>
 
+    <order manager="plone.abovecontenttitle" skinname="GitesSkin">
+        <viewlet name="plone.app.i18n.locales.languageselector" />
+    </order>
+        
     <order manager="plone.belowcontent" skinname="GitesSkin">
         <viewlet name="gites.moteur-recherche" />
     </order>
