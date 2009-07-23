@@ -3,8 +3,7 @@
       i18n:domain="gites">
 <body>
 <div metal:define-macro="portlet"
-  tal:define="view context/@@idees_sejours_view;
-              obj view/getRandomIdeeSejour;
+  tal:define="obj view/getRandomIdeeSejour;
               sejours_link view/getAllIdeesSejoursView;"
   tal:condition="obj">
    <div id="portlet-idee-sejour">

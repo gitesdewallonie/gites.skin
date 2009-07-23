@@ -16,4 +16,16 @@
       editview=".ideesejourfolder.EditForm"
       />
 
+
+  <plone:portlet
+      name="gites.ideesejour"
+      interface=".ideesejour.IIdeeSejour"
+      assignment=".ideesejour.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".ideesejour.Renderer"
+      addview=".ideesejour.AddForm"
+      editview=".ideesejour.EditForm"
+      />
+
 </configure>
