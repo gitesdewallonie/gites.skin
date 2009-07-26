@@ -8,7 +8,7 @@ Copyright by Affinitic sprl
 $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 """
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
-from Products.CMFCore.utils import getToolByName
+#from Products.CMFCore.utils import getToolByName
 #from Products.Five import BrowserView
 from zope.interface import implements
 from plone.app.portlets.portlets import base
@@ -19,7 +19,6 @@ from z3c.sqlalchemy import getSAWrapper
 from sqlalchemy import desc
 from DateTime import DateTime
 import random
-from bnbelgium.skin.browser.interfaces import IBNBelgiumTheme
 
 
 class IDerniereMinute(IPortletDataProvider):
@@ -61,23 +60,18 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        """
-        By default, portlets are available
+        """By default, portlets are available
         """
         return True
-        
-    def inBnB(self):
-        """
-        Permet de checker si on est dans BNB ou dans GDW
-        """
-        return IBNBelgiumTheme.providedBy(self.request)
+
+#    def __init__(self, context, request, *args, **kw):
+#        super(BrowserView, self).__init__(context, request, *args, **kw)
+#        self.cat = getToolByName(self.context, 'portal_catalog')
+#        utool = getToolByName(context, 'portal_url')
+#        self.portal_url = utool()
 
     def _getValidDerniereMinute(self):
-        """
-        Retourne 1 derniere minute (non expiré) au hasard.
-        """
-        cat = getToolByName(self.context, 'portal_catalog')
-        results = cat.searchResults(portal_type='DerniereMinute',
+        results = self.cat.searchResults(portal_type='DerniereMinute',
                                          end={'query': DateTime(),
                                               'range': 'min'},
                                          review_state='published')
@@ -96,25 +90,21 @@ class Renderer(base.Renderer):
                 return [derniereMinute.getObject()]
 
     def getAllDerniereMinuteLink(self):
-        """
-        Get the link to all dernieres minutes
-        """
-        utool = getToolByName(self.context, 'portal_url')
-        return '%s/dernieres-minutes' % utool()
+        return '%s/dernieres-minutes' % self.portal_url
 
-    def getNiceEventStartDate(self, obj):
-        startDate = obj.getEventStartDate()
+    def getNiceEventStartDate(self):
+        startDate = self.context.getEventStartDate()
         return startDate.strftime("%d-%m")
 
-    def getNiceEventEndDate(self, obj):
-        endDate = obj.getEventEndDate()
+    def getNiceEventEndDate(self):
+        endDate = self.context.getEventEndDate()
         return endDate.strftime("%d-%m")
 
-    def getText(self, obj):
-        return obj.getText()
+    def getText(self):
+        return self.context.getText()
 
-    def getCategory(self, obj):
-        return obj.getCategory()
+    def getCategory(self):
+        return self.context.getCategory()
 
     def getLastPromotions(self):
         results = self._getValidDerniereMinute()
@@ -142,17 +132,6 @@ class Renderer(base.Renderer):
                                              limit=10)
         results = [hebergement.__of__(self.context.hebergement) for hebergement in results]
         return results
-
-    def getRandomVignette(self, derniereMinuteUrl, amount=1):
-        """
-        Return a random vignette for a derniere minuet
-        """
-        cat = getToolByName(self.context, 'portal_catalog')
-        results = cat.searchResults(portal_type='Vignette',
-                                         path={'query': derniereMinuteUrl})
-        results = list(results)
-        random.shuffle(results)
-        return results[:amount]
 
 
 class AddForm(base.AddForm):
