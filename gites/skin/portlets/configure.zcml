@@ -5,6 +5,8 @@
            xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="gites.skin">
 
+
+<!-- IDEE SEJOUR -->
   <plone:portlet
       name="gites.ideesejourfolder"
       interface=".ideesejourfolder.IIdeeSejourFolderPortlet"
@@ -16,7 +18,6 @@
       editview=".ideesejourfolder.EditForm"
       />
 
-
   <plone:portlet
       name="gites.ideesejour"
       interface=".ideesejour.IIdeeSejour"
@@ -26,6 +27,31 @@
       renderer=".ideesejour.Renderer"
       addview=".ideesejour.AddForm"
       editview=".ideesejour.EditForm"
+      />
+
+
+<!-- DERNIERE MINUTE -->
+  <plone:portlet
+      name="gites.derniereminutefolder"
+      interface=".derniereminutefolder.IDerniereMinuteFolderPortlet"
+      assignment=".derniereminutefolder.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".derniereminutefolder.Renderer"
+      addview=".derniereminutefolder.AddForm"
+      editview=".derniereminutefolder.EditForm"
+      />
+
+
+    <plone:portlet
+      name="gites.derniereminute"
+      interface=".derniereminute.IDerniereMinute"
+      assignment=".derniereminute.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".derniereminute.Renderer"
+      addview=".derniereminute.AddForm"
+      editview=".derniereminute.EditForm"
       />
 
 </configure>
