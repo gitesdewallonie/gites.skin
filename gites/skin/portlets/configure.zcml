@@ -54,4 +54,16 @@
       editview=".derniereminute.EditForm"
       />
 
+<!-- LA BOUTIQUE -->
+    <plone:portlet
+      name="gites.laboutique"
+      interface=".laboutiquefolder.ILaBoutique"
+      assignment=".laboutiquefolder.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".laboutiquefolder.Renderer"
+      addview=".laboutiquefolder.AddForm"
+      editview=".laboutiquefolder.EditForm"
+      />
+
 </configure>

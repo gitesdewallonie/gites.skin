@@ -1,18 +1,25 @@
 <?xml version="1.0"?>
 <portlets>
 
- <!-- Portlet type registrations -->
- <portlet
-   addview="gites.ideesejour"
-   title="Idees sejour"
-   description="Liste des idees sejour"
-   />
+<!-- Portlet type registrations -->
+    <portlet
+        addview="gites.ideesejour"
+        title="Idees sejour"
+        description="Liste des idees sejour"
+        />
 
 
- <portlet
-   addview="gites.derniereminute"
-   title="Derniere minute"
-   description="Liste des dernieres minutes"
-   />
+   <portlet
+       addview="gites.derniereminute"
+       title="Derniere minute"
+       description="Liste des dernieres minutes"
+       />
+
+   <portlet
+       addview="gites.laboutique"
+       title="La Boutique"
+       description="Liste les articles en boutique"
+       />
+  
 
 </portlets>

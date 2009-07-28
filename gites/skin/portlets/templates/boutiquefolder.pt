@@ -5,7 +5,9 @@
 <body>
 
 <div metal:fill-slot="main">
-
+     <div metal:use-macro="here/document_actions/macros/document_actions">
+        Document Actions
+    </div>
   <tal:main tal:define="text context/getText;">
 
     <h1 tal:content="here/Title">
