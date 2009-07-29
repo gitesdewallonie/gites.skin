@@ -13,7 +13,7 @@ from zope.formlib import form
 from zope.interface import implements
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 #from Products.Five import BrowserView
-#from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import getToolByName
 from z3c.sqlalchemy import getSAWrapper
 from DateTime import DateTime
 import random
@@ -51,7 +51,7 @@ class Renderer(base.Renderer):
        of this class. Other methods can be added and referenced in the template.
     """
 
-    render = ZopeTwoPageTemplateFile('templates/ideesejour.pt')
+    render = ZopeTwoPageTemplateFile('templates/sejourfute.pt')
 
     def title(self):
         return self.data.title
@@ -66,10 +66,11 @@ class Renderer(base.Renderer):
         """
         Retourne 1 sejour futé (non expiré) au hasard.
         """
-        results = self.cat.searchResults(portal_type='SejourFute',
-                                         end={'query': DateTime(),
+        cat = getToolByName(self.context, 'portal_catalog')
+        results = cat.searchResults(portal_type='SejourFute',
+                                    end={'query': DateTime(),
                                               'range': 'min'},
-                                         review_state='published')
+                                    review_state='published')
         results = list(results)
         random.shuffle(results)
         for sejour in results:
@@ -82,7 +83,11 @@ class Renderer(base.Renderer):
             return None
 
     def getAllSejoursView(self):
-        return '%s/sejour-fute' % self.portal_url
+        """
+        Get the link to all sejour fute
+        """
+        utool = getToolByName(self.context, 'portal_url')
+        return '%s/sejour-fute' % utool()
 
     def getRandomVignette(self, sejour_url, amount=1):
         """
