@@ -1,17 +1,55 @@
-<dl class="portlet"
-        id="portlet-menu-sejour-fute"
-        tal:define="sejourFuteTypes view/getSejourFuteTypes">
-       <dt class="portletHeader" i18n:translate="sejours-futes">
-         Séjours futés
-       </dt>
-    <tal:bcl tal:repeat="sejourFuteType sejourFuteTypes">
-         <dd class="portletItemSingle"
-             tal:attributes="id python:test(sejourFuteType.getURL() in context.absolute_url(), 'currentItem', '')">
-              <a href=""
-                 tal:attributes="href sejourFuteType/getURL"
-                 tal:content="sejourFuteType/Title">Plus</a>
-         </dd>
-    </tal:bcl>
-       <dd class="portletItemLast">
-       </dd>
-</dl>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="gites">
+
+<body >
+
+<div metal:fill-slot="main">
+  <tal:main tal:define="view context/@@sejourfute_view">
+    <div metal:use-macro="here/document_actions/macros/document_actions">
+        Document Actions
+    </div>
+
+    <h1 i18n:translate="sejours_futes">
+        Sejours futés
+    </h1>
+
+    <div class="stx"
+         tal:define="text python: here.CookedBody(stx_level=2)"
+         tal:condition="text"
+         tal:attributes="class python:test(here.Format() in ('text/structured',
+                                               'text/x-rst', ), 'stx', 'plain')">
+        <div tal:replace="structure text" />
+    </div>
+
+    <div class="sejour_fute_container">
+        <fieldset tal:repeat="sejour view/getAllSejourFute">
+        <div tal:define="vignette python:view.getRandomVignette(sejour.getPath())"
+              id="div_sejours_futes">
+          <p id="logo">
+            <a href="" tal:attributes="href sejour/getURL"
+                       tal:condition="vignette">
+               <img src=""
+                    tal:attributes="src python:vignette[0].getURL()+'/image_thumb'"/><br />
+            </a>
+          </p>
+
+        <div id="info">
+          <a href="" tal:attributes="href sejour/getURL">
+             <span id="title" tal:content="sejour/Title"/>
+             <span id="description">
+                 <p tal:content="sejour/Description"/>
+             </span>
+          </a>
+        </div>
+
+        </div>
+        </fieldset>
+    </div>
+
+  </tal:main>
+</div>
+
+</body>
+</html>

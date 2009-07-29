@@ -13,11 +13,10 @@ from zope.formlib import form
 from zope.interface import implements
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 #from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
+#from Products.CMFCore.utils import getToolByName
 from z3c.sqlalchemy import getSAWrapper
 from DateTime import DateTime
 import random
-from bnbelgium.skin.browser.interfaces import IBNBelgiumTheme
 
 
 class ISejourFute(IPortletDataProvider):
@@ -52,7 +51,7 @@ class Renderer(base.Renderer):
        of this class. Other methods can be added and referenced in the template.
     """
 
-    render = ZopeTwoPageTemplateFile('templates/sejourfute.pt')
+    render = ZopeTwoPageTemplateFile('templates/ideesejour.pt')
 
     def title(self):
         return self.data.title
@@ -63,21 +62,14 @@ class Renderer(base.Renderer):
         """
         return True
 
-    def inBnB(self):
-        """
-        Permet de checker si on est dans BNB ou dans GDW
-        """
-        return IBNBelgiumTheme.providedBy(self.request)
-
     def getRandomSejourFute(self):
         """
         Retourne 1 sejour futé (non expiré) au hasard.
         """
-        cat = getToolByName(self.context, 'portal_catalog')
-        results = cat.searchResults(portal_type='SejourFute',
-                                    end={'query': DateTime(),
+        results = self.cat.searchResults(portal_type='SejourFute',
+                                         end={'query': DateTime(),
                                               'range': 'min'},
-                                    review_state='published')
+                                         review_state='published')
         results = list(results)
         random.shuffle(results)
         for sejour in results:
@@ -90,18 +82,13 @@ class Renderer(base.Renderer):
             return None
 
     def getAllSejoursView(self):
-        """
-        Get the link to all sejour fute
-        """
-        utool = getToolByName(self.context, 'portal_url')
-        return '%s/sejour-fute' % utool()
+        return '%s/sejour-fute' % self.portal_url
 
     def getRandomVignette(self, sejour_url, amount=1):
         """
         Return a random vignette for a sejour fute
         """
-        cat = getToolByName(self.context, 'portal_catalog')
-        results = cat.searchResults(portal_type='Vignette',
+        results = self.cat.searchResults(portal_type='Vignette',
                                          path={'query': sejour_url})
         results = list(results)
         random.shuffle(results)
