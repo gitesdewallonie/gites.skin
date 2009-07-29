@@ -54,6 +54,31 @@
       editview=".derniereminute.EditForm"
       />
 
+
+<!-- SEJOUR FUTE -->
+    <plone:portlet
+      name="gites.sejourfutefolder"
+      interface=".sejourfutefolder.ISejourFuteFolderPortlet"
+      assignment=".sejourfutefolder.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".sejourfutefolder.Renderer"
+      addview=".sejourfutefolder.AddForm"
+      editview=".sejourfutefolder.EditForm"
+      />
+
+    <plone:portlet
+      name="gites.sejourfute"
+      interface=".sejourfute.ISejourFute"
+      assignment=".sejourfute.Assignment"
+      view_permission="zope2.View"
+      edit_permission="cmf.ManagePortal"
+      renderer=".sejourfute.Renderer"
+      addview=".sejourfute.AddForm"
+      editview=".sejourfute.EditForm"
+      />
+
+
 <!-- LA BOUTIQUE -->
     <plone:portlet
       name="gites.laboutique"
