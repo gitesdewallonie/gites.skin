@@ -8,7 +8,7 @@ Copyright by Affinitic sprl
 $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 """
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
-#from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import getToolByName
 #from Products.Five import BrowserView
 from zope.interface import implements
 from plone.app.portlets.portlets import base
@@ -64,14 +64,12 @@ class Renderer(base.Renderer):
         """
         return True
 
-#    def __init__(self, context, request, *args, **kw):
-#        super(BrowserView, self).__init__(context, request, *args, **kw)
-#        self.cat = getToolByName(self.context, 'portal_catalog')
-#        utool = getToolByName(context, 'portal_url')
-#        self.portal_url = utool()
-
     def _getValidDerniereMinute(self):
-        results = self.cat.searchResults(portal_type='DerniereMinute',
+        """
+        Retourne 1 sejour futé (non expiré) au hasard.
+        """
+        cat = getToolByName(self.context, 'portal_catalog')
+        results = cat.searchResults(portal_type='DerniereMinute',
                                          end={'query': DateTime(),
                                               'range': 'min'},
                                          review_state='published')
@@ -90,7 +88,11 @@ class Renderer(base.Renderer):
                 return [derniereMinute.getObject()]
 
     def getAllDerniereMinuteLink(self):
-        return '%s/dernieres-minutes' % self.portal_url
+        """
+        Get the link to all sejour fute
+        """
+        utool = getToolByName(self.context, 'portal_url')
+        return '%s/dernieres-minutes' % utool()
 
     def getNiceEventStartDate(self):
         startDate = self.context.getEventStartDate()
