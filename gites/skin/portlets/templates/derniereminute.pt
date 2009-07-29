@@ -3,9 +3,8 @@
       i18n:domain="gites">
 <body>
 <div metal:define-macro="portlet"
-            tal:define="portlet_view context/@@derniere_minute_view;
-                        results portlet_view/getRandomDerniereMinute;
-                        sejours_link portlet_view/getAllDerniereMinuteLink;"
+            tal:define="results view/getRandomDerniereMinute;
+                        sejours_link view/getAllDerniereMinuteLink;"
      tal:condition="results">
 
 <dl class="portlet" id="portlet-sejours-fute">
