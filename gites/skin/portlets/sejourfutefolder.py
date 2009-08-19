@@ -13,10 +13,10 @@ from zope.formlib import form
 from zope.interface import implements
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 #from Products.Five import BrowserView
-#from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import getToolByName
 #from z3c.sqlalchemy import getSAWrapper
-from DateTime import DateTime
-import random
+#from DateTime import DateTime
+#import random
 
 
 class ISejourFuteFolderPortlet(IPortletDataProvider):
@@ -38,10 +38,6 @@ class Assignment(base.Assignment):
     def __init__(self, title=u'', menu_id=u''):
         self._title = title
 
-    @property
-    def title(self):
-        return self._title
-
 
 class Renderer(base.Renderer):
     """Portlet renderer.
@@ -62,13 +58,23 @@ class Renderer(base.Renderer):
         """
         return True
 
-    def getAllSejourFute(self):
-        results = self.cat.searchResults(portal_type='SejourFute',
-                                               end={'query': DateTime(),
-                                                    'range': 'min'},
-                                               review_state='published')
+    def getSejourFuteTypes(self):
+        """
+        Returns the list of SejourFuteTypes available in the current folder
+        """
+        cat = getToolByName(self.context, 'portal_catalog')
+        sejourFute = getattr(self.context, 'sejour-fute')
+        url = '/'.join(sejourFute.getPhysicalPath())
+        contentFilter = {}
+        path = {}
+        path['query'] = url
+        path['depth'] = 1
+        contentFilter['path'] = path
+        contentFilter['portal_type'] = ['SejourFuteFolder', 'SejourFute']
+        contentFilter['sort_on'] = 'getObjPositionInParent'
+        contentFilter['review_state'] = 'published'
+        results = cat.queryCatalog(contentFilter)
         results = list(results)
-        random.shuffle(results)
         return results
 
 
