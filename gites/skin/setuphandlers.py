@@ -21,6 +21,8 @@ LANGUAGES = ['en', 'nl', 'fr', 'it', 'de']
 
 
 def setupgites(context):
+    if context.readDataFile('gites.skin_various.txt') is None:
+        return
     logger.debug('Setup gites skin')
     portal = context.getSite()
     if not ISite.providedBy(portal):
