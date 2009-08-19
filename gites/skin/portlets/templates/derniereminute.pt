@@ -18,12 +18,11 @@
     <tal:sejours tal:repeat="obj results">
     <dd class="portletItemSingle"
         tal:define="oddrow repeat/obj/odd;
-                    view obj/@@derniere_minute_view;
                     hebergement obj/getHebergement;
-                    start view/getNiceEventStartDate;
-                    end view/getNiceEventEndDate;
+                    start python:view.getNiceEventStartDate(obj);
+                    end python:view.getNiceEventEndDate(obj);
                     text view/getText;
-                    promotion python: view.getCategory() == 'promotion'"
+                    promotion python: view.getCategory(obj) == 'promotion'"
         tal:condition="hebergement">
         <a href="#"
            class="tile"
@@ -34,7 +33,7 @@
             </span>
             <div class="portletItemDetails">
                 <img id="derniere-minute-vignette" src="" 
-                     tal:attributes="src string:${portal_url}/photos_heb/${hebergement/getVignette}"/>
+                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}"/>
                 <span id="capacite">
                   <img src="picto/capacite.png"
                        title="Capacité"

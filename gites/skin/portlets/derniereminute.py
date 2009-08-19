@@ -94,19 +94,19 @@ class Renderer(base.Renderer):
         utool = getToolByName(self.context, 'portal_url')
         return '%s/dernieres-minutes' % utool()
 
-    def getNiceEventStartDate(self):
-        startDate = self.context.getEventStartDate()
+    def getNiceEventStartDate(self, obj):
+        startDate = obj.getEventStartDate()
         return startDate.strftime("%d-%m")
 
-    def getNiceEventEndDate(self):
-        endDate = self.context.getEventEndDate()
+    def getNiceEventEndDate(self, obj):
+        endDate = obj.getEventEndDate()
         return endDate.strftime("%d-%m")
 
     def getText(self):
         return self.context.getText()
 
-    def getCategory(self):
-        return self.context.getCategory()
+    def getCategory(self, obj):
+        return obj.getCategory()
 
     def getLastPromotions(self):
         results = self._getValidDerniereMinute()

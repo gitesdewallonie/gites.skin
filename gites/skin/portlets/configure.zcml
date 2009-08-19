@@ -7,88 +7,87 @@
 
 
 <!-- IDEE SEJOUR -->
-  <plone:portlet
-      name="gites.ideesejourfolder"
-      interface=".ideesejourfolder.IIdeeSejourFolderPortlet"
-      assignment=".ideesejourfolder.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".ideesejourfolder.Renderer"
-      addview=".ideesejourfolder.AddForm"
-      editview=".ideesejourfolder.EditForm"
-      />
-
-  <plone:portlet
-      name="gites.ideesejour"
-      interface=".ideesejour.IIdeeSejour"
-      assignment=".ideesejour.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".ideesejour.Renderer"
-      addview=".ideesejour.AddForm"
-      editview=".ideesejour.EditForm"
-      />
-
-
-<!-- DERNIERE MINUTE -->
-  <plone:portlet
-      name="gites.derniereminutefolder"
-      interface=".derniereminutefolder.IDerniereMinuteFolderPortlet"
-      assignment=".derniereminutefolder.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".derniereminutefolder.Renderer"
-      addview=".derniereminutefolder.AddForm"
-      editview=".derniereminutefolder.EditForm"
-      />
-
+    <plone:portlet
+        name="gites.ideesejourfolder"
+        interface=".ideesejourfolder.IIdeeSejourFolderPortlet"
+        assignment=".ideesejourfolder.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".ideesejourfolder.Renderer"
+        addview=".ideesejourfolder.AddForm"
+        editview=".ideesejourfolder.EditForm"
+        />
 
     <plone:portlet
-      name="gites.derniereminute"
-      interface=".derniereminute.IDerniereMinute"
-      assignment=".derniereminute.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".derniereminute.Renderer"
-      addview=".derniereminute.AddForm"
-      editview=".derniereminute.EditForm"
-      />
+        name="gites.ideesejour"
+        interface=".ideesejour.IIdeeSejour"
+        assignment=".ideesejour.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".ideesejour.Renderer"
+        addview=".ideesejour.AddForm"
+        editview=".ideesejour.EditForm"
+        />
 
 
 <!-- SEJOUR FUTE -->
     <plone:portlet
-      name="gites.sejourfutefolder"
-      interface=".sejourfutefolder.ISejourFuteFolderPortlet"
-      assignment=".sejourfutefolder.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".sejourfutefolder.Renderer"
-      addview=".sejourfutefolder.AddForm"
-      editview=".sejourfutefolder.EditForm"
-      />
+        name="gites.sejourfutefolder"
+        interface=".sejourfutefolder.ISejourFuteFolderPortlet"
+        assignment=".sejourfutefolder.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".sejourfutefolder.Renderer"
+        addview=".sejourfutefolder.AddForm"
+        editview=".sejourfutefolder.EditForm"
+        />
 
     <plone:portlet
-      name="gites.sejourfute"
-      interface=".sejourfute.ISejourFute"
-      assignment=".sejourfute.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".sejourfute.Renderer"
-      addview=".sejourfute.AddForm"
-      editview=".sejourfute.EditForm"
-      />
+        name="gites.sejourfute"
+        interface=".sejourfute.ISejourFute"
+        assignment=".sejourfute.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".sejourfute.Renderer"
+        addview=".sejourfute.AddForm"
+        editview=".sejourfute.EditForm"
+        />
+
+
+<!-- DERNIERE MINUTE -->
+    <plone:portlet
+        name="gites.derniereminutefolder"
+        interface=".derniereminutefolder.IDerniereMinuteFolderPortlet"
+        assignment=".derniereminutefolder.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".derniereminutefolder.Renderer"
+        addview=".derniereminutefolder.AddForm"
+        editview=".derniereminutefolder.EditForm"
+        />
+
+    <plone:portlet
+        name="gites.derniereminute"
+        interface=".derniereminute.IDerniereMinute"
+        assignment=".derniereminute.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".derniereminute.Renderer"
+        addview=".derniereminute.AddForm"
+        editview=".derniereminute.EditForm"
+        />
 
 
 <!-- LA BOUTIQUE -->
     <plone:portlet
-      name="gites.laboutique"
-      interface=".laboutiquefolder.ILaBoutique"
-      assignment=".laboutiquefolder.Assignment"
-      view_permission="zope2.View"
-      edit_permission="cmf.ManagePortal"
-      renderer=".laboutiquefolder.Renderer"
-      addview=".laboutiquefolder.AddForm"
-      editview=".laboutiquefolder.EditForm"
-      />
+        name="gites.laboutique"
+        interface=".laboutiquefolder.ILaBoutique"
+        assignment=".laboutiquefolder.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".laboutiquefolder.Renderer"
+        addview=".laboutiquefolder.AddForm"
+        editview=".laboutiquefolder.EditForm"
+        />
 
 </configure>

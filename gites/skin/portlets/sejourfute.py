@@ -93,7 +93,8 @@ class Renderer(base.Renderer):
         """
         Return a random vignette for a sejour fute
         """
-        results = self.cat.searchResults(portal_type='Vignette',
+        cat = getToolByName(self.context, 'portal_catalog')
+        results = cat.searchResults(portal_type='Vignette',
                                          path={'query': sejour_url})
         results = list(results)
         random.shuffle(results)
