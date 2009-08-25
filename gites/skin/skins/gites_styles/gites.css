@@ -19,7 +19,7 @@ margin-right:auto;
 background-color:transparent; /*#ecf6eb;*/
 background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
-width:953px;
+width:952px !important;
 height:175px;
 border-left:2px solid #086038;
 border-right:2px solid #086038;
@@ -118,19 +118,20 @@ background-color:transparent;
 background-image:url(pied_bandeau.png);
 background-repeat:repeat-x;
 height:20px;
-width:953px;
+width:952px !important;
 }
 
 
 /*** PLONE ***/
 #portal-columns{
-width:955px !important;
+width:954px !important;
 margin-left:auto;
 margin-right:auto;
 margin-top:-6px;
 border-left:2px solid #086038;
 border-right:2px solid #086038;
 }
+
 
 #portal-top {
 background-color:transparent;

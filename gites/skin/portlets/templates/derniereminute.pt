@@ -21,7 +21,7 @@
                     hebergement obj/getHebergement;
                     start python:view.getNiceEventStartDate(obj);
                     end python:view.getNiceEventEndDate(obj);
-                    text view/getText;
+                    text python:view.getText(obj);
                     promotion python: view.getCategory(obj) == 'promotion'"
         tal:condition="hebergement">
         <a href="#"
