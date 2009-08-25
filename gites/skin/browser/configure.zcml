@@ -21,7 +21,7 @@
      provides=".interfaces.ITypeHebCommuneView"
      name="index.html"
      />
-  
+
   <!-- gites viewlet header -->
   <browser:viewlet
       name="gites.header"
