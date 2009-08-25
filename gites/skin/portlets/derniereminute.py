@@ -102,8 +102,8 @@ class Renderer(base.Renderer):
         endDate = obj.getEventEndDate()
         return endDate.strftime("%d-%m")
 
-    def getText(self):
-        return self.context.getText()
+    def getText(self, obj):
+        return obj.getText()
 
     def getCategory(self, obj):
         return obj.getCategory()
