@@ -7,7 +7,7 @@
                   <th class="nosort">&nbsp;</th>
                   <th i18n:translate="nom_hebergement" class="" tal:attributes="class thclass">Nom </th>
                   <th i18n:translate="type_hebergement" class="" tal:attributes="class thclass">Type</th>
-                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localité</th>
+                  <th i18n:translate="localite_hebergement" class="" tal:attributes="class thclass">Localit&eacute;</th>
                   <th i18n:translate="epis_hebergement" class="" tal:attributes="class thclass">Classification</th>
                   <th class="" tal:attributes="class thclass">
                     <span id="capacite">

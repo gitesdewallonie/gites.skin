@@ -187,6 +187,9 @@ background-repeat: no-repeat;
 background-position: bottom right;
 }
 
+h1 {
+margin-top: 0px;
+}
 
 /*** FOOTER GITES ***/
 #footer-gites {
@@ -227,10 +230,6 @@ margin-top:15px;
   border: 2px solid #476D84;
   margin-top: 5px;
   padding: 3px;
-}
-
-#moteur-form div{
-  margin-top:30px;
 }
 
 #moteur-simple{
@@ -356,6 +355,10 @@ margin-top:15px;
 
 #moteur-avance a:hover{
   color:#bc0000;
+}
+
+div.formHelp {
+display: none;
 }
 
 /*** FIN GESTION MOTEUR RECHERCHE ***/
@@ -875,5 +878,3 @@ text-align:center;
 }
 
 /*** FIN DESCRIPTION HEBERGEMENT ***/
-
-

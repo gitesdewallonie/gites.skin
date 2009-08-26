@@ -19,6 +19,7 @@ class SearchHebergement(formbase.PageForm):
     A search module to search hebergement
     """
     label = _("Search Hebergement")
+    form_reset = False
 
     form_fields = form.FormFields(ISearchHebergement)
     too_much_form_fields = form.FormFields(ISearchHebergementTooMuch)
@@ -29,9 +30,9 @@ class SearchHebergement(formbase.PageForm):
         """
         Translate a grouped type to a list of types
         """
-        if groupedType == [-2]:
+        if groupedType == -2:
             types = ['GR', 'GF', 'MT', 'GC', 'MV', 'GRECR', 'GG']
-        elif groupedType == [-3]:
+        elif groupedType == -3:
             types = ['CH', 'MH', 'CHECR']
         return self.translateTypes(types)
 
@@ -42,7 +43,7 @@ class SearchHebergement(formbase.PageForm):
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         typeHebTable = wrapper.getMapper('type_heb')
-        typeList = session.query(typeHebTable).filter(typeHebTable.c.type_heb_code.in_(*types))
+        typeList = session.query(typeHebTable).filter(typeHebTable.type_heb_code.in_(types))
         return [typeHeb.type_heb_pk for typeHeb in typeList]
 
     @form.action(localTranslate(u"Search"))
@@ -62,38 +63,38 @@ class SearchHebergement(formbase.PageForm):
         seeResults = self.request.form.has_key('form.seeResults')
 
         query = session.query(hebergementTable).join('province')
-        if provinces and provinces != [-1]:
-            query = query.filter(provincesTable.c.prov_pk.in_(*provinces))
-        if hebergementType and hebergementType != [-1]:
-            if hebergementType[0] in [-2, -3]:
-                hebergementType = self.translateGroupedType(hebergementType)
-            query = query.filter(hebergementTable.c.heb_typeheb_fk.in_(*hebergementType))
-        if classification and classification != [-1]:
-            query = query.filter(and_(episTable.c.heb_nombre_epis == classification[0],
-                                      hebergementTable.c.heb_pk==episTable.c.heb_pk))
+        if provinces and provinces != -1:
+            query = query.filter(provincesTable.prov_pk == provinces)
+        if hebergementType and hebergementType != -1:
+            if hebergementType in [-2, -3]:
+                hebergementTypeDB = self.translateGroupedType(hebergementType)
+            query = query.filter(hebergementTable.heb_typeheb_fk.in_(hebergementTypeDB))
+        if classification and classification != -1:
+            query = query.filter(and_(episTable.heb_nombre_epis == classification,
+                                      hebergementTable.heb_pk==episTable.heb_pk))
         if checkAnimals:
-            query = query.filter(hebergementTable.c.heb_animal=='oui')
+            query = query.filter(hebergementTable.heb_animal=='oui')
         if checkSmokers:
-            query = query.filter(hebergementTable.c.heb_fumeur=='oui')
+            query = query.filter(hebergementTable.heb_fumeur=='oui')
         if roomAmount:
-            query = query.filter(hebergementTable.c.heb_cgt_nbre_chmbre >= roomAmount)
+            query = query.filter(hebergementTable.heb_cgt_nbre_chmbre >= roomAmount)
         if capacityMin:
             if capacityMin < 16:
                 capacityMax = capacityMin + 4
-                query = query.filter(or_(hebergementTable.c.heb_cgt_cap_min.between(capacityMin, capacityMax),
-                                         hebergementTable.c.heb_cgt_cap_max.between(capacityMin, capacityMax)))
+                query = query.filter(or_(hebergementTable.heb_cgt_cap_min.between(capacityMin, capacityMax),
+                                         hebergementTable.heb_cgt_cap_max.between(capacityMin, capacityMax)))
             else:
                 capacityMax = capacityMin
                 capacityMin = 16
-                query = query.filter(and_(hebergementTable.c.heb_cgt_cap_min >= capacityMin,
-                                          hebergementTable.c.heb_cgt_cap_max >= capacityMax))
+                query = query.filter(and_(hebergementTable.heb_cgt_cap_min >= capacityMin,
+                                          hebergementTable.heb_cgt_cap_max >= capacityMax))
 
         if isinstance(self.context, IdeeSejour):
             sejour = self.context
             filteredHebergements = sejour.getHebergements()
-            query = query.filter(hebergementTable.c.heb_pk.in_(*filteredHebergements))
+            query = query.filter(hebergementTable.heb_pk.in_(filteredHebergements))
 
-        query = query.order_by(hebergementTable.c.heb_nom)
+        query = query.order_by(hebergementTable.heb_nom)
         self.selectedHebergements = [hebergement.__of__(self.context.hebergement) for hebergement in query.all()]
 
         nbResults = len(self.selectedHebergements)
@@ -109,7 +110,9 @@ class SearchHebergement(formbase.PageForm):
             self.widgets['capacityMin'].setRenderedValue(capacityMin)
             self.widgets['animals'].setRenderedValue(checkAnimals)
             self.widgets['smokers'].setRenderedValue(checkSmokers)
-
+            self.widgets['hebergementType'].setRenderedValue(hebergementType)
+            self.widgets['provinces'].setRenderedValue(provinces)
+            self.widgets['classification'].setRenderedValue(classification)
 
             message = utranslate('gites',
                                  "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait utile de l'affiner.",
@@ -138,6 +141,7 @@ class BasicSearchHebergement(SearchHebergement):
     A search module to search hebergement
     """
     label = _("Search Hebergement")
+    form_reset = False
 
     form_fields = form.FormFields(IBasicSearchHebergement)
     too_much_form_fields = form.FormFields(IBasicSearchHebergementTooMuch)

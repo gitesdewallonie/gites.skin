@@ -7,6 +7,7 @@ from zope.component import queryMultiAdapter
 #from sqlalchemy import Table
 #from sqlalchemy import select
 
+
 class MoteurRecherche(BrowserView):
 
     def getHebergementByPk(self, heb_pk):
@@ -36,7 +37,6 @@ class MoteurRecherche(BrowserView):
         retourne les deux groupes de types d'hebergements
         """
         # get some translation interfaces
-
         translation_service = getToolByName(self.context,
                                             'translation_service')
 
