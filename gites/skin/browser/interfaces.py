@@ -156,19 +156,19 @@ class ISearchHebergement(Interface):
 
     hebergementType = schema.Choice(title=_("Hebergement Type"),
                                     description=_("Select a type of Hebergement"),
-                                    required=False,
+                                    required=True,
                                     vocabulary="gitescontent.typehebergement")
 
     provinces = schema.Choice(
             title=_('Province'),
             description=_("Select a province"),
-            required=False,
+            required=True,
             vocabulary="gitescontent.provinces")
 
     classification = schema.Choice(
             title=_('Classification'),
             description=_("Select a classification"),
-            required=False,
+            required=True,
             vocabulary="gitescontent.classification")
 
     capacityMin = schema.Int(title=_('Minimum Capacity'),

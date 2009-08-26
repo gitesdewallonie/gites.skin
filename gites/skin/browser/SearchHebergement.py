@@ -67,8 +67,10 @@ class SearchHebergement(formbase.PageForm):
             query = query.filter(provincesTable.prov_pk == provinces)
         if hebergementType and hebergementType != -1:
             if hebergementType in [-2, -3]:
-                hebergementTypeDB = self.translateGroupedType(hebergementType)
-            query = query.filter(hebergementTable.heb_typeheb_fk.in_(hebergementTypeDB))
+                groupedHebergementTypes = self.translateGroupedType(hebergementType)
+                query = query.filter(hebergementTable.heb_typeheb_fk.in_(groupedHebergementTypes))
+            else:
+                query = query.filter(hebergementTable.heb_typeheb_fk == hebergementType)
         if classification and classification != -1:
             query = query.filter(and_(episTable.heb_nombre_epis == classification,
                                       hebergementTable.heb_pk==episTable.heb_pk))

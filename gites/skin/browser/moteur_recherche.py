@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
+
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 from z3c.sqlalchemy import getSAWrapper
 from zope.component import queryMultiAdapter
-
-#from sqlalchemy import Table
-#from sqlalchemy import select
 
 
 class MoteurRecherche(BrowserView):
@@ -61,7 +59,7 @@ class MoteurRecherche(BrowserView):
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         TypeHeb = wrapper.getMapper('type_heb')
-        results = session.query(TypeHeb).select()
+        results = session.query(TypeHeb).all()
         language = self.request.get('LANGUAGE', 'en')
         typesList = []
         for typeHeb in results:
