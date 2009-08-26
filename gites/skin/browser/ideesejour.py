@@ -43,14 +43,3 @@ class IdeeSejourRootFolder(BrowserView):
         results = list(results)
         random.shuffle(results)
         return results[:amount]
-
-    def getVignetteURL(self):
-        """
-        Return vignette URL for an idee sejour
-        """
-        cat = getToolByName(self.context, 'portal_catalog')
-        path = '/'.join(self.context.getPhysicalPath())
-        results = cat.searchResults(portal_type='Vignette',
-                                    path={'query': path})
-        if results:
-            return results[0].getURL()

@@ -97,6 +97,22 @@
       />
 
    <browser:page
+      name="sejourfute_root"
+      for="gites.skin.interfaces.ISejourFuteRootFolder"
+      class=".sejourfute.SejourFuteRootFolder"
+      template="templates/sejourfuteroot.pt"
+      permission="zope.Public"
+      />
+
+   <browser:page
+      name="ideesejour_root"
+      for="gites.skin.interfaces.ISejourFuteRootFolder"
+      class=".ideesejour.IdeeSejourRootFolder"
+      template="templates/ideesejourroot.pt"
+      permission="zope.Public"
+      />
+
+   <browser:page
       name="search.html"
       for="*"
       class=".SearchHebergement.SearchHebergement"
