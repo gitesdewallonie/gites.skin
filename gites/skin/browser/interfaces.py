@@ -1,7 +1,6 @@
 from plone.theme.interfaces import IDefaultPloneLayer
 from zope.interface import Interface
 from zope import schema
-from schema import List
 from gites.skin import GitesMessage as _
 
 
@@ -155,28 +154,22 @@ class ISearchHebergement(Interface):
     A search module to search hebergement
     """
 
-    hebergementType = List(title=_("Hebergement Type"),
-                           description=_("Select a type of Hebergement"),
-                           unique=True,
-                           required=False,
-                           value_type=schema.Choice(
-                           vocabulary="gitescontent.typehebergement"))
+    hebergementType = schema.Choice(title=_("Hebergement Type"),
+                                    description=_("Select a type of Hebergement"),
+                                    required=False,
+                                    vocabulary="gitescontent.typehebergement")
 
-    provinces = List(
+    provinces = schema.Choice(
             title=_('Province'),
             description=_("Select a province"),
-            unique = True,
             required=False,
-            value_type=schema.Choice(
-            vocabulary="gitescontent.provinces"))
+            vocabulary="gitescontent.provinces")
 
-    classification = List(
+    classification = schema.Choice(
             title=_('Classification'),
             description=_("Select a classification"),
-            unique = True,
             required=False,
-            value_type=schema.Choice(
-            vocabulary="gitescontent.classification"))
+            vocabulary="gitescontent.classification")
 
     capacityMin = schema.Int(title=_('Minimum Capacity'),
                                  description=_('The minimum capacity of your hebergement'),
@@ -200,29 +193,23 @@ class IBasicSearchHebergement(Interface):
     A basic search module to search hebergement
     """
 
-    hebergementType = List(
+    hebergementType = schema.Choice(
         title=_("Hebergement Type"),
         description=_("Select a type of Hebergement"),
-        unique=True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.groupedtypehebergement"))
+        required=True,
+        vocabulary="gitescontent.groupedtypehebergement")
 
-    provinces = List(
+    provinces = schema.Choice(
         title=_('Province'),
         description=_("Select a province"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.provinces"))
+        required=True,
+        vocabulary="gitescontent.provinces")
 
-    classification = List(
+    classification = schema.Choice(
         title=_('Classification'),
         description=_("Select a classification"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.classification"))
+        required=True,
+        vocabulary="gitescontent.classification")
 
     capacityMin = schema.Int(title=_('Minimum Capacity'),
                              description=_('The minimum capacity of your hebergement'),
@@ -249,29 +236,23 @@ class IBasicSearchHebergementTooMuch(Interface):
                              description=_('Show results even if there are more than 50'),
                              required=False)
 
-    hebergementType = List(
+    hebergementType = schema.Choice(
         title=_("Hebergement Type"),
         description=_("Select a type of Hebergement"),
-        unique=True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.groupedtypehebergement"))
+        required=True,
+        vocabulary="gitescontent.groupedtypehebergement")
 
-    provinces = List(
+    provinces = schema.Choice(
         title=_('Province'),
         description=_("Select a province"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.provinces"))
+        required=True,
+        vocabulary="gitescontent.provinces")
 
-    classification = List(
+    classification = schema.Choice(
         title=_('Classification'),
         description=_("Select a classification"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.classification"))
+        required=True,
+        vocabulary="gitescontent.classification")
 
     capacityMin = schema.Int(title=_('Minimum Capacity'),
                              description=_('The minimum capacity of your hebergement'),
@@ -299,29 +280,23 @@ class ISearchHebergementTooMuch(Interface):
                              description=_('Show results even if there are more than 50'),
                              required=False)
 
-    hebergementType = List(
+    hebergementType = schema.Choice(
         title=_("Hebergement Type"),
         description=_("Select a type of Hebergement"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.typehebergement"))
+        required=True,
+        vocabulary="gitescontent.typehebergement")
 
-    provinces = List(
+    provinces = schema.Choice(
         title=_('Province'),
         description=_("Select a province"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.provinces"))
+        required=True,
+        vocabulary="gitescontent.provinces")
 
-    classification = List(
+    classification = schema.Choice(
         title=_('Classification'),
         description=_("Select a classification"),
-        unique = True,
-        required=False,
-        value_type=schema.Choice(
-            vocabulary="gitescontent.classification"))
+        required=True,
+        vocabulary="gitescontent.classification")
 
     capacityMin = schema.Int(title=_('Minimum Capacity'),
                              description=_('The minimum capacity of your hebergement'),
