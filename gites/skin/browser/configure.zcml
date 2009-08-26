@@ -82,6 +82,13 @@
       
    <browser:page
       for="*"
+      name="unknown_gites"
+      permission="zope.Public"
+      template="templates/unknown_gites.pt"
+      />
+
+   <browser:page
+      for="*"
       name="form_contact_proprio"
       template="templates/form_contact_proprio.pt"
       permission="zope.Public"
