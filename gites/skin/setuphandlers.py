@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import tempfile
+from zope.interface import alsoProvides
+from gites.skin.interfaces import (ISejourFuteRootFolder,
+                                   IIdeeSejourRootFolder)
 from zope.component import getUtility
 from zope.component import getMultiAdapter
 from plone.portlets.constants import CONTEXT_CATEGORY
@@ -13,7 +16,7 @@ from zope.app.component.interfaces import ISite
 from Products.LocalFS.LocalFS import manage_addLocalFS
 from gites.skin.portlets import (sejourfute, derniereminute, ideesejour,
                                  laboutiquefolder, ideesejourfolder)
-
+from gites.core.utils import (createFolder, publishObject)
 
 import logging
 logger = logging.getLogger('gites.skin')
@@ -31,8 +34,8 @@ def setupgites(context):
     setupLanguages(portal)
     createHebergement(portal)
     createContent(portal)
-    setupHomePortlets(portal)
     createLocalFS(portal)
+    setupHomePortlets(portal)
 
 
 def createHebergement(portal):
@@ -49,13 +52,6 @@ def createLocalFS(portal):
     if 'photos_heb' not in portal.objectIds():
         manage_addLocalFS(portal, 'photos_heb', 'Photos heb',
                           tempfile.gettempdir())
-
-
-def publishObject(obj):
-    portal_workflow = getToolByName(obj, 'portal_workflow')
-    if portal_workflow.getInfoFor(obj, 'review_state') in ['visible', 'private']:
-        portal_workflow.doActionFor(obj, 'publish')
-    return
 
 
 def setupLanguages(portal):
@@ -95,6 +91,12 @@ def changeFolderView(portal, folder, viewname):
     addViewToType(portal, 'Folder', viewname)
     if folder.getLayout() != viewname:
         folder.setLayout(viewname)
+
+
+def changePageView(portal, page, viewname):
+    addViewToType(portal, 'Document', viewname)
+    if page.getLayout() != viewname:
+        page.setLayout(viewname)
 
 
 def clearColumnPortlets(folder, column):
@@ -152,18 +154,6 @@ def createPage(parentFolder, documentId, documentTitle):
     return document
 
 
-def createFolder(parentFolder, folderId, folderTitle, excludeNav):
-    if folderId not in parentFolder.objectIds():
-        parentFolder.invokeFactory('Folder', folderId, title=folderTitle, excludeFromNav=excludeNav)
-    createdFolder = getattr(parentFolder, folderId)
-    createdFolder.reindexObject()
-    createdFolder.exclude_from_nav=excludeNav
-    createdFolder.reindexObject()
-    publishObject(createdFolder)
-    createdFolder.reindexObject()
-    return createdFolder
-
-
 def createTranslationsForObject(enObject):
     translatedObjects = []
     for lang in LANGUAGES:
@@ -185,6 +175,8 @@ def setupHomePortlets(folder):
     setupRightColumnPortlets(folder)
     ideeSejourFolder = getattr(folder, 'idee-sejour')
     setupPortlesInIdeeSejour(ideeSejourFolder)
+    associationFolder = getattr(folder, 'association')
+    setupPortletsInAssociation(associationFolder)
 
 
 def setupPortlesInIdeeSejour(folder):
@@ -195,6 +187,16 @@ def setupPortlesInIdeeSejour(folder):
     if 'ideesejourfolder' not in assignments.keys():
         assignment = ideesejourfolder.Assignment('Idee sejour Folder')
         assignments['ideesejourfolder'] = assignment
+    setupClassicPortlet(folder, 'portlet_outil', 'left')
+    setupClassicPortlet(folder, 'portlet_partenaires', 'left')
+
+
+def setupPortletsInAssociation(folder):
+    blockParentPortlets(folder)
+    setupRightColumnPortlets(folder)
+    manager = getManager(folder, 'left')
+    assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
+    setupClassicPortlet(folder, 'portlet_menu_association', 'left')
     setupClassicPortlet(folder, 'portlet_outil', 'left')
     setupClassicPortlet(folder, 'portlet_partenaires', 'left')
 
@@ -221,11 +223,13 @@ def createContent(portal):
 
     ideesSejourFolder = createFolder(portal, "idee-sejour", "Idées Séjours",
                                      True)
-    createPage(ideesSejourFolder, "idees-sejours", "Idées Séjours")
+    sejourPage = createPage(ideesSejourFolder, "idees-sejours", "Idées Séjours")
     ideesSejourFolder.setDefaultPage('idees-sejours')
     createTranslationsForObject(ideesSejourFolder)
     ideesSejourFolder.setConstrainTypesMode(1)
     ideesSejourFolder.setLocallyAllowedTypes(['IdeeSejourFolder'])
+    alsoProvides(ideesSejourFolder, IIdeeSejourRootFolder)
+    changeFolderView(portal, ideesSejourFolder, 'ideesejour_root')
 
     gitesMeublesFolder = createFolder(portal, "gites-meubles", "Gîtes Meublés",
                                       True)
@@ -296,8 +300,8 @@ def createContent(portal):
     createPage(dernieresMinutesFolder, "dernieres-minutes", "Dernières Minutes")
     dernieresMinutesFolder.setDefaultPage("dernieres-minutes")
     createTranslationsForObject(dernieresMinutesFolder)
-    ideesSejourFolder.setConstrainTypesMode(1)
-    ideesSejourFolder.setLocallyAllowedTypes(['DerniereMinute'])
+    dernieresMinutesFolder.setConstrainTypesMode(1)
+    dernieresMinutesFolder.setLocallyAllowedTypes(['DerniereMinute'])
 
     preparerSejourFolder = createFolder(portal, "preparer-sejour",
                                         "Préparer votre Séjour", True)
@@ -329,3 +333,10 @@ def createContent(portal):
     sejourFuteFolder = createFolder(portal, "sejour-fute", "Sejour Fute", True)
     sejourFuteFolder.setConstrainTypesMode(1)
     sejourFuteFolder.setLocallyAllowedTypes(['SejourFute'])
+    alsoProvides(sejourFuteFolder, ISejourFuteRootFolder)
+    changeFolderView(portal, sejourFuteFolder, 'sejourfute_root')
+
+    associationFolder = portal.association
+    createPage(associationFolder, "label-qualite", "Label Qualité")
+    createPage(associationFolder, "objectifs", "Objectifs")
+    createPage(associationFolder, "devenir-membre", "Devenir membre")

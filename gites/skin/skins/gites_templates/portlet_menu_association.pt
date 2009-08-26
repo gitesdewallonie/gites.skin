@@ -1,0 +1,48 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xml:lang="en"
+      lang="en"
+      i18n:domain="gites">
+<body>
+<div metal:define-macro="portlet">
+   <div id="portlet-menu-association"
+        tal:define="translate nocall:context/getTranslatedObjectUrl">
+      <dl class="portlet">
+         <dt class="portletHeader"
+             i18n:translate="association">
+           Association
+         </dt>
+
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="label_qualite"
+               tal:attributes="href python:translate('association/label-qualite')"
+               class="">Label de qualité</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="objectifs"
+               tal:attributes="href python:translate('association/objectifs')"
+               class="">Objectifs</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="acces_membre"
+               tal:attributes="href string:$portal_url/zone-membre"
+               class="">Accès membre</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="devenir_membre"
+               tal:attributes="href python:translate('association/devenir-membre')"
+               class="">Devenir membre</a>
+         </dd>
+
+         <dd class="portletItemLast">
+            <!--bas-->
+         </dd>
+      </dl>
+   </div>
+</div>
+</body>
+</html>
