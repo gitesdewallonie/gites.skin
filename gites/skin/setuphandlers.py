@@ -9,7 +9,7 @@ from plone.portlets.constants import CONTEXT_CATEGORY
 from plone.portlets.interfaces import IPortletManager
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import ILocalPortletAssignmentManager
-from plone.app.portlets.portlets import classic
+from plone.app.portlets.portlets import (classic, navigation)
 from Products.CMFCore.utils import getToolByName
 from Products.Five.component import enableSite
 from zope.app.component.interfaces import ISite
@@ -167,6 +167,8 @@ def setupHomePortlets(folder):
     setupPortlesInIdeeSejour(ideeSejourFolder)
     associationFolder = getattr(folder, 'association')
     setupPortletsInAssociation(associationFolder)
+    zoneMembreFolder = getattr(folder, 'zone-membre')
+    setupPortletsInZoneMembre(zoneMembreFolder)
 
 
 def setupPortlesInIdeeSejour(folder):
@@ -177,6 +179,18 @@ def setupPortlesInIdeeSejour(folder):
     if 'ideesejourfolder' not in assignments.keys():
         assignment = ideesejourfolder.Assignment('Idee sejour Folder')
         assignments['ideesejourfolder'] = assignment
+    setupClassicPortlet(folder, 'portlet_outil', 'left')
+    setupClassicPortlet(folder, 'portlet_partenaires', 'left')
+
+
+def setupPortletsInZoneMembre(folder):
+    blockParentPortlets(folder)
+    setupRightColumnPortlets(folder)
+    manager = getManager(folder, 'left')
+    assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
+    if 'navigation' not in assignments.keys():
+        assignment = navigation.Assignment('Zone Membre')
+        assignments['navigation'] = assignment
     setupClassicPortlet(folder, 'portlet_outil', 'left')
     setupClassicPortlet(folder, 'portlet_partenaires', 'left')
 
