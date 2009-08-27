@@ -90,4 +90,8 @@
         editview=".laboutiquefolder.EditForm"
         />
 
+       <plone:portletRenderer
+         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+         layer="gites.skin.browser.interfaces.IGitesTheme"
+         class=".navigation.Renderer" />
 </configure>
