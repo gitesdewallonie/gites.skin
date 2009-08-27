@@ -16,7 +16,7 @@ from zope.app.component.interfaces import ISite
 from Products.LocalFS.LocalFS import manage_addLocalFS
 from gites.skin.portlets import (sejourfute, derniereminute, ideesejour,
                                  laboutiquefolder, ideesejourfolder)
-from gites.core.utils import (createFolder, publishObject)
+from gites.core.utils import (createFolder, publishObject, createPage)
 
 import logging
 logger = logging.getLogger('gites.skin')
@@ -142,16 +142,6 @@ def movePortlet(folder, name, column, position):
     keys.remove(name)
     keys.insert(position, name)
     assignments.updateOrder(keys)
-
-
-def createPage(parentFolder, documentId, documentTitle):
-    if documentId not in parentFolder.objectIds():
-        parentFolder.invokeFactory('Document', documentId, title=documentTitle)
-    document = getattr(parentFolder, documentId)
-    #By default, created page are written in English
-    #XXX bug here : document.setLanguage('en')
-    publishObject(document)
-    return document
 
 
 def createTranslationsForObject(enObject):
