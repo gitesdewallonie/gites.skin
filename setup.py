@@ -25,6 +25,7 @@ setup(name='gites.skin',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'zc.table',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
