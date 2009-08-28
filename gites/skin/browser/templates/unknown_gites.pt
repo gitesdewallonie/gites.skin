@@ -9,7 +9,7 @@
     <div metal:use-macro="here/document_actions/macros/document_actions">
         Document Actions
     </div>
-  <img src="" tal:attributes="src string:{portal_url}/picto/o_alerte.png"/>
+  <img src="picto/o_alerte.png"/>
   <span class="unknown_gites" i18n:translate="unknown_gites">La référence de l'hébergement <span
   i18n:name="heb_pk" tal:content="request/heb_pk|nothing"/> n'est pas valide</span>
 

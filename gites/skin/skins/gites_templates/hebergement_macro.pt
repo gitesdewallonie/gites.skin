@@ -148,7 +148,7 @@
 
          <div id="type_heb"
                tal:condition="python:heb.type.type_heb_code == 'MH'">
-               <span tal:content="view/getTypeHebergement">Maison d'hôtes</span>
+               <span tal:content="view/getTypeHebergement">Maison d'h&ocirc;tes</span>
             <br />
             <div id="heb_ref">
                n : <span tal:content="heb/heb_pk" />
@@ -472,7 +472,7 @@
          <div tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p>''">
             <table id="tarification-chambre">
                <tr align="center">
-                  <td class="bg-chambre"><span i18n:translate="table_d_hote">Table d'hôte</span></td>
+                  <td class="bg-chambre"><span i18n:translate="table_d_hote">Table d'h&ocirc;te</span></td>
                   <td>
                   <span tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p>0">
                      <span tal:content="heb/heb_tarif_chmbr_table_hote_1p" />
