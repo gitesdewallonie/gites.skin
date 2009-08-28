@@ -3,20 +3,19 @@ import tempfile
 from zope.interface import alsoProvides
 from gites.skin.interfaces import (ISejourFuteRootFolder,
                                    IIdeeSejourRootFolder)
-from zope.component import getUtility
 from zope.component import getMultiAdapter
 from plone.portlets.constants import CONTEXT_CATEGORY
-from plone.portlets.interfaces import IPortletManager
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import ILocalPortletAssignmentManager
-from plone.app.portlets.portlets import (classic, navigation)
+from plone.app.portlets.portlets import (navigation)
 from Products.CMFCore.utils import getToolByName
 from Products.Five.component import enableSite
 from zope.app.component.interfaces import ISite
 from Products.LocalFS.LocalFS import manage_addLocalFS
 from gites.skin.portlets import (sejourfute, derniereminute, ideesejour,
                                  laboutiquefolder, ideesejourfolder)
-from gites.core.utils import (createFolder, publishObject, createPage)
+from gites.core.utils import (createFolder, publishObject, createPage,
+                              setupClassicPortlet, getManager, clearPortlets)
 
 import logging
 logger = logging.getLogger('gites.skin')
@@ -70,14 +69,6 @@ def setupNewsletter(folder):
     newsletter.reindexObject()
 
 
-def getManager(folder, column):
-    if column == 'left':
-        manager = getUtility(IPortletManager, name=u'plone.leftcolumn', context=folder)
-    else:
-        manager = getUtility(IPortletManager, name=u'plone.rightcolumn', context=folder)
-    return manager
-
-
 def addViewToType(portal, typename, templatename):
     pt = getToolByName(portal, 'portal_types')
     foldertype = getattr(pt, typename)
@@ -99,18 +90,6 @@ def changePageView(portal, page, viewname):
         page.setLayout(viewname)
 
 
-def clearColumnPortlets(folder, column):
-    manager = getManager(folder, column)
-    assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
-    for portlet in assignments:
-        del assignments[portlet]
-
-
-def clearPortlets(folder):
-    clearColumnPortlets(folder, 'left')
-    clearColumnPortlets(folder, 'right')
-
-
 def blockParentPortlets(folder):
     manager = getManager(folder, 'left')
     assignable = getMultiAdapter((folder, manager), ILocalPortletAssignmentManager)
@@ -119,17 +98,6 @@ def blockParentPortlets(folder):
     manager = getManager(folder, 'right')
     assignable = getMultiAdapter((folder, manager), ILocalPortletAssignmentManager)
     assignable.setBlacklistStatus(CONTEXT_CATEGORY, True)
-
-
-def setupClassicPortlet(folder, template, column):
-    #Add classic portlet (using template) to folder
-    manager = getManager(folder, column)
-    assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
-
-    assignment = classic.Assignment(template=template, macro='portlet')
-    if template in assignments:
-        del assignments[template]
-    assignments[template] = assignment
 
 
 def movePortlet(folder, name, column, position):
@@ -185,14 +153,11 @@ def setupPortlesInIdeeSejour(folder):
 
 def setupPortletsInZoneMembre(folder):
     blockParentPortlets(folder)
-    setupRightColumnPortlets(folder)
     manager = getManager(folder, 'left')
     assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
     if 'navigation' not in assignments.keys():
         assignment = navigation.Assignment('Zone Membre')
         assignments['navigation'] = assignment
-    setupClassicPortlet(folder, 'portlet_outil', 'left')
-    setupClassicPortlet(folder, 'portlet_partenaires', 'left')
 
 
 def setupPortletsInAssociation(folder):
