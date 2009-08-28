@@ -1,0 +1,1 @@
+gites_map http://svn.affinitic.be/flash/gites

@@ -11,14 +11,19 @@
  <object name="gites_styles"
          meta_type="Filesystem Directory View"
          directory="gites.skin:skins/gites_styles"/>
+ <object name="gitesmap"
+         meta_type="Filesystem Directory View"
+         directory="gites.skin:skins/gitesmap"/>
 
- <skin-path name="GitesSkin" 
+ <skin-path name="GitesSkin"
             based-on="Plone Default">
   <layer name="gites_images"
          insert-after="custom"/>
   <layer name="gites_templates"
          insert-after="gites_images"/>
-  <layer name="gites_styles"
+  <layer name="gites_templates"
+      insert-after="gites_images"/>
+  <layer name="gitesmap"
          insert-after="gites_templates"/>
  </skin-path>
 
