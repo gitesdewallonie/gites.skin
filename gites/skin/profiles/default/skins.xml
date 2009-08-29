@@ -19,10 +19,10 @@
             based-on="Plone Default">
   <layer name="gites_images"
          insert-after="custom"/>
-  <layer name="gites_templates"
+  <layer name="gites_styles"
          insert-after="gites_images"/>
   <layer name="gites_templates"
-      insert-after="gites_images"/>
+      insert-after="gites_styles"/>
   <layer name="gitesmap"
          insert-after="gites_templates"/>
  </skin-path>
