@@ -132,14 +132,14 @@ def setupHomePortlets(folder):
     setupClassicPortlet(folder, 'portlet_partenaires', 'left')
     setupRightColumnPortlets(folder)
     ideeSejourFolder = getattr(folder, 'idee-sejour')
-    setupPortlesInIdeeSejour(ideeSejourFolder)
+    setupPortletsInIdeeSejour(ideeSejourFolder)
     associationFolder = getattr(folder, 'association')
     setupPortletsInAssociation(associationFolder)
     zoneMembreFolder = getattr(folder, 'zone-membre')
     setupPortletsInZoneMembre(zoneMembreFolder)
 
 
-def setupPortlesInIdeeSejour(folder):
+def setupPortletsInIdeeSejour(folder):
     blockParentPortlets(folder)
     setupRightColumnPortlets(folder)
     manager = getManager(folder, 'left')
