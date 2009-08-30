@@ -12,6 +12,7 @@ from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from z3c.sqlalchemy import getSAWrapper
 from sqlalchemy import and_, or_
+import plone.z3cform.z2
 
 
 class SearchHebergement(formbase.PageForm):
@@ -149,3 +150,7 @@ class BasicSearchHebergement(SearchHebergement):
     too_much_form_fields = form.FormFields(IBasicSearchHebergementTooMuch)
 
     search_results = ViewPageTemplateFile('templates/search_results_hebergement.pt')
+
+    def update(self):
+        self.request.locale = plone.z3cform.z2.setup_locale(self.request)
+        super(BasicSearchHebergement, self).update()
