@@ -41,6 +41,10 @@
             </tr>
          </table><!--table-description-->
 
+         <!-- infos proprios-->
+         <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
+
+         <!-- infos touristiques -->
          <div id="heb_info_trouristique"
               tal:define="maisonTourisme heb/getMaisonTourisme">
             <fieldset>
@@ -110,7 +114,6 @@
             </fieldset>
          </div><!-- info touristique -->
 
-         <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
 
          <br /><br /><br />
          <div id="navigation_bas">
