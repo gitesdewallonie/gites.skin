@@ -2,15 +2,15 @@
      metal:define-macro="portal_footer"
      i18n:domain="plone"
      tal:define="portal_url context/portal_url">
-        
+
         <div id="coordonnee">
-            Fédération des Gites de Wallonie asbl. &copy; 2004 - 
+            Fédération des Gites de Wallonie asbl. &copy; 2004 -
             <span tal:define="now modules/DateTime/DateTime"
                   tal:replace="now/year" />
             <span i18n:domain="gites.skin"
                   i18n:translate="gites_copyright">
                -  All rights reserved.
-               - avenue Prince de Liège, 1/21 
+               - avenue Prince de Liège, 1/21
                - B5100 Jambes (Namur)
                <br />
                <a href="contact-info">info@gitesdewallonie.be</a>
@@ -21,9 +21,9 @@
            <div id="marque">
               <a href="http://plone.org"
                  target="_blank"
-                 title="This site was built using Plone CMS, 
-                        the Open Source Content Management System. 
-                        Click for more information."
+                 title="This site was built using Plone CMS, the Open Source Content Management System.
+Click for more information."
+                 i18n:domain="gites.skin"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                  <img src="plone_powered.gif" /></a>

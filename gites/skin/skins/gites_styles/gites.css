@@ -19,10 +19,12 @@ margin-right:auto;
 background-color:transparent; /*#ecf6eb;*/
 background-image:url(fond-bandeau.png);
 background-repeat:no-repeat;
-width:952px !important;
+background-position: top center;
+/*width:952px !important;*/
+width:100% !important;
 height:175px;
-border-left:2px solid #086038;
-border-right:2px solid #086038;
+/*border-left:2px solid #086038;*/
+/*border-right:2px solid #086038;*/
 }
 
 #gites-logo{
@@ -118,24 +120,25 @@ background-color:transparent;
 background-image:url(pied_bandeau.png);
 background-repeat:repeat-x;
 height:20px;
-width:952px !important;
+/*width:952px !important;*/
 }
 
 
 /*** PLONE ***/
 #portal-columns{
-width:954px !important;
+/*width:954px !important;*/
+width:95% !important;
 margin-left:auto;
 margin-right:auto;
 margin-top:-6px;
-border-left:2px solid #086038;
-border-right:2px solid #086038;
+/*border-left:2px solid #086038;*/
+/*border-right:2px solid #086038;*/
 }
 
 
 #portal-top {
 background-color:transparent;
-width:961px;
+/*width:961px;*/
 margin:auto;
 padding:0pt;
 }
@@ -194,14 +197,16 @@ margin-top: 0px;
 /*** FOOTER GITES ***/
 #footer-gites {
 background-color: transparent;
-width:943px;
+/*width:943px;*/
+width:90% !important;
 margin-left:auto;
 margin-right:auto;
 margin-bottom:3em;
-border-left:2px solid #086038;
-border-right:2px solid #086038;
-border-bottom:2px solid #086038;
-padding:0px 5px 3px 5px;
+border:1px solid #E7C46B;
+/*border-left:2px solid #086038;*/
+/*border-right:2px solid #086038;*/
+/*border-bottom:2px solid #086038;*/
+padding:10px 5px 3px 5px;
 color:#fff;
 text-align:center;
 }
