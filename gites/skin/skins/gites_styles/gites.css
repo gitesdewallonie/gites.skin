@@ -29,10 +29,13 @@ height:175px;
 
 #gites-logo{
 position:relative;
+margin-left:auto;
+margin-right:auto;
 top:13px;
-left:6px;
+left:-428px;
 width:88px;
 height:88px;
+border:1px solid #f00;
 }
 
 #gites-logo a{
@@ -198,7 +201,7 @@ margin-top: 0px;
 #footer-gites {
 background-color: transparent;
 /*width:943px;*/
-width:90% !important;
+width:98% !important;
 margin-left:auto;
 margin-right:auto;
 margin-bottom:3em;
@@ -821,59 +824,59 @@ vertical-align: top;
 }
 
 #heb_commentaire{
-  height:200px;
-  margin-left:5px;
-  padding:5px;
-  display:none;
-
+height:200px;
+margin-left:5px;
+padding:5px;
+display:none;
 }
 
 #contact-proprio{
-  background-color:#DDD;
-  margin-top: 8px;
-  text-align:right;
-  padding-right:0.8em;
-  height: 1.8em;
+background-color:#DDD;
+margin-top: 8px;
+text-align:right;
+padding-right:0.8em;
+height: 1.8em;
 }
 
 #contact-proprio a:hover{
-  color:#F00;
+color:#F00;
 }
 
 .bg-chambre{
-  background-color:#82a7ea;
-  height:40px;
+background-color:#82a7ea;
+height:40px;
 }
 
 .bg-chambre-data{
-  background-color:#ced8e2;
+background-color:#ced8e2;
 }
 .bg-gite{
-  background-color:#ace087;
-  height:40px;
+background-color:#ace087;
+height:40px;
 }
 
 .field-des{
-  margin-left:4px;
+margin-left:4px;
 }
 
 .leg-des{
-  font-weight:bold;
-  font-size:0.8em;
+font-weight:bold;
+font-size:0.8em;
+color:#B37025    /*#CA6E20;*/  /*#17700D;*/
 }
 
 .leg-des-rem{
-  font-weight:bold;
-  font-size:0.8em;
-  color:#F00;
+font-weight:bold;
+font-size:0.8em;
+color:#F00;
 }
 
 .floatleft{
-  float:left;
+float:left;
 }
 
 .floatright{
-  float:right;
+float:right;
 }
 
 #navigation_bas{
