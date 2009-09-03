@@ -36,6 +36,3 @@ class ApplicaTranslatableLanguageSelector(TranslatableLanguageSelector):
     """Language selector for translatable content.
     """
     render = ViewPageTemplateFile('templates/language_selector.pt')
-
-
-

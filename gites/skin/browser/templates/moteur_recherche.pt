@@ -64,7 +64,7 @@
             <div id="moteur-carte">
                <div id="btn-carto1">
                   
-                  <a href="hebergement_map"
+                  <a href=""
                      i18n:translate="recherche_cartographique"
                      tal:attributes="href string:${context/absolute_url}/map">
                      recherche cartographique
