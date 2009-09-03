@@ -286,8 +286,7 @@ def createContent(portal):
     createTranslationsForObject(proposerHebergementFolder)
 
     mapFolder = createFolder(portal, "map", "Map", True)
-    createPage(mapFolder, "map", "Map")
-    mapFolder.setDefaultPage("map")
+    changeFolderView(portal, mapFolder, 'hebergement_map')
     createTranslationsForObject(mapFolder)
 
     signaletiquesFolder = createFolder(portal, "signaletiques", "Signalétiques",
