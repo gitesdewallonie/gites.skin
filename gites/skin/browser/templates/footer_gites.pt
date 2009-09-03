@@ -7,7 +7,7 @@
             Fédération des Gites de Wallonie asbl. &copy; 2004 -
             <span tal:define="now modules/DateTime/DateTime"
                   tal:replace="now/year" />
-            <span i18n:domain="gites.skin"
+            <span i18n:domain="gites"
                   i18n:translate="gites_copyright">
                -  All rights reserved.
                - avenue Prince de Liège, 1/21
@@ -23,7 +23,7 @@
                  target="_blank"
                  title="This site was built using Plone CMS, the Open Source Content Management System.
 Click for more information."
-                 i18n:domain="gites.skin"
+                 i18n:domain="gites"
                  i18n:attributes="title title_built_with_plone;"
                  i18n:translate="label_powered_by_plone">
                  <img src="plone_powered.gif" /></a>
@@ -31,7 +31,7 @@ Click for more information."
               <a href="http://www.affinitic.be"
                  target="_blank"
                  title="This site has been developed and is hosted by Affinitic."
-                 i18n:domain="gites.skin"
+                 i18n:domain="gites"
                  i18n:attributes="title title_developed_affinitic;"
                  i18n:translate="label_affinitic">
                  <img src="affinitic_powered.gif" /></a>
