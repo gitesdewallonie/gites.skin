@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-09-06 12:18+0000\n"
+"POT-Creation-Date: 2009-09-06 12:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,8 +49,80 @@ msgstr ""
 msgid "Are people allowed to smoke in the Hebergement"
 msgstr ""
 
+msgid "Chambre d'hote"
+msgstr ""
+
 #: ./browser/interfaces.py:169
 msgid "Classification"
+msgstr ""
+
+msgid "Gites et Meubles"
+msgstr ""
+
+msgid "GitesContent_help_category"
+msgstr ""
+
+msgid "GitesContent_help_description"
+msgstr ""
+
+msgid "GitesContent_help_endDate"
+msgstr ""
+
+msgid "GitesContent_help_eventEndDate"
+msgstr ""
+
+msgid "GitesContent_help_eventStartDate"
+msgstr ""
+
+msgid "GitesContent_help_hebergements"
+msgstr ""
+
+msgid "GitesContent_help_hebergementsConcernes"
+msgstr ""
+
+msgid "GitesContent_help_maisonsTourisme"
+msgstr ""
+
+msgid "GitesContent_help_startDate"
+msgstr ""
+
+msgid "GitesContent_help_text"
+msgstr ""
+
+msgid "GitesContent_label_category"
+msgstr ""
+
+msgid "GitesContent_label_description"
+msgstr ""
+
+msgid "GitesContent_label_endDate"
+msgstr ""
+
+msgid "GitesContent_label_eventEndDate"
+msgstr ""
+
+msgid "GitesContent_label_eventStartDate"
+msgstr ""
+
+msgid "GitesContent_label_hebergements"
+msgstr ""
+
+msgid "GitesContent_label_hebergementsConcernes"
+msgstr ""
+
+msgid "GitesContent_label_logo"
+msgstr ""
+
+msgid "GitesContent_label_maisonsTourisme"
+msgstr ""
+
+msgid "GitesContent_label_photo"
+msgstr ""
+
+msgid "GitesContent_label_startDate"
+msgstr ""
+
+msgid "GitesContent_label_text"
 msgstr ""
 
 #: ./browser/interfaces.py:355
@@ -59,6 +131,12 @@ msgstr ""
 
 #: ./browser/interfaces.py:157
 msgid "Hebergement Type"
+msgstr ""
+
+msgid "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait utile de l'affiner."
+msgstr ""
+
+msgid "La recherche n'a pas renvoy&eacute; de r&eacute;sultats."
 msgstr ""
 
 #: ./browser/interfaces.py:174
@@ -192,6 +270,10 @@ msgstr ""
 #. Default: "carte"
 #: ./skins/gites_templates/hebergement_macro.pt:384
 msgid "carte"
+msgstr ""
+
+#. Default: "Chambre d'h\303\264tes"
+msgid "chambre_hotes"
 msgstr ""
 
 #. Default: "Chambres d'hôtes"
@@ -384,6 +466,14 @@ msgstr ""
 msgid "gare"
 msgstr ""
 
+#. Default: "G\303\256te \303\240 la ferme"
+msgid "gite_a_la_ferme"
+msgstr ""
+
+#. Default: "${number} Gite ou Chambre d'h\303\264tes \303\240 proximit\303\251"
+msgid "gite_a_proximite"
+msgstr ""
+
 #. Default: "Gîte accessible à tous"
 #: ./skins/gites_templates/hebergement_macro.pt:173
 msgid "gite_accessible_a_tous"
@@ -409,6 +499,10 @@ msgstr ""
 msgid "gite_bebe_tendresse"
 msgstr ""
 
+#. Default: "G\303\256te citadin"
+msgid "gite_citadin"
+msgstr ""
+
 #. Default: "Gîte &eacute;questre"
 #: ./skins/gites_templates/hebergement_macro.pt:212
 msgid "gite_equestre"
@@ -429,9 +523,21 @@ msgstr ""
 msgid "gite_peche"
 msgstr ""
 
+#. Default: "G\303\256te rural"
+msgid "gite_rural"
+msgstr ""
+
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: ./browser/templates/footer_gites.pt:10
 msgid "gites_copyright"
+msgstr ""
+
+#. Default: "Gites et Meubl\303\251s"
+msgid "gites_et_meubles"
+msgstr ""
+
+#. Default: "Gites Meubles"
+msgid "gites_meubles"
 msgstr ""
 
 #. Default: "Up one level"
@@ -477,6 +583,10 @@ msgstr ""
 #. Default: "Idées séjours"
 #: ./browser/templates/ideesejourroot.pt:10
 msgid "idees_sejours"
+msgstr ""
+
+#. Default: "Il existe"
+msgid "il_existe"
 msgstr ""
 
 #. Default: "in"
@@ -634,6 +744,10 @@ msgstr ""
 msgid "maison_du_tourisme"
 msgstr ""
 
+#. Default: "Maison d'h\303\264tes"
+msgid "maison_hotes"
+msgstr ""
+
 #. Default: "Membre d'Eurog&icirc;tes"
 #: ./skins/gites_templates/portlet_partenaires.pt:8
 msgid "membre_eurogites"
@@ -662,6 +776,10 @@ msgstr ""
 #. Default: "<br />Idées Séjours"
 #: ./browser/templates/header_gites.pt:13
 msgid "menu_idee_sejour"
+msgstr ""
+
+#. Default: "Meubl\303\251"
+msgid "meuble"
 msgstr ""
 
 #. Default: "Micro-onde"
@@ -707,6 +825,10 @@ msgstr ""
 #. Default: "Nombre de personne"
 #: ./browser/templates/form_contact_proprio.pt:207
 msgid "nombre_personnes"
+msgstr ""
+
+#. Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
+msgid "not_hebergement_correspondant"
 msgstr ""
 
 #. Default: "Il n'y a aucune derni&egrave;re minute"
@@ -874,6 +996,14 @@ msgstr ""
 msgid "sky"
 msgstr ""
 
+#. Default: "Avec le soutien du Commissariat g\303\251n\303\251ral"
+msgid "soutien_commissariat_ligne_1"
+msgstr ""
+
+#. Default: "au Tourisme du Minist\303\250re de la R\303\251gion wallonne"
+msgid "soutien_commissariat_ligne_2"
+msgstr ""
+
 #. Default: "Sports nautiques"
 #: ./skins/gites_templates/hebergement_macro.pt:698
 msgid "sports-nautiques"
@@ -887,6 +1017,10 @@ msgstr ""
 #. Default: "Table d'h&ocirc;te"
 #: ./skins/gites_templates/hebergement_macro.pt:475
 msgid "table_d_hote"
+msgstr ""
+
+#. Default: "Table d'h\303\264tes"
+msgid "table_hotes"
 msgstr ""
 
 #. Default: "Tarif 2p d&eacute;j"
@@ -949,6 +1083,10 @@ msgstr ""
 msgid "title_required"
 msgstr ""
 
+#. Default: "Tout voir"
+msgid "tout_voir"
+msgstr ""
+
 #. Default: "Type"
 #: ./skins/gites_templates/hebergement_macro.pt:483
 msgid "type"
@@ -987,6 +1125,10 @@ msgstr ""
 #. Default: "V&eacute;lo"
 #: ./skins/gites_templates/hebergement_macro.pt:752
 msgid "velo"
+msgstr ""
+
+#. Default: "Voir la liste"
+msgid "voir_la_liste"
 msgstr ""
 
 #. Default: "VTT"
