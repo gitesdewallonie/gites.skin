@@ -3,6 +3,7 @@ from zope.interface import implements
 from zope.security.interfaces import Unauthorized
 from interfaces import ILogoView
 
+
 class LogoView(BrowserView):
     """
     Logo
