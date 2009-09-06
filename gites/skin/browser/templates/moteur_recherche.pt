@@ -1,6 +1,7 @@
 <table id="moteur-recherche"
        cellspacing="0"
-       cellpadding="4">
+       cellpadding="4"
+       i18n:domain="gites">
       <tr bgcolor="#f9e7c6">
          <td>
             <div id="moteur-form">

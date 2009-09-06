@@ -1,5 +1,5 @@
-
-<div id="header-gites">
+<div id="header-gites"
+     i18n:domain="gites">
     <div id="gites-logo">
         <a href=""
            tal:attributes="href string: ${context/portal_url}"></a>
@@ -24,7 +24,7 @@
             <td id="btn-maison-rouge">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/association"
-                   i18n:translate="menu_assocoation"><br />L'association</a></td>
+                   i18n:translate="menu_association"><br />L'association</a></td>
             <td id="btn-maison-rose">
                 <a href=""
                    tal:attributes="href string: ${context/portal_url}/contacts"

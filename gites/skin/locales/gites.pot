@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2009-09-06 10:26+0000\n"
+"POT-Creation-Date: 2009-09-06 12:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,7 +135,7 @@ msgid "acces_membre"
 msgstr ""
 
 #. Default: "Rechercher"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:68
+#: ./browser/templates/moteur_recherche.pt:55
 msgid "action_search"
 msgstr ""
 
@@ -539,6 +539,11 @@ msgstr ""
 msgid "label_confort"
 msgstr ""
 
+#. Default: "Nombre de personnes :"
+#: ./browser/templates/moteur_recherche.pt:31
+msgid "label_nombre_personnes"
+msgstr ""
+
 #. Default: "<img src=\"plone_powered.gif\" />"
 #: ./browser/templates/footer_gites.pt:22
 msgid "label_powered_by_plone"
@@ -549,8 +554,13 @@ msgstr ""
 msgid "label_qualite"
 msgstr ""
 
-#. Default: "Recherche rapide"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:98
+#. Default: "Je cherche"
+#: ./browser/templates/moteur_recherche.pt:14
+msgid "label_recherche"
+msgstr ""
+
+#. Default: "Référence :"
+#: ./browser/templates/moteur_recherche.pt:84
 msgid "label_reference"
 msgstr ""
 
@@ -627,6 +637,31 @@ msgstr ""
 #. Default: "Membre d'Eurog&icirc;tes"
 #: ./skins/gites_templates/portlet_partenaires.pt:8
 msgid "membre_eurogites"
+msgstr ""
+
+#. Default: "<br />L'association"
+#: ./browser/templates/header_gites.pt:25
+msgid "menu_association"
+msgstr ""
+
+#. Default: "<br />Chambres d'Hôtes"
+#: ./browser/templates/header_gites.pt:21
+msgid "menu_chambres_hotes"
+msgstr ""
+
+#. Default: "<br />Contacts"
+#: ./browser/templates/header_gites.pt:29
+msgid "menu_contacts"
+msgstr ""
+
+#. Default: "<br />Gîtes et Meublés"
+#: ./browser/templates/header_gites.pt:17
+msgid "menu_gites_meubles"
+msgstr ""
+
+#. Default: "<br />Idées Séjours"
+#: ./browser/templates/header_gites.pt:13
+msgid "menu_idee_sejour"
 msgstr ""
 
 #. Default: "Micro-onde"
@@ -767,6 +802,16 @@ msgstr ""
 #. Default: "RAVEL"
 #: ./skins/gites_templates/hebergement_macro.pt:770
 msgid "ravel"
+msgstr ""
+
+#. Default: "recherche avancée"
+#: ./browser/templates/moteur_recherche.pt:97
+msgid "recherche_avancee"
+msgstr ""
+
+#. Default: "recherche cartographique"
+#: ./browser/templates/moteur_recherche.pt:68
+msgid "recherche_cartographique"
 msgstr ""
 
 #. Default: "REMARQUE"
