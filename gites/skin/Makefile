@@ -15,7 +15,6 @@ extract-translations:
 
 .PHONY: update-translations
 update-translations:
-	../../../../i18n/bin/i18ndude merge --pot locales/gites.pot --merge locales/manual.pot
 	msgmerge -U --backup=off locales/fr/LC_MESSAGES/gites.po locales/gites.pot
 	msgmerge -U --backup=off locales/en/LC_MESSAGES/gites.po locales/gites.pot
 	msgmerge -U --backup=off locales/de/LC_MESSAGES/gites.po locales/gites.pot
