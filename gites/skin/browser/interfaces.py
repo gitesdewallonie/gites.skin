@@ -188,11 +188,11 @@ class ISearchHebergement(Interface):
                               required=False)
 
     fromDate = schema.Date(title=_('Sejour du'),
-                              description=_(''),
+                              description=_('Stay from'),
                               required=False)
 
     toDate = schema.Date(title=_('Sejour au'),
-                              description=_(''),
+                              description=_('Stay to'),
                               required=False)
 
 
@@ -236,11 +236,11 @@ class IBasicSearchHebergement(Interface):
                           required=False)
 
     fromDate = schema.Date(title=_('Sejour du'),
-                              description=_(''),
+                              description=_('Stay from'),
                               required=False)
 
     toDate = schema.Date(title=_('Sejour au'),
-                              description=_(''),
+                              description=_('Stay to'),
                               required=False)
 
 
@@ -287,11 +287,11 @@ class IBasicSearchHebergementTooMuch(Interface):
                           required=False)
 
     fromDate = schema.Date(title=_('Sejour du'),
-                              description=_(''),
+                              description=_('Stay from'),
                               required=False)
 
     toDate = schema.Date(title=_('Sejour au'),
-                              description=_(''),
+                              description=_('Stay to'),
                               required=False)
 
 
@@ -339,11 +339,11 @@ class ISearchHebergementTooMuch(Interface):
                           required=False)
 
     fromDate = schema.Date(title=_('Sejour du'),
-                              description=_(''),
+                              description=_('Stay from'),
                               required=False)
 
     toDate = schema.Date(title=_('Sejour au'),
-                              description=_(''),
+                              description=_('Stay to'),
                               required=False)
 
 
