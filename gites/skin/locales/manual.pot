@@ -95,23 +95,11 @@ msgstr ""
 msgid "gite_a_proximite"
 msgstr ""
 
-# Default: "${number} Gites et Chambres d'h\303\264tes \303\240 proximit\303\251"
-msgid "gites_a_proximite"
-msgstr ""
-
-# Default: "${number} Chambre d'h\303\264tes \303\240 proximit\303\251"
-msgid "chambre_a_proximite"
-msgstr ""
-
-# Default: "${number} Chambres d'h\303\264tes \303\240 proximit\303\251"
-msgid "chambres_a_proximite"
-msgstr ""
-
 # Default: "Il existe"
 msgid "il_existe"
 msgstr ""
 
-# Default: "Il n'y a aucun h&eacute;bergement correspondant &agrave; ces crit&egrave;res"
+# Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
 msgid "not_hebergement_correspondant"
 msgstr ""
 

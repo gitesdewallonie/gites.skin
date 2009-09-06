@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-09-06 12:18+0000\n"
+"POT-Creation-Date: 2009-09-06 12:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -51,9 +51,85 @@ msgstr "Sind Tiere in der Unterkunft zugelassen?"
 msgid "Are people allowed to smoke in the Hebergement"
 msgstr "Handelt es sich um eine Unterkunft für Raucher?"
 
+msgid "Chambre d'hote"
+msgstr "Gästezimmer"
+
 #: browser/interfaces.py:169
 msgid "Classification"
 msgstr "Einstufung"
+
+msgid "Gites et Meubles"
+msgstr "Ferienhäuser"
+
+msgid "GitesContent_help_category"
+msgstr "Art Last Minute"
+
+msgid "GitesContent_help_description"
+msgstr "Kurzbeschreibung des Aufenthalts für schlaue Füchse"
+
+msgid "GitesContent_help_endDate"
+msgstr "Datum, an dem der Aufenthalt nicht mehr erscheint"
+
+msgid "GitesContent_help_eventEndDate"
+msgstr "Datum, an dem die Veranstaltung endet"
+
+msgid "GitesContent_help_eventStartDate"
+msgstr "Anfang Veranstaltung"
+
+msgid "GitesContent_help_hebergements"
+msgstr "Liste der für diese Aufenthaltsidee in Frage kommenden Unterkünfte"
+
+msgid "GitesContent_help_hebergementsConcernes"
+msgstr ""
+"Für die Sonderaktion oder das Last-Minute-Angebot in Frage kommende "
+"Unterkunft"
+
+msgid "GitesContent_help_maisonsTourisme"
+msgstr ""
+"Für diese Art von Aufenthalt für schlaue Füchse in Frage kommende Häuser des "
+"Tourismus"
+
+msgid "GitesContent_help_startDate"
+msgstr "Datum, an dem der Aufenthalt erscheint"
+
+msgid "GitesContent_help_text"
+msgstr "Ausführliche Beschreibung des Aufenthalts für schlaue Füchse"
+
+msgid "GitesContent_label_category"
+msgstr "Art"
+
+msgid "GitesContent_label_description"
+msgstr "Beschreibung"
+
+msgid "GitesContent_label_endDate"
+msgstr "Datum Rückziehung"
+
+msgid "GitesContent_label_eventEndDate"
+msgstr "Ende Veranstaltung"
+
+msgid "GitesContent_label_eventStartDate"
+msgstr "Anfang Veranstaltung"
+
+msgid "GitesContent_label_hebergements"
+msgstr "In Frage kommende Unterkünfte"
+
+msgid "GitesContent_label_hebergementsConcernes"
+msgstr "Liste der in Frage kommenden Unterkünfte"
+
+msgid "GitesContent_label_logo"
+msgstr "Logo"
+
+msgid "GitesContent_label_maisonsTourisme"
+msgstr "Haus des Tourismus"
+
+msgid "GitesContent_label_photo"
+msgstr "Foto"
+
+msgid "GitesContent_label_startDate"
+msgstr "Datum Aktivierung"
+
+msgid "GitesContent_label_text"
+msgstr "Text"
 
 #: browser/interfaces.py:355
 msgid "Heb Pk"
@@ -62,6 +138,16 @@ msgstr ""
 #: browser/interfaces.py:157
 msgid "Hebergement Type"
 msgstr "Unterkunftsart"
+
+msgid ""
+"La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait "
+"utile de l'affiner."
+msgstr ""
+"Die Suche hat ${nbr} Ergebnisse ergeben. <br /> Sie sollten die Suche "
+"verfeinern."
+
+msgid "La recherche n'a pas renvoy&eacute; de r&eacute;sultats."
+msgstr "Kein Ergebnis gefunden."
 
 #: browser/interfaces.py:174
 msgid "Minimum Capacity"
@@ -210,6 +296,11 @@ msgstr "Kapazität"
 #: skins/gites_templates/hebergement_macro.pt:384
 msgid "carte"
 msgstr "Karte"
+
+# Default: "Chambre d'h\303\264tes"
+#. Default: "Chambre d'h\303\264tes"
+msgid "chambre_hotes"
+msgstr "Gästezimmer"
 
 # Default: "Chambres d'h\303\264tes"
 #. Default: "Chambres d'hôtes"
@@ -439,6 +530,16 @@ msgstr "Garantie"
 msgid "gare"
 msgstr "Bahnhof"
 
+# Default: "G\303\256te \303\240 la ferme"
+#. Default: "G\303\256te \303\240 la ferme"
+msgid "gite_a_la_ferme"
+msgstr "Ferienhaus auf dem Bauernhof"
+
+# Default: "${number} Gite ou Chambre d'h\303\264tes \303\240 proximit\303\251"
+#. Default: "${number} Gite ou Chambre d'h\303\264tes \303\240 proximit\303\251"
+msgid "gite_a_proximite"
+msgstr "${number} Ferienhaus oder Gästezimmer in der Nähe"
+
 # Default: "G\303\256te accessible \303\240 tous"
 #. Default: "Gîte accessible à tous"
 #: skins/gites_templates/hebergement_macro.pt:173
@@ -469,6 +570,11 @@ msgstr "Ferienhaus im Garten"
 msgid "gite_bebe_tendresse"
 msgstr "Ferienhaus Fürs Baby"
 
+# Default: "G\303\256te citadin"
+#. Default: "G\303\256te citadin"
+msgid "gite_citadin"
+msgstr "Ferienhaus in der Stadt"
+
 # Default: "G\303\256te \303\251questre"
 #. Default: "Gîte &eacute;questre"
 #: skins/gites_templates/hebergement_macro.pt:212
@@ -493,12 +599,27 @@ msgstr "Ferienhaus Kulturerbe"
 msgid "gite_peche"
 msgstr "Ferienhaus Angeln"
 
+# Default: "G\303\256te rural"
+#. Default: "G\303\256te rural"
+msgid "gite_rural"
+msgstr "Ferienhaus auf dem Land"
+
 # Default: "${number} Gites et Chambres d'h\303\264tes \303\240 proximit\303\251"
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: browser/templates/footer_gites.pt:10
 #, fuzzy
 msgid "gites_copyright"
 msgstr "${number} Ferienhäuser oder Gästezimmer in der Nähe"
+
+# Default: "Gites et Meubl\303\251s"
+#. Default: "Gites et Meubl\303\251s"
+msgid "gites_et_meubles"
+msgstr "Ferienhäuser und Ferienwohnungen"
+
+# Default: "Gites Meubles"
+#. Default: "Gites Meubles"
+msgid "gites_meubles"
+msgstr "Ferienhäuser Ferienwohnungen"
 
 # Default: "Up one level"
 #. Default: "Up one level"
@@ -553,6 +674,11 @@ msgstr ""
 msgid "idees_sejours"
 msgstr "Aufenthaltsideen"
 
+# Default: "Il existe"
+#. Default: "Il existe"
+msgid "il_existe"
+msgstr "Es gibt"
+
 # Default: "in"
 #. Default: "in"
 #: browser/templates/type_heb_commune_view.pt:10
@@ -601,11 +727,12 @@ msgstr "Ich bin"
 msgid "la_boutique_portlet_title"
 msgstr "Der shop"
 
-# Default: ""
+# Default: "Label de qualit\303\251"
 #. Default: "Add to Cart"
 #: portlets/templates/boutiquefolder.pt:43
+#, fuzzy
 msgid "label_add_to_cart"
-msgstr ""
+msgstr "Qualitätssiegel"
 
 # Default: "Label de qualit\303\251"
 #. Default: "<img src=\"affinitic_powered.gif\" />"
@@ -659,11 +786,12 @@ msgstr "Ich suche"
 msgid "label_reference"
 msgstr "Code"
 
-# Default: "(Required)"
+# Default: "G\303\256te \303\251questre"
 #. Default: "(Required)"
 #: browser/templates/form_contact_proprio.pt:139
+#, fuzzy
 msgid "label_required"
-msgstr ""
+msgstr "Ferienhaus Reiten"
 
 # Default: "Label de qualit\303\251"
 #. Default: "Tarifs :"
@@ -744,6 +872,11 @@ msgstr "Frau"
 msgid "maison_du_tourisme"
 msgstr "Haus des Tourismus"
 
+# Default: "Maison d'h\303\264tes"
+#. Default: "Maison d'h\303\264tes"
+msgid "maison_hotes"
+msgstr "Gästehaus"
+
 # Default: "Membre d'Eurog\303\256tes"
 #. Default: "Membre d'Eurog&icirc;tes"
 #: skins/gites_templates/portlet_partenaires.pt:8
@@ -779,6 +912,11 @@ msgstr "Ferienhäuser und -wohnungen"
 #: browser/templates/header_gites.pt:13
 msgid "menu_idee_sejour"
 msgstr "Aufenthaltsideen"
+
+# Default: "Meubl\303\251"
+#. Default: "Meubl\303\251"
+msgid "meuble"
+msgstr "Ferienwohnung"
 
 # Default: "Micro-onde"
 #. Default: "Micro-onde"
@@ -833,6 +971,11 @@ msgstr "Anzahl Zimmer"
 #: browser/templates/form_contact_proprio.pt:207
 msgid "nombre_personnes"
 msgstr "Anzahl Personen"
+
+# Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
+#. Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
+msgid "not_hebergement_correspondant"
+msgstr "Es gibt keine Unterkunft, die diesen Kriterien entspricht"
 
 # Default: "Il n'y a aucune derni&egrave;re minute"
 #. Default: "Il n'y a aucune derni&egrave;re minute"
@@ -1033,6 +1176,16 @@ msgstr "Lage"
 msgid "sky"
 msgstr "Ski"
 
+# Default: "Avec le soutien du Commissariat g\303\251n\303\251ral"
+#. Default: "Avec le soutien du Commissariat g\303\251n\303\251ral"
+msgid "soutien_commissariat_ligne_1"
+msgstr "Mit der Unterstützung des Generalkommissariats"
+
+# Default: "au Tourisme du Minist\303\250re de la R\303\251gion wallonne"
+#. Default: "au Tourisme du Minist\303\250re de la R\303\251gion wallonne"
+msgid "soutien_commissariat_ligne_2"
+msgstr "für Tourismus des Ministeriums der Wallonischen Region"
+
 # Default: "Sports nautiques"
 #. Default: "Sports nautiques"
 #: skins/gites_templates/hebergement_macro.pt:698
@@ -1049,6 +1202,11 @@ msgstr "Einschreibung für die Newsletter"
 #. Default: "Table d'h&ocirc;te"
 #: skins/gites_templates/hebergement_macro.pt:475
 msgid "table_d_hote"
+msgstr "Gästetisch"
+
+# Default: "Table d'h\303\264tes"
+#. Default: "Table d'h\303\264tes"
+msgid "table_hotes"
 msgstr "Gästetisch"
 
 # Default: "Classification"
@@ -1111,10 +1269,12 @@ msgstr "Sonderaktion"
 msgid "title_built_with_plone"
 msgstr ""
 
+# Default: "Label de qualit\303\251"
 #. Default: "This site has been developed and is hosted by Affinitic."
 #: browser/templates/footer_gites.pt:31
+#, fuzzy
 msgid "title_developed_affinitic"
-msgstr ""
+msgstr "Qualitätssiegel"
 
 # Default: "G\303\256te \303\251questre"
 #. Default: "Required"
@@ -1122,6 +1282,11 @@ msgstr ""
 #, fuzzy
 msgid "title_required"
 msgstr "Ferienhaus Reiten"
+
+# Default: "Tout voir"
+#. Default: "Tout voir"
+msgid "tout_voir"
+msgstr "Alles ansehen"
 
 # Default: "Type"
 #. Default: "Type"
@@ -1171,6 +1336,11 @@ msgstr "Der Code der Unterkunft ${heb_pk} ist ungültig."
 msgid "velo"
 msgstr "Fahrrad"
 
+# Default: "Voir la liste"
+#. Default: "Voir la liste"
+msgid "voir_la_liste"
+msgstr "Liste ansehen"
+
 # Default: "VTT"
 #. Default: "VTT"
 #: skins/gites_templates/hebergement_macro.pt:761
@@ -1182,153 +1352,3 @@ msgstr "Mountainbike"
 #: skins/gites_templates/hebergement_macro.pt:525
 msgid "week-end"
 msgstr "Wochenende"
-
-#~ msgid "GitesContent_help_category"
-#~ msgstr "Art Last Minute"
-
-#~ msgid "GitesContent_help_description"
-#~ msgstr "Kurzbeschreibung des Aufenthalts für schlaue Füchse"
-
-#~ msgid "GitesContent_help_endDate"
-#~ msgstr "Datum, an dem der Aufenthalt nicht mehr erscheint"
-
-#~ msgid "GitesContent_help_eventEndDate"
-#~ msgstr "Datum, an dem die Veranstaltung endet"
-
-#~ msgid "GitesContent_help_eventStartDate"
-#~ msgstr "Anfang Veranstaltung"
-
-#~ msgid "GitesContent_help_hebergements"
-#~ msgstr "Liste der für diese Aufenthaltsidee in Frage kommenden Unterkünfte"
-
-#~ msgid "GitesContent_help_hebergementsConcernes"
-#~ msgstr ""
-#~ "Für die Sonderaktion oder das Last-Minute-Angebot in Frage kommende "
-#~ "Unterkunft"
-
-#~ msgid "GitesContent_help_maisonsTourisme"
-#~ msgstr ""
-#~ "Für diese Art von Aufenthalt für schlaue Füchse in Frage kommende Häuser "
-#~ "des Tourismus"
-
-#~ msgid "GitesContent_help_startDate"
-#~ msgstr "Datum, an dem der Aufenthalt erscheint"
-
-#~ msgid "GitesContent_help_text"
-#~ msgstr "Ausführliche Beschreibung des Aufenthalts für schlaue Füchse"
-
-#~ msgid "GitesContent_label_category"
-#~ msgstr "Art"
-
-#~ msgid "GitesContent_label_description"
-#~ msgstr "Beschreibung"
-
-#~ msgid "GitesContent_label_endDate"
-#~ msgstr "Datum Rückziehung"
-
-#~ msgid "GitesContent_label_eventEndDate"
-#~ msgstr "Ende Veranstaltung"
-
-#~ msgid "GitesContent_label_eventStartDate"
-#~ msgstr "Anfang Veranstaltung"
-
-#~ msgid "GitesContent_label_hebergements"
-#~ msgstr "In Frage kommende Unterkünfte"
-
-#~ msgid "GitesContent_label_hebergementsConcernes"
-#~ msgstr "Liste der in Frage kommenden Unterkünfte"
-
-#~ msgid "GitesContent_label_logo"
-#~ msgstr "Logo"
-
-#~ msgid "GitesContent_label_maisonsTourisme"
-#~ msgstr "Haus des Tourismus"
-
-#~ msgid "GitesContent_label_photo"
-#~ msgstr "Foto"
-
-#~ msgid "GitesContent_label_startDate"
-#~ msgstr "Datum Aktivierung"
-
-#~ msgid "GitesContent_label_text"
-#~ msgstr "Text"
-
-#~ msgid ""
-#~ "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait "
-#~ "utile de l'affiner."
-#~ msgstr ""
-#~ "Die Suche hat ${nbr} Ergebnisse ergeben. <br /> Sie sollten die Suche "
-#~ "verfeinern."
-
-#~ msgid "La recherche n'a pas renvoy&eacute; de r&eacute;sultats."
-#~ msgstr "Kein Ergebnis gefunden."
-
-# Default: "${number} Gite ou Chambre d'h\303\264tes \303\240 proximit\303\251"
-#~ msgid "gite_a_proximite"
-#~ msgstr "${number} Ferienhaus oder Gästezimmer in der Nähe"
-
-# Default: "Il existe"
-#~ msgid "il_existe"
-#~ msgstr "Es gibt"
-
-# Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
-#~ msgid "not_hebergement_correspondant"
-#~ msgstr "Es gibt keine Unterkunft, die diesen Kriterien entspricht"
-
-# Default: "Voir la liste"
-#~ msgid "voir_la_liste"
-#~ msgstr "Liste ansehen"
-
-#~ msgid "Gites et Meubles"
-#~ msgstr "Ferienhäuser"
-
-#~ msgid "Chambre d'hote"
-#~ msgstr "Gästezimmer"
-
-# Default: "Avec le soutien du Commissariat g\303\251n\303\251ral"
-#~ msgid "soutien_commissariat_ligne_1"
-#~ msgstr "Mit der Unterstützung des Generalkommissariats"
-
-# Default: "au Tourisme du Minist\303\250re de la R\303\251gion wallonne"
-#~ msgid "soutien_commissariat_ligne_2"
-#~ msgstr "für Tourismus des Ministeriums der Wallonischen Region"
-
-# Default: "Chambre d'h\303\264tes"
-#~ msgid "chambre_hotes"
-#~ msgstr "Gästezimmer"
-
-# Default: "Maison d'h\303\264tes"
-#~ msgid "maison_hotes"
-#~ msgstr "Gästehaus"
-
-# Default: "Table d'h\303\264tes"
-#~ msgid "table_hotes"
-#~ msgstr "Gästetisch"
-
-# Default: "Tout voir"
-#~ msgid "tout_voir"
-#~ msgstr "Alles ansehen"
-
-# Default: "Gites Meubles"
-#~ msgid "gites_meubles"
-#~ msgstr "Ferienhäuser Ferienwohnungen"
-
-# Default: "Gites et Meubl\303\251s"
-#~ msgid "gites_et_meubles"
-#~ msgstr "Ferienhäuser und Ferienwohnungen"
-
-# Default: "G\303\256te rural"
-#~ msgid "gite_rural"
-#~ msgstr "Ferienhaus auf dem Land"
-
-# Default: "G\303\256te citadin"
-#~ msgid "gite_citadin"
-#~ msgstr "Ferienhaus in der Stadt"
-
-# Default: "G\303\256te \303\240 la ferme"
-#~ msgid "gite_a_la_ferme"
-#~ msgstr "Ferienhaus auf dem Bauernhof"
-
-# Default: "Meubl\303\251"
-#~ msgid "meuble"
-#~ msgstr "Ferienwohnung"
