@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-09-07 04:53+0000\n"
+"POT-Creation-Date: 2009-09-07 07:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -162,7 +162,6 @@ msgid "Search Hebergement"
 msgstr "Unterkunft suchen"
 
 #: browser/searchPk.py:25
-#, fuzzy
 msgid "Search Hebergement by Pk in website"
 msgstr "Unterkunft suchen"
 
@@ -327,7 +326,6 @@ msgstr "Gefrierschrank"
 
 #. Default: "Contact"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:30
-#, fuzzy
 msgid "contact"
 msgstr "Kontakt"
 
@@ -418,9 +416,8 @@ msgstr "E-Mail"
 
 #. Default: "Encoder la r&eacute;f&eacute;rence de la chambre d'hôtes"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:101
-#, fuzzy
 msgid "encoder_reference"
-msgstr "Code"
+msgstr "Wählen Sie die Referenz der Gästezimmer"
 
 #. Default: "Envoyer votre demande"
 #: browser/templates/form_contact_proprio.pt:244
@@ -540,9 +537,8 @@ msgstr "Ferienhaus auf dem Land"
 
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: browser/templates/footer_gites.pt:10
-#, fuzzy
 msgid "gites_copyright"
-msgstr "${number} Ferienhäuser oder Gästezimmer in der Nähe"
+msgstr ""
 
 #. Default: "Gites et Meubl\303\251s"
 msgid "gites_et_meubles"
@@ -643,27 +639,23 @@ msgstr "Der shop"
 
 #. Default: "Add to Cart"
 #: portlets/templates/boutiquefolder.pt:43
-#, fuzzy
 msgid "label_add_to_cart"
-msgstr "Qualitätssiegel"
+msgstr ""
 
 #. Default: "<img src=\"affinitic_powered.gif\" />"
 #: browser/templates/footer_gites.pt:31
-#, fuzzy
 msgid "label_affinitic"
-msgstr "Qualitätssiegel"
+msgstr ""
 
 #. Default: "Lieu :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:13
-#, fuzzy
 msgid "label_communes"
-msgstr "Anzahl Personen"
+msgstr "Ortschaft :"
 
 #. Default: "Confort :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:47
-#, fuzzy
 msgid "label_confort"
-msgstr "Komfort"
+msgstr "Einstufung :"
 
 #. Default: "Nombre de personnes :"
 #: browser/templates/moteur_recherche.pt:31
@@ -672,9 +664,8 @@ msgstr "Anzahl Personen"
 
 #. Default: "<img src=\"plone_powered.gif\" />"
 #: browser/templates/footer_gites.pt:22
-#, fuzzy
 msgid "label_powered_by_plone"
-msgstr "Anzahl Personen"
+msgstr ""
 
 #. Default: "Label de qualité"
 #: skins/gites_templates/portlet_menu_association.pt:17
@@ -693,15 +684,13 @@ msgstr "Code"
 
 #. Default: "(Required)"
 #: browser/templates/form_contact_proprio.pt:139
-#, fuzzy
 msgid "label_required"
-msgstr "Ferienhaus Reiten"
+msgstr ""
 
 #. Default: "Tarifs :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:29
-#, fuzzy
 msgid "label_tarifs"
-msgstr "Qualitätssiegel"
+msgstr "Preis :"
 
 #. Default: "Langue"
 #: browser/templates/form_contact_proprio.pt:105
@@ -922,9 +911,8 @@ msgstr "Sonderaktionen"
 
 #. Default: "Proposer votre hébergement"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:24
-#, fuzzy
 msgid "proposer_hebergement"
-msgstr "Einstufung"
+msgstr "Ihre Wohnung vorstellen"
 
 #. Default: "PROPRIETAIRE"
 #: skins/gites_templates/hebergement_macro.pt:1116
@@ -1046,9 +1034,8 @@ msgstr "Gästetisch"
 
 #. Default: "Tarif 2p d&eacute;j"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:12
-#, fuzzy
 msgid "tarif_hebergement"
-msgstr "Einstufung"
+msgstr "übernachtung (2 p. + Frühstück)"
 
 #. Default: "Taxe de s&eacute;jour"
 #: skins/gites_templates/hebergement_macro.pt:654
@@ -1097,15 +1084,13 @@ msgstr ""
 
 #. Default: "This site has been developed and is hosted by Affinitic."
 #: browser/templates/footer_gites.pt:31
-#, fuzzy
 msgid "title_developed_affinitic"
-msgstr "Qualitätssiegel"
+msgstr ""
 
 #. Default: "Required"
 #: browser/templates/form_contact_proprio.pt:139
-#, fuzzy
 msgid "title_required"
-msgstr "Ferienhaus Reiten"
+msgstr ""
 
 #. Default: "Tout voir"
 msgid "tout_voir"

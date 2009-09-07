@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-09-07 04:53+0000\n"
+"POT-Creation-Date: 2009-09-07 07:45+0000\n"
 "PO-Revision-Date: Wed Jun  6 10:28:22 2007\n"
 "Last-Translator: Jean Francois Roche <jfroche@jfroche.be>\n"
 "Language-Team: <info@affinitic.be>\n"
@@ -158,7 +158,6 @@ msgid "Search Hebergement"
 msgstr "Rechercher un hébergement"
 
 #: browser/searchPk.py:25
-#, fuzzy
 msgid "Search Hebergement by Pk in website"
 msgstr "Rechercher un hébergement"
 
@@ -321,9 +320,8 @@ msgstr "Congélateur"
 
 #. Default: "Contact"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:30
-#, fuzzy
 msgid "contact"
-msgstr "Contacts"
+msgstr "Contact"
 
 #. Default: "Contactez le propriétaire"
 #: browser/templates/form_contact_proprio.pt:16
@@ -412,9 +410,8 @@ msgstr "E-mail"
 
 #. Default: "Encoder la r&eacute;f&eacute;rence de la chambre d'hôtes"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:101
-#, fuzzy
 msgid "encoder_reference"
-msgstr "Référence"
+msgstr "Encodez la référence de la chambre d'hôtes"
 
 #. Default: "Envoyer votre demande"
 #: browser/templates/form_contact_proprio.pt:244
@@ -534,9 +531,8 @@ msgstr "Gîte rural"
 
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: browser/templates/footer_gites.pt:10
-#, fuzzy
 msgid "gites_copyright"
-msgstr "${number} Gîtes et Chambres d'hôtes à proximité"
+msgstr ""
 
 #. Default: "Gites et Meubl\303\251s"
 msgid "gites_et_meubles"
@@ -637,27 +633,23 @@ msgstr "La boutique"
 
 #. Default: "Add to Cart"
 #: portlets/templates/boutiquefolder.pt:43
-#, fuzzy
 msgid "label_add_to_cart"
-msgstr "Label de qualité"
+msgstr ""
 
 #. Default: "<img src=\"affinitic_powered.gif\" />"
 #: browser/templates/footer_gites.pt:31
-#, fuzzy
 msgid "label_affinitic"
-msgstr "Label de qualité"
+msgstr ""
 
 #. Default: "Lieu :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:13
-#, fuzzy
 msgid "label_communes"
-msgstr "Nombre de personnes"
+msgstr "Localité :"
 
 #. Default: "Confort :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:47
-#, fuzzy
 msgid "label_confort"
-msgstr "Confort"
+msgstr "Classification :"
 
 #. Default: "Nombre de personnes :"
 #: browser/templates/moteur_recherche.pt:31
@@ -666,9 +658,8 @@ msgstr "Nombre de personnes"
 
 #. Default: "<img src=\"plone_powered.gif\" />"
 #: browser/templates/footer_gites.pt:22
-#, fuzzy
 msgid "label_powered_by_plone"
-msgstr "Nombre de personnes"
+msgstr ""
 
 #. Default: "Label de qualité"
 #: skins/gites_templates/portlet_menu_association.pt:17
@@ -687,15 +678,13 @@ msgstr "Référence"
 
 #. Default: "(Required)"
 #: browser/templates/form_contact_proprio.pt:139
-#, fuzzy
 msgid "label_required"
-msgstr "Gîte équestre"
+msgstr ""
 
 #. Default: "Tarifs :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:29
-#, fuzzy
 msgid "label_tarifs"
-msgstr "Label de qualité"
+msgstr "Prix :"
 
 #. Default: "Langue"
 #: browser/templates/form_contact_proprio.pt:105
@@ -916,9 +905,8 @@ msgstr "Promotions"
 
 #. Default: "Proposer votre hébergement"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:24
-#, fuzzy
 msgid "proposer_hebergement"
-msgstr "Classification"
+msgstr "Proposer votre hébergement"
 
 #. Default: "PROPRIETAIRE"
 #: skins/gites_templates/hebergement_macro.pt:1116
@@ -1039,9 +1027,8 @@ msgstr "Table d'hôtes"
 
 #. Default: "Tarif 2p d&eacute;j"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:12
-#, fuzzy
 msgid "tarif_hebergement"
-msgstr "Classification"
+msgstr "nuitée (2 p. + p. déj.)"
 
 #. Default: "Taxe de s&eacute;jour"
 #: skins/gites_templates/hebergement_macro.pt:654
@@ -1090,15 +1077,13 @@ msgstr ""
 
 #. Default: "This site has been developed and is hosted by Affinitic."
 #: browser/templates/footer_gites.pt:31
-#, fuzzy
 msgid "title_developed_affinitic"
-msgstr "Label de qualité"
+msgstr ""
 
 #. Default: "Required"
 #: browser/templates/form_contact_proprio.pt:139
-#, fuzzy
 msgid "title_required"
-msgstr "Gîte équestre"
+msgstr ""
 
 #. Default: "Tout voir"
 msgid "tout_voir"
