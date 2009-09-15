@@ -5,6 +5,26 @@
       i18n:domain="gites">
 
 <body>
+<metal:block fill-slot="style_slot">
+  <link rel="stylesheet" href="++resource++timeframe.css" type="text/css" media="screen" title="timeframe" charset="utf-8"/>
+  <script type="text/javascript" charset="utf-8" src="++resource++gitetimeframe.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    //<![CDATA[
+    calsetup = function() {
+      jQuery.noConflict();
+      new GiteTimeframe('calendars', {
+            startField: 'start',
+            endField: 'end',
+            resetButton: 'reset',
+            weekOffset: 1,
+            hebPk: 184,
+            months:1,
+            earliest: new Date()});}
+    registerPloneFunction(calsetup);
+    //]]>
+  </script>
+
+</metal:block>
 
 <div metal:fill-slot="main">
    <div tal:define="heb context;
@@ -37,6 +57,8 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebLiterie" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebConfort" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebSeminaire" />
+
+                    <div id="calendars"></div>
                 </td><!-- col droite-->
             </tr>
          </table><!--table-description-->
