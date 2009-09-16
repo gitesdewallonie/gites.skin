@@ -43,6 +43,7 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebCoordonneeGite" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
+
                </td><!-- col gauche-->
 
                <td id="col-centre">

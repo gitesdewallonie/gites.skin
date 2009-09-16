@@ -363,7 +363,7 @@ msgstr "Einddatum van het verblijf"
 #. Default: "Découvrir la Wallonie"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:18
 msgid "decouvrir_wallonie"
-msgstr ""
+msgstr "Ardennen ontdekken"
 
 #. Default: "D&eacute;duction si pas petit d&eacute;jeuner"
 #: skins/gites_templates/hebergement_macro.pt:427
