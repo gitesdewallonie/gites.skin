@@ -11,13 +11,13 @@
                   <th i18n:translate="epis_hebergement" class="" tal:attributes="class thclass">Classification</th>
                   <th class="" tal:attributes="class thclass">
                     <span id="capacite">
-                      <img src="picto/capacite.png"
+                      <img src="capacite.png"
                            title="Capacité"
                            alt="Capacité"
                            i18n:attributes="alt capacite; title capacite" />
                   </th>
                   <th class="" tal:attributes="class thclass">
-                      <img src="picto/lit_double.png"
+                      <img src="lit_double.png"
                            title="Nombre de chambres"
                            alt="Nombre de chambres"
                            i18n:attributes="alt nombre-chambres; title nombre-chambres" />
