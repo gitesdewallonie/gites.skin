@@ -79,7 +79,7 @@
                         <div id="region-sejour-fute"
                            tal:define="sejourFute view/getRelatedSejourFute"
                            tal:condition="python: sejourFute">
-                           <img src="picto/o_alerte.png" border="0" />
+                           <img src="o_alerte.png" border="0" />
                            <span class="region-titre" i18n:translate="sejours_futes">Séjours Futés</span><br />
                            <tal:bcl tal:repeat="elem sejourFute">
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -96,8 +96,11 @@
                      <td>
                         <!-- maison tourisme-->
                         <div id="region-maison-trourisme">
-                           <img src="picto/o_info.png" border="0" />
-                           <span class="region-titre" i18n:translate="maison_du_tourisme">Maison du Tourisme</span><br />
+                           <img src="o_info.png" border="0" />
+                           <span class="region-titre" 
+                                 i18n:translate="maison_du_tourisme">
+                               Maison du Tourisme
+                           </span><br />
                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                            <a href=""
                               tal:attributes="href string:http://${maisonTourisme/mais_url}"
@@ -108,8 +111,11 @@
                         <div id="region-info-tourisme"
                            tal:define="info maisonTourisme/infosTouristique"
                            tal:condition="python: info">
-                           <img src="picto/o_info_tour.png" border="0" />
-                           <span class="region-titre" i18n:translate="infos_touristiques">Infos Touristiques</span><br />
+                           <img src="o_info_tour.png" border="0" />
+                           <span class="region-titre" 
+                                 i18n:translate="infos_touristiques">
+                                 Infos Touristiques
+                           </span><br />
                            <tal:bcl tal:repeat="elem info">
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               <a href="" tal:attributes="href string:http://${elem/infotour_url}"
@@ -126,7 +132,10 @@
                            <a href=""
                               tal:attributes="href view/getTypeHebInCommuneURL">
                            <span i18n:translate="autres_a">
-                             Autres <span i18n:name="type_hebergement" tal:content="view/getTypeHebergement"/> à <span i18n:name="commune" tal:content="heb/commune/com_nom"/>
+                             Autres <span i18n:name="type_hebergement" 
+                                           tal:content="view/getTypeHebergement"/> 
+                             à <span i18n:name="commune" 
+                                      tal:content="heb/commune/com_nom"/>
                            </span>
                            <img src="flechebulle_bleue.png"
                                  border="0" /></a>

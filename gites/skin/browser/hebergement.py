@@ -134,10 +134,10 @@ class HebergementIconsView(BrowserView):
         url = getToolByName(self.context, 'portal_url')()
         if self.context.type.type_heb_code in ['MV']:
             for i in range(number):
-                result.append('<img src="picto/1_clef.png" src="%s/picto/1_clef.png"/>' % url)
+                result.append('<img src="1_clef.png" src="%s1_clef.png"/>' % url)
         else:
             for i in range(number):
-                result.append('<img src="picto/1_epis.gif" src="%s/picto/1_epis.gif"/>' % url)
+                result.append('<img src="1_epis.gif" src="%s1_epis.gif"/>' % url)
         return " ".join(result)
 
     def getEpis(self):

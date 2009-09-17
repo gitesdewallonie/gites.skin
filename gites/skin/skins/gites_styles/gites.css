@@ -35,7 +35,6 @@ top:13px;
 left:-428px;
 width:88px;
 height:88px;
-border:1px solid #f00;
 }
 
 #gites-logo a{
@@ -48,7 +47,7 @@ height:88px;
 
 #menu-maison{
 position:relative;
-top:10px;
+top:12px;
 width:960px;
 height:41px;
 }
@@ -60,7 +59,7 @@ text-align:center;
 #menu-maison a {
 background-position:center top;
 background-repeat:no-repeat;
-padding:26px 0px 0px 0px;
+padding:38px 0px 0px 0px;
 text-decoration:none;
 width:150px;
 font-size:1.3em;
@@ -116,7 +115,7 @@ color:#ff8788;
 
 #bordue-ombre-menu-maison {
 position:relative;
-top:10px;
+top:12px;
 margin-left:auto;
 margin-right:auto;
 background-color:transparent;
