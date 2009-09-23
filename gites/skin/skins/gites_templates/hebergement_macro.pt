@@ -164,69 +164,77 @@
             <span tal:define="label heb/heb_gid_bebe_tendresse"
                   tal:condition="python:label=='oui'">
                <img src="l_bebe.png"
-                     title="Gîte b&eacute;b&eacute; tendresse"
-                     alt="Gîte b&eacute;b&eacute; tendresse" 
-                     i18n:attributes="alt gite_bebe_tendresse; title gite_bebe_tendresse" />
+                    title="Gîte b&eacute;b&eacute; tendresse"
+                    alt="Gîte b&eacute;b&eacute; tendresse" 
+                    i18n:attributes="alt gite_bebe_tendresse; title gite_bebe_tendresse" />
             </span>
             <span tal:define="label heb/heb_gid_access_tous"
                   tal:condition="python:label=='oui'">
                <img src="l_accessibilite.png"
-                     title="Gîte accessible à tous"
-                     alt="Gîte accessible à tous"
-                     i18n:attributes="alt gite_accessible_a_tous; title gite_accessible_a_tous" />
+                    title="Gîte accessible à tous"
+                    alt="Gîte accessible à tous"
+                    i18n:attributes="alt gite_accessible_a_tous; title gite_accessible_a_tous" />
             </span>
             <span tal:define="label heb/heb_gid_antiallergique"
                   tal:condition="python:label=='oui'">
                <img src="l_anti_allergique.png"
-                     title="Gîte anti-allergique"
-                     alt="Gîte anti-allergique"
-                     i18n:attributes="alt gite_anti_allergique; title gite_anti_allergique" />
+                    title="Gîte anti-allergique"
+                    alt="Gîte anti-allergique"
+                    i18n:attributes="alt gite_anti_allergique; title gite_anti_allergique" />
             </span>
 
             <span tal:define="label heb/heb_gid_beau_jardin"
                   tal:condition="python:label=='oui'">
                <img src="l_jardin.png"
-                     title="Gîte au jardin"
-                     alt="Gîte au jardin"
-                     i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
-            </span>
+                    title="Gîte au jardin"
+                    alt="Gîte au jardin"
+                    i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
+             </span>
+
+             <span tal:define="label heb/heb_gid_eco_gite"
+                   tal:condition="python:label=='oui'">
+               <img src="l_eco_gite.png"
+                    title="Gite ecologique"
+                    alt="Gite ecologique"
+                    i18n:attributes="alt gite_eco; title gite_eco" />
+             </span>
          </div><!-- div gitesplus-->
 
          <div id="heb_theme">
             <span tal:define="theme heb/heb_gid_activite_nature"
                   tal:condition="python:theme=='oui'">
                <img src="t_decouverte.png"
-                     title="Gîte Activit&eacute;s d&eacute;couverte nature"
-                     alt="Gîte Activit&eacute;s d&eacute;couverte nature"
-                     i18n:attributes="alt gite_activite_decouverte_nature; title gite_activite_decouverte_nature" />
+                    title="Gîte Activit&eacute;s d&eacute;couverte nature"
+                    alt="Gîte Activit&eacute;s d&eacute;couverte nature"
+                    i18n:attributes="alt gite_activite_decouverte_nature; title gite_activite_decouverte_nature" />
             </span>
             <span tal:define="theme heb/heb_gid_panda"
                   tal:condition="python:theme=='oui'">
                <img src="t_panda.png"
-                     title="Gîte Panda"
-                     alt="Gîte Panda"
-                     i18n:attributes="alt gite_panda; title gite_panda" />
+                    title="Gîte Panda"
+                    alt="Gîte Panda"
+                    i18n:attributes="alt gite_panda; title gite_panda" />
             </span>
             <span tal:define="theme heb/heb_gid_theme_equestre"
                   tal:condition="python:theme=='oui'">
                <img src="t_equestre.png"
-                     title="Gîte &eacute;questre"
-                     alt="Gîte &eacute;questre"
-                     i18n:attributes="alt gite_equestre; title gite_equestre" />
+                    title="Gîte &eacute;questre"
+                    alt="Gîte &eacute;questre"
+                    i18n:attributes="alt gite_equestre; title gite_equestre" />
             </span>
             <span tal:define="theme heb/heb_gid_peche"
                   tal:condition="python:theme=='oui'">
                <img src="t_peche.png"
-                     title="Gîte pêche"
-                     alt="Gîte pêche"
-                     i18n:attributes="alt gite_peche; title gite_peche" />
+                    title="Gîte pêche"
+                    alt="Gîte pêche"
+                    i18n:attributes="alt gite_peche; title gite_peche" />
             </span>
             <span tal:define="theme heb/heb_gid_patrimoine"
                   tal:condition="python:theme=='oui'">
                <img src="t_patrimoine.png"
-                     title="Gîte patrimoine"
-                     alt="Gîte patrimoine"
-                     i18n:attributes="alt gite_patrimoine; title gite_patrimoine" />
+                    title="Gîte patrimoine"
+                    alt="Gîte patrimoine"
+                    i18n:attributes="alt gite_patrimoine; title gite_patrimoine" />
             </span>
          </div><!--div theme>-->
 
@@ -289,6 +297,13 @@
                      alt="Gîte au jardin"
                      i18n:attributes="alt gite_au_jardin; title gite_au_jardin" />
             </span>
+            <span tal:define="label heb/heb_gid_eco_gite"
+                   tal:condition="python:label=='oui'">
+               <img src="l_eco_gite.png"
+                    title="Gite ecologique"
+                    alt="Gite ecologique"
+                    i18n:attributes="alt gite_eco; title gite_eco" />
+             </span>
          </div><!-- div gitesplus-->
 
          <div id="heb_theme">
