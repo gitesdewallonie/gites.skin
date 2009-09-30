@@ -6,32 +6,37 @@
     <div id="portlet-outil"
          tal:define="view context/@@logo_view">
        <div>
-           <a href="" tal:attributes="href string:${portal_url}/newsletter">
-               <img src="" 
+           <a href=""
+              tal:attributes="href string:${portal_url}/newsletter">
+               <img src=""
                     tal:replace="structure python:view.getButton('outil_news_letter.gif')"/>
            </a>
        </div>
        <div>
-           <a href="" tal:attributes="href string:${portal_url}/preparer-sejour">
-               <img src="" 
+           <a href=""
+              tal:attributes="href string:${portal_url}/preparer-sejour">
+               <img src=""
                     tal:replace="structure python:view.getButton('outil_preparer_sejour.gif')"/>
            </a>
        </div>
        <div>
-           <a href="" tal:attributes="href string:${portal_url}/decouvrir-wallonie">
-               <img src="" 
+           <a href=""
+              tal:attributes="href string:${portal_url}/decouvrir-wallonie">
+               <img src=""
                     tal:replace="structure python:view.getButton('outil_decouvrir_wallonie.gif')"/>
            </a>
        </div>
        <div>
-           <a href="" tal:attributes="href string:${portal_url}/association/devenir-membre">
-               <img src="" 
+           <a href=""
+              tal:attributes="href string:${portal_url}/association/devenir-membre">
+               <img src=""
                     tal:replace="structure python:view.getButton('outil_proposer_hebergement.gif')"/>
            </a>
        </div>
        <div>
-           <a href="" tal:attributes="href string:${portal_url}/coin-presse">
-               <img src="" 
+           <a href=""
+              tal:attributes="href string:${portal_url}/coin-presse">
+               <img src=""
                     tal:replace="structure python:view.getButton('outil_coin_presse.gif')"/>
            </a>
        </div>
