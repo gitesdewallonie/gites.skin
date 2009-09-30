@@ -194,7 +194,6 @@ def createContent(portal):
                                      True)
     sejourPage = createPage(ideesSejourFolder, "idees-sejours", "Idées Séjours")
     ideesSejourFolder.setDefaultPage('idees-sejours')
-    createTranslationsForObject(ideesSejourFolder)
     ideesSejourFolder.setConstrainTypesMode(1)
     ideesSejourFolder.setLocallyAllowedTypes(['IdeeSejourFolder'])
     alsoProvides(ideesSejourFolder, IIdeeSejourRootFolder)
@@ -204,51 +203,42 @@ def createContent(portal):
                                       True)
     createPage(gitesMeublesFolder, "gites-meubles", "Gîtes Meublés")
     gitesMeublesFolder.setDefaultPage("gites-meubles")
-    createTranslationsForObject(gitesMeublesFolder)
 
     chambresHotesFolder = createFolder(portal, "chambres-hotes",
                                        "Chambres d'Hôtes", True)
     createPage(chambresHotesFolder, "chambres-hotes", "Chambres d'Hôtes")
     chambresHotesFolder.setDefaultPage('chambres-hotes')
-    createTranslationsForObject(chambresHotesFolder)
 
     associationFolder = createFolder(portal, "association", "Association",
                                      True)
     createPage(associationFolder, "association", "Association")
     associationFolder.setDefaultPage("association")
-    createTranslationsForObject(associationFolder)
 
     contactsFolder = createFolder(portal, "contacts", "Contacts", True)
     createPage(contactsFolder, "contacts", "Contacts")
     contactsFolder.setDefaultPage("contacts")
-    createTranslationsForObject(contactsFolder)
 
     coupleFolder = createFolder(portal, "couple", "Couple",
                                 True)
     createPage(coupleFolder, "couple", "Couple")
     coupleFolder.setDefaultPage("couple")
-    createTranslationsForObject(coupleFolder)
 
     familleFolder = createFolder(portal, "famille", "Famille", True)
     createPage(familleFolder, "famille", "Famille")
     familleFolder.setDefaultPage("famille")
-    createTranslationsForObject(familleFolder)
 
     groupeFolder = createFolder(portal, "groupe", "Groupe", True)
     createPage(groupeFolder, "groupe", "Groupe")
     groupeFolder.setDefaultPage("Groupe")
-    createTranslationsForObject(groupeFolder)
 
     societeFolder = createFolder(portal, "societe", "Société", True)
     createPage(societeFolder, "societe", "Société")
     societeFolder.setDefaultPage("societe")
-    createTranslationsForObject(societeFolder)
 
     decouvrirWallonieFolder = createFolder(portal, "decouvrir-wallonie",
                                            "Découvrir la Wallonie", True)
     createPage(decouvrirWallonieFolder, "decouvrir-wallonie", "Découvrir la Wallonie")
     decouvrirWallonieFolder.setDefaultPage("decouvrir-wallonie")
-    createTranslationsForObject(decouvrirWallonieFolder)
 
     proposerHebergementFolder = createFolder(portal, "proposer-hebergement",
                                              "Proposer votre Hébergement",
@@ -256,19 +246,16 @@ def createContent(portal):
     createPage(proposerHebergementFolder, "proposer-hebergement",
                "Proposer votre Hébergement")
     proposerHebergementFolder.setDefaultPage("proposer-hebergement")
-    createTranslationsForObject(proposerHebergementFolder)
 
     coinPresseFolder = createFolder(portal, "coin-presse", "Coin Presse",
                                     True)
     createPage(coinPresseFolder, "coin-presse", "Coin Presse")
     coinPresseFolder.setDefaultPage("coin-presse")
-    createTranslationsForObject(coinPresseFolder)
 
     dernieresMinutesFolder = createFolder(portal, "dernieres-minutes",
                                           "Dernières Minutes", True)
     createPage(dernieresMinutesFolder, "dernieres-minutes", "Dernières Minutes")
     dernieresMinutesFolder.setDefaultPage("dernieres-minutes")
-    createTranslationsForObject(dernieresMinutesFolder)
     dernieresMinutesFolder.setConstrainTypesMode(1)
     dernieresMinutesFolder.setLocallyAllowedTypes(['DerniereMinute'])
 
@@ -276,24 +263,20 @@ def createContent(portal):
                                         "Préparer votre Séjour", True)
     createPage(preparerSejourFolder, "preparer-sejour", "Préparer votre Séjour")
     preparerSejourFolder.setDefaultPage("preparer-sejour")
-    createTranslationsForObject(preparerSejourFolder)
 
     proposerHebergementFolder = createFolder(portal, "proposer-hebergement",
                                              "Proposer votre Hébergement",
                                              True)
     createPage(proposerHebergementFolder, "proposer-hebergement", "Proposer votre Hébergement")
     proposerHebergementFolder.setDefaultPage("proposer-hebergement")
-    createTranslationsForObject(proposerHebergementFolder)
 
     mapFolder = createFolder(portal, "map", "Map", True)
     changeFolderView(portal, mapFolder, 'hebergement_map')
-    createTranslationsForObject(mapFolder)
 
     signaletiquesFolder = createFolder(portal, "signaletiques", "Signalétiques",
                                        True)
     createPage(signaletiquesFolder, "signaletique-gites", "Signalétique gites")
     signaletiquesFolder.setDefaultPage("signaletiques")
-    createTranslationsForObject(signaletiquesFolder)
 
     createPage(signaletiquesFolder, "signaletique-gite", "Signaletique Gites")
     createPage(signaletiquesFolder, "signaletique-chambre-hote", "Signaletique Gites")
