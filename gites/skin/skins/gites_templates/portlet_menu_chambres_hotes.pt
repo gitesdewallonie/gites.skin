@@ -21,6 +21,12 @@
          </dd>
          <dd class="portletItemSingle">
             <a href=""
+               i18n:translate="maison_hotes"
+               tal:attributes="href python:translate('chambres-hotes/maison-hotes')"
+               class="">Maison d'hôtes</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
                i18n:translate="table_hotes"
                tal:attributes="href python:translate('chambres-hotes/table-hotes')"
                class="">Table d'hôtes</a>
