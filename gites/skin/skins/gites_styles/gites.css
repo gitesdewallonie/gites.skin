@@ -67,7 +67,6 @@ font-variant:small-caps;
 font-weight:bold;
 }
 
-
 #btn-maison-jaune a{
 display:block;
 background-image:url(maison_jaune.png);
@@ -125,7 +124,6 @@ height:20px;
 /*width:952px !important;*/
 }
 
-
 /* 
 descendre la barre d'onglets verts en mode edition
 lorsque le titre dans menu maison est sur deux ligne
@@ -154,7 +152,6 @@ margin-top:-6px;
 /*border-left:2px solid #086038;*/
 /*border-right:2px solid #086038;*/
 }
-
 
 #portal-top {
 background-color:transparent;
@@ -213,6 +210,13 @@ background-position: bottom right;
 h1 {
 margin-top: 0px;
 }
+
+table.plain, table.plain td, table.plain th {
+border:0 solid #CCCCCC;
+border-collapse:collapse;
+padding:0.5em;
+}
+
 
 /*** FOOTER GITES ***/
 #footer-gites {
