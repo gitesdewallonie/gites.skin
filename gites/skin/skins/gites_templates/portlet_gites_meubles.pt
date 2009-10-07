@@ -1,0 +1,24 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="gites">
+<body>
+<div metal:define-macro="portlet">
+   <div id="portlet-gites-meubles">
+      <dl class="portlet">
+         <dt class="portletHeader" i18n:translate="gites_meubles">
+           Gites Meubles
+         </dt>
+
+         <dd class="portletItemSingle">
+
+         </dd>
+
+         <dd class="portletItemLast">
+            <a href="" tal:attributes="href string:${portal_url}/gites-meubles" i18n:translate="tout_voir">Tout voir</a>
+         </dd>
+      </dl>
+   </div>
+</div>
+</body>
+</html>
+
