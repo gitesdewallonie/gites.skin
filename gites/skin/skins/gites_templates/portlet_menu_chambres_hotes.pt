@@ -1,0 +1,42 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xml:lang="en"
+      lang="en"
+      i18n:domain="gites">
+<body>
+<div metal:define-macro="portlet">
+   <div id="portlet-menu-chambres-hotes"
+        tal:define="translate nocall:context/getTranslatedObjectUrl">
+      <dl class="portlet">
+         <dt class="portletHeader"
+             i18n:translate="chambres_hotes">
+           Chambres d'hôtes
+         </dt>
+
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="chambre_hotes"
+               tal:attributes="href python:translate('chambres-hotes/chambre-hotes')"
+               class="">Chambre d'hôtes</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="maison_hotes"
+               tal:attributes="href python:translate('chambres-hotes/maison-hotes')"
+               class="">Maison d'hôtes</a>
+         </dd>
+         <dd class="portletItemSingle">
+            <a href=""
+               i18n:translate="table_hotes"
+               tal:attributes="href python:translate('chambres-hotes/table-hotes')"
+               class="">Table d'hôtes</a>
+         </dd>
+
+         <dd class="portletItemLast">
+            <!--bas-->
+         </dd>
+      </dl>
+   </div>
+</div>
+</body>
+</html>
