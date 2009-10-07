@@ -30,7 +30,7 @@ def setupgites(context):
     portal = context.getSite()
     if not ISite.providedBy(portal):
         enableSite(portal)
-    setupLanguages(portal)
+    #setupLanguages(portal)
     createHebergement(portal)
     createContent(portal)
     createLocalFS(portal)
@@ -220,7 +220,7 @@ def createContent(portal):
 
     coupleFolder = createFolder(portal, "couple", "Couple",
                                 True)
-    createPage(coupleFolder, "couple", "Couple")
+    #createPage(coupleFolder, "couple", "Couple")
     coupleFolder.setDefaultPage("couple")
 
     familleFolder = createFolder(portal, "famille", "Famille", True)
