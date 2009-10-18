@@ -354,3 +354,18 @@ class ISearchPk(Interface):
 
     pk = schema.Int(title=_('Heb Pk'),
                         required=True)
+
+
+class IProprioInfo(Interface):
+    """
+    Info proprio
+    """
+    def getAllPorprio():
+        """
+        Liste tous les proprios
+        """
+        
+    def getProprioByLogin(login):
+        """
+        Selectionne les infos d'un proprio selon son login
+        """

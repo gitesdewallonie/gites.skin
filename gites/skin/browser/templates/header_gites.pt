@@ -30,11 +30,6 @@
                    tal:attributes="href string: ${context/portal_url}/contacts"
                    i18n:translate="menu_contacts"><br />Contacts</a></td>
         </tr>
-        <!--
-        <tr>
-            <td colspan="5" id="bordue-ombre-menu-maison"></td>
-        </tr>
-        -->
     </table>
     <div id="bordue-ombre-menu-maison"></div>
     
