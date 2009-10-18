@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<head>
+    <tal:comment replace="nothing">
+            Please note that this template will most likely be renamed to news_listing
+            in the future, so if you reference this template or its macros from
+            another template, make sure to change it when you upgrade.
+    </tal:comment>
+</head>
+<body>
+<div metal:fill-slot="main"
+     tal:define="proprios python:view.getAllProprio()">
+    <h1>Modification de vos informations</h1>
+    
+    <div tal:repeat="proprio proprios">
+        <span tal:content="proprio" /><br />
+    </div>
+</div>
+</body>
+</html>
