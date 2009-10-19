@@ -12,11 +12,219 @@
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="proprios python:view.getAllProprio()">
+     tal:define="proprios python:view.getProprioByLogin('loufiv')">
+<!--     tal:define="proprios python:view.getAllProprio()"-------------------------------------       -->
     <h1>Modification de vos informations</h1>
-    
+    loufiv  NcCT FIVET pro_pk=60 heb_pk=81
     <div tal:repeat="proprio proprios">
-        <span tal:content="proprio" /><br />
+        <form name="formulaire_creation"
+              action=""
+              method="post">
+            <table border="1"
+                   cellspacing="0"
+                   bordercolor="#EEEFEE">
+                <tr>
+                    <td colspan="2" align="left" bgcolor="#006666">
+                        <span class="titre_encodage">
+                            INFORMATION GENERALE
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Civilité</td>
+                    <td>
+                        <select name="pro_civ_fk">
+                          <option value="">
+                              <span tal:content="proprio/pro_civ_fk" /></option>
+                           <!-- <dtml-in zsql_select_all_civilite>
+                                <option value="<dtml-var civ_pk>"><dtml-var civ_titre></option>
+                            </dtml-in>-->
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nom 1</td>
+                    <td>
+                        <input type="text"
+                               name="pro_nom1"
+                               value=""
+                               tal:attributes="value proprio/pro_nom1" />
+                               <span tal:content="proprio/pro_ņom1“" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td>
+                        <input type="text"
+                               name="pro_prenom1"
+                               value=""
+                               tal:attributes="value proprio/pro_prenom1" />
+                               <span tal:content="proprio/pro_prenom1" />
+                    </td>
+                </tr>
+                    <tr>
+                    <td>Nom 2</td>
+                    <td>
+                        <input type="text"
+                               name="pro_pronom2"
+                               value=""
+                               tal:attributes="value proprio/pro_prenom2" />
+                               <span tal:content="proprio/pro_prenom2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prénom 2</td>
+                    <td>
+                        <input type="text"
+                               name="pro_prenom2"
+                               value=""
+                               tal:attributes="value proprio/pro_prenom2" />
+                               <span tal:content="proprio/pro_prenom2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Société</td>
+                    <td>
+                        <input type="text"
+                               name="pro_societe"
+                               value=""
+                               tal:attributes="value proprio/pro_societe" />
+                               <span tal:content="proprio/pro_societe" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adresse</td>
+                    <td>
+                        <input type="text"
+                               name="pro_adresse"
+                               value=""
+                               tal:attributes="value proprio/pro_adresse" />
+                               <span tal:content="proprio/pro_adresse" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Code postal - Localité</td>
+                    <td>
+                        <select name="pro_com_fk">
+                            <!--dtml-in "admin_base.commune.zsql_select_all_commune()"-->
+                                <option value=""
+                                        tal:content="proprio/pro_com_fk"
+                                        tal:attributes="value proprio/pro_com_fh" />
+                            <!--</dtml-in>-->
+                        </select>
+                    </td>
+                </tr>
+                <!--tr>
+                    <td>LocalitÃ©</td>
+                    <td>
+                        <select name="">
+                            <dtml-in "admin_base.commune.zsql_select_all_commune()">
+                                <option value="com_pk"> <dtml-var com_nom></option>
+                            </dtml-in>
+                        </select>
+                    </td>
+                </tr-->
+                <tr>
+                    <td>E-mail</td>
+                    <td>
+                        <input type="text"
+                               name="pro_email"
+                               value=""
+                               tal:attributes="value proprio/pro_email" />
+                               <span tal:content="proprio/pro_email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Téléphone privé</td>
+                    <td>
+                        <input type="text"
+                               name="pro_tel_priv"
+                               value=""
+                               tal:attributes="value proprio/pro_tel_priv" />
+                               <span tal:content="proprio/pro_tel_priv" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Téléphone bureau</td>
+                    <td>
+                        <input type="text"
+                               name="pro_tel_bur"
+                               value=""
+                               tal:attributes="value proprio/pro_tel_bur" />
+                               <span tal:content="proprio/pro_tel_bur" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fax privé</td>
+                    <td>
+                        <input type="text"
+                               name="pro_fax_priv"
+                               value=""
+                               tal:attributes="value proprio/pro_fax_priv" />
+                               <span tal:content="proprio/pro_fax_priv" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fax bureau</td>
+                    <td>
+                        <input type="text"
+                               name="pro_fax_bur"
+                               value=""
+                               tal:attributes="value proprio/pro_fax_bur" />
+                               <span tal:content="proprio/pro_fax_bur" />
+                </tr>
+                <tr>
+                    <td>GSM 1</td>
+                    <td>
+                        <input type="text"
+                               name="pro_gsm1"
+                               value=""
+                               tal:attributes="value proprio/pro_gsm1" />
+                               <span tal:content="proprio/pro_gsm1" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>GSM 2</td>
+                    <td>
+                        <input type="text"
+                               name="pro_gsm2"
+                               value=""
+                               tal:attributes="value proprio/pro_gsm2" />
+                               <span tal:content="proprio/pro_gsm2" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>URL du site personnel</td>
+                    <td>
+                        <input type="text"
+                               name="pro_url"
+                               value=""
+                               tal:attributes="value proprio/pro_url" />
+                               <span tal:content="proprio/pro_url" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Numéro de TVA</td>
+                    <td>
+                        <input type="text"
+                               name="pro_tva"
+                               value=""
+                               tal:attributes="value proprio/pro_tva" />
+                               <span tal:content="proprio/pro_tva" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="hidden"
+                               name="pro_etat"
+                               value="True" />
+                        <input type="submit"
+                               value="Modinitic] fier mes données" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br />
     </div>
 </div>
 </body>

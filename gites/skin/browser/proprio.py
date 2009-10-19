@@ -24,7 +24,6 @@ class ProprioInfo(BrowserView):
     Infos relatives aux proprio
     """
     implements(IProprioInfo)
-    
 
     def getAllProprio(self):
         """
@@ -36,7 +35,7 @@ class ProprioInfo(BrowserView):
         query = session.query(proprioTable)
         proprios = query.all()
         return proprios
-        
+
     def getProprioByLogin(self, loginProprio):
         """
         Sélectionne les infos d'un proprio selon son login
