@@ -24,13 +24,6 @@
                    cellspacing="0"
                    bordercolor="#EEEFEE">
                 <tr>
-                    <td colspan="2" align="left" bgcolor="#006666">
-                        <span class="titre_encodage">
-                            INFORMATION GENERALE
-                        </span>
-                    </td>
-                </tr>
-                <tr>
                     <td>Civilité</td>
                     <td>
                         <select name="pro_civ_fk">
@@ -49,7 +42,7 @@
                                name="pro_nom1"
                                value=""
                                tal:attributes="value proprio/pro_nom1" />
-                               <span tal:content="proprio/pro_ņom1“" />
+                               <span tal:content="proprio/pro_nom1" />
                     </td>
                 </tr>
                 <tr>
@@ -109,7 +102,7 @@
                             <!--dtml-in "admin_base.commune.zsql_select_all_commune()"-->
                                 <option value=""
                                         tal:content="proprio/pro_com_fk"
-                                        tal:attributes="value proprio/pro_com_fh" />
+                                        tal:attributes="value proprio/pro_com_fk" />
                             <!--</dtml-in>-->
                         </select>
                     </td>
@@ -219,7 +212,7 @@
                                name="pro_etat"
                                value="True" />
                         <input type="submit"
-                               value="Modinitic] fier mes données" />
+                               value="Modifier mes données" />
                     </td>
                 </tr>
             </table>
