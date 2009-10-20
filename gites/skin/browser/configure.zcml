@@ -149,13 +149,23 @@
         permission="zope.Public"
         />
 
-   <!--PRORPIO-->
+<!-- MAJ PROPRIO -->
    <browser:page
         for="*"
         name="proprio-info"
         template="templates/maj_info_proprio.pt"
         class=".proprio.ProprioInfo"
         allowed_interface=".interfaces.IProprioInfo"
+        permission="zope.Public"
+        />
+
+<!-- MAJ HEBERGEMENT -->
+   <browser:page
+        for="*"
+        name="hebergement-info"
+        template="templates/maj_info_hebergement.pt"
+        class=".hebergement.HebergementView"
+        allowed_interface=".interfaces.IHebergementView"
         permission="zope.Public"
         />
 </configure>

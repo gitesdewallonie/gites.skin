@@ -27,6 +27,18 @@ class HebergementView(BrowserView):
     implements(IHebergementView)
     template = ViewPageTemplateFile("templates/hebergement.pt")
 
+    def getHebergementByProprietaire(self, proprioFk):
+        """
+        Sélectionne les infos d'un proprio selon son login
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        hebergementTable = wrapper.getMapper('hebergement')
+        query = session.query(hebergementTable)
+        query = query.filter(hebergementTable.heb_pro_fk == proprioFk)
+        hebergement = query.all()
+        return hebergement
+
     def getTypeHebergement(self):
         """
         Get the hebergement type title translated
