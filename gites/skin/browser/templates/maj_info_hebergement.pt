@@ -21,7 +21,980 @@ de son hebergement
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
        <span tal:content="heb/heb_nom" />
-    </div>
+       <form action="traiter_modification_heb" 
+             method="get">
+       
+       <!---[DEBUT INFORMATION GENERALE]--->
+       <input type="hidden" 
+              name="heb_pk" 
+              value=""
+              tal:attributes="value heb/heb_pk" />
+
+       <table border="1" 
+              cellspacing="0" 
+              bordercolor="#EEEFEE" 
+              width="560">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                   INFORMATION GENERALE
+                </span>
+             </td>
+          </tr>
+           <tr>
+              <td colspan="2">&nbsp;</td>
+           </tr>
+           <tr>
+              <td>Type</td>
+              <td>
+                 <span tal:content="heb/heb_typeheb_fk" />
+              </td>
+           </tr>
+           <tr>
+              <td colspan="2">&nbsp;</td>
+           </tr>
+           <tr>
+              <td>Nom de l'hébergement</td>
+              <td>
+                 <input type="text" 
+                        name="heb_nom"
+                        size="50" 
+                        value=""
+                        tal:attributes="value heb/heb_nom" /> 
+              </td>
+            </tr>
+            <tr>
+               <td>Adresse</td>
+               <td>
+                  <input type="text" 
+                         name="heb_adresse" 
+                         value=""
+                         size="50"
+                         tal:attributes="value heb/heb_adresse" />
+               </td>
+             </tr>
+           <tr>
+              <td>Code postal</td>
+              <td>
+                 <span tal:content="heb/heb_com_fk" /> 
+              </td>
+           </tr>
+          <tr>
+             <td>Localité</td>
+             <td>
+                <input type="text" 
+                       name="heb_localite"
+                       size="50"
+                       value=""
+                       tal:attributes="value heb/heb_localite" />
+             </td>
+          </tr>
+          <tr>
+             <td colspan="2"></td>
+          </tr>
+          <tr>
+             <td valign="center">Type de table d'hôte</td>
+             <td>
+                getTypeTableHote(heb_pk=fheb_pk
+             </td>
+          </tr>
+          <tr>
+             <td colspan="2"></td>
+          </tr>
+          <tr>
+             <td>Nombre d'épis</td>
+             <td>
+                if "heb_typeheb_fk in [1,2,3,4,7,10]"  cas des GR GF MT GC MV GRECR<br />
+                   &nbsp;&nbsp;&nbsp;getNbreEpis(heb_pk=heb_pk)
+                if "heb_nbre_epis in [5,6,9]" cas de CH MH CHECR<br />
+                   &nbsp;&nbsp;&nbsp;getNbreEpis(heb_pk=heb_pk)
+             </td>
+          </tr>
+          <tr>
+             <td colspan="2"></td>
+          </tr>
+          <tr>
+             <td>Activités</td>
+             <td valign="middle">
+                <!-- 
+                <dtml-if "heb_tenis=='oui'">
+                   <input type="checkbox" name="fheb_tenis" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_tenis" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_tennis.png">
+                <input type="text" 
+                       name="heb_tenis_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_tenis_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!-->
+                <dtml-if "heb_nautisme=='oui'">
+                   <input type="checkbox" name="fheb_nautisme" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_nautisme" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_voile.png">
+                <input type="text" 
+                       name="heb_nautisme_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_nautisme_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!-->
+                <dtml-if "heb_sky=='oui'">
+                   <input type="checkbox" name="fheb_sky" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_sky" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_sky.png">
+                <input type="text"
+                       name="heb_sky_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_sky_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <br/>
+                <!--
+                <dtml-if "heb_rando=='oui'">
+                   <input type="checkbox" name="fheb_rando" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_rando" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_rando.png">
+                <input type="text" 
+                       name="fheb_rando_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_rando_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_piscine=='oui'">
+                   <input type="checkbox" name="fheb_piscine" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_piscine" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_piscine.png">
+                <input type="text" 
+                       name="fheb_piscine_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_piscine_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_peche=='oui'">
+                   <input type="checkbox" name="fheb_peche" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_peche" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_peche.png">
+                <input type="text" 
+                       name="fheb_peche_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_peche_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <br/>
+                <!--
+                <dtml-if "heb_equitation=='oui'">
+                   <input type="checkbox" name="fheb_equitation" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_equitation" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_cheval.png">
+                <input type="text" 
+                       name="fheb_equitation_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_equitation_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_velo=='oui'">
+                   <input type="checkbox" name="fheb_velo" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_velo" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_velo.png">
+                <input type="text" 
+                       name="fheb_velo_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_velo_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_vtt=='oui'">
+                   <input type="checkbox" name="fheb_vtt" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_vtt" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_vtt.png">
+                <input type="text"
+                       name="fheb_vtt_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_vtt_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_ravel=='oui'">
+                   <input type="checkbox" name="fheb_ravel" value="oui" checked>
+                <dtml-else>
+                      <input type="checkbox" name="fheb_ravel" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/a_ravel.png">
+                <input type="text"
+                       name="fheb_ravel_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_ravel_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <br/>
+                </td>
+                </tr>
+                <tr>
+                   <td>
+                   Informations
+                   </td>
+                   <td>
+                       <!--
+                <dtml-if "heb_commerce=='oui'">
+                   <input type="checkbox" name="fheb_commerce" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_commerce" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/i_commerce.png" title="COMMERCE" />
+                <input type="text"
+                       name="fheb_commerce_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_commerce_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_restaurant=='oui'">
+                   <input type="checkbox" name="fheb_restaurant" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_restaurant" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/i_restaurant.png" title="RESTAURANT" />
+                <input type="text"
+                       name="fheb_restaurant_distance"
+                       size="3"
+                       value=""
+                       tal:attributes="value heb/heb_restaurant_distance" />
+                &nbsp;&nbsp;&nbsp;
+                <!--
+                <dtml-if "heb_gare=='oui'">
+                   <input type="checkbox" name="fheb_gare" value="oui" checked>
+                <dtml-else>
+                   <input type="checkbox" name="fheb_gare" value="oui">
+                </dtml-if>
+                -->
+                <img src="images/picto/i_gare.png" title="GARE" />
+                <input type="text"
+                       name="heb_gare_distance"
+                        size="3"
+                       value=""
+                       tal:attributes="value heb/heb_gare_distance">
+                &nbsp;&nbsp;&nbsp;
+             </td>
+          </tr>
+          <tr>
+             <td colspan="2"></td>
+          </tr>
+          <tr>
+             <td>Animaux</td>
+             <td>
+                <img src="images/picto/c_chien.png">
+                <!-->
+                <dtml-if "heb_animal=='oui'">
+                   <input type="radio" name="fheb_animal" value="oui" checked>Oui
+                   &nbsp;&nbsp;&nbsp;
+                   <input type="radio" name="fheb_animal" value="non">Non
+                <dtml-else>
+                   <input type="radio" name="fheb_animal" value="oui">
+                   &nbsp;&nbsp;&nbsp;
+                   <input type="radio" name="fheb_animal" value="non" checked>Non
+                </dtml-if>
+                -->
+                   &nbsp;&nbsp;&nbsp;
+                </td>
+          </tr>
+          <tr>
+             <td colspan="2"></td>
+          </tr>
+          <tr>
+             <td>Fumeur</td>
+             <td>
+                <img src="images/picto/c_fumeur.png">
+                <!-->
+                <dtml-if "heb_fumeur=='oui'">
+                   <input type="radio" name="fheb_fumeur" value="oui" checked>Oui
+                   &nbsp;&nbsp;&nbsp;
+                   <input type="radio" name="fheb_fumeur" value="non">Non
+                <dtml-else>
+                   <input type="radio" name="fheb_fumeur" value="oui">
+                   &nbsp;&nbsp;&nbsp;
+                   <input type="radio" name="fheb_fumeur" value="non" checked>Non
+                </dtml-if>
+                -->
+                   &nbsp;&nbsp;&nbsp;
+                </td>
+          </tr>
+
+       </table>
+       <!---[FIN INFORMATION GENERALE]--->
+
+       <!---[DEBUT TARIFICATION CHAMBRE]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="4" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                TARIFICATION DES CHAMBRES
+                </span>
+             </td>
+          </tr>
+          <tr>
+             <td>&nbsp;</td>
+             <td align="center"><b>1 pers</b></td>
+             <td align="center"><b>2 pers</b></td>
+             <td align="center"><b>3 pers</b></td>
+          <tr bgcolor="#E0FEEA">
+             <td>Chambre avec petit déjeuner</td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_avec_dej_1p"
+                       size="10" 
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_avec_dej_1p" />
+             </td>
+             <td align="center">
+                <input type="text" 
+                       name="heb_tarif_chmbr_avec_dej_2p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_avec_dej_2p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_avec_dej_3p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_avec_dej_3p" />
+             </td>
+          </tr>
+          <tr>
+             <td>Déduction si pas petit déjeuner <b>(-)</b></td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_sans_dej_1p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_sans_dej_1p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_sans_dej_2p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_sans_dej_2p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_sans_dej_3p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_sans_dej_3p" />
+             </td>
+          </tr>
+          <tr>
+             <td>Si table d'hôte, prix</td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_table_hote_1p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_table_hote_1p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_table_hote_2p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_table_hote_2p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_table_hote_3p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_table_hote_3p" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Autre</td>
+             <td align="center">
+                <input type="text" 
+                       name="heb_tarif_chmbr_autre_1p" 
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_autre_1p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="fheb_tarif_chmbr_autre_2p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_autre_2p" />
+             </td>
+             <td align="center">
+                <input type="text"
+                       name="heb_tarif_chmbr_autre_3p"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_chmbr_autre_3p" />
+             </td>
+          </tr>
+       </table>
+
+       <!---[FIN TARIFICATION CHAMBRE]--->
+
+       <!---[DEBUT TARIFICATION GITES]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE" cellpading="0">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                TARIFICATION DES GITES
+                </span>
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif week-end basse saison</td>
+             <td>
+                <input type="text" 
+                       name="heb_tarif_we_bs"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_we_bs" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif week-end moyenne saison</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_we_ms"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_we_ms" />
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif week-end haute saison</td>
+             <td>
+                <input type="text" 
+                       name="heb_tarif_we_hs"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_we_hs" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif semaine basse saison</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_sem_bs"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_sem_bs" />
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif semaine moyenne saison</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_sem_ms"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_sem_ms" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif semaine haute saison</td>
+             <td>
+                <input type="text"
+                       name="fheb_tarif_sem_hs"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_sem_hs" />
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif week-end fête 3 nuits</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_we_3n"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_we_3n" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif week-end fête 4 nuits</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_we_4n"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_we_4n" />
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif Semaine fin d'année</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_semaine_fin_annee"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_semaine_fin_annee" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif garantie</td>
+             <td>
+                <input type="text"
+                       name="heb_tarif_garantie"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_tarif_garantie" />
+             </td>
+          </tr>
+          <tr>
+             <td>Tarif charge</td>
+             <td>
+                <!--
+                <select name="heb_charge_fk">
+                   <option>...</option>
+                   <dtml-in zsql_select_all_charge>
+                      <dtml-if "heb_charge_fk==cha_pk">
+                         <option value='<dtml-var cha_pk>' selected> <dtml-var cha_type_fr></option>
+                      <dtml-else>
+                         <option value='<dtml-var cha_pk>'> <dtml-var cha_type_fr></option>
+                      </dtml-if>
+                   </dtml-in>
+                </select>
+                -->
+                <span tal:content="heb/heb_charge_fk" />
+                <br/>
+                Si charge forfaitaire, encodez le montant ci-dessous:<br/>
+                <input type="text"
+                       name="heb_forfait_montant"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_forfait_montant" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td>Tarif divers</td>
+             <td>
+                <!--input type="text" name="fheb_tarif_divers" value="<dtml-var heb_tarif_divers"-->
+                <textarea name="heb_tarif_divers" 
+                          value=""
+                          tal:attributes="value heb/heb_tarif_divers" 
+                          cols="30" 
+                          rows="5"><span tal:content="heb/heb_tarif_divers" /></textarea>
+             </td>
+          </tr>
+
+       </table>
+       <!---[FIN TARIFICATION GITES]--->
+
+       <!---[DEBUT TAXE SEJOUR]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                TAXE DE SEJOUR
+                </span>
+             </td>
+          </tr>
+          <tr>
+             <td>Taxe de Séjour</td>
+             <td>
+                <!--
+                <select name="fheb_taxe_sejour">
+                   <option value="non">...</option>
+                       <dtml-if "heb_taxe_sejour=='oui'">
+                       <option value="oui" selected> Oui</option>
+                       <option value="non"> Non</option>
+                       <dtml-else>
+                           <option value="oui"> Oui</option>
+                       <option value="non" selected> Non</option>
+                       </dtml-if>
+                </select>
+                -->
+                <span tal:content="heb/heb_taxe_sejour" />
+             </td>
+          </tr>
+          <tr>
+             <td>Montant de la taxe</td>
+             <td>
+                <input type="text"
+                       name="heb_taxe_montant"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_taxe_montant" />
+             </td>
+          </tr>
+       </table>
+       <!---[FIN TAXE SEJOUR]--->
+
+       <!---[DEBUT POINTS FORTS HEB]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                POINT FORT DE L' HEBERGEMENT
+                </span>
+             </td>
+          </tr>
+          <tr>
+             <td>Les points forts <b>FR</b></td>
+             <td>
+                <textarea name="heb_pointfort_fr"
+                          cols="50"
+                          rows="9"><span tal:content="heb/heb_pointfort_fr" /></textarea>
+             </td>
+          </tr>
+       </table>
+       <!---[FIN POINTS FORTS HEB]--->
+
+       <!---[DEBUT DESCRIPTION HEB]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                DESCRIPTION HEBERGEMENT
+                </span>
+
+             </td>
+          </tr>
+          <tr>
+             <td>Description de l'hébergement <b>FR</b></td>
+             <td>
+                <textarea name="heb_descriptif_fr"
+                          cols="50"
+                          rows="9"><span tal:content="heb/heb_descriptif_fr" /></textarea>
+             </td>
+          </tr>
+       </table>
+       <!---[FIN DESCRIPTION HEB]--->
+
+       <!---[DEBUT DISTRIBUTION HEB]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                DISTRIBUTION HEBERGEMENT
+                </span>
+
+             </td>
+          </tr>
+          <tr>
+             <td>Distribution de l'hébergement <b>FR</b></td>
+             <td>
+                <textarea name="heb_distribution_fr"
+                          cols="50"
+                          rows="9"><span tal:content="heb/heb_distribution_fr" /></textarea>
+             </td>
+          </tr>
+       </table>
+       <!---[FIN DISTRIBUTION HEB]--->
+
+       <!---[DEBUT TYPE LIT HEB]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                LITERIE
+                </span>
+
+             </td>
+          </tr>
+          <tr>
+             <td>Lit d'une personne</td>
+             <td>
+                 <input type="text"
+                        name="heb_lit_1p"
+                        size="10"
+                        value=""
+                        tal:attributes="value heb/heb_lit_1p" />
+            </td>
+          </tr>
+          <tr>
+            <td>Lit de 2 personnes</td>
+            <td>
+                 <input type="text"
+                        name="heb_lit_2p"
+                        size="10"
+                        value=""
+                        tal:attributes="value heb/heb_lit_2p" />
+            </td>
+          </tr>
+          <tr>
+            <td>Lit superposé</td>
+            <td>
+                <input type="text"
+                       name="heb_lit_sup"
+                       size="10"
+                       value=""
+                       tal:attributes="value heb/heb_lit_sup" />
+                       
+            </td>
+          </tr>
+          <tr>
+             <td>Lit pour enfant</td>
+             <td><input type="text"
+                        name="fheb_lit_enf"
+                        size="10"
+                        value=""
+                        tal:attributes="value heb/heb_lit_enf" /></td>
+          </tr>
+       </table>
+       <!---[FIN TYPE LIT HEB]--->
+
+       <!---[DEBUT CONFORT HEB]--->
+       <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <tr>
+             <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">
+                CONFORT DE L'HEBERGEMENT
+                </span>
+
+             </td>
+          </tr>
+          <tr>
+             <td><img src="images/picto/c_tv.png" />&nbsp;&nbsp;&nbsp;&nbsp; TV - VIDEO</td>
+             <td>
+                 <!--
+                <dtml-if "heb_confort_tv=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_tv" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_tv" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_tv" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+             <td><img src="images/picto/c_feu_ouvert.png" />&nbsp;&nbsp;&nbsp;&nbsp; Feu ouvert</td>
+             <td>
+                 <!--
+                <dtml-if "heb_confort_feu_ouvert=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_feu_ouvert" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_feu_ouvert" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_feu_ouvert" />
+             </td>
+          </tr>
+          <tr>
+             <td>
+                 <img src="images/picto/c_lave_vaisselle.png" />
+                 &nbsp;&nbsp;&nbsp;&nbsp;Lave-vaisselle
+            </td>
+            <td>
+                 <!--
+                <dtml-if "heb_confort_lave_vaiselle=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_lave_vaiselle" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_lave_vaiselle" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_lave_vaiselle" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+            <td>
+                 <img src="images/picto/c_micro_onde.png" />
+                 &nbsp;&nbsp;&nbsp;&nbsp;Micro-onde
+            </td>
+            <td>
+                 <!--
+                <dtml-if "heb_confort_micro_onde=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_micro_onde" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_micro_onde" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_micro_onde" />
+             </td>
+          </tr>
+          <tr>
+             <td>
+                 <img src="images/picto/c_lave_linge.png" />
+                 &nbsp;&nbsp;&nbsp;&nbsp;Lave-linge
+            </td>
+            <td>
+                 <!--
+                <dtml-if "heb_confort_lave_linge=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_lave_linge" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_lave_linge" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_lave_linge" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+            <td>
+                <img src="images/picto/c_seche_linge.png" />
+                &nbsp;&nbsp;&nbsp;&nbsp;Sèche-linge
+            </td>
+            <td>
+                <!--
+                <dtml-if "heb_confort_seche_linge=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_seche_linge" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_seche_linge" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_seche_linge" />
+             </td>
+          </tr>
+          <tr>
+            <td>
+                <img src="images/picto/c_congelateur.png" />
+                &nbsp;&nbsp;&nbsp;&nbsp;Congélateur
+            </td>
+            <td>
+                <!--
+                <dtml-if "heb_confort_congelateur=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_congelateur" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_congelateur" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_congelateur" />
+             </td>
+          </tr>
+          <tr bgcolor="#E0FEEA">
+            <td>
+                 <img src="images/picto/c_internet.png" />
+                 &nbsp;&nbsp;&nbsp;&nbsp;Accès Internet
+            </td>
+            <td>
+                <!--
+                <dtml-if "heb_confort_internet=='oui'">
+                   <input type="checkbox" 
+                          name="fheb_confort_internet" 
+                          value="oui" 
+                          checked="checked">
+                <dtml-else>
+                   <input type="checkbox" 
+                          name="fheb_confort_internet" 
+                          value="oui">
+                </dtml-if>
+                -->
+                <span tal:content="heb/heb_confort_internet" />
+            </td>
+         </tr>
+      </table>
+      <!---[FIN CONFORT HEB]--->
+
+      <!---[DEBUT CGT]--->
+      <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+         <tr>
+            <td colspan="2" align="left" bgcolor="#006666">
+                <span class="titre_encodage">CGT</span>
+            </td>
+         </tr>
+         <tr>
+            <td>Code CGT</td>
+            <td>
+                 <input type="text"
+                        name="heb_code_cgt"
+                        size="10"
+                        value=""
+                        tal:attributes="value heb/heb_code_cgt" />
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3">Capacité</td>
+            <td>
+                min : <input type="text" 
+                             name="fheb_cgt_cap_min"
+                             size="5"
+                             value=""
+                             tal:attributes="value heb/heb_cgt_cap_min" />
+            </td>
+          <tr>
+            <td>
+                max : <input type="text" 
+                             name="fheb_cgt_cap_max"
+                             size="5"
+                             value=""
+                             tal:attributes="value heb/heb_cgt_cap_max" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+                nombre de chambre : <input type="text" 
+                                           name="fheb_cgt_nbre_chmbre"
+                                           size="5"
+                                           value=""
+                                           tal:attributes="value heb/heb_cgt_nbre_chmbre" />
+            </td>
+        </tr>
+      </table>
+      <!---[FIN CGT]--->
+   </div>
 </div>
 </body>
 </html>
