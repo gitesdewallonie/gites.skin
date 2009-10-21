@@ -27,6 +27,10 @@ class SearchHebergement(formbase.PageForm):
 
     search_results = ViewPageTemplateFile('templates/search_results_hebergement.pt')
 
+    def update(self):
+        self.request.locale = plone.z3cform.z2.setup_locale(self.request)
+        super(SearchHebergement, self).update()
+
     def translateGroupedType(self, groupedType):
         """
         Translate a grouped type to a list of types
