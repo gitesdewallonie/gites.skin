@@ -163,11 +163,11 @@ msgstr "Een logeeradres zoeken"
 
 #: browser/interfaces.py:194
 msgid "Sejour au"
-msgstr ""
+msgstr "Vertrekdatum"
 
 #: browser/interfaces.py:190
 msgid "Sejour du"
-msgstr ""
+msgstr "Aankomstdatum"
 
 #: browser/interfaces.py:170
 msgid "Select a classification"

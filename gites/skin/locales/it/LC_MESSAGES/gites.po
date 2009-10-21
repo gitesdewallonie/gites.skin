@@ -163,11 +163,11 @@ msgstr "Ricercare un'abitazione"
 
 #: browser/interfaces.py:194
 msgid "Sejour au"
-msgstr ""
+msgstr "Partenza"
 
 #: browser/interfaces.py:190
 msgid "Sejour du"
-msgstr ""
+msgstr "Arrivo"
 
 #: browser/interfaces.py:170
 msgid "Select a classification"
