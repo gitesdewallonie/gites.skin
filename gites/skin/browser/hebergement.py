@@ -17,7 +17,9 @@ from gites.skin.browser.interfaces import (IHebergementView,
                                            IHebergementIconsView)
 from Products.CMFCore.utils import getToolByName
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+from sqlalchemy import select, func
 from z3c.sqlalchemy import getSAWrapper
+from datetime import datetime
 
 
 class HebergementView(BrowserView):
@@ -26,6 +28,52 @@ class HebergementView(BrowserView):
     """
     implements(IHebergementView)
     template = ViewPageTemplateFile("templates/hebergement.pt")
+
+    def _getLastAddedReservation(self):
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        ReservationProprio = wrapper.getMapper('reservation_proprio')
+        return select([func.max(ReservationProprio.res_date_cre).label('maxcre')],
+                      ReservationProprio.heb_fk==self.context.heb_pk).execute().fetchone()
+
+    def calendarJS(self):
+        """
+        Calendar javascript
+        """
+        return """
+        //<![CDATA[
+            calsetup = function() {
+                jQuery.noConflict();
+                new GiteTimeframe('calendars', {
+                                startField: 'start',
+                                endField: 'end',
+                                resetButton: 'reset',
+                                weekOffset: 1,
+                                hebPk: %s,
+                                months:1,
+                                earliest: new Date()});}
+            registerPloneFunction(calsetup);
+        //]]>
+        """ % (self.context.heb_pk)
+
+    def showCalendar(self):
+        """
+        Should we show this calendar ?
+
+            * is it activated ?
+            * did the proprio edited its calendar recently ?
+        """
+        if self.context.heb_calendrier_proprio != 'actif':
+            return False
+        lastReservation = self._getLastAddedReservation()
+        if lastReservation is not None:
+            lastReservation = lastReservation.maxcre
+        else: # pas de reservation
+            return False
+        delta = datetime.now() - lastReservation
+        if delta.days > 45:
+            return False
+        return True
 
     def getHebergementByProprietaire(self, proprioFk):
         """
