@@ -1,3 +1,4 @@
+import gites.skin.monkey
 from zope.i18nmessageid import MessageFactory
 GitesMessage = MessageFactory("gites")
 GitesLocalesMessage = MessageFactory("giteslocales")
