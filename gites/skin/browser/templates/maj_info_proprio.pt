@@ -86,7 +86,7 @@
                                name="pro_pronom2"
                                value=""
                                size="50"
-                               tal:attributes="value proprio/pro_prenom2" />
+                               tal:attributes="value proprio/pro_nom2" />
                     </td>
                 </tr>
                 <tr>
