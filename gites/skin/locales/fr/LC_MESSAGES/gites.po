@@ -162,11 +162,11 @@ msgstr "Rechercher un hébergement"
 
 #: browser/interfaces.py:194
 msgid "Sejour au"
-msgstr ""
+msgstr "Date de départ"
 
 #: browser/interfaces.py:190
 msgid "Sejour du"
-msgstr ""
+msgstr "Date d'arrivée"
 
 #: browser/interfaces.py:170
 msgid "Select a classification"

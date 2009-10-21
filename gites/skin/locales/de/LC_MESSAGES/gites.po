@@ -166,11 +166,11 @@ msgstr "Unterkunft suchen"
 
 #: browser/interfaces.py:194
 msgid "Sejour au"
-msgstr ""
+msgstr "Abreisedatum"
 
 #: browser/interfaces.py:190
 msgid "Sejour du"
-msgstr ""
+msgstr "Ankunftsdatum"
 
 #: browser/interfaces.py:170
 msgid "Select a classification"

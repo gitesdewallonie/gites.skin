@@ -160,11 +160,11 @@ msgstr "Search of an accommodation"
 
 #: browser/interfaces.py:194
 msgid "Sejour au"
-msgstr ""
+msgstr "Leaving date"
 
 #: browser/interfaces.py:190
 msgid "Sejour du"
-msgstr ""
+msgstr "Arrival date"
 
 #: browser/interfaces.py:170
 msgid "Select a classification"
