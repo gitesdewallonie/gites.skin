@@ -56,6 +56,7 @@ class SearchHebergement(formbase.PageForm):
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         hebergementTable = wrapper.getMapper('hebergement')
+        proprioTable = wrapper.getMapper('proprio')
         provincesTable = wrapper.getMapper('province')
         episTable = wrapper.getMapper('link_hebergement_epis')
         hebergementType = data.get('hebergementType')
@@ -67,7 +68,10 @@ class SearchHebergement(formbase.PageForm):
         checkSmokers = data.get('smokers')
         seeResults = self.request.form.has_key('form.seeResults')
 
-        query = session.query(hebergementTable).join('province')
+        query = session.query(hebergementTable).join('province').join('proprio')
+        query = query.filter(hebergementTable.heb_site_public == '1')
+        query = query.filter(proprioTable.pro_etat == True)
+
         if provinces and provinces != -1:
             query = query.filter(provincesTable.prov_pk == provinces)
         if hebergementType and hebergementType != -1:

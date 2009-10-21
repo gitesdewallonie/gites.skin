@@ -22,7 +22,10 @@ class MoteurRecherche(BrowserView):
             return queryMultiAdapter((portal, self.request),
                                       name="unknown_gites")()
         hebergement = session.query(HebTable).get(heb_pk)
-        if hebergement:
+        if hebergement and \
+           int(hebergement.heb_site_public) == 1 and \
+           hebergement.proprio.pro_etat:
+           # L'hébergement doit être actif, ainsi que son propriétaire
             hebURL = queryMultiAdapter((hebergement.__of__(self.context.hebergement), self.request), name="url")
             return self.request.RESPONSE.redirect(str(hebURL))
         else:
