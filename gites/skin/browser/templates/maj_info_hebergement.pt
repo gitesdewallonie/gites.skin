@@ -16,7 +16,7 @@ de son hebergement
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="hebergements python:view.getHebergementByProprietaire(60)">
+     tal:define="hebergements python:view.getHebergementByProprietaire(24)">
     <h1>Modification de vos informations</h1>
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
@@ -95,7 +95,52 @@ de son hebergement
               <tr>
                  <td valign="center">Type de table d'hôte</td>
                  <td>
-                    getTypeTableHote(heb_pk=fheb_pk
+                     <div tal:define="table heb/tableHote">
+                     <tal:boucle tal:repeat="elem table">
+                         <input type="checkbox"
+                                name="heb_tenis"
+                                checked=""
+                                value="1"
+                                tal:attributes="checked python:elem.tabho_pk==1 
+                                                and 
+                                                elem.tabho_pk==1 
+                                                or None" />
+                          <img src="assiette_1.png"
+                             alt=""
+                             title=""
+                             tal:attributes="alt elem/tabho_type_fr;
+                                             title elem/tabho_type_fr">
+                          <br />
+                        <input type="checkbox"
+                                name="heb_tenis"
+                                checked=""
+                                value="2"
+                                tal:attributes="checked python:elem.tabho_pk==2
+                                                and 
+                                                elem.tabho_pk==2
+                                                or None" />
+                          <img src="assiette_2.png"
+                             alt=""
+                             title=""
+                             tal:attributes="alt elem/tabho_type_fr;
+                                              title elem/tabho_type_fr">
+                            <br />
+                        <input type="checkbox"
+                                name="heb_tenis"
+                                checked=""
+                                value="3"
+                                tal:attributes="checked python:elem.tabho_pk==3
+                                                and 
+                                                elem.tabho_pk==3 
+                                                or None" />
+                          <img src="assiette_3.png"
+                             alt=""
+                             title=""
+                             tal:attributes="alt elem/tabho_type_fr;
+                                            title elem/tabho_type_fr">
+                          <br />
+                    </tal:boucle>
+                    </div>
                  </td>
               </tr>
               <tr>
@@ -131,6 +176,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_tenis_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Tennis
                     <br />
                     <input type="checkbox"
                            name="heb_nautisme"
@@ -146,6 +193,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_nautisme_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Activiés nautiques
                     <br />
                     <input type="checkbox"
                            name="heb_sky"
@@ -161,6 +210,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_sky_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Ski
                     <br/>
                     <input type="checkbox"
                            name="heb_rando"
@@ -176,6 +227,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_rando_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Randonnée
                     <br />
                     <input type="checkbox"
                            name="heb_piscine"
@@ -191,6 +244,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_piscine_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Piscine
                     <br />
                     <input type="checkbox"
                            name="heb_peche"
@@ -206,6 +261,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_peche_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Pêche
                     <br/>
                     <input type="checkbox"
                            name="heb_equitation"
@@ -221,6 +278,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_equitation_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Equitation
                     <br />
                     <input type="checkbox"
                            name="heb_velo"
@@ -236,6 +295,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_velo_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    Vélo
                     <br />
                     <input type="checkbox"
                            name="heb_vtt"
@@ -251,6 +312,8 @@ de son hebergement
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_vtt_distance" />Km
+                    &nbsp;&nbsp;&nbsp;
+                    VTT
                     <br />
                     <input type="checkbox"
                            name="heb_ravel"
@@ -267,6 +330,7 @@ de son hebergement
                            value=""
                            tal:attributes="value heb/heb_ravel_distance" />Km
                     &nbsp;&nbsp;&nbsp;
+                    Ravel
                     <br/>
                     </td>
                     </tr>
@@ -290,6 +354,8 @@ de son hebergement
                            value=""
                            tal:attributes="value heb/heb_commerce_distance" />Km
                     &nbsp;&nbsp;&nbsp;
+                    Commerce
+                    <br />
                     <input type="checkbox"
                            name="heb_restaurant"
                            checked=""
@@ -305,6 +371,8 @@ de son hebergement
                            value=""
                            tal:attributes="value heb/heb_restaurant_distance" />Km
                     &nbsp;&nbsp;&nbsp;
+                    Restaurant
+                    <br />
                     <input type="checkbox"
                            name="heb_gare"
                            checked=""
@@ -320,6 +388,7 @@ de son hebergement
                            value=""
                            tal:attributes="value heb/heb_gare_distance">Km
                     &nbsp;&nbsp;&nbsp;
+                    Gare
                  </td>
               </tr>
               <tr>
