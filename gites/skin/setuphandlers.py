@@ -189,6 +189,7 @@ def setupRightColumnPortlets(folder):
 
 def createContent(portal):
     #Create empty documents and folders
+    return
 
     ideesSejourFolder = createFolder(portal, "idee-sejour", "Idées Séjours",
                                      True)
