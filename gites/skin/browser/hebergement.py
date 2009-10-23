@@ -87,6 +87,17 @@ class HebergementView(BrowserView):
         hebergement = query.all()
         return hebergement
 
+    def getAllCharge(self):
+        """
+        Sélectionne les type de charge
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        chargeTable = wrapper.getMapper('charge')
+        query = session.query(chargeTable)
+        charges = query.all()
+        return charges    
+
     def getTypeHebergement(self):
         """
         Get the hebergement type title translated
