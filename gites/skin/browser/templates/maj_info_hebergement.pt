@@ -18,6 +18,16 @@ de son hebergement
 <div metal:fill-slot="main"
      tal:define="hebergements python:view.getHebergementByProprietaire(24)">
     <h1>Modification de vos informations</h1>
+    Ce formulaire vous permet de modifier les informations de votre hébergement.
+
+    Certaines de ces données ne peuvent pas être modifiées via ce formulaire et nécessite une intervention de la part des Gîtes de Wallonie.
+
+    Si vous souhaitez obtenir des informations complémentaires ou si vous éprouvez des difficultés à compléter ce formulaire, merci de prendre contact avec nos bureaux au 081 311 800.
+
+
+    Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis aux Gîtes de Wallonie qui vérifieront et valideront vos données. Dès que celles-ci seront validées, elles apparaitront sur le site.
+
+    
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
        <span tal:content="heb/heb_nom" />
@@ -98,46 +108,52 @@ de son hebergement
                      <div tal:define="table heb/tableHote">
                      <tal:boucle tal:repeat="elem table">
                          <input type="checkbox"
-                                name="heb_tenis"
-                                checked=""
+                                name="hebhot_tabhot_fk"
+                                checked=""  
                                 value="1"
                                 tal:attributes="checked python:elem.tabho_pk==1 
                                                 and 
                                                 elem.tabho_pk==1 
                                                 or None" />
                           <img src="assiette_1.png"
-                             alt=""
-                             title=""
-                             tal:attributes="alt elem/tabho_type_fr;
-                                             title elem/tabho_type_fr">
+                               alt="assiette_1.png"
+                               title="Assiette gourmande"
+                               width="47"
+                               height="36" />
+                          &nbsp;&nbsp;&nbsp;
+                          Assiette gourmande
                           <br />
-                        <input type="checkbox"
-                                name="heb_tenis"
-                                checked=""
-                                value="2"
-                                tal:attributes="checked python:elem.tabho_pk==2
-                                                and 
-                                                elem.tabho_pk==2
-                                                or None" />
+                          <input type="checkbox"
+                                 name="hebhot_tabhot_fk"
+                                 checked=""
+                                 value="2"
+                                 tal:attributes="checked python:elem.tabho_pk==2
+                                                 and 
+                                                 elem.tabho_pk==2
+                                                 or None" />
                           <img src="assiette_2.png"
-                             alt=""
-                             title=""
-                             tal:attributes="alt elem/tabho_type_fr;
-                                              title elem/tabho_type_fr">
-                            <br />
-                        <input type="checkbox"
-                                name="heb_tenis"
-                                checked=""
-                                value="3"
-                                tal:attributes="checked python:elem.tabho_pk==3
-                                                and 
-                                                elem.tabho_pk==3 
-                                                or None" />
+                               alt="assiette_2.png"
+                               title="Repas familial"
+                               width="47"
+                               height="36" />
+                          &nbsp;&nbsp;&nbsp;
+                          Repas familial
+                          <br />
+                          <input type="checkbox"
+                                 name="hebhot_tabhot_fk"
+                                 checked=""
+                                 value="3"
+                                 tal:attributes="checked python:elem.tabho_pk==3
+                                                 and 
+                                                 elem.tabho_pk==3 
+                                                 or None" />
                           <img src="assiette_3.png"
-                             alt=""
-                             title=""
-                             tal:attributes="alt elem/tabho_type_fr;
-                                            title elem/tabho_type_fr">
+                               alt="assiette_3.png"
+                               title="Menu gastronomique"
+                               width="47"
+                               height="36" />
+                          &nbsp;&nbsp;&nbsp;
+                          Menu gastronomique
                           <br />
                     </tal:boucle>
                     </div>
@@ -149,11 +165,15 @@ de son hebergement
               <tr>
                  <td>Nombre d'épis</td>
                  <td>
+                    <!--
                     if "heb_typeheb_fk in [1,2,3,4,7,10]"  cas des GR GF MT GC MV GRECR<br />
-                       &nbsp;&nbsp;&nbsp;getNbreEpis(heb_pk=heb_pk)
                     if "heb_nbre_epis in [5,6,9]" cas de CH MH CHECR<br />
-                       &nbsp;&nbsp;&nbsp;getNbreEpis(heb_pk=heb_pk)
-                    
+                    -->
+                    <div tal:define="nbrEpis heb/epis">
+                        <span tal:repeat="epis nbrEpis">
+                            <span tal:content="epis/heb_nombre_epis" />
+                        </span>
+                    </div>
                  </td>
               </tr>
               <tr>
@@ -170,7 +190,11 @@ de son hebergement
                                            and 
                                            heb.heb_tenis=='oui' 
                                            or None" />
-                    <img src="a_tennis.png">
+                    <img src="a_tennis.png"
+                         alt="a_tennis.png"
+                         title="Tennis"
+                         width="28"
+                         height="28" />
                     <input type="text" 
                            name="heb_tenis_distance"
                            size="3"
@@ -187,7 +211,11 @@ de son hebergement
                                            and 
                                            heb.heb_nautisme=='oui' 
                                            or None" />
-                    <img src="a_voile.png">
+                    <img src="a_voile.png"
+                         alt="a_voile.png"
+                         title="Activités nautiques"
+                         width="28"
+                         height="28" />
                     <input type="text" 
                            name="heb_nautisme_distance"
                            size="3"
@@ -204,7 +232,11 @@ de son hebergement
                                            and 
                                            heb.heb_sky=='oui' 
                                            or None" />
-                    <img src="a_sky.png">
+                    <img src="a_sky.png"
+                         alt="a_sky.png"
+                         title="Ski"
+                         width="28"
+                         height="28" />
                     <input type="text"
                            name="heb_sky_distance"
                            size="3"
@@ -669,7 +701,8 @@ de son hebergement
                        </dtml-in>
                     </select>
                     -->
-                    <span tal:content="heb/heb_charge_fk" />
+                    <span tal:content="heb/heb_charge_fk" /> ::
+                    <span tal:content="heb/charge/cha_type_fr" />
                     <br/>
                     Si charge forfaitaire, encodez le montant ci-dessous:<br/>
                     <input type="text"
