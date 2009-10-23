@@ -689,20 +689,19 @@ de son hebergement
               <tr>
                  <td>Tarif charge</td>
                  <td>
-                    <!--
-                    <select name="heb_charge_fk">
-                       <option>...</option>
-                       <dtml-in zsql_select_all_charge>
-                          <dtml-if "heb_charge_fk==cha_pk">
-                             <option value='<dtml-var cha_pk>' selected> <dtml-var cha_type_fr></option>
-                          <dtml-else>
-                             <option value='<dtml-var cha_pk>'> <dtml-var cha_type_fr></option>
-                          </dtml-if>
-                       </dtml-in>
-                    </select>
-                    -->
-                    <span tal:content="heb/heb_charge_fk" /> ::
-                    <span tal:content="heb/charge/cha_type_fr" />
+                    <div tal:define="charges python:view.getAllCharge()">
+                        <span tal:repeat="charge charges">
+                            <input type="radio"
+                                   name="heb_charge_fk"
+                                   checked=""
+                                   value=""
+                                   tal:attributes="checked python:charge.cha_pk==heb.heb_charge_fk
+                                                   and
+                                                   charge.cha_pk==heb.heb_charge_fk
+                                                   or None" />
+                            <span tal:content="charge/cha_type_fr" /><br />
+                        </span>
+                    </div>
                     <br/>
                     Si charge forfaitaire, encodez le montant ci-dessous:<br/>
                     <input type="text"
