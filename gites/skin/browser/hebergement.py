@@ -34,7 +34,7 @@ class HebergementView(BrowserView):
         session = wrapper.session
         ReservationProprio = wrapper.getMapper('reservation_proprio')
         return select([func.max(ReservationProprio.res_date_cre).label('maxcre')],
-                      ReservationProprio.heb_fk==self.context.heb_pk).execute().fetchone()
+                      ReservationProprio.heb_fk == self.context.heb_pk).execute().fetchone()
 
     def calendarJS(self):
         """
@@ -68,6 +68,8 @@ class HebergementView(BrowserView):
         lastReservation = self._getLastAddedReservation()
         if lastReservation is not None:
             lastReservation = lastReservation.maxcre
+            if lastReservation is None:
+                return False
         else: # pas de reservation
             return False
         delta = datetime.now() - lastReservation
@@ -145,7 +147,7 @@ class HebergementView(BrowserView):
         Get the commune and type hebergement URL
         """
         hebURL = queryMultiAdapter((self.context, self.request), name="url")
-        urlList= str(hebURL).split('/')
+        urlList = str(hebURL).split('/')
         urlList.pop()
         return '/'.join(urlList)
 
