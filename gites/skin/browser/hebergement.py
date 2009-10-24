@@ -54,6 +54,7 @@ class HebergementView(BrowserView):
                                 earliest: new Date()});}
             registerPloneFunction(calsetup);
         //]]>
+
         """ % (self.context.heb_pk)
 
     def showCalendar(self):
@@ -98,7 +99,7 @@ class HebergementView(BrowserView):
         chargeTable = wrapper.getMapper('charge')
         query = session.query(chargeTable)
         charges = query.all()
-        return charges    
+        return charges
 
     def getTypeHebergement(self):
         """
