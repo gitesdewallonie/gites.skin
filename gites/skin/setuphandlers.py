@@ -31,7 +31,6 @@ def setupgites(context):
     if not ISite.providedBy(portal):
         enableSite(portal)
     #setupLanguages(portal)
-    setupNewsletter(portal)
     createHebergement(portal)
     createContent(portal)
     createLocalFS(portal)
