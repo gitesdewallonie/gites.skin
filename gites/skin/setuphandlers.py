@@ -31,6 +31,7 @@ def setupgites(context):
     if not ISite.providedBy(portal):
         enableSite(portal)
     #setupLanguages(portal)
+    setupNewsletter(portal)
     createHebergement(portal)
     createContent(portal)
     createLocalFS(portal)
@@ -189,6 +190,8 @@ def setupRightColumnPortlets(folder):
 
 def createContent(portal):
     #Create empty documents and folders
+
+    # XXX see ticket http://trac.affinitic.be/trac/ticket/1466
     return
 
     ideesSejourFolder = createFolder(portal, "idee-sejour", "Idées Séjours",
