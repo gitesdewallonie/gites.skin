@@ -28,12 +28,13 @@
            class="tile"
            tal:attributes="href hebergement/@@url;
                            title obj/description">
-            <span tal:replace="obj/Title">
+            <span tal:replace="obj/pretty_title_or_id">
              Some Dernieres minutes
             </span>
             <div class="portletItemDetails">
-                <img id="derniere-minute-vignette" src="" 
-                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}"/>
+                <img id="derniere-minute-vignette"
+                     src=""
+                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}/image_thumb"/>
                 <span id="capacite">
                   <img src="capacite.png"
                        title="Capacité"
@@ -44,7 +45,7 @@
                 <span id="derniere-minute-date">
                    <span tal:replace="start" /> &rarr; <span tal:replace="end" />
                 </span>
-                <span id="promotion-text" 
+                <span id="promotion-text"
                       tal:condition="promotion"><br/><span tal:replace="structure text" /></span>
             </div>
         </a>

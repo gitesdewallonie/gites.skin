@@ -135,6 +135,17 @@ class Renderer(base.Renderer):
         results = [hebergement.__of__(self.context.hebergement) for hebergement in results]
         return results
 
+    def getRandomVignette(self, derniereMinuteUrl, amount=1):
+        """
+        Return a random vignette for a derniere minuet
+        """
+        cat = getToolByName(self.context, 'portal_catalog')
+        results = cat.searchResults(portal_type='Vignette',
+                                         path={'query': derniereMinuteUrl})
+        results = list(results)
+        random.shuffle(results)
+        return results[:amount]
+
 
 class AddForm(base.AddForm):
     """Portlet add form.

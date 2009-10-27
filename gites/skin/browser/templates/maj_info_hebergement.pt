@@ -1,7 +1,3 @@
-<!--
-form qui permet au proprio de mettre à jours les infos 
-de son hebergement
--->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
@@ -18,30 +14,38 @@ de son hebergement
 <div metal:fill-slot="main"
      tal:define="hebergements python:view.getHebergementByProprietaire(24)">
     <h1>Modification de vos informations</h1>
+    <p>
     Ce formulaire vous permet de modifier les informations de votre hébergement.
+    </p>
+    <p>
+    Certaines de ces données ne peuvent pas être modifiées via ce formulaire
+    et nécessite une intervention de la part des Gîtes de Wallonie.
+    </p>
+    <p>
+    Si vous souhaitez obtenir des informations complémentaires ou si vous
+    éprouvez des difficultés à compléter ce formulaire, merci de prendre
+    contact avec nos bureaux au 081 311 800.
+    </p>
+    <p>
+    Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis
+    aux Gîtes de Wallonie qui vérifieront et valideront vos données.
+    Dès que celles-ci seront validées, elles apparaitront sur le site.
+    </p>
 
-    Certaines de ces données ne peuvent pas être modifiées via ce formulaire et nécessite une intervention de la part des Gîtes de Wallonie.
-
-    Si vous souhaitez obtenir des informations complémentaires ou si vous éprouvez des difficultés à compléter ce formulaire, merci de prendre contact avec nos bureaux au 081 311 800.
-
-
-    Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis aux Gîtes de Wallonie qui vérifieront et valideront vos données. Dès que celles-ci seront validées, elles apparaitront sur le site.
-
-    
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
        <span tal:content="heb/heb_nom" />
-       <form action="traiter_modification_heb" 
+       <form action="traiter_modification_heb"
              method="get">
            <!---[DEBUT INFORMATION GENERALE]--->
-           <input type="hidden" 
-                  name="heb_pk" 
+           <input type="hidden"
+                  name="heb_pk"
                   value=""
                   tal:attributes="value heb/heb_pk" />
 
-           <table border="1" 
-                  cellspacing="0" 
-                  bordercolor="#EEEFEE" 
+           <table border="1"
+                  cellspacing="0"
+                  bordercolor="#EEEFEE"
                   width="560">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
@@ -65,18 +69,18 @@ de son hebergement
                <tr>
                   <td>Nom de l'hébergement</td>
                   <td>
-                     <input type="text" 
+                     <input type="text"
                             name="heb_nom"
-                            size="50" 
+                            size="50"
                             value=""
-                            tal:attributes="value heb/heb_nom" /> 
+                            tal:attributes="value heb/heb_nom" />
                   </td>
                 </tr>
                 <tr>
                    <td>Adresse</td>
                    <td>
-                      <input type="text" 
-                             name="heb_adresse" 
+                      <input type="text"
+                             name="heb_adresse"
                              value=""
                              size="50"
                              tal:attributes="value heb/heb_adresse" />
@@ -92,7 +96,7 @@ de son hebergement
               <tr>
                  <td>Localité</td>
                  <td>
-                    <input type="text" 
+                    <input type="text"
                            name="heb_localite"
                            size="50"
                            value=""
@@ -109,11 +113,11 @@ de son hebergement
                      <tal:boucle tal:repeat="elem table">
                          <input type="checkbox"
                                 name="hebhot_tabhot_fk"
-                                checked=""  
+                                checked=""
                                 value="1"
-                                tal:attributes="checked python:elem.tabho_pk==1 
-                                                and 
-                                                elem.tabho_pk==1 
+                                tal:attributes="checked python:elem.tabho_pk==1
+                                                and
+                                                elem.tabho_pk==1
                                                 or None" />
                           <img src="assiette_1.png"
                                alt="assiette_1.png"
@@ -128,7 +132,7 @@ de son hebergement
                                  checked=""
                                  value="2"
                                  tal:attributes="checked python:elem.tabho_pk==2
-                                                 and 
+                                                 and
                                                  elem.tabho_pk==2
                                                  or None" />
                           <img src="assiette_2.png"
@@ -144,8 +148,8 @@ de son hebergement
                                  checked=""
                                  value="3"
                                  tal:attributes="checked python:elem.tabho_pk==3
-                                                 and 
-                                                 elem.tabho_pk==3 
+                                                 and
+                                                 elem.tabho_pk==3
                                                  or None" />
                           <img src="assiette_3.png"
                                alt="assiette_3.png"
@@ -186,16 +190,16 @@ de son hebergement
                            name="heb_tenis"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_tenis=='oui' 
-                                           and 
-                                           heb.heb_tenis=='oui' 
+                           tal:attributes="checked python:heb.heb_tenis=='oui'
+                                           and
+                                           heb.heb_tenis=='oui'
                                            or None" />
                     <img src="a_tennis.png"
                          alt="a_tennis.png"
                          title="Tennis"
                          width="28"
                          height="28" />
-                    <input type="text" 
+                    <input type="text"
                            name="heb_tenis_distance"
                            size="3"
                            value=""
@@ -207,16 +211,16 @@ de son hebergement
                            name="heb_nautisme"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_nautisme=='oui' 
-                                           and 
-                                           heb.heb_nautisme=='oui' 
+                           tal:attributes="checked python:heb.heb_nautisme=='oui'
+                                           and
+                                           heb.heb_nautisme=='oui'
                                            or None" />
                     <img src="a_voile.png"
                          alt="a_voile.png"
                          title="Activités nautiques"
                          width="28"
                          height="28" />
-                    <input type="text" 
+                    <input type="text"
                            name="heb_nautisme_distance"
                            size="3"
                            value=""
@@ -228,9 +232,9 @@ de son hebergement
                            name="heb_sky"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_sky=='oui' 
-                                           and 
-                                           heb.heb_sky=='oui' 
+                           tal:attributes="checked python:heb.heb_sky=='oui'
+                                           and
+                                           heb.heb_sky=='oui'
                                            or None" />
                     <img src="a_sky.png"
                          alt="a_sky.png"
@@ -249,12 +253,12 @@ de son hebergement
                            name="heb_rando"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_rando=='oui' 
-                                           and 
-                                           heb.heb_rando=='oui' 
+                           tal:attributes="checked python:heb.heb_rando=='oui'
+                                           and
+                                           heb.heb_rando=='oui'
                                            or None" />
                     <img src="a_rando.png">
-                    <input type="text" 
+                    <input type="text"
                            name="heb_rando_distance"
                            size="3"
                            value=""
@@ -266,12 +270,12 @@ de son hebergement
                            name="heb_piscine"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_piscine=='oui' 
-                                           and 
-                                           heb.heb_piscine=='oui' 
+                           tal:attributes="checked python:heb.heb_piscine=='oui'
+                                           and
+                                           heb.heb_piscine=='oui'
                                            or None" />
                     <img src="a_piscine.png">
-                    <input type="text" 
+                    <input type="text"
                            name="heb_piscine_distance"
                            size="3"
                            value=""
@@ -283,12 +287,12 @@ de son hebergement
                            name="heb_peche"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_peche=='oui' 
-                                           and 
-                                           heb.heb_peche=='oui' 
+                           tal:attributes="checked python:heb.heb_peche=='oui'
+                                           and
+                                           heb.heb_peche=='oui'
                                            or None" />
                     <img src="a_peche.png">
-                    <input type="text" 
+                    <input type="text"
                            name="heb_peche_distance"
                            size="3"
                            value=""
@@ -300,12 +304,12 @@ de son hebergement
                            name="heb_equitation"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_equitation=='oui' 
-                                           and 
-                                           heb.heb_equitation=='oui' 
+                           tal:attributes="checked python:heb.heb_equitation=='oui'
+                                           and
+                                           heb.heb_equitation=='oui'
                                            or None" />
                     <img src="a_cheval.png">
-                    <input type="text" 
+                    <input type="text"
                            name="heb_equitation_distance"
                            size="3"
                            value=""
@@ -317,12 +321,12 @@ de son hebergement
                            name="heb_velo"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_velo=='oui' 
-                                           and 
-                                           heb.heb_velo=='oui' 
+                           tal:attributes="checked python:heb.heb_velo=='oui'
+                                           and
+                                           heb.heb_velo=='oui'
                                            or None" />
                     <img src="a_velo.png">
-                    <input type="text" 
+                    <input type="text"
                            name="fheb_velo_distance"
                            size="3"
                            value=""
@@ -334,9 +338,9 @@ de son hebergement
                            name="heb_vtt"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_vtt=='oui' 
-                                           and 
-                                           heb.heb_vtt=='oui' 
+                           tal:attributes="checked python:heb.heb_vtt=='oui'
+                                           and
+                                           heb.heb_vtt=='oui'
                                            or None" />
                     <img src="a_vtt.png">
                     <input type="text"
@@ -351,9 +355,9 @@ de son hebergement
                            name="heb_ravel"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_ravel=='oui' 
-                                           and 
-                                           heb.heb_ravel=='oui' 
+                           tal:attributes="checked python:heb.heb_ravel=='oui'
+                                           and
+                                           heb.heb_ravel=='oui'
                                            or None" />
                     <img src="a_ravel.png">
                     <input type="text"
@@ -375,9 +379,9 @@ de son hebergement
                            name="heb_commerce"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_commerce=='oui' 
-                                           and 
-                                           heb.heb_commerce=='oui' 
+                           tal:attributes="checked python:heb.heb_commerce=='oui'
+                                           and
+                                           heb.heb_commerce=='oui'
                                            or None" />
                     <img src="i_commerce.png" title="COMMERCE" />
                     <input type="text"
@@ -392,9 +396,9 @@ de son hebergement
                            name="heb_restaurant"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_restaurant=='oui' 
-                                           and 
-                                           heb.heb_restaurant=='oui' 
+                           tal:attributes="checked python:heb.heb_restaurant=='oui'
+                                           and
+                                           heb.heb_restaurant=='oui'
                                            or None" />
                     <img src="i_restaurant.png" title="RESTAURANT" />
                     <input type="text"
@@ -409,9 +413,9 @@ de son hebergement
                            name="heb_gare"
                            checked=""
                            value="oui"
-                           tal:attributes="checked python:heb.heb_gare=='oui' 
-                                           and 
-                                           heb.heb_gare=='oui' 
+                           tal:attributes="checked python:heb.heb_gare=='oui'
+                                           and
+                                           heb.heb_gare=='oui'
                                            or None" />
                     <img src="i_gare.png" title="GARE" />
                     <input type="text"
@@ -433,9 +437,9 @@ de son hebergement
                             name="heb_animal"
                             checked=""
                             value="oui"
-                            tal:attributes="checked python:heb.heb_animal=='oui' 
-                                            and 
-                                            heb.heb_animal=='oui' 
+                            tal:attributes="checked python:heb.heb_animal=='oui'
+                                            and
+                                            heb.heb_animal=='oui'
                                             or None" />
                     <img src="c_chien.png">
                     &nbsp;&nbsp;&nbsp;
@@ -451,9 +455,9 @@ de son hebergement
                              name="heb_fumeur"
                              checked=""
                              value="oui"
-                             tal:attributes="checked python:heb.heb_fumeur=='oui' 
-                                             and 
-                                             heb.heb_fumeur=='oui' 
+                             tal:attributes="checked python:heb.heb_fumeur=='oui'
+                                             and
+                                             heb.heb_fumeur=='oui'
                                              or None" />
                        <img src="c_fumeur.png">
                        &nbsp;&nbsp;&nbsp;
@@ -482,12 +486,12 @@ de son hebergement
                  <td align="center">
                     <input type="text"
                            name="heb_tarif_chmbr_avec_dej_1p"
-                           size="10" 
+                           size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_avec_dej_1p" />
                  </td>
                  <td align="center">
-                    <input type="text" 
+                    <input type="text"
                            name="heb_tarif_chmbr_avec_dej_2p"
                            size="10"
                            value=""
@@ -552,8 +556,8 @@ de son hebergement
               <tr bgcolor="#FDFFE0">
                  <td>Autre</td>
                  <td align="center">
-                    <input type="text" 
-                           name="heb_tarif_chmbr_autre_1p" 
+                    <input type="text"
+                           name="heb_tarif_chmbr_autre_1p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_1p" />
@@ -589,7 +593,7 @@ de son hebergement
               <tr>
                  <td>Tarif week-end basse saison</td>
                  <td>
-                    <input type="text" 
+                    <input type="text"
                            name="heb_tarif_we_bs"
                            size="10"
                            value=""
@@ -609,7 +613,7 @@ de son hebergement
               <tr>
                  <td>Tarif week-end haute saison</td>
                  <td>
-                    <input type="text" 
+                    <input type="text"
                            name="heb_tarif_we_hs"
                            size="10"
                            value=""
@@ -715,10 +719,10 @@ de son hebergement
                  <td>Tarif divers</td>
                  <td>
                     <!--input type="text" name="fheb_tarif_divers" value="<dtml-var heb_tarif_divers"-->
-                    <textarea name="heb_tarif_divers" 
+                    <textarea name="heb_tarif_divers"
                               value=""
-                              tal:attributes="value heb/heb_tarif_divers" 
-                              cols="30" 
+                              tal:attributes="value heb/heb_tarif_divers"
+                              cols="30"
                               rows="5"
                               tal:content="heb/heb_tarif_divers"></textarea>
                  </td>
@@ -866,7 +870,6 @@ de son hebergement
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_lit_sup" />
-                       
                 </td>
               </tr>
               <tr>
@@ -896,12 +899,12 @@ de son hebergement
                               name="heb_confort_tv"
                               checked=""
                               value="oui"
-                              tal:attributes="checked python:heb.heb_confort_tv=='oui' 
-                                              and 
-                                              heb.heb_confort_tv=='oui' 
+                              tal:attributes="checked python:heb.heb_confort_tv=='oui'
+                                              and
+                                              heb.heb_confort_tv=='oui'
                                               or None" />
                      <img src="c_tv.png" />
-                     &nbsp;&nbsp;&nbsp;&nbsp; 
+                     &nbsp;&nbsp;&nbsp;&nbsp;
                      TV - VIDEO
                 </td>
               </tr>
@@ -911,12 +914,12 @@ de son hebergement
                               name="heb_confort_feu_ouvert"
                               checked=""
                               value="oui"
-                              tal:attributes="checked python:heb.heb_confort_feu_ouvert=='oui' 
-                                              and 
-                                              heb.heb_confort_feu_ouvert=='oui' 
+                              tal:attributes="checked python:heb.heb_confort_feu_ouvert=='oui'
+                                              and
+                                              heb.heb_confort_feu_ouvert=='oui'
                                               or None" />
                      <img src="c_feu_ouvert.png" />
-                     &nbsp;&nbsp;&nbsp;&nbsp; 
+                     &nbsp;&nbsp;&nbsp;&nbsp;
                      Feu ouvert
                 </td>
               </tr>
@@ -927,8 +930,8 @@ de son hebergement
                               checked=""
                               value="oui"
                               tal:attributes="checked python:heb.heb_confort_lave_vaiselle=='oui' 
-                                              and 
-                                              heb.heb_confort_lave_vaiselle=='oui' 
+                                              and
+                                              heb.heb_confort_lave_vaiselle=='oui'
                                               or None" />
                      <img src="c_lave_vaisselle.png" />
                      &nbsp;&nbsp;&nbsp;&nbsp;Lave-vaisselle
@@ -940,9 +943,9 @@ de son hebergement
                              name="heb_confort_micro_onde"
                              checked=""
                              value="oui"
-                             tal:attributes="checked python:heb.heb_confort_micro_onde=='oui' 
-                                             and 
-                                             heb.heb_confort_micro_onde=='oui' 
+                             tal:attributes="checked python:heb.heb_confort_micro_onde=='oui'
+                                             and
+                                             heb.heb_confort_micro_onde=='oui'
                                              or None" />
                      <img src="c_micro_onde.png" />
                      &nbsp;&nbsp;&nbsp;&nbsp;Micro-onde
@@ -954,9 +957,9 @@ de son hebergement
                               name="heb_confort_lave_linge"
                               checked=""
                               value="oui"
-                              tal:attributes="checked python:heb.heb_confort_lave_linge=='oui' 
-                                              and 
-                                              heb.heb_confort_lave_linge=='oui' 
+                              tal:attributes="checked python:heb.heb_confort_lave_linge=='oui'
+                                              and
+                                              heb.heb_confort_lave_linge=='oui'
                                               or None" />
                      <img src="c_lave_linge.png" />
                      &nbsp;&nbsp;&nbsp;&nbsp;Lave-linge
@@ -968,9 +971,9 @@ de son hebergement
                                  name="heb_confort_seche_linge"
                                  checked=""
                                  value="oui"
-                                 tal:attributes="checked python:heb.heb_confort_seche_linge=='oui' 
-                                                 and 
-                                                 heb.heb_confort_seche_linge=='oui' 
+                                 tal:attributes="checked python:heb.heb_confort_seche_linge=='oui'
+                                                 and
+                                                 heb.heb_confort_seche_linge=='oui'
                                                  or None" />
                     <img src="c_seche_linge.png" />
                     &nbsp;&nbsp;&nbsp;&nbsp;Sèche-linge
@@ -982,9 +985,9 @@ de son hebergement
                              name="heb_confort_congelateur"
                              checked=""
                              value="oui"
-                             tal:attributes="checked python:heb.heb_confort_congelateur=='oui' 
-                                             and 
-                                             heb.heb_confort_congelateur=='oui' 
+                             tal:attributes="checked python:heb.heb_confort_congelateur=='oui'
+                                             and
+                                             heb.heb_confort_congelateur=='oui'
                                              or None" />
                     <img src="c_congelateur.png" />
                     &nbsp;&nbsp;&nbsp;&nbsp;Congélateur
@@ -996,9 +999,9 @@ de son hebergement
                              name="heb_confort_internet"
                              checked=""
                              value="oui"
-                             tal:attributes="checked python:heb.heb_confort_internet=='oui' 
-                                             and 
-                                             heb.heb_confort_internet=='oui' 
+                             tal:attributes="checked python:heb.heb_confort_internet=='oui'
+                                             and
+                                             heb.heb_confort_internet=='oui'
                                              or None" />
                      <img src="c_internet.png" />
                      &nbsp;&nbsp;&nbsp;&nbsp;Accès Internet
@@ -1027,7 +1030,7 @@ de son hebergement
               <tr>
                 <td rowspan="3">Capacité</td>
                 <td>
-                    min : <input type="text" 
+                    min : <input type="text"
                                  name="fheb_cgt_cap_min"
                                  size="5"
                                  value=""
@@ -1035,7 +1038,7 @@ de son hebergement
                 </td>
               <tr>
                 <td>
-                    max : <input type="text" 
+                    max : <input type="text"
                                  name="fheb_cgt_cap_max"
                                  size="5"
                                  value=""
@@ -1044,7 +1047,7 @@ de son hebergement
               </tr>
               <tr>
                 <td>
-                    nombre de chambre : <input type="text" 
+                    nombre de chambre : <input type="text"
                                                name="fheb_cgt_nbre_chmbre"
                                                size="5"
                                                value=""
