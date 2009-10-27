@@ -34,13 +34,13 @@
             <div class="portletItemDetails">
                 <img id="derniere-minute-vignette"
                      src=""
-                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}/image_thumb"/>
-                <span id="capacite">
+                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}" />
+                <div id="capacite">
                   <img src="capacite.png"
                        title="Capacité"
                        alt="Capacité" />
                   <span tal:replace="string:${hebergement/heb_cgt_cap_min}/${hebergement/heb_cgt_cap_max}"/>
-                </span>
+                </div>
                 <br/>
                 <span id="derniere-minute-date">
                    <span tal:replace="start" /> &rarr; <span tal:replace="end" />
