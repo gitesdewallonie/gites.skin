@@ -1,4 +1,4 @@
-from dateutil.relativedelta import relativedelta
+# from dateutil.relativedelta import relativedelta
 from Products.Five.formlib import formbase
 from Products.CMFCore.utils import getToolByName
 from gites.skin import GitesMessage as _
@@ -12,7 +12,8 @@ from interfaces import (ISearchHebergement,
 from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from z3c.sqlalchemy import getSAWrapper
-from sqlalchemy import and_, or_, select
+from sqlalchemy import and_, or_
+# from sqlalchemy import select
 import plone.z3cform.z2
 
 
@@ -68,8 +69,8 @@ class SearchHebergement(formbase.PageForm):
         roomAmount = data.get('roomAmount')
         checkAnimals = data.get('animals')
         checkSmokers = data.get('smokers')
-        fromDate = data.get('fromDate')
-        toDate = data.get('toDate')
+        # fromDate = data.get('fromDate')
+        # toDate = data.get('toDate')
         seeResults = self.request.form.has_key('form.seeResults')
 
         query = session.query(hebergementTable).join('province').join('proprio').outerjoin('reservations')
@@ -104,21 +105,21 @@ class SearchHebergement(formbase.PageForm):
                 query = query.filter(and_(hebergementTable.heb_cgt_cap_min >= capacityMin,
                                           hebergementTable.heb_cgt_cap_max >= capacityMax))
 
-        if fromDate or toDate:
-            query = query.filter(hebergementTable.heb_calendrier_proprio != 'non actif')
-            # on ne considère que les hébergements pour lequel le calendrier
-            # est utilisé
-            beginDate = fromDate or (toDate + relativedelta(days=-1))
-            endDate = toDate or (fromDate + relativedelta(days=+1))
-            # il ne peut pas y avoir d'enregistrement dans la table de
-            # réservations entre les dates de début et de fin (vu que seules
-            # les indisponibilités sont dans la table)
-            busyHebQuery = session.query(reservationsTable)
-            busyHeb = select([hebergementTable.heb_pk],
-                             and_(reservationsTable.res_date >= beginDate,
-                                  reservationsTable.res_date < endDate)).distinct().execute().fetchall()
-            busyHebPks = [heb.heb_pk for heb in busyHeb]
-            query = query.filter(~hebergementTable.heb_pk.in_(busyHebPks))
+        # if fromDate or toDate:
+        #     query = query.filter(hebergementTable.heb_calendrier_proprio != 'non actif')
+        #     # on ne considère que les hébergements pour lequel le calendrier
+        #     # est utilisé
+        #     beginDate = fromDate or (toDate + relativedelta(days=-1))
+        #     endDate = toDate or (fromDate + relativedelta(days=+1))
+        #     # il ne peut pas y avoir d'enregistrement dans la table de
+        #     # réservations entre les dates de début et de fin (vu que seules
+        #     # les indisponibilités sont dans la table)
+        #     busyHebQuery = session.query(reservationsTable)
+        #     busyHeb = select([hebergementTable.heb_pk],
+        #                      and_(reservationsTable.res_date >= beginDate,
+        #                           reservationsTable.res_date < endDate)).distinct().execute().fetchall()
+        #     busyHebPks = [heb.heb_pk for heb in busyHeb]
+        #     query = query.filter(~hebergementTable.heb_pk.in_(busyHebPks))
 
         if isinstance(self.context, IdeeSejour):
             sejour = self.context
