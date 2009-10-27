@@ -1,0 +1,45 @@
+/*
+/*  Gites de Wallonie asbl.
+/*
+/*  By Affinitic 2009
+/*
+*/
+
+#derniere-minute-capacite {
+    font-size:9px;
+    letter-spacing:1px;
+    font-weight:normal;
+}
+
+#derniere-minute-vignette {
+    width:140px;
+}
+
+#derniere-minute-date {
+    font-size:9px;
+    letter-spacing:1px;
+    font-weight:normal;
+    color:#BC0000;
+}
+
+#promotion-text {
+    font-size:9px;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+.lastminute-hebergement {
+    margin-bottom:15px;
+    clear:both;
+    height:40px;
+}
+
+.lastminute-hebergement #logo {
+    float:left;
+    margin-right: 12px;
+}
+
+.lastminute-hebergement #nom {
+    font-size:12px;
+    font-weight:bold;
+}

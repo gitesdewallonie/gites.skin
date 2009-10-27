@@ -4,6 +4,7 @@
 /*  By Affinitic 2009
 /*
 */
+
 body {
 background-color:#df8a20;
 background-image:url(fond_col_lat_droite.png);
@@ -627,8 +628,8 @@ color:#050;
 color:#090;
 }
 
-.code-langue a:visited {
-color:#050;
+.documentContent .code-langue a {
+border: 0px;
 }
 
 

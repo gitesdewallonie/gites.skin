@@ -12,4 +12,37 @@
              enabled="1"
              expression=""/>
 
+ <stylesheet title=""
+             id="dernieres_minutes.css"
+             media="screen"
+             rel="stylesheet"
+             rendering="import"
+             cacheable="True"
+             compression="safe"
+             cookable="True"
+             enabled="1"
+             expression=""/>
+
+ <stylesheet title=""
+             id="idee_sejour.css"
+             media="screen"
+             rel="stylesheet"
+             rendering="import"
+             cacheable="True"
+             compression="safe"
+             cookable="True"
+             enabled="1"
+             expression=""/>
+
+ <stylesheet title=""
+             id="sejour_fute.css"
+             media="screen"
+             rel="stylesheet"
+             rendering="import"
+             cacheable="True"
+             compression="safe"
+             cookable="True"
+             enabled="1"
+             expression=""/>
+
 </object>
