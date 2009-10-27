@@ -402,12 +402,13 @@ display: none;
 
 #derniere-minute-vignette {
     width:140px;
+    margin-bottom:10px;
 }
 
 #derniere-minute-date {
     font-size:9px;
     letter-spacing:1px;
-    font-weight:normal;
+    font-weight:bold;
     color:#BC0000;
 }
 

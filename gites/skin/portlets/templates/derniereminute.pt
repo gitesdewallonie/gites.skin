@@ -32,19 +32,20 @@
              Some Dernieres minutes
             </span>
             <div class="portletItemDetails">
-                <img id="derniere-minute-vignette"
-                     src=""
-                     tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}" />
+                <div>
+                    <img id="derniere-minute-vignette"
+                         src=""
+                         tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}" />
+                </div>
                 <div id="capacite">
                   <img src="capacite.png"
                        title="Capacité"
                        alt="Capacité" />
                   <span tal:replace="string:${hebergement/heb_cgt_cap_min}/${hebergement/heb_cgt_cap_max}"/>
                 </div>
-                <br/>
-                <span id="derniere-minute-date">
+                <div id="derniere-minute-date">
                    <span tal:replace="start" /> &rarr; <span tal:replace="end" />
-                </span>
+                </div>
                 <span id="promotion-text"
                       tal:condition="promotion"><br/><span tal:replace="structure text" /></span>
             </div>
