@@ -3,7 +3,7 @@
  <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression=""
     id="swfobject.js" inline="False"/>
- <javascript cacheable="True" compression="safe" cookable="True"
+ <!-- <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'de'"
     id="calendar-de.js" inline="False"/>
  <javascript cacheable="True" compression="safe" cookable="True"
@@ -17,5 +17,5 @@
     id="calendar-it.js" inline="False"/>
  <javascript cacheable="True" compression="safe" cookable="True"
     enabled="True" expression="python: request.get('LANGUAGE', 'en') == 'nl'"
-    id="calendar-nl.js" inline="False"/>
+    id="calendar-nl.js" inline="False"/> -->
 </object>
