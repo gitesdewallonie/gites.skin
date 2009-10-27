@@ -217,7 +217,7 @@ margin-top: 0px;
 }
 
 table.plain, table.plain td, table.plain th {
-border:0 solid #CCCCCC;
+border:0px solid #CCCCCC;
 border-collapse:collapse;
 padding:0.5em;
 }
