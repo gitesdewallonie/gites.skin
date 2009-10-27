@@ -8,6 +8,7 @@
 <div metal:fill-slot="main">
   <tal:main>
 
+    <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
     <h1 i18n:translate="sejours_futes">
         Sejours futés
     </h1>
