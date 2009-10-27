@@ -13,13 +13,12 @@
 
 #derniere-minute-vignette {
     width:140px;
-    margin-bottom:10px;
 }
 
 #derniere-minute-date {
     font-size:9px;
     letter-spacing:1px;
-    font-weight:bold;
+    font-weight:normal;
     color:#BC0000;
 }
 
