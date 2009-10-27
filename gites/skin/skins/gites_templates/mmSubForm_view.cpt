@@ -1,0 +1,277 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<div metal:fill-slot="main" tal:define="errors options/state/getErrors; text python: here.getMmListIntro()"
+      i18n:domain="mailmansubform">
+
+    <div metal:use-macro="here/document_actions/macros/document_actions">
+        Document actions (print, sendto etc)
+    </div>
+
+    <!-- ADDED FOR GITES -->
+    <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
+
+    <h1 tal:content="object_title" class="documentFirstHeading">
+      Title or id
+    </h1>
+
+    <tal:block condition="python: not (request.get('subscribed') or (request.get('unsubscribed')))">
+
+      <tal:block condition="python: not (request.get('unsubscribe') or request.get('subscribe'))">
+        <p class="documentDescription"
+           tal:condition="here/Description"
+           i18n:translate="label_description">
+            Description
+        </p>
+    
+        <p tal:condition="python: not text and is_editable"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any introductory text, click the edit tab to change it.
+        </p>
+    
+        <div class="stx"
+             tal:condition="text"
+             tal:attributes="class python:test(here.Format() in ('text/structured',
+                                                   'text/x-rst', ), 'stx', 'plain')">
+            <div tal:replace="structure text" />
+        </div>
+      </tal:block>
+  
+      <form name="subscribe_form"
+            action="#" 
+            method="post" 
+            tal:attributes="action string:${here/getId}"
+            tal:condition="not: exists: request/form.button.unsubscribe" >
+          
+          <fieldset>
+      
+              <legend i18n:translate="label_list_subscribe">List Subscribe</legend>
+  
+              <div class="field"
+                   tal:define="error errors/subemail | nothing;
+                               subemail request/subemail | nothing"
+                   tal:attributes="class python:test(error, 'field error', 'field')">
+      
+                  <label for="subemail" i18n:translate="label_email_address">E-Mail Address</label>
+                  
+                  <span class="fieldRequired" title="Required">(Required)</span>
+      
+                  <div class="formHelp" i18n:translate="help_email_address">
+                    Enter an e-mail address. This is the address which will receive list mailings.
+                  </div>
+  
+                  <div tal:content="error">Validation error output</div>
+
+                  <input type="text"
+                         id="subemail"
+                         name="subemail"
+                         size="30"
+                         value=""
+                         tabindex=""
+                         tal:attributes="value subemail;
+                                         tabindex tabindex/next;"
+                         />
+  
+              </div>
+  
+              <div class="field"
+                   tal:condition="here/mmFullNameReq | nothing"
+                   tal:define="error errors/realname | nothing;
+                               realname request/realname | nothing;"
+                   tal:attributes="class python:test(error, 'field error', 'field')">
+      
+                  <label for="realname" i18n:translate="label_your_name">Your Name</label>
+                  
+                  <span tal:condition="python: here.mmFullNameReq=='mmfn_required'" class="fieldRequired" title="Required">(Required)</span>
+      
+                  <div class="formHelp"><span i18n:translate="help_your_name">
+                    Identifies you to the list manager.</span>
+                    <span tal:condition="python: here.mmFullNameReq=='mmfn_required'"><span i18n:translate="text_required_for_subscription_approval">Required for subscription approval.</span></span>
+                  </div>
+  
+                  <div tal:content="error">Validation error output</div>
+      
+                  <input type="text"
+                         id="realname"
+                         name="realname"
+                         size="30"
+                         value=""
+                         tabindex=""
+                         tal:attributes="value realname;
+                                         tabindex tabindex/next;"
+                         />
+  
+              </div>
+
+              <div class="field"
+                   id="captcha"
+                   tal:define="error errors/captcha | nothing;
+                               realname request/captcha | nothing;
+                               captchaView nocall:context/@@captcha | nothing"
+                   tal:condition="python:captchaView is not None and context.getMmCaptcha()"
+                   tal:attributes="class python:test(error, 'field error', 'field')">
+
+                 <span tal:replace="structure captchaView/image_tag" />
+                 <span class="fieldRequired" title="Required">(Required)</span>
+
+                 <br />
+
+                 <div class="formHelp">
+                     <span i18n:translate="help_captcha">
+                         Enter the exact word in the image. This is used to fight robots.
+                     </span>
+                 </div>
+
+                 <div tal:content="error">Validation error output</div>
+
+                 <input type="text"
+                        name="captcha" />
+
+              </div>
+
+              <div class="formControls"> 
+                      <input class="context" 
+                             tabindex=""
+                             type="submit" 
+                             name="form.button.subscribe" 
+                             value="Subscribe" 
+                             i18n:attributes="value subscribe_action"
+                             tal:attributes="tabindex tabindex/next;" /> 
+              </div>
+          </fieldset>
+  
+          <input type="hidden" name="subscribe" value="1" />
+          <input type="hidden" name="form.submitted" value="1" />
+      </form>
+  
+      <form name="unsubscribe_form"
+            action="#" 
+            method="post" 
+            tal:attributes="action string:${here/getId}"
+            tal:condition="not: exists: request/form.button.subscribe" >
+          
+          <fieldset>
+      
+              <legend i18n:translate="label_list_unsubscribe">List Unsubscribe</legend>
+  
+              <div class="field"
+                   tal:define="error errors/unsubemail | nothing;
+                               unsubemail request/unsubemail | nothing;"
+                   tal:attributes="class python:test(error, 'field error', 'field')">
+      
+                  <label for="unsubemail" i18n:translate="label_email_address">E-Mail Address</label>
+                  
+                  <span class="fieldRequired" title="Required">(Required)</span>
+      
+                <div class="formHelp" i18n:translate="help_unsubscribe_email_address">
+                  Enter the e-mail address under which you are currently subscribed. Note that this
+                  address will need to exactly match the list database entry.
+                </div>
+  
+                  <div tal:content="error">Validation error output</div>
+      
+                  <input type="text"
+                         id="unsubemail"
+                         name="unsubemail"
+                         size="30"
+                         value=""
+                         tabindex=""
+                         tal:attributes="value unsubemail;
+                                         tabindex tabindex/next;"
+                         />
+  
+              </div>
+  
+              <div class="formControls"> 
+                      <input class="context" 
+                             tabindex=""
+                             type="submit" 
+                             name="form.button.unsubscribe" 
+                             value="Cancel My Subscription"
+                             i18n:attributes="value cancel_action"
+                             tal:attributes="tabindex tabindex/next;" /> 
+              </div>
+          </fieldset>
+  
+          <input type="hidden" name="unsubscribe" value="1" />
+          <input type="hidden" name="form.submitted" value="1" />
+      </form>
+
+      <tal:block condition="python: not (request.get('unsubscribe') or request.get('subscribe'))">
+        <h2 i18n:translate="label_managing_your_subscription">Managing your subscription</h2>
+        <p i18n:translate="text_if_you_have_list_subscription">
+          If you have a list subscription, you may manage it by visiting:
+        </p>
+        <blockquote tal:define="opa python:'%s/mailman/listinfo/%s'%(here.mmWebServer.strip('/'),here.mmListName)"><a tal:content="opa" tal:attributes="href opa">#</a></blockquote>
+        <p><span i18n:translate="text_you_may_also_email_the_list_manager_at">You may also e-mail the list manager at</span>: <span tal:replace="structure python:here.spamProtect('%s-owner@%s'%(here.mmListName, here.mmServer))">#</span></p>
+        <p><strong i18n:translate="text_please_note">Please Note:</strong> <span i18n:translate="text_trouble_unsubscribing">If you're having trouble unsubscribing, send a message to the list manager. Please do not ever report our list mailings as SPAM or request your ISP to block list mail. That may endanger our ability to send mail to other subscribers.</span></p>
+      </tal:block>
+      
+    </tal:block>
+
+    <tal:block condition="request/subscribed | request/unsubscribed | nothing">
+      <p i18n:translate="text_within_the_next_few_minutes">
+        Within the next few minutes you should receive an e-mail message with a subject line like:
+      </p>
+      <span tal:condition="python: request.get('subscribed') == 'join'">
+          <pre i18n:translate="text_your_confirmation_is_required_to_join">Your confirmation is required to join the <span i18n:name="listname" tal:replace="here/mmListName" /> mailing list</pre>
+      </span>
+      <span tal:condition="python: request.get('subscribed') == 'leave'">
+          <pre i18n:translate="text_your_confirmation_is_required_to_leave">Your confirmation is required to leave the <span i18n:name="listname" tal:replace="here/mmListName" /> mailing list</pre>
+      </span>
+
+      <p tal:condition="not: request/unsubscribed | nothing" i18n:translate="text_to_complete_your_subscription">To complete your subscription request, you must either:</p>
+      <p tal:condition="request/unsubscribed | nothing" i18n:translate="text_to_complete_your_cancellation">To complete your subscription cancellation request, you must either:</p>
+      <ul>
+        <li i18n:translate="text_reply_to_the_message">Reply to the message, following its instructions; or,</li>
+        <li i18n:translate="text_visit_the_web_page">Visit the web page specified in the message.</li>
+      </ul>
+      <p tal:condition="not: request/unsubscribed | nothing" i18n:translate="text_this_step_is_used_to_confirm_subscribe">
+        This step is used to confirm that the subscription request was made with the authorization of the address owner.
+      </p>
+      <p tal:condition="request/unsubscribed | nothing" i18n:translate="text_this_step_is_used_to_confirm_cancel">
+        This step is used to confirm that the subscription cancellation request was made with the authorization of the address owner.
+      </p>
+
+      <tal:block condition="request/subscribed | nothing">
+        <h3 i18n:translate="label_if_you_dont_receive_a_confirmation_request_email">If you don't receive a confirmation request e-mail</h3>
+        <p i18n:translate="text_the_confirmation_request_message">
+          The confirmation request message may have been intercepted by a SPAM filter. Check your junk mail folder (if you have one) to see if the request ended up there.
+        </p>
+        <p i18n:translate="text_you_may_need_to_add_the_list">You may need to add the list <em>sender</em> or <em>from</em> addresses to your address book or other OK list.</p>
+        <h4 i18n:translate="label_list_server_addresses">List Server Addresses</h4>
+        <dl>
+          <dt i18n:translate="text_sender_for_list_mail">"Sender" for list mail</dt>
+          <dd tal:content="python:'%s-bounces@%s' % (here.mmListName, here.mmServer)"></dd>
+          <dt i18n:translate="text_from_for_confirmation">"From" for confirmation requests</dt>
+          <dd tal:content="python:'%s-confirm@%s' % (here.mmListName, here.mmServer)"></dd>
+        </dl>
+      
+        <h2 i18n:translate="label_managing_your_subscription">Managing your subscription</h2>
+        <p i18n:translate="text_manage_visit_link">
+          Once the subscription process has been complete, you may manage your subscription by visiting:
+        </p>
+        <blockquote tal:define="opa python:'%s/mailman/listinfo/%s'%(here.mmWebServer.strip('/'),here.mmListName)"><a tal:content="opa" tal:attributes="href opa">#</a></blockquote>
+        <p><span i18n:translate="text_you_may_also_email_the_list_manager_at">You may also e-mail the list manager at</span>: <span tal:replace="structure python:here.spamProtect('%s-owner@%s'%(here.mmListName, here.mmServer))">#</span></p>
+      </tal:block>
+      
+      <tal:block condition="request/unsubscribed | nothing">
+        <h2 i18n:translate="label_difficulties_cancelling">Difficulties Cancelling?</h2>
+        <p i18n:translate="text_you_may_also_cancel_subscription_by_visiting">
+          You may also cancel your subscription by visiting:
+        </p>
+        <blockquote tal:define="opa python:'%s/mailman/listinfo/%s'%(here.mmWebServer.strip('/'),here.mmListName)"><a tal:content="opa" tal:attributes="href opa">#</a></blockquote>
+        <p><span i18n:translate="text_you_may_also_email_the_list_manager_at">You may also e-mail the list manager at</span>: <span tal:replace="structure python:here.spamProtect('%s-owner@%s'%(here.mmListName, here.mmServer))">#</span></p>
+        <p i18n:translate="text_please_note_if_you_are_having_trouble_unsubscribing"><strong>Please Note:</strong> If you're having trouble unsubscribing, send a message to the list manager. Please do not ever report our list mailings as SPAM or request your ISP to block list mail. That may endanger our ability to send mail to other subscribers.</p>
+      </tal:block>
+      
+    </tal:block>
+        
+</div>
+
+</body>
+</html>
