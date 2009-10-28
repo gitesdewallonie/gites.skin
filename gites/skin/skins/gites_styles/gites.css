@@ -912,6 +912,8 @@ text-align:center;
 
 #gitescal {
 width: 700px;
+margin: auto;
+text-align: center;
 }
 
 /*** FIN DESCRIPTION HEBERGEMENT ***/
