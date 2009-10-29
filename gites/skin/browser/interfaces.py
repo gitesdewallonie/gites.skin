@@ -100,6 +100,16 @@ class IHebergementView(Interface):
         """
 
 
+class IHebergementGallery(Interface):
+    """
+    Affichage de la galerie
+    """
+    def getVignettesUrl(self):
+           """
+            Get the vignette of an hebergement
+           """
+
+
 class IHebergementIconsView(Interface):
     """
         View for the icons of an hebergement

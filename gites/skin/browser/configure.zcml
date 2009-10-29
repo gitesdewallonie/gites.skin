@@ -148,6 +148,16 @@
         template="templates/hebergement_map.pt"
         permission="zope.Public"
         />
+        
+<!-- GALERIE HBE-->
+   <browser:page
+        for="*"
+        class=".HebergementGallery.HebergementGallery"
+        name="gallery"
+        template="templates/description_galerie.pt"
+        permission="zope.Public"
+        />
+        
 
 <!-- MAJ PROPRIO -->
    <browser:page
