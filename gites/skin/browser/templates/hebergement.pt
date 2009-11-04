@@ -30,6 +30,13 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
 
+                  <div id="calendar_form">
+                    <div id="calendars"></div>
+                    <input type="hidden" id="reset"/>
+                    <input type="hidden" name="start" value="" id="start"/>
+                    <input type="hidden" name="end" value="" id="end"/>
+                  </div>
+
                </td><!-- col gauche-->
 
                <td id="col-centre">
@@ -44,12 +51,6 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebLiterie" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebConfort" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebSeminaire" />
-      <div id="calendar_form">
-        <div id="calendars"></div>
-          <input type="hidden" id="reset"/>
-            <input type="hidden" name="start" value="" id="start"/>
-            <input type="hidden" name="end" value="" id="end"/>
-      </div>
                 </td><!-- col droite-->
             </tr>
          </table><!--table-description-->
