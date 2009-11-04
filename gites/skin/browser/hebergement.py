@@ -51,11 +51,13 @@ class HebergementView(BrowserView):
                                 weekOffset: 1,
                                 hebPk: %s,
                                 months:1,
+                                language: '%s',
                                 earliest: new Date()});}
             registerPloneFunction(calsetup);
         //]]>
 
-        """ % (self.context.heb_pk)
+        """ % (self.context.heb_pk,
+               self.context.request.get('LANGUAGE', 'en'))
 
     def showCalendar(self):
         """
