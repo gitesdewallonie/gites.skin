@@ -69,7 +69,9 @@ class SearchHebergement(formbase.PageForm):
         checkAnimals = data.get('animals')
         checkSmokers = data.get('smokers')
         fromDate = data.get('fromDate')
+        origFromDate = data.get('fromDate')
         toDate = data.get('toDate')
+        origToDate = data.get('toDate')
         seeResults = self.request.form.has_key('form.seeResults')
 
         query = session.query(hebergementTable).join('province').join('proprio').outerjoin('reservations')
@@ -149,6 +151,8 @@ class SearchHebergement(formbase.PageForm):
             self.widgets['hebergementType'].setRenderedValue(hebergementType)
             self.widgets['provinces'].setRenderedValue(provinces)
             self.widgets['classification'].setRenderedValue(classification)
+            self.widgets['fromDate'].setRenderedValue(origFromDate)
+            self.widgets['toDate'].setRenderedValue(origToDate)
 
             message = utranslate('gites',
                                  "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait utile de l'affiner.",
