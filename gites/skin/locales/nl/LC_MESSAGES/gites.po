@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-09-07 10:33+0000\n"
+"POT-Creation-Date: 2009-11-11 17:09+0000\n"
 "Last-Translator: Affinitic <info@affinitic.be>\n"
 "Language-Team: <info@affinitic.be>\n"
 "MIME-Version: 1.0\n"
@@ -15,41 +15,41 @@ msgstr ""
 "X-Is-Fallback-For: nl-be nl-nl\n"
 
 #. Default: "1 personne"
-#: skins/gites_templates/hebergement_macro.pt:407
+#: skins/gites_templates/hebergement_macro.pt:422
 msgid "1_personne"
 msgstr "1 persoon"
 
 #. Default: "2 personnes"
-#: skins/gites_templates/hebergement_macro.pt:408
+#: skins/gites_templates/hebergement_macro.pt:423
 msgid "2_personne"
 msgstr "2 personen"
 
 #. Default: "3 nuits"
-#: skins/gites_templates/hebergement_macro.pt:589
+#: skins/gites_templates/hebergement_macro.pt:604
 msgid "3_nuits"
 msgstr "Feestweekend 3 nachten"
 
 #. Default: "4 nuits"
-#: skins/gites_templates/hebergement_macro.pt:601
+#: skins/gites_templates/hebergement_macro.pt:616
 msgid "4_nuits"
 msgstr "Feestweekend 4 nachten"
 
-#: browser/interfaces.py:182
+#: browser/interfaces.py:192
 msgid "Animals authorized"
 msgstr "Dieren toegestaan na aanvraag"
 
-#: browser/interfaces.py:183
+#: browser/interfaces.py:193
 msgid "Are animals authorized in the Hebergement"
 msgstr "Zijn er dieren toegestaan op het logeeradres?"
 
-#: browser/interfaces.py:187
+#: browser/interfaces.py:197
 msgid "Are people allowed to smoke in the Hebergement"
 msgstr "Is roken toegestaan op het logeeradres?"
 
 msgid "Chambre d'hote"
 msgstr "Gastenkamer"
 
-#: browser/interfaces.py:169
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:84
 msgid "Classification"
 msgstr "Classificatie"
 
@@ -123,11 +123,11 @@ msgstr "Datum van de activering"
 msgid "GitesContent_label_text"
 msgstr "Tekst"
 
-#: browser/interfaces.py:355
+#: browser/interfaces.py:365
 msgid "Heb Pk"
 msgstr ""
 
-#: browser/interfaces.py:157
+#: browser/interfaces.py:167
 msgid "Hebergement Type"
 msgstr "Soort logeeradres"
 
@@ -141,19 +141,23 @@ msgstr ""
 msgid "La recherche n'a pas renvoy&eacute; de r&eacute;sultats."
 msgstr "Geen resultaat gevonden."
 
-#: browser/interfaces.py:174
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:88
 msgid "Minimum Capacity"
 msgstr "Minimale capaciteit"
 
-#: browser/interfaces.py:178
+#: browser/interfaces.py:188
 msgid "Number of rooms"
 msgstr "Aantal kamers"
 
-#: browser/interfaces.py:163
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:79
+msgid "Price"
+msgstr "Prijs"
+
+#: browser/interfaces.py:173
 msgid "Province"
 msgstr "Provincie"
 
-#: browser/SearchHebergement.py:22
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/SearchHebergement.py:24
 msgid "Search Hebergement"
 msgstr "Een logeeradres zoeken"
 
@@ -161,53 +165,59 @@ msgstr "Een logeeradres zoeken"
 msgid "Search Hebergement by Pk in website"
 msgstr "Een logeeradres zoeken"
 
-#: browser/interfaces.py:194
+#. Default: "Sejour au"
+#: browser/templates/moteur_recherche.pt:53
 msgid "Sejour au"
 msgstr "Vertrekdatum"
 
-#: browser/interfaces.py:190
+#. Default: "Sejour du"
+#: browser/templates/moteur_recherche.pt:40
 msgid "Sejour du"
 msgstr "Aankomstdatum"
 
-#: browser/interfaces.py:170
+#: browser/interfaces.py:180
 msgid "Select a classification"
 msgstr "Een classificatie selecteren"
 
-#: browser/interfaces.py:164
+#: browser/interfaces.py:174
 msgid "Select a province"
 msgstr "Een provincie selecteren"
 
-#: browser/interfaces.py:158
+#: browser/interfaces.py:168
 msgid "Select a type of Hebergement"
 msgstr "Een soort logeeradres selecteren"
 
-#: browser/interfaces.py:251
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:96
 msgid "Show results even if more than 50"
 msgstr "Toon de resultaten zelfs al zijn er meer dan 50"
 
-#: browser/interfaces.py:252
+#: browser/interfaces.py:262
 msgid "Show results even if there are more than 50"
 msgstr "Toon de resultaten zelfs al zijn er meer dan 50"
 
-#: browser/interfaces.py:186
+#: browser/interfaces.py:196
 msgid "Smoking allowed"
 msgstr "Rokers toegelaten"
 
-#: browser/interfaces.py:191
+#: browser/interfaces.py:201
 msgid "Stay from"
-msgstr ""
+msgstr "Aankomstdatum"
 
-#: browser/interfaces.py:195
+#: browser/interfaces.py:205
 msgid "Stay to"
-msgstr ""
+msgstr "Vertrekdatum"
 
-#: browser/interfaces.py:175
+#: browser/interfaces.py:185
 msgid "The minimum capacity of your hebergement"
 msgstr "Minimale capaciteit van het logeeradres"
 
-#: browser/interfaces.py:179
+#: browser/interfaces.py:189
 msgid "The number of rooms in hebergement"
 msgstr "Aantal kamers van het logeeradres"
+
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:74
+msgid "Town"
+msgstr "Plaats"
 
 #. Default: "Accès membre"
 #: skins/gites_templates/portlet_menu_association.pt:29
@@ -215,7 +225,7 @@ msgid "acces_membre"
 msgstr "Toegang lid"
 
 #. Default: "Rechercher"
-#: browser/templates/moteur_recherche.pt:55
+#: browser/templates/moteur_recherche.pt:82
 msgid "action_search"
 msgstr "Zoeken"
 
@@ -225,7 +235,7 @@ msgid "adresse"
 msgstr "Adres"
 
 #. Default: "Tous"
-#: portlets/templates/derniereminute.pt:57
+#: portlets/templates/derniereminute.pt:59
 msgid "all_sejour_fute"
 msgstr "Alle"
 
@@ -235,7 +245,7 @@ msgid "anglais"
 msgstr "Engels"
 
 #. Default: "Animaux de compagnie accept&eacute;s"
-#: skins/gites_templates/hebergement_macro.pt:920
+#: skins/gites_templates/hebergement_macro.pt:935
 msgid "animaux_de_compagnie_acceptes"
 msgstr "Gezelschapsdieren toegelaten"
 
@@ -250,19 +260,19 @@ msgid "association"
 msgstr "Vereniging"
 
 #. Default: "Autorisation de fumer"
-#: skins/gites_templates/hebergement_macro.pt:939
+#: skins/gites_templates/hebergement_macro.pt:954
 msgid "autorisation_de_fumer"
 msgstr "Rokers-logeeradres"
 
 #  "Autres ${type_hebergement}\n"
 #  "                             \303\240 ${commune}"
 #. Default: "Autres ${type_hebergement} à ${commune}"
-#: browser/templates/hebergement.pt:106
+#: browser/templates/hebergement.pt:128
 msgid "autres_a"
 msgstr "Andere ${type_hebergement} in ${commune}"
 
 #. Default: "Basse Saison"
-#: skins/gites_templates/hebergement_macro.pt:529
+#: skins/gites_templates/hebergement_macro.pt:544
 msgid "basse_saison"
 msgstr "Laagseizoen"
 
@@ -272,21 +282,22 @@ msgid "capacite"
 msgstr "Capaciteit"
 
 #. Default: "carte"
-#: skins/gites_templates/hebergement_macro.pt:384
+#: skins/gites_templates/hebergement_macro.pt:399
 msgid "carte"
 msgstr "Kaart"
 
-#. Default: "Chambre d'h\303\264tes"
+#. Default: "Chambre d'hôtes"
+#: skins/gites_templates/portlet_menu_chambres_hotes.pt:17
 msgid "chambre_hotes"
 msgstr "Gastenkamer"
 
 #. Default: "Chambres d'hôtes"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:12
+#: skins/gites_templates/portlet_menu_chambres_hotes.pt:11
 msgid "chambres_hotes"
 msgstr "Gastenkamers"
 
 #. Default: "Charge"
-#: skins/gites_templates/hebergement_macro.pt:642
+#: skins/gites_templates/hebergement_macro.pt:657
 msgid "charge"
 msgstr "Kosten"
 
@@ -306,17 +317,17 @@ msgid "commande"
 msgstr "Bestelling"
 
 #. Default: "Commerce"
-#: skins/gites_templates/hebergement_macro.pt:793
+#: skins/gites_templates/hebergement_macro.pt:808
 msgid "commerce"
 msgstr "Handelszaak"
 
 #. Default: "CONFORT"
-#: skins/gites_templates/hebergement_macro.pt:916
+#: skins/gites_templates/hebergement_macro.pt:931
 msgid "confort"
 msgstr "Comfort"
 
 #. Default: "Congelateur"
-#: skins/gites_templates/hebergement_macro.pt:1004
+#: skins/gites_templates/hebergement_macro.pt:1019
 msgid "congelateur"
 msgstr "Diepvries"
 
@@ -331,12 +342,12 @@ msgid "contactez_le_proprietaire"
 msgstr "Contacteer de eigenaar"
 
 #. Default: "DANS LA REGION"
-#: browser/templates/hebergement.pt:51
+#: browser/templates/hebergement.pt:65
 msgid "dans_la_region"
 msgstr "In de streek"
 
 #. Default: "Date d'ouverture :"
-#: skins/gites_templates/hebergement_macro.pt:850
+#: skins/gites_templates/hebergement_macro.pt:865
 msgid "date_d_ouverture"
 msgstr "Voorziene openingsdatum:"
 
@@ -366,7 +377,7 @@ msgid "decouvrir_wallonie"
 msgstr "Ardennen ontdekken"
 
 #. Default: "D&eacute;duction si pas petit d&eacute;jeuner"
-#: skins/gites_templates/hebergement_macro.pt:427
+#: skins/gites_templates/hebergement_macro.pt:442
 msgid "deduction_si_pas_petit_dejeuner"
 msgstr "Korting bij afwezigheid ontbijt"
 
@@ -381,7 +392,7 @@ msgid "dernieres_minutes"
 msgstr "Last minutes"
 
 #. Default: "DESCRIPTION"
-#: skins/gites_templates/hebergement_macro.pt:828
+#: skins/gites_templates/hebergement_macro.pt:843
 msgid "description"
 msgstr "Beschrijving"
 
@@ -391,17 +402,17 @@ msgid "devenir_membre"
 msgstr "Lid worden"
 
 #. Default: "DISTRIBUTION"
-#: skins/gites_templates/hebergement_macro.pt:837
+#: skins/gites_templates/hebergement_macro.pt:852
 msgid "distribution"
 msgstr "Verdeling"
 
 #. Default: "Divers"
-#: skins/gites_templates/hebergement_macro.pt:457
+#: skins/gites_templates/hebergement_macro.pt:472
 msgid "divers"
 msgstr "Diverse"
 
 #. Default: "Ecran"
-#: skins/gites_templates/hebergement_macro.pt:1038
+#: skins/gites_templates/hebergement_macro.pt:1053
 msgid "ecran"
 msgstr "Scherm"
 
@@ -411,7 +422,7 @@ msgid "email"
 msgstr "E-mail"
 
 #. Default: "Encoder la r&eacute;f&eacute;rence de la chambre d'hôtes"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:101
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:100
 msgid "encoder_reference"
 msgstr "Kiest de verwijzing van de gastenkamer"
 
@@ -426,7 +437,7 @@ msgid "epis_hebergement"
 msgstr "Classificatie"
 
 #. Default: "Equitation"
-#: skins/gites_templates/hebergement_macro.pt:743
+#: skins/gites_templates/hebergement_macro.pt:758
 msgid "equitation"
 msgstr "Paardrijden"
 
@@ -436,17 +447,17 @@ msgid "fax"
 msgstr "Fax"
 
 #. Default: "Feu ouvert"
-#: skins/gites_templates/hebergement_macro.pt:964
+#: skins/gites_templates/hebergement_macro.pt:979
 msgid "feu_ouvert"
 msgstr "Open haard"
 
 #. Default: "Fin d'ann&eacute;e"
-#: skins/gites_templates/hebergement_macro.pt:616
+#: skins/gites_templates/hebergement_macro.pt:631
 msgid "fin_d_annee"
 msgstr "Eindejaar"
 
 #. Default: "Flipchart"
-#: skins/gites_templates/hebergement_macro.pt:1054
+#: skins/gites_templates/hebergement_macro.pt:1069
 msgid "flipchart"
 msgstr "Flipchart"
 
@@ -456,21 +467,22 @@ msgid "francais"
 msgstr "Frans"
 
 #. Default: "galerie"
-#: skins/gites_templates/hebergement_macro.pt:392
+#: skins/gites_templates/hebergement_macro.pt:407
 msgid "galerie"
 msgstr "Galerij"
 
 #. Default: "Garantie"
-#: skins/gites_templates/hebergement_macro.pt:631
+#: skins/gites_templates/hebergement_macro.pt:646
 msgid "garantie"
 msgstr "Garantie"
 
 #. Default: "Gare"
-#: skins/gites_templates/hebergement_macro.pt:784
+#: skins/gites_templates/hebergement_macro.pt:799
 msgid "gare"
 msgstr "Station"
 
-#. Default: "G\303\256te \303\240 la ferme"
+#. Default: "Gîte à la ferme"
+#: skins/gites_templates/portlet_menu_gites_meubles.pt:29
 msgid "gite_a_la_ferme"
 msgstr "Gîte op de boerderij"
 
@@ -484,7 +496,7 @@ msgid "gite_accessible_a_tous"
 msgstr "Gîte toegankelijk voor elk van ons"
 
 #. Default: "Gîte Activit&eacute;s d&eacute;couverte nature"
-#: skins/gites_templates/hebergement_macro.pt:198
+#: skins/gites_templates/hebergement_macro.pt:206
 msgid "gite_activite_decouverte_nature"
 msgstr "Gîte Natuurontdekkingsactiviteiten"
 
@@ -503,31 +515,38 @@ msgstr "Tuin-gîte"
 msgid "gite_bebe_tendresse"
 msgstr "Gîte Baby-lief"
 
-#. Default: "G\303\256te citadin"
+#. Default: "Gîte citadin"
+#: skins/gites_templates/portlet_menu_gites_meubles.pt:23
 msgid "gite_citadin"
 msgstr "Stadsgîte"
 
+#. Default: "Gite ecologique"
+#: skins/gites_templates/hebergement_macro.pt:196
+msgid "gite_eco"
+msgstr ""
+
 #. Default: "Gîte &eacute;questre"
-#: skins/gites_templates/hebergement_macro.pt:212
+#: skins/gites_templates/hebergement_macro.pt:220
 msgid "gite_equestre"
 msgstr "Gîte Paardrijden"
 
 #. Default: "Gîte Panda"
-#: skins/gites_templates/hebergement_macro.pt:205
+#: skins/gites_templates/hebergement_macro.pt:213
 msgid "gite_panda"
 msgstr "Gîte Panda"
 
 #. Default: "Gîte patrimoine"
-#: skins/gites_templates/hebergement_macro.pt:226
+#: skins/gites_templates/hebergement_macro.pt:234
 msgid "gite_patrimoine"
 msgstr "Gîte Erfgoed"
 
 #. Default: "Gîte pêche"
-#: skins/gites_templates/hebergement_macro.pt:219
+#: skins/gites_templates/hebergement_macro.pt:227
 msgid "gite_peche"
 msgstr "Gîte Hengelen"
 
-#. Default: "G\303\256te rural"
+#. Default: "Gîte rural"
+#: skins/gites_templates/portlet_menu_gites_meubles.pt:17
 msgid "gite_rural"
 msgstr "Landelijke gîte"
 
@@ -536,11 +555,13 @@ msgstr "Landelijke gîte"
 msgid "gites_copyright"
 msgstr ""
 
-#. Default: "Gites et Meubl\303\251s"
+#. Default: "Gites et Meublés"
+#: skins/gites_templates/portlet_menu_gites_meubles.pt:11
 msgid "gites_et_meubles"
 msgstr "Gîtes en Vakantieverblijven"
 
 #. Default: "Gites Meubles"
+#: skins/gites_templates/portlet_gites_meubles.pt:8
 msgid "gites_meubles"
 msgstr "Gemeubileerde gîtes"
 
@@ -550,12 +571,12 @@ msgid "go_to_parent_url"
 msgstr "Ga naar vorig niveau"
 
 #. Default: "Haut de la page"
-#: browser/templates/hebergement.pt:120
+#: browser/templates/hebergement.pt:143
 msgid "haut_de_la_page"
 msgstr "Begin van de pagina"
 
 #. Default: "Haute Saison"
-#: skins/gites_templates/hebergement_macro.pt:567
+#: skins/gites_templates/hebergement_macro.pt:582
 msgid "haute_saison"
 msgstr "Hoogseizoen"
 
@@ -600,27 +621,27 @@ msgid "in_location"
 msgstr "in"
 
 #. Default: "Infos Touristiques"
-#: browser/templates/hebergement.pt:89
+#: browser/templates/hebergement.pt:106
 msgid "infos_touristiques"
 msgstr "Toeristische informatie"
 
 #. Default: "Interdit de fumer"
-#: skins/gites_templates/hebergement_macro.pt:948
+#: skins/gites_templates/hebergement_macro.pt:963
 msgid "interdit_de_fumer"
 msgstr "Verboden te roken"
 
 #. Default: "Internet"
-#: skins/gites_templates/hebergement_macro.pt:1012
+#: skins/gites_templates/hebergement_macro.pt:1027
 msgid "internet"
 msgstr "Internet"
 
 #. Default: "Jaccuzzi"
-#: skins/gites_templates/hebergement_macro.pt:1086
+#: skins/gites_templates/hebergement_macro.pt:1101
 msgid "jacuzzi"
 msgstr "Jacuzzi"
 
 #. Default: "Jardin"
-#: skins/gites_templates/hebergement_macro.pt:1070
+#: skins/gites_templates/hebergement_macro.pt:1085
 msgid "jardin"
 msgstr "Tuin"
 
@@ -675,7 +696,7 @@ msgid "label_recherche"
 msgstr "Ik zoek"
 
 #. Default: "Référence :"
-#: browser/templates/moteur_recherche.pt:84
+#: browser/templates/moteur_recherche.pt:111
 msgid "label_reference"
 msgstr "Referentie"
 
@@ -695,37 +716,37 @@ msgid "langue"
 msgstr "Taal"
 
 #. Default: "Lave-linge"
-#: skins/gites_templates/hebergement_macro.pt:988
+#: skins/gites_templates/hebergement_macro.pt:1003
 msgid "lave_linge"
 msgstr "Wasmachine"
 
 #. Default: "Lave-vaisselle"
-#: skins/gites_templates/hebergement_macro.pt:972
+#: skins/gites_templates/hebergement_macro.pt:987
 msgid "lave_vaisselle"
 msgstr "Vaatwas"
 
 #. Default: "Lit 1 personne"
-#: skins/gites_templates/hebergement_macro.pt:871
+#: skins/gites_templates/hebergement_macro.pt:886
 msgid "lit_1_personne"
 msgstr "Bed 1 persoon"
 
 #. Default: "Lit 2 personnes"
-#: skins/gites_templates/hebergement_macro.pt:881
+#: skins/gites_templates/hebergement_macro.pt:896
 msgid "lit_2_personne"
 msgstr "Bed 2 personen"
 
 #. Default: "Lit enfant"
-#: skins/gites_templates/hebergement_macro.pt:901
+#: skins/gites_templates/hebergement_macro.pt:916
 msgid "lit_enfant"
 msgstr "Kinderbed"
 
 #. Default: "Lit superpos&eacute;"
-#: skins/gites_templates/hebergement_macro.pt:891
+#: skins/gites_templates/hebergement_macro.pt:906
 msgid "lit_superpose"
 msgstr "Stapelbed"
 
 #. Default: "LITERIE"
-#: skins/gites_templates/hebergement_macro.pt:859
+#: skins/gites_templates/hebergement_macro.pt:874
 msgid "literie"
 msgstr "Beddengoed"
 
@@ -745,7 +766,7 @@ msgid "madame"
 msgstr "Mevrouw"
 
 #. Default: "Maison du Tourisme"
-#: browser/templates/hebergement.pt:77
+#: browser/templates/hebergement.pt:91
 msgid "maison_du_tourisme"
 msgstr "Maison du Tourisme"
 
@@ -783,12 +804,13 @@ msgstr "Gîtes en Vakantieverblijven"
 msgid "menu_idee_sejour"
 msgstr "Verblijfsideeën"
 
-#. Default: "Meubl\303\251"
+#. Default: "Meublé"
+#: skins/gites_templates/portlet_menu_gites_meubles.pt:35
 msgid "meuble"
 msgstr "Gemeubileerd vakantieverblijf"
 
 #. Default: "Micro-onde"
-#: skins/gites_templates/hebergement_macro.pt:980
+#: skins/gites_templates/hebergement_macro.pt:995
 msgid "micro_onde"
 msgstr "Microgolf"
 
@@ -798,7 +820,7 @@ msgid "monsieur"
 msgstr "Mijnheer"
 
 #. Default: "Moyenne Saison"
-#: skins/gites_templates/hebergement_macro.pt:548
+#: skins/gites_templates/hebergement_macro.pt:563
 msgid "moyenne_saison"
 msgstr "Tussenseizoen"
 
@@ -823,7 +845,7 @@ msgid "nombre-chambres"
 msgstr "Aantal kamers"
 
 #. Default: "Nombre de chambres"
-#: skins/gites_templates/hebergement_macro.pt:861
+#: skins/gites_templates/hebergement_macro.pt:876
 msgid "nombre_de_chambre"
 msgstr "Aantal kamers"
 
@@ -852,7 +874,7 @@ msgid "nouveaux_hebergements"
 msgstr "Nieuwe logeeradressen"
 
 #. Default: "Nuit&eacute;e avec petit d&eacute;jeuner"
-#: skins/gites_templates/hebergement_macro.pt:413
+#: skins/gites_templates/hebergement_macro.pt:428
 msgid "nuit_avec_petit_dejeuner"
 msgstr "Overnachting met ontbijt"
 
@@ -862,7 +884,7 @@ msgid "objectifs"
 msgstr "Doelstellingen"
 
 #. Default: "Pas d'animal de compagnie"
-#: skins/gites_templates/hebergement_macro.pt:930
+#: skins/gites_templates/hebergement_macro.pt:945
 msgid "pas_d_animal_de_compagnie"
 msgstr "Geen gezelschapsdieren"
 
@@ -872,22 +894,22 @@ msgid "pays"
 msgstr "Land"
 
 #. Default: "Pêche"
-#: skins/gites_templates/hebergement_macro.pt:734
+#: skins/gites_templates/hebergement_macro.pt:749
 msgid "peche"
 msgstr "Hengelen"
 
 #. Default: "P&eacute;riode"
-#: skins/gites_templates/hebergement_macro.pt:524
+#: skins/gites_templates/hebergement_macro.pt:539
 msgid "periode"
 msgstr "Periode"
 
 #. Default: "Personne suppl&eacute;mentaire"
-#: skins/gites_templates/hebergement_macro.pt:409
+#: skins/gites_templates/hebergement_macro.pt:424
 msgid "personne_supplementaire"
 msgstr "Bijkomende persoon"
 
 #. Default: "Piscine"
-#: skins/gites_templates/hebergement_macro.pt:725
+#: skins/gites_templates/hebergement_macro.pt:740
 msgid "piscine"
 msgstr "Zwembad"
 
@@ -897,7 +919,7 @@ msgid "prenom"
 msgstr "Voornaam"
 
 #. Default: "Projecteurs"
-#: skins/gites_templates/hebergement_macro.pt:1046
+#: skins/gites_templates/hebergement_macro.pt:1061
 msgid "projecteur"
 msgstr "Projector"
 
@@ -912,37 +934,37 @@ msgid "proposer_hebergement"
 msgstr "Uw woning voorstellen"
 
 #. Default: "PROPRIETAIRE"
-#: skins/gites_templates/hebergement_macro.pt:1116
+#: skins/gites_templates/hebergement_macro.pt:1131
 msgid "proprietaire"
 msgstr "Eigenaar"
 
 #. Default: "question"
-#: skins/gites_templates/hebergement_macro.pt:376
+#: skins/gites_templates/hebergement_macro.pt:391
 msgid "question"
 msgstr "Vraag"
 
 #. Default: "Randonn&eacute;e"
-#: skins/gites_templates/hebergement_macro.pt:716
+#: skins/gites_templates/hebergement_macro.pt:731
 msgid "randonnee"
 msgstr "Tocht"
 
 #. Default: "RAVEL"
-#: skins/gites_templates/hebergement_macro.pt:770
+#: skins/gites_templates/hebergement_macro.pt:785
 msgid "ravel"
 msgstr "Ravel"
 
 #. Default: "recherche avancée"
-#: browser/templates/moteur_recherche.pt:97
+#: browser/templates/moteur_recherche.pt:124
 msgid "recherche_avancee"
 msgstr "Verfijnd zoeken"
 
 #. Default: "recherche cartographique"
-#: browser/templates/moteur_recherche.pt:68
+#: browser/templates/moteur_recherche.pt:95
 msgid "recherche_cartographique"
 msgstr "Zoeken op de kaart"
 
 #. Default: "REMARQUE"
-#: skins/gites_templates/hebergement_macro.pt:847
+#: skins/gites_templates/hebergement_macro.pt:862
 msgid "remarque"
 msgstr "Opmerking"
 
@@ -952,27 +974,27 @@ msgid "remarques"
 msgstr "Opmerkingen"
 
 #. Default: "Restaurant"
-#: skins/gites_templates/hebergement_macro.pt:802
+#: skins/gites_templates/hebergement_macro.pt:817
 msgid "restaurant"
 msgstr "Restaurant"
 
 #. Default: "Retour à la page précédente"
-#: browser/templates/hebergement.pt:124
+#: browser/templates/hebergement.pt:147
 msgid "retour_page_precedente"
 msgstr "Terug naar vorige pagina"
 
 #. Default: "Sauna"
-#: skins/gites_templates/hebergement_macro.pt:1094
+#: skins/gites_templates/hebergement_macro.pt:1109
 msgid "sauna"
 msgstr "Sauna"
 
 #. Default: "Sèche-linge"
-#: skins/gites_templates/hebergement_macro.pt:996
+#: skins/gites_templates/hebergement_macro.pt:1011
 msgid "seche_linge"
 msgstr "Droogkast"
 
 #. Default: "Séjours Futés"
-#: browser/templates/hebergement.pt:60
+#: browser/templates/hebergement.pt:74
 msgid "sejours_futes"
 msgstr "Uitgekiend verblijf"
 
@@ -982,22 +1004,22 @@ msgid "selectionnez_titre_pour_trier"
 msgstr "Kies de titel van een kolom om de resultaten te sorteren."
 
 #. Default: "Semaine"
-#: skins/gites_templates/hebergement_macro.pt:526
+#: skins/gites_templates/hebergement_macro.pt:541
 msgid "semaine"
 msgstr "Week"
 
 #. Default: "SEMINAIRE"
-#: skins/gites_templates/hebergement_macro.pt:1027
+#: skins/gites_templates/hebergement_macro.pt:1042
 msgid "seminaire"
 msgstr "Seminarie"
 
 #. Default: "SITUATION"
-#: skins/gites_templates/hebergement_macro.pt:819
+#: skins/gites_templates/hebergement_macro.pt:834
 msgid "situation"
 msgstr "Situatie"
 
 #. Default: "Ski"
-#: skins/gites_templates/hebergement_macro.pt:707
+#: skins/gites_templates/hebergement_macro.pt:722
 msgid "sky"
 msgstr "Ski"
 
@@ -1010,7 +1032,7 @@ msgid "soutien_commissariat_ligne_2"
 msgstr "voor Toerisme van het Waalse Gewest"
 
 #. Default: "Sports nautiques"
-#: skins/gites_templates/hebergement_macro.pt:698
+#: skins/gites_templates/hebergement_macro.pt:713
 msgid "sports-nautiques"
 msgstr "Watersporten"
 
@@ -1020,11 +1042,12 @@ msgid "subscribe_to_newsletter"
 msgstr "Inschrijving op de newsletter"
 
 #. Default: "Table d'h&ocirc;te"
-#: skins/gites_templates/hebergement_macro.pt:475
+#: skins/gites_templates/hebergement_macro.pt:490
 msgid "table_d_hote"
 msgstr "Table d'hôtes"
 
-#. Default: "Table d'h\303\264tes"
+#. Default: "Table d'hôtes"
+#: skins/gites_templates/portlet_menu_chambres_hotes.pt:23
 msgid "table_hotes"
 msgstr "Table d'hôtes"
 
@@ -1034,12 +1057,12 @@ msgid "tarif_hebergement"
 msgstr "overnachting (2 p.+ ontbijt)"
 
 #. Default: "Taxe de s&eacute;jour"
-#: skins/gites_templates/hebergement_macro.pt:654
+#: skins/gites_templates/hebergement_macro.pt:669
 msgid "taxe_sejour"
 msgstr "Verblijfstaks"
 
 #. Default: "Taxes de s&eacute;jour"
-#: skins/gites_templates/hebergement_macro.pt:442
+#: skins/gites_templates/hebergement_macro.pt:457
 msgid "taxes_sejour"
 msgstr "Verblijfstaks"
 
@@ -1049,17 +1072,17 @@ msgid "telephone"
 msgstr "Telefoon"
 
 #. Default: "T&eacute;l&eacute;vision"
-#: skins/gites_templates/hebergement_macro.pt:956
+#: skins/gites_templates/hebergement_macro.pt:971
 msgid "television"
 msgstr "Televisie"
 
 #. Default: "Tennis"
-#: skins/gites_templates/hebergement_macro.pt:689
+#: skins/gites_templates/hebergement_macro.pt:704
 msgid "tennis"
 msgstr "Tennis"
 
 #. Default: "Terrasse"
-#: skins/gites_templates/hebergement_macro.pt:1062
+#: skins/gites_templates/hebergement_macro.pt:1077
 msgid "terrasse"
 msgstr "Terras"
 
@@ -1089,11 +1112,12 @@ msgid "title_required"
 msgstr ""
 
 #. Default: "Tout voir"
+#: skins/gites_templates/portlet_gites_meubles.pt:17
 msgid "tout_voir"
 msgstr "Alles zien"
 
 #. Default: "Type"
-#: skins/gites_templates/hebergement_macro.pt:483
+#: skins/gites_templates/hebergement_macro.pt:498
 msgid "type"
 msgstr "Type"
 
@@ -1123,12 +1147,12 @@ msgid "une_societe"
 msgstr "<span><span><span>Onderneming</span></span></span>"
 
 #. Default: "La référence de l'hébergement ${heb_pk} n'est pas valide"
-#: browser/templates/unknown_gites.pt:13
+#: browser/templates/unknown_gites.pt:15
 msgid "unknown_gites"
 msgstr "De referentie van het logies ${heb_pk} is ongeldig"
 
 #. Default: "V&eacute;lo"
-#: skins/gites_templates/hebergement_macro.pt:752
+#: skins/gites_templates/hebergement_macro.pt:767
 msgid "velo"
 msgstr "Fiets"
 
@@ -1137,11 +1161,11 @@ msgid "voir_la_liste"
 msgstr "Zie de lijst"
 
 #. Default: "VTT"
-#: skins/gites_templates/hebergement_macro.pt:761
+#: skins/gites_templates/hebergement_macro.pt:776
 msgid "vtt"
 msgstr "Mountainbike"
 
 #. Default: "WE"
-#: skins/gites_templates/hebergement_macro.pt:525
+#: skins/gites_templates/hebergement_macro.pt:540
 msgid "week-end"
 msgstr "WE"
