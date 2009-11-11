@@ -43,10 +43,7 @@
                   value=""
                   tal:attributes="value heb/heb_pk" />
 
-           <table border="1"
-                  cellspacing="0"
-                  bordercolor="#EEEFEE"
-                  width="560">
+           <table class="maj-info">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -54,20 +51,14 @@
                     </span>
                  </td>
               </tr>
-               <tr>
-                  <td colspan="2">&nbsp;</td>
-               </tr>
-               <tr>
-                  <td>Type</td>
+              <tr>
+                  <td class="maj-etiquette">Type</td>
                   <td>
-                     <span tal:content="heb/type/type_heb_nom" />
+                     <span tal:content="heb/type/type_heb_nom" class="maj-donnee" />
                   </td>
                </tr>
                <tr>
-                  <td colspan="2">&nbsp;</td>
-               </tr>
-               <tr>
-                  <td>Nom de l'hébergement</td>
+                  <td class="maj-etiquette">Nom de l'hébergement</td>
                   <td>
                      <input type="text"
                             name="heb_nom"
@@ -77,7 +68,7 @@
                   </td>
                 </tr>
                 <tr>
-                   <td>Adresse</td>
+                   <td class="maj-etiquette">Adresse</td>
                    <td>
                       <input type="text"
                              name="heb_adresse"
@@ -87,14 +78,14 @@
                    </td>
                  </tr>
                <tr>
-                  <td>Code postal</td>
-                  <td>
+                  <td class="maj-etiquette">Code postal</td>
+                  <td class="maj-donnee">
                      <span tal:content="heb/commune/com_cp" />
                      (<span tal:content="heb/commune/com_nom" />)
                   </td>
                </tr>
               <tr>
-                 <td>Localité</td>
+                 <td class="maj-etiquette">Localité</td>
                  <td>
                     <input type="text"
                            name="heb_localite"
@@ -104,10 +95,7 @@
                  </td>
               </tr>
               <tr>
-                 <td colspan="2"></td>
-              </tr>
-              <tr>
-                 <td valign="center">Type de table d'hôte</td>
+                 <td valign="center" class="maj-etiquette">Type de table d'hôte</td>
                  <td>
                      <div tal:define="table heb/tableHote">
                      <tal:boucle tal:repeat="elem table">
@@ -164,10 +152,7 @@
                  </td>
               </tr>
               <tr>
-                 <td colspan="2"></td>
-              </tr>
-              <tr>
-                 <td>Nombre d'épis</td>
+                 <td class="maj-etiquette">Nombre d'épis</td>
                  <td>
                     <!--
                     if "heb_typeheb_fk in [1,2,3,4,7,10]"  cas des GR GF MT GC MV GRECR<br />
@@ -175,16 +160,13 @@
                     -->
                     <div tal:define="nbrEpis heb/epis">
                         <span tal:repeat="epis nbrEpis">
-                            <span tal:content="epis/heb_nombre_epis" />
+                            <span tal:content="epis/heb_nombre_epis" class="maj-donnee" />
                         </span>
                     </div>
                  </td>
               </tr>
               <tr>
-                 <td colspan="2"></td>
-              </tr>
-              <tr>
-                 <td>Activités</td>
+                 <td class="maj-etiquette">Activités</td>
                  <td valign="middle">
                     <input type="checkbox"
                            name="heb_tenis"
@@ -371,9 +353,7 @@
                     </td>
                     </tr>
                     <tr>
-                       <td>
-                       Informations
-                       </td>
+                       <td class="maj-etiquette">Informations</td>
                        <td>
                     <input type="checkbox"
                            name="heb_commerce"
@@ -428,10 +408,7 @@
                  </td>
               </tr>
               <tr>
-                 <td colspan="2"></td>
-              </tr>
-              <tr>
-                 <td>Animaux</td>
+                 <td class="maj-etiquette">Animaux</td>
                  <td>
                      <input type="checkbox"
                             name="heb_animal"
@@ -446,10 +423,7 @@
                     </td>
               </tr>
               <tr>
-                 <td colspan="2"></td>
-              </tr>
-              <tr>
-                 <td>Fumeur</td>
+                 <td class="maj-etiquette">Fumeur</td>
                  <td>
                      <input type="checkbox"
                              name="heb_fumeur"
@@ -463,12 +437,11 @@
                        &nbsp;&nbsp;&nbsp;
                     </td>
               </tr>
-
            </table>
            <!---[FIN INFORMATION GENERALE]--->
 
            <!---[DEBUT TARIFICATION CHAMBRE]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td colspan="4" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -482,7 +455,7 @@
                  <td align="center"><b>2 pers</b></td>
                  <td align="center"><b>3 pers</b></td>
               <tr bgcolor="#FDFFE0">
-                 <td>Chambre avec petit déjeuner</td>
+                 <td class="maj-etiquette">Chambre avec petit déjeuner</td>
                  <td align="center">
                     <input type="text"
                            name="heb_tarif_chmbr_avec_dej_1p"
@@ -506,7 +479,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Déduction si pas petit déjeuner <b>(-)</b></td>
+                 <td class="maj-etiquette">Déduction si pas petit déjeuner <b>(-)</b></td>
                  <td align="center">
                     <input type="text"
                            name="heb_tarif_chmbr_sans_dej_1p"
@@ -530,7 +503,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Si table d'hôte, prix</td>
+                 <td class="maj-etiquette">Si table d'hôte, prix</td>
                  <td align="center">
                     <input type="text"
                            name="heb_tarif_chmbr_table_hote_1p"
@@ -554,7 +527,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Autre</td>
+                 <td class="maj-etiquette">Autre</td>
                  <td align="center">
                     <input type="text"
                            name="heb_tarif_chmbr_autre_1p"
@@ -582,7 +555,7 @@
            <!---[FIN TARIFICATION CHAMBRE]--->
 
            <!---[DEBUT TARIFICATION GITES]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE" cellpading="0">
+           <table class="maj-info">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -591,7 +564,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif week-end basse saison</td>
+                 <td class="maj-etiquette">Tarif week-end basse saison</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_we_bs"
@@ -601,7 +574,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif week-end moyenne saison</td>
+                 <td class="maj-etiquette">Tarif week-end moyenne saison</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_we_ms"
@@ -611,7 +584,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif week-end haute saison</td>
+                 <td class="maj-etiquette">Tarif week-end haute saison</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_we_hs"
@@ -621,7 +594,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif semaine basse saison</td>
+                 <td class="maj-etiquette">Tarif semaine basse saison</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_sem_bs"
@@ -631,7 +604,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif semaine moyenne saison</td>
+                 <td class="maj-etiquette">Tarif semaine moyenne saison</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_sem_ms"
@@ -641,7 +614,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif semaine haute saison</td>
+                 <td class="maj-etiquette">Tarif semaine haute saison</td>
                  <td>
                     <input type="text"
                            name="fheb_tarif_sem_hs"
@@ -651,7 +624,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif week-end fête 3 nuits</td>
+                 <td class="maj-etiquette">Tarif week-end fête 3 nuits</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_we_3n"
@@ -661,7 +634,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif week-end fête 4 nuits</td>
+                 <td class="maj-etiquette">Tarif week-end fête 4 nuits</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_we_4n"
@@ -671,7 +644,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif Semaine fin d'année</td>
+                 <td class="maj-etiquette">Tarif Semaine fin d'année</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_semaine_fin_annee"
@@ -681,7 +654,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif garantie</td>
+                 <td class="maj-etiquette">Tarif garantie</td>
                  <td>
                     <input type="text"
                            name="heb_tarif_garantie"
@@ -691,7 +664,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Tarif charge</td>
+                 <td class="maj-etiquette">Tarif charge</td>
                  <td>
                     <div tal:define="charges python:view.getAllCharge()">
                         <span tal:repeat="charge charges">
@@ -716,7 +689,7 @@
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
-                 <td>Tarif divers</td>
+                 <td class="maj-etiquette">Tarif divers</td>
                  <td>
                     <!--input type="text" name="fheb_tarif_divers" value="<dtml-var heb_tarif_divers"-->
                     <textarea name="heb_tarif_divers"
@@ -732,7 +705,7 @@
            <!---[FIN TARIFICATION GITES]--->
 
            <!---[DEBUT TAXE SEJOUR]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -741,7 +714,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Taxe de Séjour</td>
+                 <td class="maj-etiquette">Taxe de Séjour</td>
                  <td>
                     <!--
                     <select name="fheb_taxe_sejour">
@@ -759,7 +732,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Montant de la taxe</td>
+                 <td class="maj-etiquette">Montant de la taxe</td>
                  <td>
                     <input type="text"
                            name="heb_taxe_montant"
@@ -772,7 +745,7 @@
            <!---[FIN TAXE SEJOUR]--->
 
            <!---[DEBUT POINTS FORTS HEB]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -792,7 +765,7 @@
            <!---[FIN POINTS FORTS HEB]--->
 
            <!---[DEBUT DESCRIPTION HEB]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -812,7 +785,7 @@
            <!---[FIN DESCRIPTION HEB]--->
 
            <!---[DEBUT DISTRIBUTION HEB]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -833,7 +806,7 @@
            <!---[FIN DISTRIBUTION HEB]--->
 
            <!---[DEBUT TYPE LIT HEB]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -843,7 +816,7 @@
                  </td>
               </tr>
               <tr>
-                 <td>Lit d'une personne</td>
+                 <td class="maj-etiquette">Lit d'une personne</td>
                  <td>
                      <input type="text"
                             name="heb_lit_1p"
@@ -853,7 +826,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Lit de 2 personnes</td>
+                <td class="maj-etiquette">Lit de 2 personnes</td>
                 <td>
                      <input type="text"
                             name="heb_lit_2p"
@@ -863,7 +836,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Lit superposé</td>
+                <td class="maj-etiquette">Lit superposé</td>
                 <td>
                     <input type="text"
                            name="heb_lit_sup"
@@ -873,7 +846,7 @@
                 </td>
               </tr>
               <tr>
-                 <td>Lit pour enfant</td>
+                 <td class="maj-etiquette">Lit pour enfant</td>
                  <td><input type="text"
                             name="fheb_lit_enf"
                             size="10"
@@ -884,7 +857,7 @@
            <!---[FIN TYPE LIT HEB]--->
 
            <!---[DEBUT CONFORT HEB]--->
-           <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+           <table class="maj-info">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -1011,14 +984,14 @@
           <!---[FIN CONFORT HEB]--->
 
           <!---[DEBUT CGT]--->
-          <table border="1" cellspacing="0" bordercolor="#EEEFEE">
+          <table class="maj-info">
              <tr>
                 <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">CGT</span>
                 </td>
              </tr>
              <tr>
-                <td>Code CGT</td>
+                <td class="maj-etiquette">Code CGT</td>
                 <td>
                      <input type="text"
                             name="heb_code_cgt"
@@ -1028,7 +1001,7 @@
                 </td>
               </tr>
               <tr>
-                <td rowspan="3">Capacité</td>
+                <td rowspan="3" class="maj-etiquette">Capacité</td>
                 <td>
                     min : <input type="text"
                                  name="fheb_cgt_cap_min"

@@ -917,3 +917,51 @@ text-align: center;
 }
 
 /*** FIN DESCRIPTION HEBERGEMENT ***/
+
+
+
+/*** DEBUT MAJ INFO PROPRIO HEB***/
+table.maj-info{
+width:95%;
+margin:auto;
+}
+
+table.maj-info, table.maj-info td, table.maj-info th {
+border:1px solid #CCCCCC;
+border-collapse:collapse;
+padding:0.5em;
+}
+
+.maj-etiquette{
+font-weight:bold;
+color:#666;
+}
+
+.maj-donnee{
+color:#ff7e00;
+font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
+font-weight:bold;
+}
+
+input {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:White url(input_background.gif) repeat-x scroll 0 0;
+border:1px solid #8CACBB;
+color:#ff7e00;
+font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
+font-weight:bold;
+vertical-align:middle;
+visibility:visible;
+}
+
+select {
+background-color:White;
+border:1px solid #8CACBB;
+color:#ff7e00;
+font-weight:bold;
+vertical-align:top;
+}
+
+/*** FIN PROPRIO MAJ INFO ***/

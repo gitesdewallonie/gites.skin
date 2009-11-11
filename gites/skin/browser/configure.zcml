@@ -161,11 +161,19 @@
 
 <!-- MAJ PROPRIO -->
    <browser:page
+         for="*"
+         name="proprioInfo"
+         class=".proprio.ProprioInfo"
+         allowed_interface=".proprio.IProprioInfo"
+         permission="zope.Public"
+         />
+
+   <browser:page
         for="*"
         name="proprio-info"
         template="templates/maj_info_proprio.pt"
         class=".proprio.ProprioInfo"
-        allowed_interface=".interfaces.IProprioInfo"
+        allowed_interface=".proprio.IProprioInfo"
         permission="zope.Public"
         />
 

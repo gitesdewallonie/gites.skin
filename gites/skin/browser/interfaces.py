@@ -380,3 +380,13 @@ class IProprioInfo(Interface):
         """
         Selectionne les infos d'un proprio selon son login
         """
+
+    def getAllProprioMaj(self):
+        """
+        recupère tous les proprio en attente de modification
+        """
+
+    def addProprioMaj(self):
+        """
+        ajoute les infos mise à jour par le prorpio dans la table provisoire
+        """
