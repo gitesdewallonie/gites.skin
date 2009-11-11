@@ -12,7 +12,7 @@
                           enctype="multipart/form-data"
                           tal:attributes="action string:${here/absolute_url}/basic_search.html">
 
-                      <table border="0">
+                      <table border="0" align="center">
                           <tr>
                               <td colspan="2">
                                   <div id="type">
