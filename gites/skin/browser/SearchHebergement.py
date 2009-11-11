@@ -119,10 +119,10 @@ class SearchHebergement(formbase.PageForm):
             endDate = endDate + relativedelta(days=-1)
 
             busyHebQuery = session.query(reservationsTable)
-            busyHeb = select([hebergementTable.heb_pk],
+            busyHeb = select([reservationsTable.heb_fk],
                              and_(reservationsTable.res_date >= beginDate,
                                   reservationsTable.res_date < endDate)).distinct().execute().fetchall()
-            busyHebPks = [heb.heb_pk for heb in busyHeb]
+            busyHebPks = [heb.heb_fk for heb in busyHeb]
             query = query.filter(~hebergementTable.heb_pk.in_(busyHebPks))
 
         if isinstance(self.context, IdeeSejour):
