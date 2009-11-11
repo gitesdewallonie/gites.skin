@@ -5,7 +5,7 @@
       <tr bgcolor="#f9e7c6">
          <td>
             <div id="moteur-form">
-                <div id="moteur-simple">
+                <div id="moteur-simple" tal:condition="python: 'search.html' not in view.request.URL" comment="XXX TEMPORARY">
                 <form action="" method="post"
                       id="zc.page.browser_form"
                       enctype="multipart/form-data"
@@ -35,6 +35,33 @@
                             value=""
                             size="4" />
                    </div>
+
+                   <div class="widget">
+                    <label i18n:translate="" class="label-recherche">Sejour du</label>
+                    <input id="form.fromDate" class="textType" type="text" value="" size="10" name="form.fromDate"/>
+                    <input id="form.fromDate_trigger" type="button" value="..."/>
+                    <script type="text/javascript">
+                      Calendar.setup({
+                      inputField: 'form.fromDate',
+                      button: 'form.fromDate_trigger',
+                      ifFormat: '%d %b %Y'
+                     });
+                    </script>
+                   </div>
+
+                   <div class="widget">
+                    <label i18n:translate="" class="label-recherche">Sejour au</label>
+                    <input id="form.toDate" class="textType" type="text" value="" size="10" name="form.toDate"/>
+                    <input id="form.toDate_trigger" type="button" value="..."/>
+                    <script type="text/javascript">
+                      Calendar.setup({
+                      inputField: 'form.toDate',
+                      button: 'form.toDate_trigger',
+                      ifFormat: '%d %b %Y'
+                     });
+                    </script>
+                   </div>
+                   <br/>
                    <div id="chercher">
                     <input type="hidden" 
                            name="form.provinces" 
