@@ -116,7 +116,7 @@ class SearchHebergement(formbase.PageForm):
 
             # il y a un décalage dans le calcul des jours / nuits :
             # 1 nuit indiquée comme louée = 2 jours demandés
-            endDate = endDate + relativedelta(days=+1)
+            endDate = endDate + relativedelta(days=-1)
 
             busyHebQuery = session.query(reservationsTable)
             busyHeb = select([hebergementTable.heb_pk],
