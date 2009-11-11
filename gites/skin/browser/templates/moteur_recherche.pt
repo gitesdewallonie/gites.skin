@@ -6,86 +6,120 @@
          <td>
             <div id="moteur-form">
                 <div id="moteur-simple" tal:condition="python: 'search.html' not in view.request.URL" comment="XXX TEMPORARY">
-                <form action="" method="post"
-                      id="zc.page.browser_form"
-                      enctype="multipart/form-data"
-                      tal:attributes="action string:${here/absolute_url}/basic_search.html">
-                  <div id="type">
-                     <label i18n:translate="label_recherche" class="label-recherche">Je cherche</label><br />
-                     <select name="form.hebergementType">
-                        <tal:requete tal:repeat="type here/@@moteur_recherche_view/getGroupedHebergementTypes">
-                           <span tal:define="cle type/pk">
-                              <span tal:condition="python:cle==0">
-                                 <option value="-1"></option>
-                              </span>
-                              <span tal:condition="python:cle!=0">
-                                 <option tal:attributes="value cle"
-                                         i18n:translate=""
-                                         tal:content="type/name">Type d'hébergement</option>
-                              </span>
-                           </span>
-                        </tal:requete>
-                     </select>
-                   </div>
-                   <div id="pour">
-                     <label class="label-recherche" i18n:translate="label_nombre_personnes">Nombre de personnes :</label>
-                     <input type="text"
-                            id="form.capacityMin" 
-                            name="form.capacityMin"
-                            value=""
-                            size="4" />
-                   </div>
+                    <form action="" 
+                          method="post"
+                          id="zc.page.browser_form"
+                          enctype="multipart/form-data"
+                          tal:attributes="action string:${here/absolute_url}/basic_search.html">
 
-                   <div class="widget">
-                    <label i18n:translate="" class="label-recherche">Sejour du</label>
-                    <input id="form.fromDate" class="textType" type="text" value="" size="10" name="form.fromDate"/>
-                    <input id="form.fromDate_trigger" type="button" value="..."/>
-                    <script type="text/javascript">
-                      Calendar.setup({
-                      inputField: 'form.fromDate',
-                      button: 'form.fromDate_trigger',
-                      ifFormat: '%d %b %Y'
-                     });
-                    </script>
-                   </div>
+                      <table border="0">
+                          <tr>
+                              <td colspan="2">
+                                  <div id="type">
+                                     <label i18n:translate="label_recherche" class="label-recherche">Je cherche</label><br />
+                                     <select name="form.hebergementType">
+                                        <tal:requete tal:repeat="type here/@@moteur_recherche_view/getGroupedHebergementTypes">
+                                           <span tal:define="cle type/pk">
+                                              <span tal:condition="python:cle==0">
+                                                 <option value="-1"></option>
+                                              </span>
+                                              <span tal:condition="python:cle!=0">
+                                                 <option tal:attributes="value cle"
+                                                         i18n:translate=""
+                                                         tal:content="type/name">Type d'hébergement</option>
+                                              </span>
+                                           </span>
+                                        </tal:requete>
+                                     </select>
+                                   </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td id="pour" align="right">
+                                   <label class="label-recherche" i18n:translate="label_nombre_personnes">Nombre de personnes :</label>
+                              </td>
+                              <td align="left">
+                                     <input type="text"
+                                            id="form.capacityMin" 
+                                            name="form.capacityMin"
+                                            value=""
+                                            size="4" />
+                              </td>
+                          </tr>
+                          <tr>
+                              <td class="widget" align="right">
+                                 <label i18n:translate="" class="label-recherche">Sejour du</label>
+                              </td>
+                              <td>
+                                 <input id="form.fromDate" 
+                                        class="textType" 
+                                        type="text" 
+                                        value="" 
+                                        size="10" 
+                                        name="form.fromDate"/>
+                                 <input id="form.fromDate_trigger" type="button" value="..."/>
+                                 <script type="text/javascript">
+                                    Calendar.setup({
+                                    inputField: 'form.fromDate',
+                                    button: 'form.fromDate_trigger',
+                                    ifFormat: '%d %b %Y'
+                                    });
+                                 </script>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td class="widget"  align="right">
+                                  <label i18n:translate="" class="label-recherche">Sejour au</label>
+                              </td>
+                              <td>
+                                  <input id="form.toDate" 
+                                         class="textType" 
+                                         type="text" 
+                                         value="" 
+                                         size="10" 
+                                         name="form.toDate"/>
+                                  <input id="form.toDate_trigger" 
+                                         type="button" 
+                                         value="..."/>
+                                  <script type="text/javascript">
+                                          Calendar.setup({
+                                          inputField: 'form.toDate',
+                                          button: 'form.toDate_trigger',
+                                          ifFormat: '%d %b %Y'
+                                          });
+                                  </script>
+                              </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                               <div id="chercher">
+                                <input type="hidden" 
+                                       name="form.provinces" 
+                                       value="-1"/>
+                                <input type="hidden" 
+                                       name="form.classification" 
+                                       value="-1"/>
+                                <input type="hidden" 
+                                       name="form.smokers" 
+                                       value=""/>
+                                <input type="hidden" 
+                                       name="form.animals" 
+                                       value=""/>
+                                <input type="hidden" 
+                                       name="form.roomAmount" 
+                                       value=""/>
 
-                   <div class="widget">
-                    <label i18n:translate="" class="label-recherche">Sejour au</label>
-                    <input id="form.toDate" class="textType" type="text" value="" size="10" name="form.toDate"/>
-                    <input id="form.toDate_trigger" type="button" value="..."/>
-                    <script type="text/javascript">
-                      Calendar.setup({
-                      inputField: 'form.toDate',
-                      button: 'form.toDate_trigger',
-                      ifFormat: '%d %b %Y'
-                     });
-                    </script>
-                   </div>
-                   <br/>
-                   <div id="chercher">
-                    <input type="hidden" 
-                           name="form.provinces" 
-                           value="-1"/>
-                    <input type="hidden" 
-                           name="form.classification" 
-                           value="-1"/>
-                    <input type="hidden" 
-                           name="form.smokers" 
-                           value=""/>
-                    <input type="hidden" 
-                           name="form.animals" 
-                           value=""/>
-                    <input type="hidden" 
-                           name="form.roomAmount" 
-                           value=""/>
+                                <input type="submit" 
+                                       i18n:attributes="value action_search;" 
+                                       value="Rechercher" 
+                                       id="form.actions.search" 
+                                       name="form.actions.search" />
+                               </div>
+                            </td>
+                          </tr>
+                      </table>
 
-                    <input type="submit" 
-                           i18n:attributes="value action_search;" 
-                           value="Rechercher" 
-                           id="form.actions.search" 
-                           name="form.actions.search" />
-                   </div>
-                </form>
+                    </form>
                 </div>
          </td>
          <td align="center" valign="middle">

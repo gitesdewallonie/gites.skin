@@ -32,13 +32,7 @@
       vos données. Dès que celles-ci seront validées, elles apparaitront sur le site.
     </p>
     <hr />
-    <div tal:define="proprios python:view.getAllProprioMaj()">
-        >>>>
-        <span tal:repeat="proprio proprios">
-            ---<span tal:content="proprio/pro_maj_nom1" />---<br />
-        </span>
-        <<<
-    </div>
+    
 
     <div tal:repeat="proprio proprios" align="center">
         loufiv  NcCT FIVET pro_maj_pk=60 heb_pk=81
