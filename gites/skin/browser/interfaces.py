@@ -197,13 +197,13 @@ class ISearchHebergement(Interface):
                               description=_('Are people allowed to smoke in the Hebergement'),
                               required=False)
 
-    # fromDate = schema.Date(title=_('Sejour du'),
-    #                           description=_('Stay from'),
-    #                           required=False)
-    # 
-    # toDate = schema.Date(title=_('Sejour au'),
-    #                           description=_('Stay to'),
-    #                           required=False)
+    fromDate = schema.Date(title=_('Sejour du'),
+                              description=_('Stay from'),
+                              required=False)
+    
+    toDate = schema.Date(title=_('Sejour au'),
+                              description=_('Stay to'),
+                              required=False)
 
 
 class IBasicSearchHebergement(Interface):
@@ -245,13 +245,13 @@ class IBasicSearchHebergement(Interface):
                           description=_('Are people allowed to smoke in the Hebergement'),
                           required=False)
 
-    # fromDate = schema.Date(title=_('Sejour du'),
-    #                           description=_('Stay from'),
-    #                           required=False)
-    # 
-    # toDate = schema.Date(title=_('Sejour au'),
-    #                           description=_('Stay to'),
-    #                           required=False)
+    fromDate = schema.Date(title=_('Sejour du'),
+                              description=_('Stay from'),
+                              required=False)
+    
+    toDate = schema.Date(title=_('Sejour au'),
+                              description=_('Stay to'),
+                              required=False)
 
 
 class IBasicSearchHebergementTooMuch(Interface):
@@ -296,13 +296,13 @@ class IBasicSearchHebergementTooMuch(Interface):
                           description=_('Are people allowed to smoke in the Hebergement'),
                           required=False)
 
-    # fromDate = schema.Date(title=_('Sejour du'),
-    #                           description=_('Stay from'),
-    #                           required=False)
-    # 
-    # toDate = schema.Date(title=_('Sejour au'),
-    #                           description=_('Stay to'),
-    #                           required=False)
+    fromDate = schema.Date(title=_('Sejour du'),
+                              description=_('Stay from'),
+                              required=False)
+    
+    toDate = schema.Date(title=_('Sejour au'),
+                              description=_('Stay to'),
+                              required=False)
 
 
 class ISearchHebergementTooMuch(Interface):
@@ -348,13 +348,13 @@ class ISearchHebergementTooMuch(Interface):
                           description=_('Are people allowed to smoke in the Hebergement'),
                           required=False)
 
-    # fromDate = schema.Date(title=_('Sejour du'),
-    #                           description=_('Stay from'),
-    #                           required=False)
-    # 
-    # toDate = schema.Date(title=_('Sejour au'),
-    #                           description=_('Stay to'),
-    #                           required=False)
+    fromDate = schema.Date(title=_('Sejour du'),
+                              description=_('Stay from'),
+                              required=False)
+    
+    toDate = schema.Date(title=_('Sejour au'),
+                              description=_('Stay to'),
+                              required=False)
 
 
 class ISearchPk(Interface):
