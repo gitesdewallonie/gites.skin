@@ -69,9 +69,7 @@ class SearchHebergement(formbase.PageForm):
         checkAnimals = data.get('animals')
         checkSmokers = data.get('smokers')
         fromDate = data.get('fromDate')
-        origFromDate = data.get('fromDate')
         toDate = data.get('toDate')
-        origToDate = data.get('toDate')
         seeResults = self.request.form.has_key('form.seeResults')
 
         query = session.query(hebergementTable).join('province').join('proprio').outerjoin('reservations')
@@ -118,8 +116,7 @@ class SearchHebergement(formbase.PageForm):
 
             # il y a un décalage dans le calcul des jours / nuits :
             # 1 nuit indiquée comme louée = 2 jours demandés
-            endDate = endDate + relativedelta(days=-1)
-
+            # --> >= beginDate et < endDate
             busyHebQuery = session.query(reservationsTable)
             busyHeb = select([reservationsTable.heb_fk],
                              and_(reservationsTable.res_date >= beginDate,
@@ -151,8 +148,8 @@ class SearchHebergement(formbase.PageForm):
             self.widgets['hebergementType'].setRenderedValue(hebergementType)
             self.widgets['provinces'].setRenderedValue(provinces)
             self.widgets['classification'].setRenderedValue(classification)
-            self.widgets['fromDate'].setRenderedValue(origFromDate)
-            self.widgets['toDate'].setRenderedValue(origToDate)
+            self.widgets['fromDate'].setRenderedValue(fromDate)
+            self.widgets['toDate'].setRenderedValue(toDate)
 
             message = utranslate('gites',
                                  "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait utile de l'affiner.",
