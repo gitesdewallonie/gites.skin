@@ -949,7 +949,7 @@ input {
 -moz-background-origin:padding;
 background:White url(input_background.gif) repeat-x scroll 0 0;
 border:1px solid #8CACBB;
-color:#777;      /*#ff7e00;*/
+color:#000;      /*#ff7e00;*/
 font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
 font-weight:bold;
 vertical-align:middle;
@@ -959,7 +959,7 @@ visibility:visible;
 select {
 background-color:White;
 border:1px solid #8CACBB;
-color:#777; /*#ff7e00;*/
+color:#000; /*#ff7e00;*/
 font-weight:bold;
 vertical-align:top;
 }
