@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-from Products.Five import BrowserView
+from zope.component import queryMultiAdapter
 from zope.interface import implements
+from z3c.sqlalchemy import getSAWrapper
+from Products.Five import BrowserView
 from interfaces import ISendMail
 from mailer import Mailer
-from Products.CMFCore.utils import getToolByName
-from z3c.sqlalchemy import getSAWrapper
 
 LANG_MAP = {'en': 'Anglais',
             'fr': 'Français',
@@ -20,7 +20,7 @@ class SendMail(BrowserView):
 
     def sendMailToProprio(self):
         """
-           envoi d'un mail au proprio suite a un contact via hebergement description
+        envoi d'un mail au proprio suite a un contact via hebergement description
         """
         hebPk = self.request.get('hebPk')
         wrapper = getSAWrapper('gites_wallons')
@@ -98,9 +98,14 @@ class SendMail(BrowserView):
                 nombrePersonne,\
                 unicode(remarque, 'utf-8'))
         mailer.sendAllMail(mail.encode('utf-8'))
-        portal_url = getToolByName(self.context, 'portal_url')()
+
+        translate = queryMultiAdapter((self.context, self.request),
+                                       name='getTranslatedObjectUrl')
+
         if self.request.get('newsletter', False):
-            self.request.RESPONSE.redirect('%s/newsletter' % portal_url)
+            url = translate('newsletter')
+            self.request.RESPONSE.redirect(url)
         else:
-            self.request.RESPONSE.redirect('%s/mailsent' % portal_url)
+            url = translate('mailsent')
+            self.request.RESPONSE.redirect(url)
         return ''
