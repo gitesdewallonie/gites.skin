@@ -2,6 +2,8 @@
 from zope.component import queryMultiAdapter
 from zope.interface import implements
 from z3c.sqlalchemy import getSAWrapper
+from Products.CMFDefault.utils import checkEmailAddress
+from Products.CMFDefault.exceptions import EmailAddressInvalid
 from Products.Five import BrowserView
 from interfaces import ISendMail
 from mailer import Mailer
@@ -44,7 +46,7 @@ class SendMail(BrowserView):
             contactLangue = LANG_MAP.get(language, '')
         contactTelephone = self.request.get('contactTelephone', '')
         contactFax = self.request.get('contactFax', '')
-        contactEmail = self.request.get('contactEmail', '')
+        contactEmail = self.request.get('contactEmail', None)
         debutJour = self.request.get('debutJour')
         debutMois = self.request.get('debutMois')
         debutAn = self.request.get('debutAn')
@@ -53,7 +55,16 @@ class SendMail(BrowserView):
         finAn = self.request.get('finAn')
         nombrePersonne = self.request.get('nombrePersonne')
         remarque = self.request.get('remarque', '')
-        mailer = Mailer("localhost", "info@gitesdewallonie.be")
+
+        fromMail = "info@gitesdewallonie.be"
+        if contactEmail is not None:
+            try:
+                checkEmailAddress(contactEmail)
+                fromMail = contactEmail
+            except EmailAddressInvalid:
+                pass
+
+        mailer = Mailer("localhost", fromMail)
         mailer.setSubject("[DEMANDE D'INFORMATION PAR LE SITE]")
         mailer.setRecipients(proprioMail)
         mail = u"""<font color='#FF0000'><b>:: DEMANDE D'INFORMATION ::</b></font><br /><br />
