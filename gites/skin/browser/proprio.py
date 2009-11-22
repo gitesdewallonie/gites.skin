@@ -59,6 +59,17 @@ class ProprioInfo(BrowserView):
         communes = query.all()
         return communes
 
+    def getAllCivilites(self):
+        """
+        Sélectionne les civilites
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        civiliteTable = wrapper.getMapper('civilite')
+        query = session.query(civiliteTable)
+        civilites = query.all()
+        return civilites
+
     def getAllProprioMaj(self):
         """
         Liste tous les prorios en attente de modification
