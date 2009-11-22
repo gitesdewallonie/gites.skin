@@ -12,8 +12,9 @@
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="hebergements python:view.getHebergementByProprietaire(24)">
+     tal:define="hebergements python:view.getHebergementByProprietaire(83)">
     <h1>Modification de vos informations</h1>
+    proprio 24 2 heb // prorpio 83 1 heb
     <p>
     Ce formulaire vous permet de modifier les informations de votre hébergement.
     </p>
@@ -54,7 +55,8 @@
               <tr>
                   <td class="maj-etiquette">Type</td>
                   <td>
-                     <span tal:content="heb/type/type_heb_nom" class="maj-donnee" />
+                     <span tal:content="heb/type/type_heb_nom" 
+                           class="maj-donnee" />
                   </td>
                </tr>
                <tr bgcolor="#FDFFE0">
@@ -160,7 +162,8 @@
                     -->
                     <div tal:define="nbrEpis heb/epis">
                         <span tal:repeat="epis nbrEpis">
-                            <span tal:content="epis/heb_nombre_epis" class="maj-donnee" />
+                            <span tal:content="epis/heb_nombre_epis" 
+                                  class="maj-donnee" />
                         </span>
                     </div>
                  </td>
@@ -365,7 +368,7 @@
                                            or None" />
                     <img src="i_commerce.png" title="COMMERCE" />
                     <input type="text"
-                           name="fheb_commerce_distance"
+                           name="heb_commerce_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_commerce_distance" />Km
@@ -382,7 +385,7 @@
                                            or None" />
                     <img src="i_restaurant.png" title="RESTAURANT" />
                     <input type="text"
-                           name="fheb_restaurant_distance"
+                           name="heb_restaurant_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_restaurant_distance" />Km
@@ -717,7 +720,7 @@
                  <td class="maj-etiquette">Taxe de Séjour</td>
                  <td>
                     <!--
-                    <select name="fheb_taxe_sejour">
+                    <select name="heb_taxe_sejour">
                        <option value="non">...</option>
                            <dtml-if "heb_taxe_sejour=='oui'">
                            <option value="oui" selected> Oui</option>
@@ -728,6 +731,18 @@
                            </dtml-if>
                     </select>
                     -->
+                    <select name="heb_taxe_sejour">
+                        <option value="oui"
+                                selected=""
+                                tal:attributes="selected python:heb.heb_taxe_sejour == 'oui' or None">
+                                Oui
+                        </option>
+                        <option value="non"
+                                selected=""
+                                tal:attributes="selected python:heb.heb_taxe_sejour == 'non' or None">
+                                Non
+                        </option>
+                    </select>
                     <span tal:content="heb/heb_taxe_sejour" />
                  </td>
               </tr>
@@ -848,7 +863,7 @@
               <tr bgcolor="#FDFFE0" bgcolor="#FDFFE0">
                  <td class="maj-etiquette">Lit pour enfant</td>
                  <td><input type="text"
-                            name="fheb_lit_enf"
+                            name="heb_lit_enf"
                             size="10"
                             value=""
                             tal:attributes="value heb/heb_lit_enf" /></td>
@@ -1004,7 +1019,7 @@
                 <td rowspan="3" class="maj-etiquette">Capacité</td>
                 <td>
                     min : <input type="text"
-                                 name="fheb_cgt_cap_min"
+                                 name="heb_cgt_cap_min"
                                  size="5"
                                  value=""
                                  tal:attributes="value heb/heb_cgt_cap_min" />
@@ -1012,7 +1027,7 @@
               <tr>
                 <td>
                     max : <input type="text"
-                                 name="fheb_cgt_cap_max"
+                                 name="heb_cgt_cap_max"
                                  size="5"
                                  value=""
                                  tal:attributes="value heb/heb_cgt_cap_max" />
@@ -1021,7 +1036,7 @@
               <tr>
                 <td>
                     nombre de chambre : <input type="text"
-                                               name="fheb_cgt_nbre_chmbre"
+                                               name="heb_cgt_nbre_chmbre"
                                                size="5"
                                                value=""
                                                tal:attributes="value heb/heb_cgt_nbre_chmbre" />
