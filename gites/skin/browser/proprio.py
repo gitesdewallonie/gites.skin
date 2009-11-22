@@ -69,7 +69,7 @@ class ProprioInfo(BrowserView):
         query = session.query(proprioMajTable)
         propriosMaj = query.all()
         return propriosMaj
-        
+
     def addProprioMaj(self):
         """
         ajoute les infos mise à jour par proprio dans table provisoire
