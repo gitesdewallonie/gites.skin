@@ -79,7 +79,7 @@
       class=".meubles.MeublesView"
       permission="zope.Public"
       allowed_interface=".interfaces.IMeublesView" />
-      
+
    <browser:page
       for="*"
       name="unknown_gites"
@@ -148,7 +148,8 @@
         template="templates/hebergement_map.pt"
         permission="zope.Public"
         />
-        
+
+
 <!-- GALERIE HBE-->
    <browser:page
         for="*"
@@ -157,7 +158,7 @@
         template="templates/description_galerie.pt"
         permission="zope.Public"
         />
-        
+
 
 <!-- MAJ PROPRIO -->
    <browser:page

@@ -32,7 +32,6 @@
       vos données. Dès que celles-ci seront validées, elles apparaitront sur le site.
     </p>
     <hr />
-    
 
     <div tal:repeat="proprio proprios" align="center">
         loufiv  NcCT FIVET pro_maj_pk=60 heb_pk=81
@@ -43,7 +42,7 @@
                  <tr>
                     <td class="maj-etiquette">PK Proprio</td>
                     <td>
-                      <span tal:content="proprio/pro_pk" 
+                      <span tal:content="proprio/pro_pk"
                             class="maj-donnee" />
                     </td>
                 </tr>
