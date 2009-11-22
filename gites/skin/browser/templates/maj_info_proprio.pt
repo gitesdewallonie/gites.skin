@@ -12,7 +12,7 @@
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="proprios python:view.getProprioByLogin('loufiv')">
+     tal:define="proprios python:view.getProprioByLogin('sanhou')">
     <h1>Modification de vos informations</h1>
     <p>
       Ce formulaire vous permet de modifier les informations de votre hébergement.
@@ -49,14 +49,24 @@
                 <tr>
                     <td class="maj-etiquette">Civilité</td>
                     <td>
-                        <select name="pro_maj_civ_fk">
-                          <option value="">
-                              <span tal:content="proprio/pro_civ_fk" /></option>
-                           <!-- <dtml-in zsql_select_all_civilite>
-                                <option value="<dtml-var civ_pk>"><dtml-var civ_titre></option>
-                            </dtml-in>-->
+                        <select name="pro_maj_civ_fk"
+                                tal:define="civilites python:view.getAllCivilites()">
+                            <tal:boucle tal:repeat="civilite civilites">
+                                <option value=""
+                                        selected=""
+                                        tal:attributes="value civilite/civ_pk;
+                                                        selected python:proprio.pro_civ_fk == civilite.civ_pk or None">
+                                    <span tal:content="civilite/civ_titre" />
+                                </option>
+                            </tal:boucle>
                         </select>
                     </td>
+                    
+                    <!-- <dtml-in zsql_select_all_civilite>
+                                <option value="<dtml-var civ_pk>"><dtml-var civ_titre></option>
+                            </dtml-in>-->
+                    
+                    
                 </tr>
                 <tr>
                     <td class="maj-etiquette">Nom 1</td>
