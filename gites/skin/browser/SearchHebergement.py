@@ -1,3 +1,4 @@
+from datetime import date
 from dateutil.relativedelta import relativedelta
 from Products.Five.formlib import formbase
 from Products.CMFCore.utils import getToolByName
@@ -72,6 +73,11 @@ class SearchHebergement(formbase.PageForm):
         toDate = data.get('toDate')
         seeResults = self.request.form.has_key('form.seeResults')
 
+        translation_service = getToolByName(self.context,
+                                            'translation_service')
+        utranslate = translation_service.utranslate
+        lang = self.request.get('LANGUAGE', 'en')
+
         query = session.query(hebergementTable).join('province').join('proprio').outerjoin('reservations')
         query = query.filter(hebergementTable.heb_site_public == '1')
         query = query.filter(proprioTable.pro_etat == True)
@@ -110,6 +116,7 @@ class SearchHebergement(formbase.PageForm):
             # est utilisé
             beginDate = fromDate or (toDate + relativedelta(days=-1))
             endDate = toDate or (fromDate + relativedelta(days=+1))
+            today = date.today()
             # il ne peut pas y avoir d'enregistrement dans la table de
             # réservations entre les dates de début et de fin (vu que seules
             # les indisponibilités sont dans la table)
@@ -117,6 +124,15 @@ class SearchHebergement(formbase.PageForm):
             # il y a un décalage dans le calcul des jours / nuits :
             # 1 nuit indiquée comme louée = 2 jours demandés
             # --> >= beginDate et < endDate
+            if beginDate < today or endDate < today:
+                message = utranslate('gites',
+                                     "La recherche n'a pas renvoy&eacute; de r&eacute;sultats.",
+                                     target_language=lang,
+                                     context=self.context)
+                self.errors += (message,)
+                self.status = " "
+                return self.template()
+
             busyHebQuery = session.query(reservationsTable)
             busyHeb = select([reservationsTable.heb_fk],
                              and_(reservationsTable.res_date >= beginDate,
@@ -133,11 +149,6 @@ class SearchHebergement(formbase.PageForm):
         self.selectedHebergements = [hebergement.__of__(self.context.hebergement) for hebergement in query.all()]
 
         nbResults = len(self.selectedHebergements)
-        translation_service = getToolByName(self.context,
-                                            'translation_service')
-
-        utranslate = translation_service.utranslate
-        lang = self.request.get('LANGUAGE', 'en')
         if nbResults > 50 and not seeResults:   #il faut affiner la recherche
             self.form_fields = self.too_much_form_fields
             form.FormBase.resetForm(self)
