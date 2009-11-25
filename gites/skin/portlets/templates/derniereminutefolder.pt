@@ -3,7 +3,7 @@
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="gites">
 
-<body >
+<body>
 
 <div metal:fill-slot="main">
   <tal:main tal:define="view context/@@derniere_minute_view">

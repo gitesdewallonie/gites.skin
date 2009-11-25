@@ -66,7 +66,7 @@ class Renderer(base.Renderer):
 
     def _getValidDerniereMinute(self):
         """
-        Retourne 1 sejour futé (non expiré) au hasard.
+        Retourne 1 derniere minute (non expiré) au hasard.
         """
         cat = getToolByName(self.context, 'portal_catalog')
         results = cat.searchResults(portal_type='DerniereMinute',
@@ -89,7 +89,7 @@ class Renderer(base.Renderer):
 
     def getAllDerniereMinuteLink(self):
         """
-        Get the link to all sejour fute
+        Get the link to all dernieres minutes
         """
         utool = getToolByName(self.context, 'portal_url')
         return '%s/dernieres-minutes' % utool()
