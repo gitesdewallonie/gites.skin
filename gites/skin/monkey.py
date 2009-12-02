@@ -4,6 +4,7 @@ import re
 from datetime import datetime
 from zc.datetimewidget.datetimewidget import DateWidget
 from zope.app.form.browser import textwidgets
+from zc.datetimewidget import datetimewidget
 from zope.datetime import parseDatetimetz
 from zope.datetime import DateTimeError
 from zope.app.form.interfaces import ConversionError
@@ -36,3 +37,29 @@ def _myToFieldValue(self, input):
             raise ConversionError(_("Invalid datetime data"), v)
 
 textwidgets.DatetimeWidget._toFieldValue = _myToFieldValue
+
+
+def _myOthertoFieldValue(self, input):
+    dateVars = re.match(customDate, input)
+    if input == self._missing:
+        return self.context.missing_value
+    elif dateVars:
+        dt = datetime(int(dateVars.group(3)),
+                      int(dateVars.group(2)),
+                      int(dateVars.group(1)))
+        if self._showsTime:
+            return dt
+        else:
+            return dt.date()
+    else:
+        try:
+            dt = parseDatetimetz(input)
+        except (DateTimeError, ValueError, IndexError), v:
+            return super(datetimewidget.DatetimeBase, self)._toFieldValue(input)
+        else:
+            if self._showsTime:
+                return dt
+            else:
+                return dt.date()
+
+datetimewidget.DatetimeBase._toFieldValue = _myOthertoFieldValue
