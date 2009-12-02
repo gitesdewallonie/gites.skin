@@ -104,10 +104,11 @@ class IHebergementGallery(Interface):
     """
     Affichage de la galerie
     """
+
     def getVignettesUrl(self):
-           """
-            Get the vignette of an hebergement
-           """
+        """
+        Get the vignette of an hebergement
+        """
 
 
 class IHebergementIconsView(Interface):
@@ -200,7 +201,7 @@ class ISearchHebergement(Interface):
     fromDate = schema.Date(title=_('Sejour du'),
                               description=_('Stay from'),
                               required=False)
-    
+
     toDate = schema.Date(title=_('Sejour au'),
                               description=_('Stay to'),
                               required=False)
@@ -248,7 +249,7 @@ class IBasicSearchHebergement(Interface):
     fromDate = schema.Date(title=_('Sejour du'),
                               description=_('Stay from'),
                               required=False)
-    
+
     toDate = schema.Date(title=_('Sejour au'),
                               description=_('Stay to'),
                               required=False)
@@ -299,7 +300,7 @@ class IBasicSearchHebergementTooMuch(Interface):
     fromDate = schema.Date(title=_('Sejour du'),
                               description=_('Stay from'),
                               required=False)
-    
+
     toDate = schema.Date(title=_('Sejour au'),
                               description=_('Stay to'),
                               required=False)
@@ -351,7 +352,7 @@ class ISearchHebergementTooMuch(Interface):
     fromDate = schema.Date(title=_('Sejour du'),
                               description=_('Stay from'),
                               required=False)
-    
+
     toDate = schema.Date(title=_('Sejour au'),
                               description=_('Stay to'),
                               required=False)
