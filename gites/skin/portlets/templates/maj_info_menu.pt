@@ -2,11 +2,11 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       i18n:domain="plone">
 <body>
-<div metal:define-macro="portlet"
-     tal:define="loginUser user/getUserName">
+<div metal:define-macro="portlet">
     <div id="portlet-maj-info-menu"
          tal:define="portal_url context/@@plone_portal_state/portal_url">
-        <dl class="portlet"> 
+
+        <dl class="portlet">
             <dt class="portletHeader">
                 <!--tal:content="view/title"-->
                 Mise à jour des infos

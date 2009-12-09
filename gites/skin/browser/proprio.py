@@ -14,9 +14,10 @@ from zope.interface import implements
 #from zope.component import queryMultiAdapter
 #from DateTime import DateTime
 from gites.skin.browser.interfaces import (IProprioInfo)
-#from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.utils import getToolByName
 #from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 from z3c.sqlalchemy import getSAWrapper
+from mailer import Mailer
 
 
 class ProprioInfo(BrowserView):
@@ -36,15 +37,19 @@ class ProprioInfo(BrowserView):
         proprios = query.all()
         return proprios
 
-    def getProprioByLogin(self, loginProprio):
+    def getProprioByLogin(self):
         """
         Sélectionne les infos d'un proprio selon son login
         """
+        pm = getToolByName(self, 'portal_membership')
+        user = pm.getAuthenticatedMember()
+        proprioLogin = user.getUserName()
+
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         proprioTable = wrapper.getMapper('proprio')
         query = session.query(proprioTable)
-        query = query.filter(proprioTable.pro_log == loginProprio)
+        query = query.filter(proprioTable.pro_log == proprioLogin)
         proprio = query.all()
         return proprio
 
@@ -81,17 +86,45 @@ class ProprioInfo(BrowserView):
         propriosMaj = query.all()
         return propriosMaj
 
+    def sendMail(self, sujet, message):
+        """
+        envoi de mail à secretariat GDW
+        """
+        #mailer = Mailer("localhost", "rof@apefasbl.org")
+        mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
+        mailer.setSubject(sujet)
+        mailer.setRecipients("alain.meurant@affinitic.be")
+        #mailer.setRecipients("alain.meurant@skynet.be")
+        mail = message
+        mailer.sendAllMail(mail)
+
+    def modifyStatutMajProprio(self, proPk, proMajInfoEtat):
+        """
+        change le statut de mise à jour d'un hebergement
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        updateProprio = wrapper.getMapper('proprio')
+        query = session.query(updateProprio)
+        query = query.filter(updateProprio.pro_pk == proPk)
+        records = query.all()
+        for record in records:
+            record.pro_maj_info_etat = proMajInfoEtat
+        session.flush()
+
     def addProprioMaj(self):
         """
         ajoute les infos mise à jour par proprio dans table provisoire
         """
         fields = self.context.REQUEST
+        proPk=fields.get('pro_maj_propk')
+        proNom=fields.get('pro_maj_nom1')
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         insertProprioMaj = wrapper.getMapper('proprio_maj')
-        newEntry = insertProprioMaj(pro_maj_propk=fields.get('pro_maj_propk'),\
+        newEntry = insertProprioMaj(pro_maj_propk=proPk,\
                                     pro_maj_civ_fk=fields.get('pro_maj_civ_fk'),\
-                                    pro_maj_nom1=fields.get('pro_maj_nom1'),\
+                                    pro_maj_nom1=proNom,\
                                     pro_maj_prenom1=fields.get('pro_maj_prenom1'),\
                                     pro_maj_nom2=fields.get('pro_maj_nom2'),\
                                     pro_maj_prenom2=fields.get('pro_maj_prenom2'),\
@@ -105,7 +138,15 @@ class ProprioInfo(BrowserView):
                                     pro_maj_url=fields.get('pro_maj_url'),\
                                     pro_maj_tva=fields.get('pro_maj_tva'),\
                                     pro_maj_langue=fields.get('pro_maj_langue'),\
-                                    pro_maj_data=fields.get('pro_maj_data'))
+                                    pro_maj_info_etat=fields.get('pro_maj_info_etat'))
         session.save(newEntry)
         session.flush()
 
+        proMajInfoEtat="En attente confirmation"
+        self.modifyStatutMajProprio(proPk, proMajInfoEtat)
+
+        sujet="Un proprio a modifié ses données personnelles"
+        message="""Le proprio %s dont la référence est %s vient de modifier ses
+                   données. Il faut les vérifier et les valider
+                   via le lien suivant"""%(proNom, proPk)
+        self.sendMail(sujet, message)

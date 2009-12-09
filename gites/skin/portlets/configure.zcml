@@ -94,4 +94,17 @@
          portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
          layer="gites.skin.browser.interfaces.IGitesTheme"
          class=".navigation.Renderer" />
+         
+<!-- MISE A JOUR DES INFOS -->
+    <plone:portlet
+        name="gites.maj_info_menu"
+        interface=".maj_info_menu.IMajInfoMenuPortlet"
+        assignment=".maj_info_menu.Assignment"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        renderer=".maj_info_menu.Renderer"
+        addview=".maj_info_menu.AddForm"
+        />
+
+
 </configure>

@@ -369,7 +369,7 @@ class ISearchPk(Interface):
 
 class IProprioInfo(Interface):
     """
-    Info proprio
+    mise à jour info proprio
     """
 
     def getAllPorprio():
@@ -377,9 +377,14 @@ class IProprioInfo(Interface):
         Liste tous les proprios
         """
 
-    def getProprioByLogin(login):
+    def getProprioByLogin(proprioFk):
         """
-        Selectionne les infos d'un proprio selon son login
+        Selectionne les infos d'un hébergement d'un proprio selon propk
+        """
+
+    def getHebergementByHebPk(hebPk):
+        """
+        Selectionne les infos d'un hébergement selon hebpk
         """
 
     def getAllProprioMaj(self):
@@ -389,5 +394,14 @@ class IProprioInfo(Interface):
 
     def addProprioMaj(self):
         """
-        ajoute les infos mise à jour par le prorpio dans la table provisoire
+        ajoute les infos mise à jour du proprio par le prorpio dans la table provisoire
+        """
+
+class IHebergementInfo(Interface):
+    """
+    mise à jour info hebergement
+    """
+    def addHebergementMaj(self):
+        """
+        ajoute les infos mise à jour par de l'hébergement le prorpio dans la table provisoire
         """

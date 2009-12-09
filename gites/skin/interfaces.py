@@ -20,3 +20,8 @@ class IIdeeSejourRootFolder(Interface):
     """
     Marker interface for Idee Sejour root folder
     """
+
+class IMajInfoMenuPortlet(Interface):
+    """
+    Marker interface for Menu mise à jour des infos proprio et heb
+    """

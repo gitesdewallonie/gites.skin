@@ -179,12 +179,20 @@
         />
 
 <!-- MAJ HEBERGEMENT -->
+    <browser:page
+         for="*"
+         name="hebergementInfo"
+         class=".hebergement.HebergementInfo"
+         allowed_interface=".hebergement.IHebergementInfo"
+         permission="zope.Public"
+         />
+         
    <browser:page
         for="*"
         name="hebergement-info"
         template="templates/maj_info_hebergement.pt"
-        class=".hebergement.HebergementView"
-        allowed_interface=".interfaces.IHebergementView"
+        class=".hebergement.HebergementInfo"
+        allowed_interface=".interfaces.IHebergementInfo"
         permission="zope.Public"
         />
 </configure>
