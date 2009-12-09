@@ -25,6 +25,10 @@
        title="La Boutique"
        description="Liste les articles en boutique"
        />
-  
 
+    <portlet
+       addview="gites.maj_info_menu"
+       title="Mise a jour menu"
+       description="Portlet qui permet au proprio de modifier
+                    ses donnees ainsi que celles de son ou ses heb" />
 </portlets>

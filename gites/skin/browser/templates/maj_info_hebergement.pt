@@ -12,9 +12,10 @@
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="hebergements python:view.getHebergementByProprietaire(83)">
+     tal:define="hebPk request/hebPk;
+                 hebergements python:view.getHebergementByHebPk(hebPk)">
     <h1>Modification de vos informations</h1>
-    proprio 24 2 heb // prorpio 83 1 heb
+    <span class="discreet">proprio 24 : nicdh/RkBl :: 2 heb // prorpio 83 1 heb</span>
     <p>
     Ce formulaire vous permet de modifier les informations de votre hébergement.
     </p>
@@ -36,21 +37,24 @@
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
        <span tal:content="heb/heb_nom" />
-       <form action="traiter_modification_heb"
-             method="get">
+       <form action="hebergement-info/addHebergementMaj"
+             method="post">
            <!---[DEBUT INFORMATION GENERALE]--->
            <input type="hidden"
-                  name="heb_pk"
+                  name="heb_maj_maj_pk"
                   value=""
                   tal:attributes="value heb/heb_pk" />
 
            <table class="maj-info">
               <tr>
-                 <td colspan="2" align="left" bgcolor="#FF862B">
+                 <td align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
                        INFORMATION GENERALE
                     </span>
                  </td>
+                 <td align="right" bgcolor="#ff862b">
+                    Ref :: <b tal:content="heb/heb_pk" />
+                </td>
               </tr>
               <tr>
                   <td class="maj-etiquette">Type</td>
@@ -63,7 +67,7 @@
                   <td class="maj-etiquette">Nom de l'hébergement</td>
                   <td>
                      <input type="text"
-                            name="heb_nom"
+                            name="heb_maj_nom"
                             size="50"
                             value=""
                             tal:attributes="value heb/heb_nom" />
@@ -73,7 +77,7 @@
                    <td class="maj-etiquette">Adresse</td>
                    <td>
                       <input type="text"
-                             name="heb_adresse"
+                             name="heb_maj_adresse"
                              value=""
                              size="50"
                              tal:attributes="value heb/heb_adresse" />
@@ -90,12 +94,16 @@
                  <td class="maj-etiquette">Localité</td>
                  <td>
                     <input type="text"
-                           name="heb_localite"
+                           name="heb_maj_localite"
                            size="50"
                            value=""
                            tal:attributes="value heb/heb_localite" />
                  </td>
               </tr>
+
+
+
+
               <tr bgcolor="#FDFFE0">
                  <td valign="center" class="maj-etiquette">Type de table d'hôte</td>
                  <td>
@@ -172,7 +180,7 @@
                  <td class="maj-etiquette">Activités</td>
                  <td valign="middle">
                     <input type="checkbox"
-                           name="heb_tenis"
+                           name="heb_maj_maj_tenis"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_tenis=='oui'
@@ -185,7 +193,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_tenis_distance"
+                           name="heb_maj_maj_tenis_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_tenis_distance" />Km
@@ -193,7 +201,7 @@
                     Tennis
                     <br />
                     <input type="checkbox"
-                           name="heb_nautisme"
+                           name="heb_maj_maj_nautisme"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_nautisme=='oui'
@@ -206,7 +214,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_nautisme_distance"
+                           name="heb_maj_maj_nautisme_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_nautisme_distance" />Km
@@ -214,7 +222,7 @@
                     Activiés nautiques
                     <br />
                     <input type="checkbox"
-                           name="heb_sky"
+                           name="heb_maj_maj_sky"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_sky=='oui'
@@ -227,7 +235,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_sky_distance"
+                           name="heb_maj_maj_sky_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_sky_distance" />Km
@@ -235,7 +243,7 @@
                     Ski
                     <br/>
                     <input type="checkbox"
-                           name="heb_rando"
+                           name="heb_maj_maj_rando"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_rando=='oui'
@@ -244,7 +252,7 @@
                                            or None" />
                     <img src="a_rando.png">
                     <input type="text"
-                           name="heb_rando_distance"
+                           name="heb_maj_maj_rando_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_rando_distance" />Km
@@ -252,7 +260,7 @@
                     Randonnée
                     <br />
                     <input type="checkbox"
-                           name="heb_piscine"
+                           name="heb_maj_maj_piscine"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_piscine=='oui'
@@ -261,7 +269,7 @@
                                            or None" />
                     <img src="a_piscine.png">
                     <input type="text"
-                           name="heb_piscine_distance"
+                           name="heb_maj_maj_piscine_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_piscine_distance" />Km
@@ -269,7 +277,7 @@
                     Piscine
                     <br />
                     <input type="checkbox"
-                           name="heb_peche"
+                           name="heb_maj_maj_peche"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_peche=='oui'
@@ -278,7 +286,7 @@
                                            or None" />
                     <img src="a_peche.png">
                     <input type="text"
-                           name="heb_peche_distance"
+                           name="heb_maj_peche_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_peche_distance" />Km
@@ -286,7 +294,7 @@
                     Pêche
                     <br/>
                     <input type="checkbox"
-                           name="heb_equitation"
+                           name="heb_maj_equitation"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_equitation=='oui'
@@ -295,7 +303,7 @@
                                            or None" />
                     <img src="a_cheval.png">
                     <input type="text"
-                           name="heb_equitation_distance"
+                           name="heb_maj_equitation_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_equitation_distance" />Km
@@ -303,7 +311,7 @@
                     Equitation
                     <br />
                     <input type="checkbox"
-                           name="heb_velo"
+                           name="heb_maj_velo"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_velo=='oui'
@@ -320,7 +328,7 @@
                     Vélo
                     <br />
                     <input type="checkbox"
-                           name="heb_vtt"
+                           name="heb_maj_vtt"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_vtt=='oui'
@@ -329,7 +337,7 @@
                                            or None" />
                     <img src="a_vtt.png">
                     <input type="text"
-                           name="heb_vtt_distance"
+                           name="heb_maj_vtt_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_vtt_distance" />Km
@@ -337,7 +345,7 @@
                     VTT
                     <br />
                     <input type="checkbox"
-                           name="heb_ravel"
+                           name="heb_maj_ravel"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_ravel=='oui'
@@ -346,7 +354,7 @@
                                            or None" />
                     <img src="a_ravel.png">
                     <input type="text"
-                           name="heb_ravel_distance"
+                           name="heb_maj_ravel_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_ravel_distance" />Km
@@ -359,7 +367,7 @@
                        <td class="maj-etiquette">Informations</td>
                        <td>
                     <input type="checkbox"
-                           name="heb_commerce"
+                           name="heb_maj_commerce"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_commerce=='oui'
@@ -368,7 +376,7 @@
                                            or None" />
                     <img src="i_commerce.png" title="COMMERCE" />
                     <input type="text"
-                           name="heb_commerce_distance"
+                           name="heb_maj_commerce_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_commerce_distance" />Km
@@ -376,7 +384,7 @@
                     Commerce
                     <br />
                     <input type="checkbox"
-                           name="heb_restaurant"
+                           name="heb_maj_restaurant"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_restaurant=='oui'
@@ -385,7 +393,7 @@
                                            or None" />
                     <img src="i_restaurant.png" title="RESTAURANT" />
                     <input type="text"
-                           name="heb_restaurant_distance"
+                           name="heb_maj_restaurant_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_restaurant_distance" />Km
@@ -393,7 +401,7 @@
                     Restaurant
                     <br />
                     <input type="checkbox"
-                           name="heb_gare"
+                           name="heb_maj_gare"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_gare=='oui'
@@ -402,7 +410,7 @@
                                            or None" />
                     <img src="i_gare.png" title="GARE" />
                     <input type="text"
-                           name="heb_gare_distance"
+                           name="heb_maj_gare_distance"
                             size="3"
                            value=""
                            tal:attributes="value heb/heb_gare_distance">Km
@@ -414,7 +422,7 @@
                  <td class="maj-etiquette">Animaux</td>
                  <td>
                      <input type="checkbox"
-                            name="heb_animal"
+                            name="heb_maj_animal"
                             checked=""
                             value="oui"
                             tal:attributes="checked python:heb.heb_animal=='oui'
@@ -429,7 +437,7 @@
                  <td class="maj-etiquette">Fumeur</td>
                  <td>
                      <input type="checkbox"
-                             name="heb_fumeur"
+                             name="heb_maj_fumeur"
                              checked=""
                              value="oui"
                              tal:attributes="checked python:heb.heb_fumeur=='oui'
@@ -442,6 +450,7 @@
               </tr>
            </table>
            <!---[FIN INFORMATION GENERALE]--->
+
 
            <!---[DEBUT TARIFICATION CHAMBRE]--->
            <table class="maj-info">
@@ -461,21 +470,21 @@
                  <td class="maj-etiquette">Chambre avec petit déjeuner</td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_avec_dej_1p"
+                           name="heb_maj_tarif_chmbr_avec_dej_1p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_avec_dej_1p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_avec_dej_2p"
+                           name="heb_maj_tarif_chmbr_avec_dej_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_avec_dej_2p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_avec_dej_3p"
+                           name="heb_maj_tarif_chmbr_avec_dej_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_avec_dej_3p" />
@@ -485,21 +494,21 @@
                  <td class="maj-etiquette">Déduction si pas petit déjeuner <b>(-)</b></td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_sans_dej_1p"
+                           name="heb_maj_tarif_chmbr_sans_dej_1p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_1p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_sans_dej_2p"
+                           name="heb_maj_tarif_chmbr_sans_dej_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_2p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_sans_dej_3p"
+                           name="heb_maj_tarif_chmbr_sans_dej_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_3p" />
@@ -509,21 +518,21 @@
                  <td class="maj-etiquette">Si table d'hôte, prix</td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_table_hote_1p"
+                           name="heb_maj_tarif_chmbr_table_hote_1p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_1p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_table_hote_2p"
+                           name="heb_maj_tarif_chmbr_table_hote_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_2p" />
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_table_hote_3p"
+                           name="heb_maj_tarif_chmbr_table_hote_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_3p" />
@@ -533,7 +542,7 @@
                  <td class="maj-etiquette">Autre</td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_autre_1p"
+                           name="heb_maj_tarif_chmbr_autre_1p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_1p" />
@@ -547,7 +556,7 @@
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="heb_tarif_chmbr_autre_3p"
+                           name="heb_maj_tarif_chmbr_autre_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_3p" />
@@ -556,6 +565,7 @@
            </table>
 
            <!---[FIN TARIFICATION CHAMBRE]--->
+
 
            <!---[DEBUT TARIFICATION GITES]--->
            <table class="maj-info">
@@ -570,7 +580,7 @@
                  <td class="maj-etiquette">Tarif week-end basse saison</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_we_bs"
+                           name="heb_maj_tarif_we_bs"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_we_bs" />
@@ -580,7 +590,7 @@
                  <td class="maj-etiquette">Tarif week-end moyenne saison</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_we_ms"
+                           name="heb_maj_tarif_we_ms"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_we_ms" />
@@ -590,7 +600,7 @@
                  <td class="maj-etiquette">Tarif week-end haute saison</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_we_hs"
+                           name="heb_maj_tarif_we_hs"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_we_hs" />
@@ -600,7 +610,7 @@
                  <td class="maj-etiquette">Tarif semaine basse saison</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_sem_bs"
+                           name="heb_maj_tarif_sem_bs"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_sem_bs" />
@@ -610,7 +620,7 @@
                  <td class="maj-etiquette">Tarif semaine moyenne saison</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_sem_ms"
+                           name="heb_maj_tarif_sem_ms"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_sem_ms" />
@@ -630,7 +640,7 @@
                  <td class="maj-etiquette">Tarif week-end fête 3 nuits</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_we_3n"
+                           name="heb_maj_tarif_we_3n"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_we_3n" />
@@ -640,7 +650,7 @@
                  <td class="maj-etiquette">Tarif week-end fête 4 nuits</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_we_4n"
+                           name="heb_maj_tarif_we_4n"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_we_4n" />
@@ -650,7 +660,7 @@
                  <td class="maj-etiquette">Tarif Semaine fin d'année</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_semaine_fin_annee"
+                           name="heb_maj_tarif_semaine_fin_annee"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_semaine_fin_annee" />
@@ -660,7 +670,7 @@
                  <td class="maj-etiquette">Tarif garantie</td>
                  <td>
                     <input type="text"
-                           name="heb_tarif_garantie"
+                           name="heb_maj_tarif_garantie"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_garantie" />
@@ -672,10 +682,11 @@
                     <div tal:define="charges python:view.getAllCharge()">
                         <span tal:repeat="charge charges">
                             <input type="radio"
-                                   name="heb_charge_fk"
+                                   name="heb_maj_charge_fk"
                                    checked=""
                                    value=""
-                                   tal:attributes="checked python:charge.cha_pk==heb.heb_charge_fk
+                                   tal:attributes="value heb/heb_charge_fk;
+                                                   checked python:charge.cha_pk==heb.heb_charge_fk
                                                    and
                                                    charge.cha_pk==heb.heb_charge_fk
                                                    or None" />
@@ -685,7 +696,7 @@
                     <br/>
                     Si charge forfaitaire, encodez le montant ci-dessous:<br/>
                     <input type="text"
-                           name="heb_forfait_montant"
+                           name="heb_maj_forfait_montant"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_forfait_montant" />
@@ -695,7 +706,7 @@
                  <td class="maj-etiquette">Tarif divers</td>
                  <td>
                     <!--input type="text" name="fheb_tarif_divers" value="<dtml-var heb_tarif_divers"-->
-                    <textarea name="heb_tarif_divers"
+                    <textarea name="heb_maj_tarif_divers"
                               value=""
                               tal:attributes="value heb/heb_tarif_divers"
                               cols="30"
@@ -720,7 +731,7 @@
                  <td class="maj-etiquette">Taxe de Séjour</td>
                  <td>
                     <!--
-                    <select name="heb_taxe_sejour">
+                    <select name="heb_maj_taxe_sejour">
                        <option value="non">...</option>
                            <dtml-if "heb_taxe_sejour=='oui'">
                            <option value="oui" selected> Oui</option>
@@ -731,7 +742,7 @@
                            </dtml-if>
                     </select>
                     -->
-                    <select name="heb_taxe_sejour">
+                    <select name="heb_maj_taxe_sejour">
                         <option value="oui"
                                 selected=""
                                 tal:attributes="selected python:heb.heb_taxe_sejour == 'oui' or None">
@@ -750,7 +761,7 @@
                  <td class="maj-etiquette">Montant de la taxe</td>
                  <td>
                     <input type="text"
-                           name="heb_taxe_montant"
+                           name="heb_maj_taxe_montant"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_taxe_montant" />
@@ -770,7 +781,7 @@
               </tr>
               <tr>
                  <td colspan="2">
-                    <textarea name="heb_pointfort_fr"
+                    <textarea name="heb_maj_pointfort_fr"
                               cols="50"
                               rows="9"
                               tal:content="heb/heb_pointfort_fr"></textarea>
@@ -790,7 +801,7 @@
               </tr>
               <tr>
                  <td>
-                    <textarea name="heb_descriptif_fr"
+                    <textarea name="heb_maj_descriptif_fr"
                               cols="50"
                               rows="9"
                               tal:content="heb/heb_descriptif_fr"></textarea>
@@ -811,7 +822,7 @@
               </tr>
               <tr>
                  <td>
-                    <textarea name="heb_distribution_fr"
+                    <textarea name="heb_maj_distribution_fr"
                               cols="50"
                               rows="9"
                               tal:content="heb/heb_distribution_fr"></textarea>
@@ -834,7 +845,7 @@
                  <td class="maj-etiquette">Lit d'une personne</td>
                  <td>
                      <input type="text"
-                            name="heb_lit_1p"
+                            name="heb_maj_lit_1p"
                             size="10"
                             value=""
                             tal:attributes="value heb/heb_lit_1p" />
@@ -844,7 +855,7 @@
                 <td class="maj-etiquette">Lit de 2 personnes</td>
                 <td>
                      <input type="text"
-                            name="heb_lit_2p"
+                            name="heb_maj_lit_2p"
                             size="10"
                             value=""
                             tal:attributes="value heb/heb_lit_2p" />
@@ -854,7 +865,7 @@
                 <td class="maj-etiquette">Lit superposé</td>
                 <td>
                     <input type="text"
-                           name="heb_lit_sup"
+                           name="heb_maj_lit_sup"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_lit_sup" />
@@ -863,7 +874,7 @@
               <tr bgcolor="#FDFFE0" bgcolor="#FDFFE0">
                  <td class="maj-etiquette">Lit pour enfant</td>
                  <td><input type="text"
-                            name="heb_lit_enf"
+                            name="heb_maj_lit_enf"
                             size="10"
                             value=""
                             tal:attributes="value heb/heb_lit_enf" /></td>
@@ -884,7 +895,7 @@
               <tr>
                  <td>
                      <input type="checkbox"
-                              name="heb_confort_tv"
+                              name="heb_maj_confort_tv"
                               checked=""
                               value="oui"
                               tal:attributes="checked python:heb.heb_confort_tv=='oui'
@@ -899,7 +910,7 @@
               <tr bgcolor="#FDFFE0">
                  <td>
                      <input type="checkbox"
-                              name="heb_confort_feu_ouvert"
+                              name="heb_maj_confort_feu_ouvert"
                               checked=""
                               value="oui"
                               tal:attributes="checked python:heb.heb_confort_feu_ouvert=='oui'
@@ -914,7 +925,7 @@
               <tr>
                  <td>
                      <input type="checkbox"
-                              name="heb_confort_lave_vaiselle"
+                              name="heb_maj_confort_lave_vaiselle"
                               checked=""
                               value="oui"
                               tal:attributes="checked python:heb.heb_confort_lave_vaiselle=='oui' 
@@ -928,7 +939,7 @@
               <tr bgcolor="#FDFFE0">
                 <td>
                     <input type="checkbox"
-                             name="heb_confort_micro_onde"
+                             name="heb_maj_confort_micro_onde"
                              checked=""
                              value="oui"
                              tal:attributes="checked python:heb.heb_confort_micro_onde=='oui'
@@ -942,7 +953,7 @@
               <tr>
                  <td>
                      <input type="checkbox"
-                              name="heb_confort_lave_linge"
+                              name="heb_maj_confort_lave_linge"
                               checked=""
                               value="oui"
                               tal:attributes="checked python:heb.heb_confort_lave_linge=='oui'
@@ -956,7 +967,7 @@
               <tr bgcolor="#FDFFE0">
                 <td>
                      <input type="checkbox"
-                                 name="heb_confort_seche_linge"
+                                 name="heb_maj_confort_seche_linge"
                                  checked=""
                                  value="oui"
                                  tal:attributes="checked python:heb.heb_confort_seche_linge=='oui'
@@ -970,7 +981,7 @@
               <tr>
                 <td>
                     <input type="checkbox"
-                             name="heb_confort_congelateur"
+                             name="heb_maj_confort_congelateur"
                              checked=""
                              value="oui"
                              tal:attributes="checked python:heb.heb_confort_congelateur=='oui'
@@ -984,7 +995,7 @@
               <tr bgcolor="#FDFFE0">
                 <td>
                     <input type="checkbox"
-                             name="heb_confort_internet"
+                             name="heb_maj_confort_internet"
                              checked=""
                              value="oui"
                              tal:attributes="checked python:heb.heb_confort_internet=='oui'
@@ -1008,39 +1019,48 @@
              <tr>
                 <td class="maj-etiquette">Code CGT</td>
                 <td>
-                     <input type="text"
-                            name="heb_code_cgt"
-                            size="10"
-                            value=""
-                            tal:attributes="value heb/heb_code_cgt" />
+                    <span tal:content="heb/heb_code_cgt" />
                 </td>
               </tr>
               <tr bgcolor="#FDFFE0">
                 <td rowspan="3" class="maj-etiquette">Capacité</td>
                 <td>
-                    min : <input type="text"
-                                 name="heb_cgt_cap_min"
-                                 size="5"
-                                 value=""
-                                 tal:attributes="value heb/heb_cgt_cap_min" />
+                    <span class="maj-etiquette">min :</span> <span tal:content="heb/heb_cgt_cap_min" />
                 </td>
               <tr>
                 <td>
-                    max : <input type="text"
-                                 name="heb_cgt_cap_max"
-                                 size="5"
-                                 value=""
-                                 tal:attributes="value heb/heb_cgt_cap_max" />
+                    <span class="maj-etiquette">max :</span> <span tal:content="heb/heb_cgt_cap_max" />
                 </td>
               </tr>
               <tr>
-                <td>
-                    nombre de chambre : <input type="text"
-                                               name="heb_cgt_nbre_chmbre"
-                                               size="5"
-                                               value=""
-                                               tal:attributes="value heb/heb_cgt_nbre_chmbre" />
+                <td bgcolor="#FDFFE0">
+                    <span class="maj-etiquette">nombre de chambre :</span> <span tal:content="heb/heb_cgt_nbre_chmbre" />
                 </td>
+              </tr>
+          </table>  
+
+
+
+
+
+
+
+
+
+
+          <table>
+            <tr>
+              <td colspan="2" align="center">
+                <input type="hidden"
+                       name="heb_maj_hebpk"
+                       value=""
+                       tal:attributes="value heb/heb_pk" />
+                <input type="hidden"
+                       name="heb_maj_maj_info_etat"
+                       value="En attente confirmation" />
+                <input type="submit"
+                       value="Modifier mes données" />
+              </td>
             </tr>
           </table>
           <!---[FIN CGT]--->

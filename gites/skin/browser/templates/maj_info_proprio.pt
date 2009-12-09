@@ -12,10 +12,10 @@
 </head>
 <body>
 <div metal:fill-slot="main"
-     tal:define="proprios python:view.getProprioByLogin('sanhou')">
+     tal:define="proprios python:view.getProprioByLogin()">
     <h1>Modification de vos informations</h1>
     <p>
-      Ce formulaire vous permet de modifier les informations de votre hébergement.
+      Ce formulaire vous permet de modifier vos informations personnelles.
     </p>
     <p>
       Certaines de ces données ne peuvent pas être modifiées via ce formulaire
@@ -34,7 +34,8 @@
     <hr />
 
     <div tal:repeat="proprio proprios" align="center">
-        loufiv  NcCT FIVET pro_maj_pk=60 heb_pk=81
+        <span tal:content="proprio/pro_log"
+              class="discreet" />
         <form name="formulaire_creation"
               action="proprio-info/addProprioMaj"
               method="post">
@@ -61,12 +62,10 @@
                             </tal:boucle>
                         </select>
                     </td>
-                    
                     <!-- <dtml-in zsql_select_all_civilite>
                                 <option value="<dtml-var civ_pk>"><dtml-var civ_titre></option>
                             </dtml-in>-->
-                    
-                    
+
                 </tr>
                 <tr>
                     <td class="maj-etiquette">Nom 1</td>
@@ -220,7 +219,7 @@
                                value=""
                                tal:attributes="value proprio/pro_pk" />
                         <input type="hidden"
-                               name="pro_maj_data"
+                               name="pro_maj_info_etat"
                                value="En attente confirmation" />
                         <input type="submit"
                                value="Modifier mes données" />
