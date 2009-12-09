@@ -1,0 +1,19 @@
+<html i18n:domain="gites.skin">
+
+<head>
+  <link rel="stylesheet" href="++resource++timeframe.css" type="text/css" media="screen" title="timeframe" charset="utf-8"/>
+  <script type="text/javascript" charset="utf-8" src="++resource++prototype16.js"></script>
+  <script type="text/javascript" charset="utf-8" src="++resource++gitetimeframe.js"></script>  
+</head>
+
+<body>
+  <div id="gitescal">
+    <div id="calendars"></div>
+      <input type="hidden" id="reset"/>
+      <input type="hidden" name="start" value="" id="start"/>
+      <input type="hidden" name="end" value="" id="end"/>
+  </div>
+  <script type="text/javascript" charset="utf-8" tal:condition="view/showCalendar"
+          tal:content="view/calendarJS"/>
+</body>
+</html>

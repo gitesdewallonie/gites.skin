@@ -195,4 +195,14 @@
         allowed_interface=".interfaces.IHebergementInfo"
         permission="zope.Public"
         />
+
+   <browser:page
+        for="*"
+        name="extern-calendar"
+        class=".hebergement.HebergementExternCalendarView"
+        allowed_interface=".interfaces.IHebergementView"
+        permission="zope.Public"
+        template="templates/externcalendar.pt"
+        />
+
 </configure>
