@@ -6,7 +6,7 @@
   <script type="text/javascript" charset="utf-8" src="++resource++gitetimeframe.js"></script>  
 </head>
 
-<body>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
   <div id="gitescal">
     <div id="calendars"></div>
       <input type="hidden" id="reset"/>
