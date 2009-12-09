@@ -31,6 +31,10 @@ class HebergementView(BrowserView):
     implements(IHebergementView)
     template = ViewPageTemplateFile("templates/hebergement.pt")
 
+    def __init__(self, context, request):
+        super(HebergementView, self).__init__(context, request)
+        super(BrowserView, self).__init__(context, request)
+
     def _getLastAddedReservation(self):
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
@@ -163,6 +167,61 @@ class HebergementView(BrowserView):
 
     def render(self):
         return self.template()
+
+
+class HebergementExternCalendarView(HebergementView):
+    """
+    View for extern calendars
+    """
+    implements(IHebergementView)
+    template = ViewPageTemplateFile("templates/externcalendar.pt")
+
+    def __init__(self, context, request):
+        hebPk = request.get('pk')
+        hebergement = self.getHebergementByPk(hebPk)
+        self.context = hebergement
+        super(HebergementExternCalendarView, self).__init__(self.context, request)
+        super(HebergementView, self).__init__(self.context, request)
+
+    def getHebergementByPk(self, heb_pk):
+        """
+        Get the url of the hebergement by Pk
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        HebTable = wrapper.getMapper('hebergement')
+        try:
+            int(heb_pk)
+        except ValueError:
+            return None
+        hebergement = session.query(HebTable).get(heb_pk)
+        if hebergement and \
+           int(hebergement.heb_site_public) == 1 and \
+           hebergement.proprio.pro_etat:
+           # L'hébergement doit être actif, ainsi que son propriétaire
+            # hebURL = queryMultiAdapter((hebergement.__of__(self.context.hebergement), self.request), name="url")
+            return hebergement
+        else:
+            return None
+
+    def calendarJS(self):
+        """
+        Calendar javascript
+        """
+        return """
+        //<![CDATA[
+            new GiteTimeframe('calendars', {
+                            startField: 'start',
+                            endField: 'end',
+                            resetButton: 'reset',
+                            weekOffset: 1,
+                            hebPk: %s,
+                            months:1,
+                            language: '%s',
+                            earliest: new Date()});
+        //]]>
+
+        """ % (self.context.heb_pk, 'fr')
 
 
 class HebergementIconsView(BrowserView):
