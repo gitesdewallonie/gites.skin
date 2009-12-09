@@ -14,6 +14,9 @@
                 Mise à jour des infos
             </dt>
             <dd class="portletItemSingle">
+                <span tal:content="loginUser" />
+            </dd>
+            <dd class="portletItemSingle">
                 * Mes données *
                 <div id="maj-info-menu">
                     <a href="#"
