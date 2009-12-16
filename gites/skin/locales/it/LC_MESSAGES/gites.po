@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-11-11 17:09+0000\n"
+"POT-Creation-Date: 2009-12-16 10:26+0000\n"
 "Last-Translator: Affinitic <info@affinitic.be>\n"
 "Language-Team: <info@affinitic.be>\n"
 "MIME-Version: 1.0\n"
@@ -286,10 +286,18 @@ msgstr "Capacità"
 msgid "carte"
 msgstr "carta"
 
+#. Default: "${number} Chambre d'h\303\264tes \303\240 proximit\303\251"
+msgid "chambre_a_proximite"
+msgstr "${number} Camera per gli ospiti nelle vicinanze"
+
 #. Default: "Chambre d'hôtes"
 #: skins/gites_templates/portlet_menu_chambres_hotes.pt:17
 msgid "chambre_hotes"
 msgstr "Camera per gli ospiti"
+
+#. Default: "${number} Chambres d'h\303\264tes \303\240 proximit\303\251"
+msgid "chambres_a_proximite"
+msgstr "${number} Camere per gli ospiti nelle vicinanze"
 
 #. Default: "Chambres d'hôtes"
 #: skins/gites_templates/portlet_menu_chambres_hotes.pt:11
@@ -549,6 +557,10 @@ msgstr "Alloggio Pesca"
 #: skins/gites_templates/portlet_menu_gites_meubles.pt:17
 msgid "gite_rural"
 msgstr "Alloggio rurale"
+
+#. Default: "${number} Gites et Chambres d'h\303\264tes \303\240 proximit\303\251"
+msgid "gites_a_proximite"
+msgstr "${number} Alloggi e Camere per gli ospiti nelle vicinanze"
 
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: browser/templates/footer_gites.pt:10
