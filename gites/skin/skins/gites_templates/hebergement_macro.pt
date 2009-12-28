@@ -35,14 +35,14 @@
                 <tbody>
                   <tal:loop tal:repeat="promotion promotions">
                   <tr tal:define="oddrow repeat/promotion/odd;
-                                  promotion_view promotion/@@dernieres_minutes_view;
+                                  promotion_view nocall:promotion/@@dernieres_minutes_view;
                                   hebergement promotion/getHebergement;
                                   hebergementIcons hebergement/@@hebergement_icons;
                                   heb_url hebergement/@@url"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
                     <td><a href="" tal:attributes="href heb_url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
                     <td><a href="" tal:attributes="href heb_url" tal:content="hebergement/heb_nom"></a></td>
-                    <td tal:content="view/getTypeHebergement"/>
+                    <!-- td tal:content="view/getTypeHebergement"/ -->
                     <td tal:content="hebergement/heb_localite"/>
                       <td tal:content="structure hebergementIcons/getEpis">
                             <span i18n:translate="epis">Les &eacute;pis</span>
@@ -97,14 +97,14 @@
                 <tbody>
                   <tal:loop tal:repeat="lastminute lastminutes">
                   <tr tal:define="oddrow repeat/lastminute/odd;
-                                  lastminute_view lastminute/@@dernieres_minutes_view;
+                                  lastminute_view nocall:lastminute/@@dernieres_minutes_view;
                                   hebergement lastminute/getHebergement;
                                   hebergementIcons hebergement/@@hebergement_icons;
                                   heb_url hebergement/@@url"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
                     <td><a href="" tal:attributes="href heb_url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
                     <td><a href="" tal:attributes="href heb_url" tal:content="hebergement/heb_nom"></a></td>
-                    <td tal:content="view/getTypeHebergement"/>
+                    <!-- td tal:content="view/getTypeHebergement"/ -->
                     <td tal:content="hebergement/heb_localite"/>
                       <td tal:content="structure hebergementIcons/getEpis">
                             <span i18n:translate="epis">Les &eacute;pis</span>

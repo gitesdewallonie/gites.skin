@@ -10,6 +10,12 @@ $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 from zope.interface import Interface
 
 
+class IDerniereMinuteRootFolder(Interface):
+    """
+    Marker interface for DerniereMinuteRootFolder root folder
+    """
+
+
 class ISejourFuteRootFolder(Interface):
     """
     Marker interface for Sejour Fute root folder
