@@ -100,10 +100,6 @@
                            tal:attributes="value heb/heb_localite" />
                  </td>
               </tr>
-
-
-
-
               <tr bgcolor="#FDFFE0">
                  <td valign="center" class="maj-etiquette">Type de table d'hôte</td>
                  <td>
@@ -164,10 +160,6 @@
               <tr>
                  <td class="maj-etiquette">Nombre d'épis</td>
                  <td>
-                    <!--
-                    if "heb_typeheb_fk in [1,2,3,4,7,10]"  cas des GR GF MT GC MV GRECR<br />
-                    if "heb_nbre_epis in [5,6,9]" cas de CH MH CHECR<br />
-                    -->
                     <div tal:define="nbrEpis heb/epis">
                         <span tal:repeat="epis nbrEpis">
                             <span tal:content="epis/heb_nombre_epis" 
@@ -320,7 +312,7 @@
                                            or None" />
                     <img src="a_velo.png">
                     <input type="text"
-                           name="fheb_velo_distance"
+                           name="heb_velo_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_velo_distance" />Km
@@ -549,7 +541,7 @@
                  </td>
                  <td align="center">
                     <input type="text"
-                           name="fheb_tarif_chmbr_autre_2p"
+                           name="heb_maj_tarif_chmbr_autre_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_2p" />
@@ -563,7 +555,6 @@
                  </td>
               </tr>
            </table>
-
            <!---[FIN TARIFICATION CHAMBRE]--->
 
 
@@ -630,7 +621,7 @@
                  <td class="maj-etiquette">Tarif semaine haute saison</td>
                  <td>
                     <input type="text"
-                           name="fheb_tarif_sem_hs"
+                           name="heb_maj_tarif_sem_hs"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_sem_hs" />
@@ -1027,6 +1018,7 @@
                 <td>
                     <span class="maj-etiquette">min :</span> <span tal:content="heb/heb_cgt_cap_min" />
                 </td>
+              </tr>
               <tr>
                 <td>
                     <span class="maj-etiquette">max :</span> <span tal:content="heb/heb_cgt_cap_max" />
@@ -1037,7 +1029,8 @@
                     <span class="maj-etiquette">nombre de chambre :</span> <span tal:content="heb/heb_cgt_nbre_chmbre" />
                 </td>
               </tr>
-          </table>  
+          </table>
+          <!---[FIN CGT]--->
 
 
 

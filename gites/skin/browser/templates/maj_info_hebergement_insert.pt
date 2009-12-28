@@ -9,15 +9,12 @@
 <div metal:fill-slot="main">
      
     <h1>:: Modification des données de l'hébergement ::</h1>
-    <div tal:define="result view/addHebergementMaj;
+    <div tal:define="result view/addProprioMaj;
                      status result/status">
 
         <div tal:condition="python: status==1">
-            Vos données sont correctement enregistrées.
-            <br /> 
-            Elles vont être vérifiées et validées par notre équipe.
-            <br />
-            Merci.
+            Vos données sont correctement enregistrées. 
+            Eles vont être vérifiée et validée par notre équipe.
         </div>
 
         <div tal:condition="python: status==-1">

@@ -178,6 +178,15 @@
         permission="zope.Public"
         />
 
+   <browser:page
+        for="*"
+        name="maj-info_proprio-insertion"
+        template="templates/maj_info_proprio_insert.pt"
+        class=".proprio.ProprioInfo"
+        allowed_interface=".proprio.IProprioInfo"
+        permission="zope.Public"
+        />
+
 <!-- MAJ HEBERGEMENT -->
     <browser:page
          for="*"
@@ -205,4 +214,12 @@
         template="templates/externcalendar.pt"
         />
 
+   <browser:page
+        for="*"
+        name="maj-hebergement-insertion"
+        template="templates/maj_info_hebergement_insert.pt"
+        class=".hebergement.HebergementInfo"
+        allowed_interface=".interfaces.IHebergementInfo"
+        permission="zope.Public"
+        />
 </configure>

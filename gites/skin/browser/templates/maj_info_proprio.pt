@@ -37,7 +37,7 @@
         <span tal:content="proprio/pro_log"
               class="discreet" />
         <form name="formulaire_creation"
-              action="proprio-info/addProprioMaj"
+              action="maj-info_proprio-insertion"
               method="post">
             <table class="maj-info">
                  <tr>

@@ -13,12 +13,8 @@
                      status result/status">
 
         <div tal:condition="python: status==1">
-            <br />
-            Vos données sont correctement enregistrées.
-            <br /> 
-            Elles vont être vérifiées et validées par notre équipe.
-            <br /><br >
-            Merci.
+            Vos données sont correctement enregistrées. 
+            Eles vont être vérifiée et validée par notre équipe.
         </div>
 
         <div tal:condition="python: status==-1">
