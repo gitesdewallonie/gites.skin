@@ -594,18 +594,29 @@ class HebergementInfo(BrowserView):
         hebPk = fields.get('heb_maj_hebpk')
         hebNom = fields.get('heb_maj_nom')
         
-        isHebergementMajExist = self.getHebergementMajByHebPk(hebPk)
+        hebergement = self.getHebergementByHebPk(hebPk)
+        for elem in hebergement:
+            hebergementPk = elem.heb_pk
         
-        if isHebergementMajExist:
-            self.updateHebergementMaj()
+        if int(hebPk) == hebergementPk:
+            isHebergementMajExist = self.getHebergementMajByHebPk(hebPk)
+        
+            if isHebergementMajExist:
+                self.updateHebergementMaj()
+            else:
+                self.insertHebergementMaj()
+
+            hebMajInfoEtat="En attente confirmation"
+            self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
+
+            sujet="Un proprio à modifié les infos de son hébergement"
+            message="""L'hébergement %s dont la référence est %s vient d'être modifié.
+                       Il faut vérifer ces données et les valider via le lien"""%(hebPk, hebNom)
+            self.sendMail(sujet, message)
+            return {'status':1}
         else:
-            self.insertHebergementMaj()
-
-        hebMajInfoEtat="En attente confirmation"
-        self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
-
-        sujet="Un proprio à modifié les infos de son hébergement"
-        message="""L'hébergement %s dont la référence est %s vient d'être modifié.
-                   Il faut vérifer ces données et les valider via le lien"""%(hebPk, hebNom)
-        self.sendMail(sujet, message)
-
+            sujet="Problème : Modification hébergement"
+            message="""L'hébergement %s dont la référence est %s n'a pas été modifié.
+                       Problème de PK"""%(hebPk, hebNom)
+            self.sendMail(sujet, message)
+            return {'status':-1}
