@@ -37,7 +37,7 @@
     <div tal:repeat="heb hebergements">
        <span tal:content="heb/heb_pk" />
        <span tal:content="heb/heb_nom" />
-       <form action="hebergement-info/addHebergementMaj"
+       <form action="maj-hebergement-insertion"
              method="post">
            <!---[DEBUT INFORMATION GENERALE]--->
            <input type="hidden"

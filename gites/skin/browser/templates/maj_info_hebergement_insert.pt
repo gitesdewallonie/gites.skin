@@ -9,7 +9,7 @@
 <div metal:fill-slot="main">
      
     <h1>:: Modification des données de l'hébergement ::</h1>
-    <div tal:define="result view/addProprioMaj;
+    <div tal:define="result view/addHebergementMaj;
                      status result/status">
 
         <div tal:condition="python: status==1">
