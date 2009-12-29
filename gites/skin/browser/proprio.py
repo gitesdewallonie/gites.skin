@@ -156,7 +156,7 @@ class ProprioInfo(BrowserView):
         record.pro_maj_tva = fields.get('pro_maj_tva')
         record.pro_maj_langue = fields.get('pro_maj_langue')
         record.pro_maj_info_etat = unicode(fields.get('pro_maj_info_etat'), 'utf-8')
-        session.add(record)
+        session.save_or_update(record)
         session.flush()
 
     def insertProprioMaj(self):
