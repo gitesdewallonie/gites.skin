@@ -14,7 +14,7 @@
 <div metal:fill-slot="main"
      tal:define="hebPk request/hebPk;
                  hebergements python:view.getHebergementByHebPk(hebPk)">
-    <h1>Modification de vos informations</h1>
+    <h1>Modification des informations de votre hébergement</h1>
     <span class="discreet">proprio 24 : nicdh/RkBl :: 2 heb // prorpio 83 1 heb</span>
     <p>
     Ce formulaire vous permet de modifier les informations de votre hébergement.
