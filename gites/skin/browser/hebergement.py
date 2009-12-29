@@ -338,6 +338,7 @@ class HebergementInfo(BrowserView):
         """
         Sélectionne les infos d'un proprio selon son login
         """
+        hebPk=int(hebPk)
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         hebergementTable = wrapper.getMapper('hebergement')
@@ -595,6 +596,11 @@ class HebergementInfo(BrowserView):
         
         isHebergementMajExist = self.getHebergementMajByHebPk(hebPk)
         
+        if isHebergementMajExist:
+            self.updateHebergementMaj()
+        else:
+            self.insertHebergementMaj()
+
         hebMajInfoEtat="En attente confirmation"
         self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
 
