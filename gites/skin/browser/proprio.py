@@ -107,7 +107,7 @@ class ProprioInfo(BrowserView):
         envoi de mail à secretariat GDW
         """
         mailer = Mailer("localhost", "info@gitesdewallonie.be")
-        #mailer = Mailer("smtp.scarlet.be", "alain.meurant@affinitic.be")
+        #mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
         mailer.setSubject(sujet)
         mailer.setRecipients("info@gitesdewallonie.be, alain.meurant@affinitic.be")
         #mailer.setRecipients("alain.meurant@skynet.be")
