@@ -197,10 +197,9 @@ class ProprioInfo(BrowserView):
         proNom = fields.get('pro_maj_nom1')
         proprio = self.getProprioByLogin()
         for elem in proprio:
-            propriopk=elem.pro_pk
+            proprioPk=elem.pro_pk
         
-        if int(proPk) == propriopk:
-            proNom = fields.get('pro_maj_pronom1')
+        if int(proPk) == proprioPk:
             isProprioMajExist = self.getProprioMajByProPk(proPk)
 
             if isProprioMajExist:
