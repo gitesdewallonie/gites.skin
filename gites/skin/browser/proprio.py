@@ -168,23 +168,23 @@ class ProprioInfo(BrowserView):
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         insertProprioMaj = wrapper.getMapper('proprio_maj')
-        newEntry = insertProprioMaj(pro_maj_propk=proPk,\
-                                    pro_maj_civ_fk=fields.get('pro_maj_civ_fk'),\
-                                    pro_maj_nom1=fields.get('pro_maj_pronom1'),\
-                                    pro_maj_prenom1=fields.get('pro_maj_prenom1'),\
-                                    pro_maj_nom2=fields.get('pro_maj_nom2'),\
-                                    pro_maj_prenom2=fields.get('pro_maj_prenom2'),\
-                                    pro_maj_societe=fields.get('pro_maj_societe'),\
-                                    pro_maj_adresse=fields.get('pro_maj_adresse'),\
-                                    pro_maj_com_fk=fields.get('pro_maj_com_fk'),\
-                                    pro_maj_email=fields.get('pro_maj_email'),\
-                                    pro_maj_tel_priv=fields.get('pro_maj_tel_priv'),\
-                                    pro_maj_fax_priv=fields.get('pro_maj_fax_priv'),\
-                                    pro_maj_gsm1=fields.get('pro_maj_gsm1'),\
-                                    pro_maj_url=fields.get('pro_maj_url'),\
-                                    pro_maj_tva=fields.get('pro_maj_tva'),\
-                                    pro_maj_langue=fields.get('pro_maj_langue'),\
-                                    pro_maj_info_etat=fields.get('pro_maj_info_etat'))
+        newEntry = insertProprioMaj(pro_maj_propk = proPk,\
+                                    pro_maj_civ_fk = fields.get('pro_maj_civ_fk'),\
+                                    pro_maj_nom1 = fields.get('pro_maj_nom1'),\
+                                    pro_maj_prenom1 = fields.get('pro_maj_prenom1'),\
+                                    pro_maj_nom2 = fields.get('pro_maj_nom2'),\
+                                    pro_maj_prenom2 = fields.get('pro_maj_prenom2'),\
+                                    pro_maj_societe = fields.get('pro_maj_societe'),\
+                                    pro_maj_adresse = fields.get('pro_maj_adresse'),\
+                                    pro_maj_com_fk = fields.get('pro_maj_com_fk'),\
+                                    pro_maj_email = fields.get('pro_maj_email'),\
+                                    pro_maj_tel_priv = fields.get('pro_maj_tel_priv'),\
+                                    pro_maj_fax_priv = fields.get('pro_maj_fax_priv'),\
+                                    pro_maj_gsm1 = fields.get('pro_maj_gsm1'),\
+                                    pro_maj_url = fields.get('pro_maj_url'),\
+                                    pro_maj_tva = fields.get('pro_maj_tva'),\
+                                    pro_maj_langue = fields.get('pro_maj_langue'),\
+                                    pro_maj_info_etat = fields.get('pro_maj_info_etat'))
         session.add(newEntry)
         session.flush()
 
