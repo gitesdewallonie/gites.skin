@@ -110,7 +110,7 @@ class ProprioInfo(BrowserView):
         #mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
         mailer.setSubject(sujet)
         mailer.setRecipients("info@gitesdewallonie.be, alain.meurant@affinitic.be")
-        #mailer.setRecipients("alain.meurant@skynet.be")
+        mailer.setRecipients("alain.meurant@skynet.be")
         mail = message
         mailer.sendAllMail(mail)
 
