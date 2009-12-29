@@ -599,7 +599,7 @@ class HebergementInfo(BrowserView):
             hebergementPk = elem.heb_pk
         
         if int(hebPk) == hebergementPk:
-            isHebergementMajExist = self.getHebergementMajByHebPk(hebPk)
+            isHebergementMajExist = self.getHebergementMajByhebPk(hebPk)
         
             if isHebergementMajExist:
                 self.updateHebergementMaj()
