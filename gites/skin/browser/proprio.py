@@ -194,6 +194,7 @@ class ProprioInfo(BrowserView):
         """
         fields = self.request
         proPk = fields.get('pro_maj_propk')
+        proNom = fields.get('pro_maj_nom1')
         proprio = self.getProprioByLogin()
         for elem in proprio:
             propriopk=elem.pro_pk
@@ -210,10 +211,10 @@ class ProprioInfo(BrowserView):
             proMajInfoEtat="En attente confirmation"
             self.modifyStatutMajProprio(proPk, proMajInfoEtat)
 
-            sujet="Un proprio a modifié ses données personnelles"
+            sujet="Modification des donn&eacute;es personnelles par un proprio"
             message="""Le proprio %s dont la référence est %s vient de modifier ses
                        données. Il faut les vérifier et les valider
-                       via le lien suivant"""%(proNom, proPk)
+                       via le lien suivant http://gdwadmin.affinitic.be/"""%(proNom, proPk)
             self.sendMail(sujet, message)
             return {'status':1}
         else:
