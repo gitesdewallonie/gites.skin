@@ -14,29 +14,27 @@
 <div metal:fill-slot="main"
      tal:define="hebPk request/hebPk;
                  hebergements python:view.getHebergementByHebPk(hebPk)">
-    <h1>Modification des informations de votre hébergement</h1>
-    <span class="discreet">proprio 24 : nicdh/RkBl :: 2 heb // prorpio 83 1 heb</span>
-    <p>
-    Ce formulaire vous permet de modifier les informations de votre hébergement.
-    </p>
-    <p>
-    Certaines de ces données ne peuvent pas être modifiées via ce formulaire
-    et nécessite une intervention de la part des Gîtes de Wallonie.
-    </p>
-    <p>
-    Si vous souhaitez obtenir des informations complémentaires ou si vous
-    éprouvez des difficultés à compléter ce formulaire, merci de prendre
-    contact avec nos bureaux au 081 311 800.
-    </p>
-    <p>
-    Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis
-    aux Gîtes de Wallonie qui vérifieront et valideront vos données.
-    Dès que celles-ci seront validées, elles apparaitront sur le site.
-    </p>
-
     <div tal:repeat="heb hebergements">
-       <span tal:content="heb/heb_pk" />
-       <span tal:content="heb/heb_nom" />
+
+       <h1>Modification des informations de votre hébergement <span tal:content="heb/heb_nom" /></h1>
+       <p>
+       Ce formulaire vous permet de modifier les informations de votre hébergement.
+       </p>
+       <p>
+       Certaines de ces données ne peuvent pas être modifiées via ce formulaire
+       et nécessite une intervention de la part des Gîtes de Wallonie.
+       </p>
+       <p>
+       Si vous souhaitez obtenir des informations complémentaires ou si vous
+       éprouvez des difficultés à compléter ce formulaire, merci de prendre
+       contact avec nos bureaux au 081 311 800.
+       </p>
+       <p>
+       Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis
+       aux Gîtes de Wallonie qui vérifieront et valideront vos données.
+       Dès que celles-ci seront validées, elles apparaitront sur le site.
+       </p>
+
        <form action="maj-hebergement-insertion"
              method="post">
            <!---[DEBUT INFORMATION GENERALE]--->
@@ -60,6 +58,8 @@
                   <td class="maj-etiquette">Type</td>
                   <td>
                      <span tal:content="heb/type/type_heb_nom" 
+                           class="maj-donnee" /> :: 
+                     <span tal:content="heb/type/type_heb_pk" 
                            class="maj-donnee" />
                   </td>
                </tr>
@@ -445,7 +445,8 @@
 
 
            <!---[DEBUT TARIFICATION CHAMBRE]--->
-           <table class="maj-info">
+           <table class="maj-info"
+                  tal:condition="python: heb.type.type_heb_pk in (5,6,9)">
               <tr>
                  <td colspan="4" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -559,7 +560,8 @@
 
 
            <!---[DEBUT TARIFICATION GITES]--->
-           <table class="maj-info">
+           <table class="maj-info"
+                  tal:condition="python: heb.type.type_heb_pk not in (5,6,9)">
               <tr>
                  <td colspan="2" align="left" bgcolor="#FF862B">
                     <span class="titre_encodage">
@@ -1031,17 +1033,8 @@
               </tr>
           </table>
           <!---[FIN CGT]--->
-
-
-
-
-
-
-
-
-
-
-          <table>
+          <hr />
+          <table align="center">
             <tr>
               <td colspan="2" align="center">
                 <input type="hidden"

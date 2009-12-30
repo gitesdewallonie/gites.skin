@@ -34,8 +34,6 @@
     <hr />
 
     <div tal:repeat="proprio proprios" align="center">
-        <span tal:content="proprio/pro_log"
-              class="discreet" />
         <form name="formulaire_creation"
               action="maj-info_proprio-insertion"
               method="post">
@@ -62,10 +60,6 @@
                             </tal:boucle>
                         </select>
                     </td>
-                    <!-- <dtml-in zsql_select_all_civilite>
-                                <option value="<dtml-var civ_pk>"><dtml-var civ_titre></option>
-                            </dtml-in>-->
-
                 </tr>
                 <tr>
                     <td class="maj-etiquette">Nom 1</td>
