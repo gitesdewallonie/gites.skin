@@ -610,13 +610,13 @@ class HebergementInfo(BrowserView):
             hebMajInfoEtat="En attente confirmation"
             self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
 
-            sujet="Un proprio à modifié les infos de son hébergement"
+            sujet="Un proprio a modifie les infos de son hebergement"
             message="""L'hébergement %s dont la référence est %s vient d'être modifié.
                        Il faut vérifer ces données et les valider via le lien"""%(hebPk, hebNom)
             self.sendMail(sujet, message)
             return {'status':1}
         else:
-            sujet="Problème : Modification hébergement"
+            sujet="Alerte :: Modification hebergement"
             message="""L'hébergement %s dont la référence est %s n'a pas été modifié.
                        Problème de PK"""%(hebPk, hebNom)
             self.sendMail(sujet, message)

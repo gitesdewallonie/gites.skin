@@ -210,7 +210,7 @@ class ProprioInfo(BrowserView):
             proMajInfoEtat="En attente confirmation"
             self.modifyStatutMajProprio(proPk, proMajInfoEtat)
 
-            sujet="Modification des donn&eacute;es personnelles par un proprio"
+            sujet="Modification des donnees personnelles par un proprio"
             message="""Le proprio %s dont la référence est %s vient de modifier ses
                        données. Il faut les vérifier et les valider
                        via le lien suivant http://gdwadmin.affinitic.be/"""%(proNom, proPk)
