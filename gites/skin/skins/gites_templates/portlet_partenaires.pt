@@ -4,14 +4,35 @@
 <body>
 <div metal:define-macro="portlet">
     <div id="portlet-partenaires">
-       <div id="logo_eurogites">
-          <span i18n:translate="membre_eurogites">Membre d'Eurog&icirc;tes</span><br/>
-          <a href="http://www.eurogites.org" target="_blank"><img src="logo_eurogit.png" /></a>
-       </div>
+        <div id="logo_eurogites">
+            <span i18n:translate="membre_eurogites">Membre d'Eurog&icirc;tes</span><br/>
+            <a href="http://www.eurogites.org" target="_blank"><img src="logo_eurogit.png" /></a>
+        </div>
 
-       <div id="logo-europe-travel">
-          <a href="http://www.visiteurope.com" target="_blank">European travel information</a>
-       </div>
+        <div id="logo-europe-travel">
+            <a href="http://www.visiteurope.com" target="_blank">European travel information</a>
+        </div>
+
+        <div id="logo-feder">
+            <img src="logo_wallonie_europe_feder.gif"
+            alt="logo_wallonie_europe_feder.gif"
+            title="FEDER – PROGRAMMATION 2007-2013" />
+            <span class="titre-feder">
+                FEDER<br />
+                PROGRAMMATION 2007-2013<br />
+            </span>
+            <span class="texte-feder">
+                Axe prioritaire 3:D&eacute;veloppement territorial 
+                &eacute;quilibr&eacute; et durable
+                <br />
+                Mesure 3.03 :Redynamisation urbaine et 
+                attractivit&eacute; du territoire
+                <br />
+                Le Fonds Europ&eacute;en de D&eacute;veloppement 
+                R&eacute;gional et la R&eacute;gion wallonne 
+                investissent dans votre avenir.
+            </span>
+        </div>
     </div>
 </div>
 </body>
