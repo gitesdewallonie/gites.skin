@@ -255,140 +255,140 @@ margin-top:15px;
 
 /*** DEBUT GESTION MOTEUR RECHERCHE ***/
 #moteur-recherche{
-  clear:both;
-  margin: 0px 0px 5px 0px;
-  width:100%;
-  text-align:center;
-  border-collapse: collapse;
-  border-spacing: 0px;
-  border: 2px solid #476D84;
-  margin-top: 5px;
-  padding: 3px;
+clear:both;
+margin: 0px 0px 5px 0px;
+width:100%;
+text-align:center;
+border-collapse: collapse;
+border-spacing: 0px;
+border: 2px solid #476D84;
+margin-top: 5px;
+padding: 3px;
 }
 
 #moteur-simple{
-  margin:0px 0px 5px Opx;
-  padding: 0px 0px 3px 0px;
-  border: 1px dashed #d7c7ab; /*#e59c09;*/
+margin:0px 0px 5px Opx;
+padding: 0px 0px 3px 0px;
+border: 1px dashed #d7c7ab; /*#e59c09;*/
 }
 
 #moteur-ref{
-  margin:5px 0px 0px 0px;
-  padding: 4px 0px 3px 0px;
-  border: 1px dashed #d7c7ab;  /*#e59c09;*/
+margin:5px 0px 0px 0px;
+padding: 4px 0px 3px 0px;
+border: 1px dashed #d7c7ab;  /*#e59c09;*/
 }
 
 .label-recherche{
-   font-size:1em;
-   font-weight: bold;
-   color:#bc0000;
+font-size:1em;
+font-weight: bold;
+color:#bc0000;
 }
 
 .mot-bord-hor-sup{
-   height:6px;
-   background-image:url(mot_hor_haut.png);
-   background-repeat: repeat-x;
+height:6px;
+background-image:url(mot_hor_haut.png);
+background-repeat: repeat-x;
 }
 
 .mot-bord-hor-inf{
-   height:6px;
-   background-image:url(mot_hor_bas.png);
-   background-repeat: repeat-x;
+height:6px;
+background-image:url(mot_hor_bas.png);
+background-repeat: repeat-x;
 }
 
 .mot-bord-vert-gch{
-   width:6px;
-   background-image:url(mot_vert_gch.png);
-   background-repeat: repeat-y;
+width:6px;
+background-image:url(mot_vert_gch.png);
+background-repeat: repeat-y;
 }
 
 .mot-bord-vert-drt{
-   width:6px;
-   background-image:url(mot_vert_drt.png);
-   background-repeat: repeat-y;
+width:6px;
+background-image:url(mot_vert_drt.png);
+background-repeat: repeat-y;
 }
 
 .mot_coin_sup_gauche{
-   width:6px;
-   height:6px;
-   background-image:url(mot_coin_sup_gch.png);
-   background-repeat:no-repeat;
+width:6px;
+height:6px;
+background-image:url(mot_coin_sup_gch.png);
+background-repeat:no-repeat;
 }
 
 .mot_coin_sup_droite{
-   width:6px;
-   height:6px;
-   background-image:url(mot_coin_sup_drt.png);
-   background-repeat:no-repeat;
+width:6px;
+height:6px;
+background-image:url(mot_coin_sup_drt.png);
+background-repeat:no-repeat;
 }
 
 .mot_coin_inf_gauche{
-   width:6px;
-   height:6px;
-   background-image:url(mot_coin_inf_gch.png);
-   background-repeat:no-repeat;
+width:6px;
+height:6px;
+background-image:url(mot_coin_inf_gch.png);
+background-repeat:no-repeat;
 }
 
 .mot_coin_inf_droite{
-   width:6px;
-   height:6px;
-   background-image:url(mot_coin_inf_drt.png);
-   background-repeat:no-repeat;
+width:6px;
+height:6px;
+background-image:url(mot_coin_inf_drt.png);
+background-repeat:no-repeat;
 }
 
 
 #moteur-carte{
-   width:230px;
-   height:107px;
-   background-image:url(carte.gif);
-   background-repeat:no-repeat;
-   font-size:1.1em;
-   font-weight: bold;
-   font-variant:small-caps;
-   color:#bc0000;
+width:230px;
+height:107px;
+background-image:url(carte.gif);
+background-repeat:no-repeat;
+font-size:1.1em;
+font-weight: bold;
+font-variant:small-caps;
+color:#bc0000;
 }
 
 #btn-carto1{
-   position:relative;
-   top:40px;
-   right:10px;
+position:relative;
+top:40px;
+right:10px;
 }
 
 #btn-carto1 a{
-   background-image:url(btn-recherche.png);
-   background-repeat: no-repeat;
-   text-decoration:none;
-   padding: 8px 14px 8px 8px !important;
-   padding: 8px 8px;
+background-image:url(btn-recherche.png);
+background-repeat: no-repeat;
+text-decoration:none;
+padding: 8px 14px 8px 8px !important;
+padding: 8px 8px;
 }
 
 #btn-carto1 a:hover{
-   color:#bc0000;
+color:#bc0000;
 }
 
 #moteur-avance{
-   position:relative;
-   right:10px;
-   width:192px;
-   height:32px;
-   background-image:url(btn-recherche.png);
-   background-repeat:no-repeat;
-   font-size:1.1em;
-   font-weight: bold;
-   font-variant:small-caps;
-   color:#bc0000;
-   padding: 0px 0px 0px 0px;
+position:relative;
+right:10px;
+width:192px;
+height:32px;
+background-image:url(btn-recherche.png);
+background-repeat:no-repeat;
+font-size:1.1em;
+font-weight: bold;
+font-variant:small-caps;
+color:#bc0000;
+padding: 0px 0px 0px 0px;
 }
 
 #moteur-avance a{
-   position:relative;
-   right:8px;
-   top:20%;
-   text-decoration:none;
+position:relative;
+right:8px;
+top:20%;
+text-decoration:none;
 }
 
 #moteur-avance a:hover{
-  color:#bc0000;
+color:#bc0000;
 }
 
 div.formHelp {
@@ -398,124 +398,131 @@ display: none;
 
 /*** DEBUT GESTION DES PORTLETS ***/
 .portletHeader a{
-  color:#666;
+color:#666;
 }
 
 .portletItem {
-  border-left:none;
-  border-right:none;
-  margin:0pt;
-  padding:1em;
+border-left:none;
+border-right:none;
+margin:0pt;
+padding:1em;
 }
 
 legend{
-  background:transparent;
+background:transparent;
 }
 
 dl.portlet {
-  background-color:transparent;
-  border:none;
-  /*margin-top: 0px;*/
-  margin:0px -5px 9px;
+background-color:transparent;
+border:none;
+/*margin-top: 0px;*/
+margin:0px -5px 9px;
 }
 
 #portlet-menu-association a,
 #portlet-menu-chambres-hotes a,
 #portlet-menu-gites-meubles a,
 #portlet-menu-idee-sejour a{
-  text-decoration:none;
-  font-weight:bold;
-  color:#78756e;
+text-decoration:none;
+font-weight:bold;
+color:#78756e;
 }
 
 #portlet-menu-association a:hover,
 #portlet-menu-chambres-hotes a:hover,
 #portlet-menu-gites-meubles a:hover,
 #portlet-menu-idee-sejour a:hover{
-  background-color:#78756e;
-  color:#FFF;
+background-color:#78756e;
+color:#FFF;
 }
 
 .navTreeItem a, dd.portletItem .navTreeItem a {
-  border:1px solid #F9F3E3;
+border:1px solid #F9F3E3;
 }
 
 dt.portletHeader {
-  border: none;
-  font-size:1.2em;
-  font-weight: bold;
-  font-variant:small-caps;
-  color:#bc0000;
-  background: url("p_bord_sup.gif") top left no-repeat;
-  margin: 0em 11px !important;
-  padding-top: 0px;
-  padding-left: 9px;
-  width:132px; <!-- nécessaire sinon probleme avec IE dans colonne de droite-->
+border: none;
+font-size:1.2em;
+font-weight: bold;
+font-variant:small-caps;
+color:#bc0000;
+background: url("p_bord_sup.gif") top left no-repeat;
+margin: 0em 11px !important;
+padding-top: 0px;
+padding-left: 9px;
+width:132px; <!-- nécessaire sinon probleme avec IE dans colonne de droite-->
 }
 
 dd.portletItemSingle, dd.portletItem  {
-  border:none;
-  background: url("p_lat_gauche.gif") top left repeat-y;
-  margin: 0em 1em;
-  padding:1px 6px;
-  width:146px;
+border:none;
+background: url("p_lat_gauche.gif") top left repeat-y;
+margin: 0em 1em;
+padding:1px 6px;
+width:146px;
 }
 
 dd.portletItemLast {
-  border: none;
-  background: url("p_bord_inf.gif") bottom left no-repeat;
-  margin: 0em 1em;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-top: 5px;
-  /*width:123px;*/ <!-- nécessaire sinon problème avec IE dans colonne de droite-->
+border: none;
+background: url("p_bord_inf.gif") bottom left no-repeat;
+margin: 0em 1em;
+padding-bottom: 10px;
+padding-left: 20px;
+padding-top: 5px;
+/*width:123px;*/ <!-- nécessaire sinon problème avec IE dans colonne de droite-->
 }
 
 dd.portletFooter {
-  border: none;
-  border-top-style: none !important;
-  background: url("p_bord_inf.gif") bottom left no-repeat;
-  margin: -3px 11px;
-  padding-bottom: 10px;
-  padding-top: 0px;
-  padding-right: 16px;
-  width:132px;
+border: none;
+border-top-style: none !important;
+background: url("p_bord_inf.gif") bottom left no-repeat;
+margin: -3px 11px;
+padding-bottom: 10px;
+padding-top: 0px;
+padding-right: 16px;
+width:132px;
 }
 
 .portletItemDetails {
-  text-align:center;
-  left:auto;
-  right:auto;
-  margin-left:-5.5px;
+text-align:center;
+left:auto;
+right:auto;
+margin-left:-5.5px;
 }
 
 
 #portlet-outil{
-  margin:7px 5px 5px 20px;
+margin:7px 5px 5px 20px;
 }
 
 #portlet-outil div{
-  padding:3px 0px;
+padding:3px 0px;
 }
 
 #portlet-partenaires{
-  margin:7px 5px 5px 20px;
+margin:7px 5px 5px 20px;
 }
 
 #portlet-partenaires div{
-  margin-top: 3px;
-  margin-left:-15px;
-  padding:3px 0px;
-  color:#fff;
-  font-weight: bold;
-  text-align: center;
-  border:1px solid #e7c46b;
+margin-top: 3px;
+margin-left:-15px;
+padding:3px 0px;
+color:#fff;
+font-weight: bold;
+text-align: center;
+border:1px solid #e7c46b;
 }
 
 #portlet-partenaires a{
-  color:#fff;
-  font-weight:bold;
-  text-decoration:none;
+color:#fff;
+font-weight:bold;
+text-decoration:none;
+}
+
+.texte-feder{
+font-size:0.8em;
+}
+.texte-feder{
+font-size:0.7em;
 }
 /*** FIN GESTION PORTLETS ***/
 
@@ -596,72 +603,72 @@ border: 0px;
 
 /*** DEBUT DESCRIPTION HEBERGEMENT ***/
 fieldset {
-  border:1px solid #8CACBB;
-  line-height:1.5em;
-  margin:0em;
-  width:auto;
+border:1px solid #8CACBB;
+line-height:1.5em;
+margin:0em;
+width:auto;
 }
 
 #description{
-  width: 100%;
+width: 100%;
 }
 
 /* type hebergement - reference - nbre epis - gites+ - theme - capacite*/
 #des-zone1{
-  position:relative;
-  height: 30px;
-  border-width:0px 0px 1px 0px;
-  border-style: solid;
-  border-color: #AAA;
+position:relative;
+height: 30px;
+border-width:0px 0px 1px 0px;
+border-style: solid;
+border-color: #AAA;
 }
 
 #type_heb{
-  padding-left:5px;
-  float:left;
-  font-weight:bold;
-  font-size: 1.2em;
+padding-left:5px;
+float:left;
+font-weight:bold;
+font-size: 1.2em;
 }
 
 #heb_ref{
-  float:left;
-  margin-top: 5px;
-  font-weight:bold;
-  font-size: 0.8em;
+float:left;
+margin-top: 5px;
+font-weight:bold;
+font-size: 0.8em;
 }
 
 #heb_epis{
-  background-color:transparent;
-  position:relative;
-  width:150px;
-  text-align:left;
-  float:left;
-  margin-top: 6px;
-  padding-left: 60px;
+background-color:transparent;
+position:relative;
+width:150px;
+text-align:left;
+float:left;
+margin-top: 6px;
+padding-left: 60px;
 }
 
 #heb_theme{
-  float:left;
-  margin-top: 2px;
-  padding-left: 20px;
+float:left;
+margin-top: 2px;
+padding-left: 20px;
 }
 
 #heb_gites_plus{
-  float:left;
-  margin-top: 2px;
-  padding-left:85px;
+float:left;
+margin-top: 2px;
+padding-left:85px;
 }
 
 #heb_capacite{
-  text-align:right;
-  padding-right: 5px;
-  font-weight:bold;
-  font-size: 1.2em;
-  padding-top: 7px;
+text-align:right;
+padding-right: 5px;
+font-weight:bold;
+font-size: 1.2em;
+padding-top: 7px;
 }
 
 /*** 
-   Zone centrale qui contient toutes les infos
-   photos, tarifs, icones, confort, literie
+Zone centrale qui contient toutes les infos
+photos, tarifs, icones, confort, literie
 ***/  
 #table-description{
 width:100%; 
@@ -691,161 +698,161 @@ vertical-align: top;
 }
 
 #heb_photo{
-  height:195px;
-  text-align:left;
+height:195px;
+text-align:left;
 }
 
 #heb_coordonnee_chambre{
-  background-color:#82a7ea;
-  width: 93%;
-  height: 80px;
-  padding: 0.9em 0.9em 0em 1em;
-  margin-top: 5px;
+background-color:#82a7ea;
+width: 93%;
+height: 80px;
+padding: 0.9em 0.9em 0em 1em;
+margin-top: 5px;
 }
 
 #heb_coordonnee_gite{
-  background-color:#ace087;
-  width: 277px;
-  height: 80px;
-  padding: 0.9em 0.9em 0em 1em;
-  margin-top: 5px;
+background-color:#ace087;
+width: 277px;
+height: 80px;
+padding: 0.9em 0.9em 0em 1em;
+margin-top: 5px;
 }
 
 #heb_nom{
-  font-weight:bold;
-  font-variant: small-caps;
-  font-size: 1.5em;
+font-weight:bold;
+font-variant: small-caps;
+font-size: 1.5em;
 }
 
 #btn_outil{
-  margin-top: 5px;  
-  width: 300px;
-  height: 40px;
-  text-align:right;
-  font-size:-2.8em;
+margin-top: 5px;  
+width: 300px;
+height: 40px;
+text-align:right;
+font-size:-2.8em;
 }
 
 #btn_gallery_back{
-  text-align:left;
-  margin-top: 5px;
+text-align:left;
+margin-top: 5px;
 }
 
 .photo_gallery{
-  margin-top:8px;
+margin-top:8px;
 }
 
 #heb_activite_icone{
-  background-color:#fffd8b;
-  font-size:0.8em;
+background-color:#fffd8b;
+font-size:0.8em;
 }
 
 #heb_info{
-  padding:2px 2px 0px 4px;
+padding:2px 2px 0px 4px;
 }
 
 .chambre{
-  float:left;
-  text-align: center;
-  font-weight: bold;
-  background-color:#faecd1;
-  margin-right: 8px;
+float:left;
+text-align: center;
+font-weight: bold;
+background-color:#faecd1;
+margin-right: 8px;
 }
 
 .lit{
-  float:left;
-  text-align: center;
+float:left;
+text-align: center;
 }
 
 .picto{
-   margin:3px 6px;
+margin:3px 6px;
 }
 
 /*** tarification ***/
 #tarification-chambre{
-  background-color:#ced8e2;
-  border-collapse: collapse;
-  border:1px solid #4f658e;
+background-color:#ced8e2;
+border-collapse: collapse;
+border:1px solid #4f658e;
 }
 
 #tarification-chambre td{
-  border:1px solid #4f658e;
+border:1px solid #4f658e;
 }
 
 .bg-chambre{
-  background-color:#82a7ea;
-  height:40px;
+background-color:#82a7ea;
+height:40px;
 }
 
 #tarification-gite{
-  background-color:#EEFFEE;
-  border-collapse: collapse;
-  border:1px solid #83aa67;
+background-color:#EEFFEE;
+border-collapse: collapse;
+border:1px solid #83aa67;
 }
 
 #tarification-gite td{
-  border:1px solid #83aa67;
+border:1px solid #83aa67;
 }
 .bg-gite{
-  background-color:#ace087;
-  height:40px;
+background-color:#ace087;
+height:40px;
 }
 
 /*** region ***/
 #dans-la-region{
- width:100%;
- margin-top: 10px;
+width:100%;
+margin-top: 10px;
 }
 
 #region-sejour-fute{
-   border-style:solid;
-   border-width:1px 5px 1px 5px;
-   border-color:#d7d3ab;
-   background-color:#fffacb;
-   margin:7px 0px;
-   padding: 5px;
+border-style:solid;
+border-width:1px 5px 1px 5px;
+border-color:#d7d3ab;
+background-color:#fffacb;
+margin:7px 0px;
+padding: 5px;
 }
 
 #region-maison-trourisme{
-   border-style:solid;
-   border-width:1px 5px 1px 5px;
-   border-color:#d7d3ab;
-   background-color:#fffacb;
-   margin:7px 0px;
-   padding:5px;
+border-style:solid;
+border-width:1px 5px 1px 5px;
+border-color:#d7d3ab;
+background-color:#fffacb;
+margin:7px 0px;
+padding:5px;
 }
 
 #region-info-tourisme{
-   border-style:solid;
-   border-width:1px 5px 1px 5px;
-   border-color:#d7d3ab;
-   background-color:#fffacb;
-   margin:7px 0px;
-   padding:5px;
+border-style:solid;
+border-width:1px 5px 1px 5px;
+border-color:#d7d3ab;
+background-color:#fffacb;
+margin:7px 0px;
+padding:5px;
 }
 
 #region-autre-heb{
-   border-style:solid;
-   border-width:1px 5px 1px 5px;
-   border-color:#d7d3ab;
-   background-color:#fffacb;
-   margin:7px 0px;
-   padding:5px;
+border-style:solid;
+border-width:1px 5px 1px 5px;
+border-color:#d7d3ab;
+background-color:#fffacb;
+margin:7px 0px;
+padding:5px;
 }
 
 .region-titre{
-   font-variant: small-caps;
-   font-size:1.2em;
-   font-style:italic;
+font-variant: small-caps;
+font-size:1.2em;
+font-style:italic;
 }
 
 /*** infos proprio ****/
 #info-proprio {
-  width:100%;
-  margin-top: 10px;
+width:100%;
+margin-top: 10px;
 }
 
 #heb_proprio{
-  padding:5px;
+padding:5px;
 }
 
 #heb_commentaire{
