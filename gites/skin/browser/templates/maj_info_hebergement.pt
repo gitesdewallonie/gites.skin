@@ -39,7 +39,7 @@
              method="post">
            <!---[DEBUT INFORMATION GENERALE]--->
            <input type="hidden"
-                  name="heb_maj_maj_pk"
+                  name="heb_maj_pk"
                   value=""
                   tal:attributes="value heb/heb_pk" />
 
@@ -172,7 +172,7 @@
                  <td class="maj-etiquette">Activités</td>
                  <td valign="middle">
                     <input type="checkbox"
-                           name="heb_maj_maj_tenis"
+                           name="heb_maj_tenis"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_tenis=='oui'
@@ -185,7 +185,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_maj_maj_tenis_distance"
+                           name="heb_maj_tenis_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_tenis_distance" />Km
@@ -193,7 +193,7 @@
                     Tennis
                     <br />
                     <input type="checkbox"
-                           name="heb_maj_maj_nautisme"
+                           name="heb_maj_nautisme"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_nautisme=='oui'
@@ -206,7 +206,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_maj_maj_nautisme_distance"
+                           name="heb_maj_nautisme_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_nautisme_distance" />Km
@@ -214,7 +214,7 @@
                     Activiés nautiques
                     <br />
                     <input type="checkbox"
-                           name="heb_maj_maj_sky"
+                           name="heb_maj_sky"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_sky=='oui'
@@ -227,7 +227,7 @@
                          width="28"
                          height="28" />
                     <input type="text"
-                           name="heb_maj_maj_sky_distance"
+                           name="heb_maj_sky_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_sky_distance" />Km
@@ -235,7 +235,7 @@
                     Ski
                     <br/>
                     <input type="checkbox"
-                           name="heb_maj_maj_rando"
+                           name="heb_maj_rando"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_rando=='oui'
@@ -244,7 +244,7 @@
                                            or None" />
                     <img src="a_rando.png">
                     <input type="text"
-                           name="heb_maj_maj_rando_distance"
+                           name="heb_maj_rando_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_rando_distance" />Km
@@ -252,7 +252,7 @@
                     Randonnée
                     <br />
                     <input type="checkbox"
-                           name="heb_maj_maj_piscine"
+                           name="heb_maj_piscine"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_piscine=='oui'
@@ -261,7 +261,7 @@
                                            or None" />
                     <img src="a_piscine.png">
                     <input type="text"
-                           name="heb_maj_maj_piscine_distance"
+                           name="heb_maj_piscine_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_piscine_distance" />Km
@@ -269,7 +269,7 @@
                     Piscine
                     <br />
                     <input type="checkbox"
-                           name="heb_maj_maj_peche"
+                           name="heb_maj_peche"
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_peche=='oui'
@@ -1042,7 +1042,7 @@
                        value=""
                        tal:attributes="value heb/heb_pk" />
                 <input type="hidden"
-                       name="heb_maj_maj_info_etat"
+                       name="heb_maj_info_etat"
                        value="En attente confirmation" />
                 <input type="submit"
                        value="Modifier mes données" />
