@@ -174,11 +174,9 @@
                     <input type="checkbox"
                            name="heb_maj_tenis"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_tenis=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_tenis=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_tennis.png"
                          alt="a_tennis.png"
                          title="Tennis"
@@ -197,9 +195,7 @@
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_nautisme=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_nautisme=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_voile.png"
                          alt="a_voile.png"
                          title="Activités nautiques"
@@ -216,11 +212,9 @@
                     <input type="checkbox"
                            name="heb_maj_sky"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_sky=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_sky=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_sky.png"
                          alt="a_sky.png"
                          title="Ski"
@@ -237,11 +231,9 @@
                     <input type="checkbox"
                            name="heb_maj_rando"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_rando=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_rando=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_rando.png">
                     <input type="text"
                            name="heb_maj_rando_distance"
@@ -254,11 +246,9 @@
                     <input type="checkbox"
                            name="heb_maj_piscine"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_piscine=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_piscine=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_piscine.png">
                     <input type="text"
                            name="heb_maj_piscine_distance"
@@ -270,12 +260,10 @@
                     <br />
                     <input type="checkbox"
                            name="heb_maj_peche"
-                           checked=""
+                           checked="oui"
                            value=""
                            tal:attributes="checked python:heb.heb_peche=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_peche=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_peche.png">
                     <input type="text"
                            name="heb_maj_peche_distance"
@@ -288,11 +276,9 @@
                     <input type="checkbox"
                            name="heb_maj_equitation"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_equitation=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_equitation=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_cheval.png">
                     <input type="text"
                            name="heb_maj_equitation_distance"
@@ -305,14 +291,12 @@
                     <input type="checkbox"
                            name="heb_maj_velo"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_velo=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_velo=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_velo.png">
                     <input type="text"
-                           name="heb_velo_distance"
+                           name="heb_maj_velo_distance"
                            size="3"
                            value=""
                            tal:attributes="value heb/heb_velo_distance" />Km
@@ -324,9 +308,7 @@
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_vtt=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_vtt=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_vtt.png">
                     <input type="text"
                            name="heb_maj_vtt_distance"
@@ -339,11 +321,9 @@
                     <input type="checkbox"
                            name="heb_maj_ravel"
                            checked=""
-                           value=""
+                           value="oui"
                            tal:attributes="checked python:heb.heb_ravel=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_ravel=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="a_ravel.png">
                     <input type="text"
                            name="heb_maj_ravel_distance"
@@ -363,9 +343,7 @@
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_commerce=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_commerce=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="i_commerce.png" title="COMMERCE" />
                     <input type="text"
                            name="heb_maj_commerce_distance"
@@ -380,9 +358,7 @@
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_restaurant=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_restaurant=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="i_restaurant.png" title="RESTAURANT" />
                     <input type="text"
                            name="heb_maj_restaurant_distance"
@@ -397,9 +373,7 @@
                            checked=""
                            value="oui"
                            tal:attributes="checked python:heb.heb_gare=='oui'
-                                           and 'CHECKED'or None;
-                                           value python:heb.heb_gare=='oui'
-                                           and 'oui' or 'non'" />
+                                           and 'CHECKED'or None;" />
                     <img src="i_gare.png" title="GARE" />
                     <input type="text"
                            name="heb_maj_gare_distance"
@@ -418,9 +392,7 @@
                             checked=""
                             value="oui"
                             tal:attributes="checked python:heb.heb_animal=='oui'
-                                            and 'CHECKED'or None;
-                                           value python:heb.heb_animal=='oui'
-                                           and 'oui' or 'non'" />
+                                            and 'CHECKED'or None;" />
                     <img src="c_chien.png">
                     &nbsp;&nbsp;&nbsp;
                     </td>
@@ -433,9 +405,7 @@
                              checked=""
                              value="oui"
                              tal:attributes="checked python:heb.heb_fumeur=='oui'
-                                             and 'CHECKED'or None;
-                                           value python:heb.heb_fumeur=='oui'
-                                           and 'oui' or 'non'" />
+                                             and 'CHECKED'or None;" />
                        <img src="c_fumeur.png">
                        &nbsp;&nbsp;&nbsp;
                     </td>

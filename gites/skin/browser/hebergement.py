@@ -427,7 +427,7 @@ class HebergementInfo(BrowserView):
                                         heb_maj_piscine=fields.get('heb_maj_piscine'),\
                                         heb_maj_peche=fields.get('heb_maj_peche'),\
                                         heb_maj_equitation=fields.get('heb_maj_equitation'),\
-                                        heb_maj_velo=fields.get('heb_maj_velo'),\
+                                        heb_maj_velo=fields.get('heb_maj_velo', 'non'),\
                                         heb_maj_vtt=fields.get('heb_maj_vtt'),\
                                         heb_maj_ravel=fields.get('heb_maj_ravel'),\
                                         heb_maj_animal=fields.get('heb_maj_animal'),\
