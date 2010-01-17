@@ -380,8 +380,8 @@ class HebergementInfo(BrowserView):
         """
         envoi de mail à secretariat GDW
         """
-        mailer = Mailer("localhost", "info@gitesdewallonie.be")
-        #mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
+        #mailer = Mailer("localhost", "info@gitesdewallonie.be")
+        mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
         mailer.setSubject(sujet)
         mailer.setRecipients("info@gitesdewallonie.be, alain.meurant@affinitic.be")
         mailer.setRecipients("alain.meurant@skynet.be")
@@ -400,6 +400,39 @@ class HebergementInfo(BrowserView):
         records = query.all()
         for record in records:
             record.heb_maj_info_etat = hebMajInfoEtat
+        session.flush()
+
+    def insertTypeTableHoteOfHebergementMaj(self):
+        """
+        ajoute les infos de mise à jour des tables d'hote d'un hebergement 
+        par le proprio
+        table heb_tab_hote_maj
+        """
+        fields = self.context.REQUEST
+        hebPk=fields.get('heb_maj_hebpk')
+        tableHotePk=fields.get('hebhot_tabhot_fk')
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        insertTypeTableHoteOfHebergementMaj = wrapper.getMapper('heb_tab_hote_maj')
+        for table in tableHotePk:
+            newEntry = insertTypeTableHoteOfHebergementMaj(hebhot_maj_heb_fk = hebPk,\
+                                                           hebhot_maj_tabho_fk = table)
+            session.save(newEntry)
+        session.flush()
+
+    def deleteTypeTableHoteOfHebergementMajByHebPk(self, hebPk):
+        """
+        supprime les infos de mise à jour des tables d'hote d'un hebergement 
+        selon la pk de l'heb
+        table heb_tab_hote_maj
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        deleteTypeTableHoteOfHebergementMaj = wrapper.getMapper('heb_tab_hote_maj')
+        query = session.query(deleteTypeTableHoteOfHebergementMaj)
+        query = query.filter(deleteTypeTableHoteOfHebergementMaj.hebhot_maj_heb_fk == hebPk)
+        for table in query.all():
+            session.delete(table)
         session.flush()
 
     def insertHebergementMaj(self):
@@ -604,8 +637,11 @@ class HebergementInfo(BrowserView):
         
             if isHebergementMajExist:
                 self.updateHebergementMaj()
+                self.deleteTypeTableHoteOfHebergementMajByHebPk(hebPk)
+                self.insertTypeTableHoteOfHebergementMaj()
             else:
                 self.insertHebergementMaj()
+                self.insertTypeTableHoteOfHebergementMaj()
 
             hebMajInfoEtat="En attente confirmation"
             self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
