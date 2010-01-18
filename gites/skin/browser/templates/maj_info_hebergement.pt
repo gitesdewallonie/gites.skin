@@ -104,56 +104,59 @@
                  <td valign="center" class="maj-etiquette">Type de table d'hôte</td>
                  <td>
                      <div tal:define="table heb/tableHote">
-                     <tal:boucle tal:repeat="elem table">
-                         <input type="checkbox"
-                                name="hebhot_tabhot_fk"
-                                checked=""
-                                value="1"
-                                tal:attributes="checked python:elem.tabho_pk==1
-                                                and
-                                                elem.tabho_pk==1
-                                                or None" />
-                          <img src="assiette_1.png"
-                               alt="assiette_1.png"
-                               title="Assiette gourmande"
-                               width="47"
-                               height="36" />
-                          &nbsp;&nbsp;&nbsp;
-                          Assiette gourmande
-                          <br />
-                          <input type="checkbox"
-                                 name="hebhot_tabhot_fk"
-                                 checked=""
-                                 value="2"
-                                 tal:attributes="checked python:elem.tabho_pk==2
-                                                 and
-                                                 elem.tabho_pk==2
-                                                 or None" />
-                          <img src="assiette_2.png"
-                               alt="assiette_2.png"
-                               title="Repas familial"
-                               width="47"
-                               height="36" />
-                          &nbsp;&nbsp;&nbsp;
-                          Repas familial
-                          <br />
-                          <input type="checkbox"
-                                 name="hebhot_tabhot_fk"
-                                 checked=""
-                                 value="3"
-                                 tal:attributes="checked python:elem.tabho_pk==3
-                                                 and
-                                                 elem.tabho_pk==3
-                                                 or None" />
-                          <img src="assiette_3.png"
-                               alt="assiette_3.png"
-                               title="Menu gastronomique"
-                               width="47"
-                               height="36" />
-                          &nbsp;&nbsp;&nbsp;
-                          Menu gastronomique
-                          <br />
-                    </tal:boucle>
+                         <tal:boucle tal:repeat="elem table">
+                             <span tal:condition="python: elem.tabho_pk==1">
+                                 <input type="checkbox"
+                                        name="hebhot_tabhot_fk"
+                                        checked=""
+                                        value="1"
+                                        tal:attributes="checked python:elem.tabho_pk==1
+                                                        and elem.tabho_pk==1
+                                                        or None" />
+                                  <img src="assiette_1.png"
+                                       alt="assiette_1.png"
+                                       title="Assiette gourmande"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Assiette gourmande
+                                  <br />
+                             </span>
+                             <span tal:condition="python: elem.tabho_pk==2">
+                                  <input type="checkbox"
+                                         name="hebhot_tabhot_fk"
+                                         checked=""
+                                         value="2"
+                                         tal:attributes="checked python:elem.tabho_pk==2
+                                                         and elem.tabho_pk==2
+                                                         or None" />
+                                  <img src="assiette_2.png"
+                                       alt="assiette_2.png"
+                                       title="Repas familial"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Repas familial
+                                  <br />
+                             </span>
+                             <span tal:condition="python: elem.tabho_pk==3">
+                                  <input type="checkbox"
+                                         name="hebhot_tabhot_fk"
+                                         checked=""
+                                         value="3"
+                                         tal:attributes="checked python:elem.tabho_pk==3
+                                                         and elem.tabho_pk==3
+                                                         or None" />
+                                  <img src="assiette_3.png"
+                                       alt="assiette_3.png"
+                                       title="Menu gastronomique"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Menu gastronomique
+                                  <br />
+                             </span>
+                        </tal:boucle>
                     </div>
                  </td>
               </tr>
