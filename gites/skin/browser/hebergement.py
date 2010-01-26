@@ -560,7 +560,7 @@ class HebergementInfo(BrowserView):
                                         heb_maj_tarif_chmbr_autre_1p=fields.get('heb_maj_tarif_chmbr_autre_1p'),\
                                         heb_maj_tarif_chmbr_autre_2p=fields.get('heb_maj_tarif_chmbr_autre_2p'),\
                                         heb_maj_tarif_chmbr_autre_3p=fields.get('heb_maj_tarif_chmbr_autre_3p'),\
-                                        heb_maj_charge_fk=chargeFk)
+                                        heb_maj_charge_fk=int(chargeFk))
         session.save(newEntry)
         session.flush()
 
