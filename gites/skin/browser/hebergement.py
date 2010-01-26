@@ -365,6 +365,21 @@ class HebergementInfo(BrowserView):
             hebergementMajExist = False
         return hebergementMajExist
 
+    def getTypeTableHoteByHebPk(self, hebPk):
+        """
+        retourne les type de table d'hote d'un hebergement
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        typeTableHoteTable = wrapper.getMapper('heb_tab_hote')
+        query = session.query(typeTableHoteTable)
+        query = query.filter(typeTableHoteTable.hebhot_heb_fk == hebPk)
+        records = query.all()
+        typeTableHoteForHeb=[]
+        for table in records:
+            typeTableHoteForHeb.append(table.hebhot_tabho_fk)
+        return typeTableHoteForHeb
+
     def getAllCharge(self):
         """
         Sélectionne les type de charge
@@ -380,8 +395,8 @@ class HebergementInfo(BrowserView):
         """
         envoi de mail à secretariat GDW
         """
-        mailer = Mailer("localhost", "info@gitesdewallonie.be")
-        #mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
+        #mailer = Mailer("localhost", "info@gitesdewallonie.be")
+        mailer = Mailer("relay.skynet.be", "alain.meurant@affinitic.be")
         mailer.setSubject(sujet)
         mailer.setRecipients("info@gitesdewallonie.be, alain.meurant@affinitic.be")
         mailer.setRecipients("alain.meurant@skynet.be")
@@ -431,6 +446,21 @@ class HebergementInfo(BrowserView):
         deleteTypeTableHoteOfHebergementMaj = wrapper.getMapper('heb_tab_hote_maj')
         query = session.query(deleteTypeTableHoteOfHebergementMaj)
         query = query.filter(deleteTypeTableHoteOfHebergementMaj.hebhot_maj_heb_fk == hebPk)
+        for table in query.all():
+            session.delete(table)
+        session.flush()
+
+    def deleteHebergementMajByHebPk(self, hebPk):
+        """
+        supprime les infos de mise à jour d'un hebergement 
+        selon la pk de l'heb
+        table hebebergement_maj
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        deleteHebergementMaj = wrapper.getMapper('hebergement_maj')
+        query = session.query(deleteHebergementMaj)
+        query = query.filter(deleteHebergementMaj.heb_maj_hebpk == hebPk)
         for table in query.all():
             session.delete(table)
         session.flush()
@@ -526,99 +556,6 @@ class HebergementInfo(BrowserView):
         session.save(newEntry)
         session.flush()
 
-    def updateHebergementMaj(self):
-        """
-        update des infos de mise à jour de l'hébergement par le proprio
-        table habergement_maj
-        met dans table hebergement le champ heb_maj_info_etat à 'En attente de confirmation'
-        """
-        fields = self.request
-        chargeFk = fields.get('heb_maj_charge_fk')
-        hebMajHebPk = fields.get('heb_maj_hebpk')
-        hebNom = fields.get('heb_maj_nom')
-
-        wrapper = getSAWrapper('gites_wallons')
-        session = wrapper.session
-        updateHebergementMaj = wrapper.getMapper('hebergement_maj')
-        query = session.query(updateHebergementMaj)
-        query = query.filter(updateHebergementMaj.heb_maj_hebpk == hebMajHebPk)
-        record = query.one()
-        record.heb_maj_nom = unicode(fields.get('heb_maj_nom', ''), 'utf-8')
-        record.heb_maj_adresse = unicode(fields.get('heb_maj_adresse', ''), 'utf-8')
-        record.heb_maj_localite = unicode(fields.get('heb_maj_localite', ''), 'utf-8')
-        record.heb_maj_tenis = unicode(fields.get('heb_maj_tenis', ''), 'utf-8')
-        record.heb_maj_nautisme = unicode(fields.get('heb_maj_nautisme', ''), 'utf-8')
-        record.heb_maj_sky = unicode(fields.get('heb_maj_sky', ''), 'utf-8')
-        record.heb_maj_rando = unicode(fields.get('heb_maj_rando', ''), 'utf-8')
-        record.heb_maj_piscine = unicode(fields.get('heb_maj_piscine', ''), 'utf-8')
-        record.heb_maj_peche = unicode(fields.get('heb_maj_peche', ''), 'utf-8')
-        record.heb_maj_equitation = unicode(fields.get('heb_maj_equitation', ''), 'utf-8')
-        record.heb_maj_velo = unicode(fields.get('heb_maj_velo', ''), 'utf-8')
-        record.heb_maj_vtt = unicode(fields.get('heb_maj_vtt', ''), 'utf-8')
-        record.heb_maj_ravel = unicode(fields.get('heb_maj_ravel', ''), 'utf-8')
-        record.heb_maj_animal = unicode(fields.get('heb_maj_animal', ''), 'utf-8')
-        record.heb_maj_fumeur = unicode(fields.get('heb_maj_fumeur', ''), 'utf-8')
-        record.heb_maj_tenis_distance = unicode(fields.get('heb_maj_tenis_distance', ''), 'utf-8')
-        record.heb_maj_nautisme_distance = unicode(fields.get('heb_maj_nautisme_distance', ''), 'utf-8')
-        record.heb_maj_sky_distance = unicode(fields.get('heb_maj_sky_distance', ''), 'utf-8')
-        record.heb_maj_rando_distance = unicode(fields.get('heb_maj_rando_distance', ''), 'utf-8')
-        record.heb_maj_piscine_distance = unicode(fields.get('heb_maj_piscine_distance', ''), 'utf-8')
-        record.heb_maj_peche_distance = unicode(fields.get('heb_maj_peche_distance', ''), 'utf-8')
-        record.heb_maj_equitation_distance = unicode(fields.get('heb_maj_equitation_distance', ''), 'utf-8')
-        record.heb_maj_velo_distance = unicode(fields.get('heb_maj_velo_distance', ''), 'utf-8')
-        record.heb_maj_vtt_distance = unicode(fields.get('heb_maj_vtt_distance', ''), 'utf-8')
-        record.heb_maj_ravel_distance = unicode(fields.get('heb_maj_ravel_distance', ''), 'utf-8')
-        record.heb_maj_confort_tv = unicode(fields.get('heb_maj_confort_tv', ''), 'utf-8')
-        record.heb_maj_confort_feu_ouvert = unicode(fields.get('heb_maj_confort_feu_ouvert', ''), 'utf-8')
-        record.heb_maj_confort_lave_vaiselle = unicode(fields.get('heb_maj_confort_lave_vaiselle', ''), 'utf-8')
-        record.heb_maj_confort_micro_onde = unicode(fields.get('heb_maj_confort_micro_onde', ''), 'utf-8')
-        record.heb_maj_confort_lave_linge = unicode(fields.get('heb_maj_confort_lave_linge', ''), 'utf-8')
-        record.heb_maj_confort_seche_linge = unicode(fields.get('heb_maj_confort_seche_linge', ''), 'utf-8')
-        record.heb_maj_confort_congelateur = unicode(fields.get('heb_maj_confort_congelateur', ''), 'utf-8')
-        record.heb_maj_confort_internet = unicode(fields.get('heb_maj_confort_internet', ''), 'utf-8')
-        record.heb_maj_commerce = unicode(fields.get('heb_maj_commerce', ''), 'utf-8')
-        record.heb_maj_commerce_distance = unicode(fields.get('heb_maj_commerce_distance'), 'utf-8')
-        record.heb_maj_restaurant = unicode(fields.get('heb_maj_restaurant', ''), 'utf-8')
-        record.heb_maj_restaurant_distance = unicode(fields.get('heb_maj_restaurant_distance', ''), 'utf-8')
-        record.heb_maj_gare = unicode(fields.get('heb_maj_gare', ''), 'utf-8')
-        record.heb_maj_gare_distance = unicode(fields.get('heb_maj_gare_distance', ''), 'utf-8')
-        record.heb_maj_taxe_sejour = unicode(fields.get('heb_maj_taxe_sejour', ''), 'utf-8')
-        record.heb_maj_taxe_montant = unicode(fields.get('heb_maj_taxe_montant', ''), 'utf-8')
-        record.heb_maj_forfait_montant = unicode(fields.get('heb_maj_forfait_montant', ''), 'utf-8')
-        record.heb_maj_tarif_we_3n = unicode(fields.get('heb_maj_tarif_we_3n', ''), 'utf-8')
-        record.heb_maj_tarif_we_4n = unicode(fields.get('heb_maj_tarif_we_4n', ''), 'utf-8')
-        record.heb_maj_tarif_semaine_fin_annee = unicode(fields.get('heb_maj_tarif_semaine_fin_annee', ''), 'utf-8')
-        record.heb_maj_tarif_we_bs = unicode(fields.get('heb_maj_tarif_we_bs', ''), 'utf-8')
-        record.heb_maj_tarif_we_ms = unicode(fields.get('heb_maj_tarif_we_ms', ''), 'utf-8')
-        record.heb_maj_tarif_we_hs = unicode(fields.get('heb_maj_tarif_we_hs', ''), 'utf-8')
-        record.heb_maj_tarif_sem_bs = unicode(fields.get('heb_maj_tarif_sem_bs', ''), 'utf-8')
-        record.heb_maj_tarif_sem_ms = unicode(fields.get('heb_maj_tarif_sem_ms', ''), 'utf-8')
-        record.heb_maj_tarif_sem_hs = unicode(fields.get('heb_maj_tarif_sem_hs', ''), 'utf-8')
-        record.heb_maj_tarif_garantie = unicode(fields.get('heb_maj_tarif_garantie', ''), 'utf-8')
-        record.heb_maj_tarif_divers = unicode(fields.get('heb_maj_tarif_divers', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_avec_dej_1p = unicode(fields.get('heb_maj_tarif_chmbr_avec_dej_1p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_avec_dej_2p = unicode(fields.get('heb_maj_tarif_chmbr_avec_dej_2p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_avec_dej_3p = unicode(fields.get('heb_maj_tarif_chmbr_avec_dej_3p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_sans_dej_1p = unicode(fields.get('heb_maj_tarif_chmbr_sans_dej_1p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_sans_dej_2p = unicode(fields.get('heb_maj_tarif_chmbr_sans_dej_2p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_sans_dej_3p = unicode(fields.get('heb_maj_tarif_chmbr_sans_dej_3p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_table_hote_1p = unicode(fields.get('heb_maj_tarif_chmbr_table_hote_1p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_table_hote_2p = unicode(fields.get('heb_maj_tarif_chmbr_table_hote_2p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_table_hote_3p = unicode(fields.get('heb_maj_tarif_chmbr_table_hote_3p', ''), 'utf-8')
-        record.heb_maj_tarif_chmbr_autre_1p = unicode(fields.get('heb_maj_tarif_chmbr_autre_1p'), 'utf-8', '')
-        record.heb_maj_tarif_chmbr_autre_2p = unicode(fields.get('heb_maj_tarif_chmbr_autre_2p'), 'utf-8', '')
-        record.heb_maj_tarif_chmbr_autre_3p = unicode(fields.get('heb_maj_tarif_chmbr_autre_3p'), 'utf-8', '')
-        record.heb_maj_lit_1p = unicode(fields.get('heb_maj_lit_1p', ''), 'utf-8')
-        record.heb_maj_lit_2p = unicode(fields.get('heb_maj_lit_2p', ''), 'utf-8')
-        record.heb_maj_lit_sup = unicode(fields.get('heb_maj_lit_sup', ''), 'utf-8')
-        record.heb_maj_lit_enf = unicode(fields.get('heb_maj_lit_enf', ''), 'utf-8')
-        record.heb_maj_descriptif_fr = unicode(fields.get('heb_maj_descriptif_fr', ''), 'utf-8')
-        record.heb_maj_pointfort_fr = unicode(fields.get('heb_maj_pointfort_fr', ''), 'utf-8')
-        record.heb_maj_distribution_fr = unicode(fields.get('heb_maj_distribution_fr', ''), 'utf-8')
-        
-        record.heb_maj_charge_fk = chargeFk
-        session.save_or_update(record)
-        session.flush()
 
     def addHebergementMaj(self):
         """
@@ -636,8 +573,13 @@ class HebergementInfo(BrowserView):
             isHebergementMajExist = self.getHebergementMajByhebPk(hebPk)
         
             if isHebergementMajExist:
-                self.updateHebergementMaj()
+                #si une maj existe déjà,
+                #    suppression de ce record dans table hebergement_maj
+                #    suppression des record table hote
+                #    insertion des nouvelles données.
+                self.deleteHebergementMajByHebPk(hebPk)
                 self.deleteTypeTableHoteOfHebergementMajByHebPk(hebPk)
+                self.insertHebergementMaj()
                 self.insertTypeTableHoteOfHebergementMaj()
             else:
                 self.insertHebergementMaj()
