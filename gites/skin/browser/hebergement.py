@@ -428,15 +428,12 @@ class HebergementInfo(BrowserView):
             record.heb_maj_info_etat = hebMajInfoEtat
         session.flush()
 
-    def insertTypeTableHoteOfHebergementMaj(self):
+    def insertTypeTableHoteOfHebergementMaj(self, hebPk, tableHotePk):
         """
         ajoute les infos de mise à jour des tables d'hote d'un hebergement 
         par le proprio
         table heb_tab_hote_maj
         """
-        fields = self.context.REQUEST
-        hebPk=fields.get('heb_maj_hebpk')
-        tableHotePk=fields.get('hebhot_tabhot_fk')
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         insertTypeTableHoteOfHebergementMaj = wrapper.getMapper('heb_tab_hote_maj')
@@ -575,6 +572,7 @@ class HebergementInfo(BrowserView):
         fields = self.request
         hebPk = fields.get('heb_maj_hebpk')
         hebNom = fields.get('heb_maj_nom')
+        tableHotePk=fields.get('hebhot_tabhot_fk', None)
         
         hebergement = self.getHebergementByHebPk(hebPk)
         for elem in hebergement:
@@ -591,10 +589,12 @@ class HebergementInfo(BrowserView):
                 self.deleteHebergementMajByHebPk(hebPk)
                 self.deleteTypeTableHoteOfHebergementMajByHebPk(hebPk)
                 self.insertHebergementMaj()
-                self.insertTypeTableHoteOfHebergementMaj()
+                if tableHotePk:
+                    self.insertTypeTableHoteOfHebergementMaj(hebPk, tableHotePk)
             else:
                 self.insertHebergementMaj()
-                self.insertTypeTableHoteOfHebergementMaj()
+                if tableHotePk:
+                    self.insertTypeTableHoteOfHebergementMaj(hebPk, tableHotePk)
 
             hebMajInfoEtat="En attente confirmation"
             self.modifyStatutMajHebergement(hebPk, hebMajInfoEtat)
