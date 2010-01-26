@@ -365,6 +365,17 @@ class HebergementInfo(BrowserView):
             hebergementMajExist = False
         return hebergementMajExist
 
+    def getTableHote(self):
+        """
+        Sélectionne toutes les table d'hôte
+        """
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        tableHoteTable = wrapper.getMapper('table_hote')
+        query = session.query(tableHoteTable)
+        tableHote = query.all()
+        return tableHote
+
     def getTypeTableHoteByHebPk(self, hebPk):
         """
         retourne les type de table d'hote d'un hebergement
