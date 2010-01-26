@@ -13,7 +13,8 @@
 <body>
 <div metal:fill-slot="main"
      tal:define="hebPk request/hebPk;
-                 hebergements python:view.getHebergementByHebPk(hebPk)">
+                 hebergements python:view.getHebergementByHebPk(hebPk);
+                 typeTables python:view.getTypeTableHoteByHebPk(hebPk);">
     <div tal:repeat="heb hebergements">
 
        <h1>Modification des informations de votre hébergement <span tal:content="heb/heb_nom" /></h1>
@@ -105,7 +106,7 @@
                  <td>
                      <div tal:define="table heb/tableHote">
                          <tal:boucle tal:repeat="elem table">
-                             <span tal:condition="python: elem.tabho_pk==1">
+                             <span tal:condition="python: elem.tabho_pk in typeTables">
                                  <input type="checkbox"
                                         name="hebhot_tabhot_fk"
                                         checked=""
@@ -122,7 +123,24 @@
                                   Assiette gourmande
                                   <br />
                              </span>
-                             <span tal:condition="python: elem.tabho_pk==2">
+                             <span tal:condition="python: elem.tabho_pk not in typeTables">
+                                 <input type="checkbox"
+                                        name="hebhot_tabhot_fk"
+                                        checked=""
+                                        value="1"
+                                        tal:attributes="checked python:elem.tabho_pk==1
+                                                        and elem.tabho_pk==1
+                                                        or None" />
+                                  <img src="assiette_1_off.png"
+                                       alt="assiette_1_off.png"
+                                       title="Assiette gourmande"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Assiette gourmande
+                                  <br />
+                             </span>
+                             <span tal:condition="python: elem.tabho_pk in typeTables">
                                   <input type="checkbox"
                                          name="hebhot_tabhot_fk"
                                          checked=""
@@ -139,7 +157,41 @@
                                   Repas familial
                                   <br />
                              </span>
-                             <span tal:condition="python: elem.tabho_pk==3">
+                             <span tal:condition="python: elem.tabho_pk not in typeTables">
+                                  <input type="checkbox"
+                                         name="hebhot_tabhot_fk"
+                                         checked=""
+                                         value="2"
+                                         tal:attributes="checked python:elem.tabho_pk==2
+                                                         and elem.tabho_pk==2
+                                                         or None" />
+                                  <img src="assiette_2_off.png"
+                                       alt="assiette_2_off.png"
+                                       title="Repas familial"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Repas familial
+                                  <br />
+                             </span>
+                             <span tal:condition="python: elem.tabho_pk in typeTables">
+                                  <input type="checkbox"
+                                         name="hebhot_tabhot_fk"
+                                         checked=""
+                                         value="3"
+                                         tal:attributes="checked python:elem.tabho_pk==3
+                                                         and elem.tabho_pk==3
+                                                         or None" />
+                                  <img src="assiette_3.png"
+                                       alt="assiette_3.png"
+                                       title="Menu gastronomique"
+                                       width="47"
+                                       height="36" />
+                                  &nbsp;&nbsp;&nbsp;
+                                  Menu gastronomique
+                                  <br />
+                             </span>
+                             <span tal:condition="python: elem.tabho_pk not in typeTables">
                                   <input type="checkbox"
                                          name="hebhot_tabhot_fk"
                                          checked=""
@@ -466,18 +518,22 @@
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_1p" />
                  </td>
                  <td align="center">
+                    <!-- 
                     <input type="text"
                            name="heb_maj_tarif_chmbr_sans_dej_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_2p" />
+                    -->
                  </td>
                  <td align="center">
+                    <!--
                     <input type="text"
                            name="heb_maj_tarif_chmbr_sans_dej_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_sans_dej_3p" />
+                    -->
                  </td>
               </tr>
               <tr>
@@ -490,18 +546,22 @@
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_1p" />
                  </td>
                  <td align="center">
+                    <!--
                     <input type="text"
                            name="heb_maj_tarif_chmbr_table_hote_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_2p" />
+                    -->
                  </td>
                  <td align="center">
+                    <!--
                     <input type="text"
                            name="heb_maj_tarif_chmbr_table_hote_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_table_hote_3p" />
+                     -->
                  </td>
               </tr>
               <tr bgcolor="#FDFFE0">
@@ -514,18 +574,22 @@
                            tal:attributes="value heb/heb_tarif_chmbr_autre_1p" />
                  </td>
                  <td align="center">
+                    <!--
                     <input type="text"
                            name="heb_maj_tarif_chmbr_autre_2p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_2p" />
+                     -->
                  </td>
                  <td align="center">
+                    <!--
                     <input type="text"
                            name="heb_maj_tarif_chmbr_autre_3p"
                            size="10"
                            value=""
                            tal:attributes="value heb/heb_tarif_chmbr_autre_3p" />
+                    -->
                  </td>
               </tr>
            </table>
