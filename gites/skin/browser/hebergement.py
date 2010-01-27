@@ -483,7 +483,6 @@ class HebergementInfo(BrowserView):
         chargeFk=fields.get('heb_maj_charge_fk')
         hebPk=fields.get('heb_maj_hebpk')
         hebNom=fields.get('heb_maj_nom')
-
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         insertHebergementMaj = wrapper.getMapper('hebergement_maj')
@@ -513,16 +512,16 @@ class HebergementInfo(BrowserView):
                                         heb_maj_descriptif_fr=fields.get('heb_maj_descriptif_fr'),\
                                         heb_maj_pointfort_fr=fields.get('heb_maj_pointfort_fr'),\
                                         heb_maj_fumeur=fields.get('heb_maj_fumeur'),\
-                                        heb_maj_tenis_distance=fields.get('heb_maj_tenis_distance'),\
-                                        heb_maj_nautisme_distance=fields.get('heb_maj_nautisme_distance'),\
-                                        heb_maj_sky_distance=fields.get('heb_maj_sky_distance'),\
-                                        heb_maj_rando_distance=fields.get('heb_maj_rando_distance'),\
-                                        heb_maj_piscine_distance=fields.get('heb_maj_piscine_distance'),\
-                                        heb_maj_peche_distance=fields.get('heb_maj_peche_distance'),\
-                                        heb_maj_equitation_distance=fields.get('heb_maj_equitation_distance'),\
-                                        heb_maj_velo_distance=fields.get('heb_maj_velo_distance'),\
-                                        heb_maj_vtt_distance=fields.get('heb_maj_vtt_distance'),\
-                                        heb_maj_ravel_distance=fields.get('heb_maj_ravel_distance'),\
+                                        heb_maj_tenis_distance=fields.get('heb_maj_tenis_distance', 0),\
+                                        heb_maj_nautisme_distance=fields.get('heb_maj_nautisme_distance', 0),\
+                                        heb_maj_sky_distance=fields.get('heb_maj_sky_distance', 0),\
+                                        heb_maj_rando_distance=fields.get('heb_maj_rando_distance', 0),\
+                                        heb_maj_piscine_distance=fields.get('heb_maj_piscine_distance', 0),\
+                                        heb_maj_peche_distance=fields.get('heb_maj_peche_distance', 0),\
+                                        heb_maj_equitation_distance=fields.get('heb_maj_equitation_distance', 0),\
+                                        heb_maj_velo_distance=fields.get('heb_maj_velo_distance', 0),\
+                                        heb_maj_vtt_distance=fields.get('heb_maj_vtt_distance', 0),\
+                                        heb_maj_ravel_distance=fields.get('heb_maj_ravel_distance', 0),\
                                         heb_maj_confort_tv=fields.get('heb_maj_confort_tv'),\
                                         heb_maj_confort_feu_ouvert=fields.get('heb_maj_confort_feu_ouvert'),\
                                         heb_maj_confort_lave_vaiselle=fields.get('heb_maj_confort_lave_vaiselle'),\
@@ -532,8 +531,8 @@ class HebergementInfo(BrowserView):
                                         heb_maj_confort_congelateur=fields.get('heb_maj_confort_congelateur'),\
                                         heb_maj_confort_internet=fields.get('heb_maj_confort_internet'),\
                                         heb_maj_taxe_sejour=fields.get('heb_maj_taxe_sejour'),\
-                                        heb_maj_taxe_montant=fields.get('heb_maj_taxe_montant'),\
-                                        heb_maj_forfait_montant=fields.get('heb_maj_forfait_montant'),\
+                                        heb_maj_taxe_montant=fields.get('heb_maj_taxe_montant', 0),\
+                                        heb_maj_forfait_montant=fields.get('heb_maj_forfait_montant', 0),\
                                         heb_maj_tarif_we_3n=fields.get('heb_maj_tarif_we_3n'),\
                                         heb_maj_tarif_we_4n=fields.get('heb_maj_tarif_we_4n'),\
                                         heb_maj_tarif_semaine_fin_annee=fields.get('heb_maj_tarif_semaine_fin_annee'),\
@@ -545,9 +544,9 @@ class HebergementInfo(BrowserView):
                                         heb_maj_commerce=fields.get('heb_maj_commerce'),\
                                         heb_maj_restaurant=fields.get('heb_maj_restaurant'),\
                                         heb_maj_gare=fields.get('heb_maj_gare'),\
-                                        heb_maj_gare_distance=fields.get('heb_maj_gare_distance'),\
-                                        heb_maj_restaurant_distance=fields.get('heb_maj_restaurant_distance'),\
-                                        heb_maj_commerce_distance=fields.get('heb_maj_commerce_distance'),\
+                                        heb_maj_gare_distance=fields.get('heb_maj_gare_distance', 0),\
+                                        heb_maj_restaurant_distance=fields.get('heb_maj_restaurant_distance', 0),\
+                                        heb_maj_commerce_distance=fields.get('heb_maj_commerce_distance', 0),\
                                         heb_maj_tarif_chmbr_avec_dej_1p=fields.get('heb_maj_tarif_chmbr_avec_dej_1p'),\
                                         heb_maj_tarif_chmbr_avec_dej_2p=fields.get('heb_maj_tarif_chmbr_avec_dej_2p'),\
                                         heb_maj_tarif_chmbr_avec_dej_3p=fields.get('heb_maj_tarif_chmbr_avec_dej_3p'),\
@@ -560,7 +559,7 @@ class HebergementInfo(BrowserView):
                                         heb_maj_tarif_chmbr_autre_1p=fields.get('heb_maj_tarif_chmbr_autre_1p'),\
                                         heb_maj_tarif_chmbr_autre_2p=fields.get('heb_maj_tarif_chmbr_autre_2p'),\
                                         heb_maj_tarif_chmbr_autre_3p=fields.get('heb_maj_tarif_chmbr_autre_3p'),\
-                                        heb_maj_charge_fk=int(chargeFk))
+                                        heb_maj_charge_fk=chargeFk)
         session.save(newEntry)
         session.flush()
 
