@@ -6,7 +6,7 @@
      tal:define="loginUser user/getUserName">
     <div id="portlet-maj-info-menu"
          tal:define="portal_url context/@@plone_portal_state/portal_url"
-         tal:condition="python:loginUser=='depmic' or 'vaast'">
+         tal:condition="python:loginUser=='depmic'">
 
         <dl class="portlet"> 
             <dt class="portletHeader">
