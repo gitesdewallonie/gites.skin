@@ -32,7 +32,7 @@
        contact avec nos bureaux au 081 311 800.
        </p>
        <p>
-       Dès que vous aurez enregistrer ce formulaire, celui-ci sera transmis
+       Dès que vous aurez enregistré ce formulaire, celui-ci sera transmis
        aux Gîtes de Wallonie qui vérifieront et valideront vos données.
        Dès que celles-ci seront validées, elles apparaitront sur le site.
        </p>
@@ -382,7 +382,17 @@
                             checked=""
                             value="oui"
                             tal:attributes="checked python:heb.heb_animal=='oui'
-                                            and 'CHECKED'or None;" />
+                                            and heb.heb_animal=='oui' or None;" />
+                    <!--
+                     <input type="checkbox"
+                                 name="heb_maj_confort_seche_linge"
+                                 checked=""
+                                 value="oui"
+                                 tal:attributes="checked python:heb.heb_confort_seche_linge=='oui'
+                                                 and
+                                                 heb.heb_confort_seche_linge=='oui'
+                                                 or None" />
+                        -->
                     <img src="c_chien.png">
                     &nbsp;&nbsp;&nbsp;
                     </td>
@@ -391,11 +401,11 @@
                  <td class="maj-etiquette">Fumeur</td>
                  <td>
                      <input type="checkbox"
-                             name="heb_maj_fumeur"
-                             checked=""
-                             value="oui"
-                             tal:attributes="checked python:heb.heb_fumeur=='oui'
-                                             and 'CHECKED'or None;" />
+                            name="heb_maj_fumeur"
+                            checked=""
+                            value="oui"
+                            tal:attributes="checked python:heb.heb_fumeur=='oui'
+                                            and heb.heb_fumeur=='oui' or None;" />
                        <img src="c_fumeur.png">
                        &nbsp;&nbsp;&nbsp;
                     </td>
