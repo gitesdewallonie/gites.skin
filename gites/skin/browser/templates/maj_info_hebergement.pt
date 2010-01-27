@@ -102,7 +102,8 @@
                            tal:attributes="value heb/heb_localite" />
                  </td>
               </tr>
-              <tr bgcolor="#FDFFE0">
+              <tr bgcolor="#FDFFE0"
+                  tal:condition="python: heb.type.type_heb_pk in (5,6,9)">
                  <td valign="center" class="maj-etiquette">Type de table d'hôte</td>
                  <td>
                      <div>
