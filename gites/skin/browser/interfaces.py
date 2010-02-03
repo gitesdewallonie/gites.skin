@@ -59,6 +59,11 @@ class IHebergementView(Interface):
     View for the full description of an hebergement
     """
 
+    def redirectInactive():
+        """
+        Redirect if gites / proprio is not active
+        """
+
     def getTypeHebergement():
         """
         Get the hebergement type title translated

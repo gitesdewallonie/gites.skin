@@ -82,9 +82,18 @@ class HebergementView(BrowserView):
         else: # pas de reservation
             return False
         delta = datetime.now() - lastReservation
-        if delta.days > 45:
+        if delta.days > 40:
             return False
         return True
+
+    def redirectInactive(self):
+        """
+        Redirect if gites / proprio is not active
+        """
+        if self.context.heb_site_public == '0' or \
+           self.context.proprio.pro_etat == False:
+            url = getToolByName(self.context, 'portal_url')()
+            return self.request.response.redirect("%s/unknown_gites" % url)
 
     def getTypeHebergement(self):
         """
@@ -349,7 +358,7 @@ class HebergementInfo(BrowserView):
 
     def getHebergementMajByhebPk(self, hebPk):
         """
-        retourne si des infos de maj existe déjà pour un hebergement 
+        retourne si des infos de maj existe déjà pour un hebergement
         selon sa clé depuis la table hebergement_maj
         """
         hebergementMajExist = False
@@ -563,7 +572,6 @@ class HebergementInfo(BrowserView):
         session.save(newEntry)
         session.flush()
 
-
     def addHebergementMaj(self):
         """
         gestion de l'ajout des données de maj d'une hebergement
@@ -576,10 +584,10 @@ class HebergementInfo(BrowserView):
         hebergement = self.getHebergementByHebPk(hebPk)
         for elem in hebergement:
             hebergementPk = elem.heb_pk
-        
+
         if int(hebPk) == hebergementPk:
             isHebergementMajExist = self.getHebergementMajByhebPk(hebPk)
-        
+
             if isHebergementMajExist:
                 #si une maj existe déjà,
                 #    suppression de ce record dans table hebergement_maj
@@ -602,10 +610,10 @@ class HebergementInfo(BrowserView):
             message="""L'hébergement %s dont la référence est %s vient d'être modifié.
                        Il faut vérifer ces données et les valider via le lien"""%(hebNom, hebPk)
             self.sendMail(sujet, message)
-            return {'status':1}
+            return {'status': 1}
         else:
             sujet="Alerte :: Modification hebergement"
             message="""L'hébergement %s dont la référence est %s n'a pas été modifié.
                        Problème de PK"""%(hebNom, hebPk)
             self.sendMail(sujet, message)
-            return {'status':-1}
+            return {'status': -1}

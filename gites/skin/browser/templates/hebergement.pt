@@ -14,7 +14,8 @@
 
 <div metal:fill-slot="main">
    <div tal:define="heb context;
-                    hebergementIcons context/@@hebergement_icons;">
+                    hebergementIcons context/@@hebergement_icons;
+                    redirection view/redirectInactive;">
       <div id="description">
          <div metal:use-macro="here/hebergement_macro/macros/hebEnTete" />
          <br/>
