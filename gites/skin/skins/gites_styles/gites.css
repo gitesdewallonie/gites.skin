@@ -774,9 +774,14 @@ border-collapse: collapse;
 border:1px solid #4f658e;
 }
 
-#tarification-chambre td{
+#tarification-chambre td.empty-cell { background-color: #FFF; }
+
+#tarification-chambre td {
 border:1px solid #4f658e;
+background-color: #CED8E2;
 }
+
+#tarification-chambre tr.bg-chambre td, #tarification-chambre td.bg-chambre { background-color: #82A7EA; }
 
 .bg-chambre{
 background-color:#82a7ea;
