@@ -451,8 +451,8 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" bgcolor="#FFF"></td>
-               <td align="center" bgcolor="#FFF"></td>
+               <td align="center" class="empty-cell"></td>
+               <td align="center" class="empty-cell"></td>
             </tr>
             <tr>
                <td class="bg-chambre">
@@ -466,8 +466,8 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" bgcolor="#FFF">&nbsp;</td>
-               <td align="center" bgcolor="#FFF">&nbsp;</td>
+               <td align="center" class="empty-cell">&nbsp;</td>
+               <td align="center" class="empty-cell">&nbsp;</td>
             </tr>
             <tr>
                <td class="bg-chambre">
@@ -481,8 +481,8 @@
                   <span class="tiret_None">-</span>
                </span>
                </td>
-               <td align="center" bgcolor="#FFF">&nbsp;</td>
-               <td align="center" bgcolor="#FFF">&nbsp;</td>
+               <td align="center" class="empty-cell">&nbsp;</td>
+               <td align="center" class="empty-cell">&nbsp;</td>
             </tr>
          </table>
          <br />
