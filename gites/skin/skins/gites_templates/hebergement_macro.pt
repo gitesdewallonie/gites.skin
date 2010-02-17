@@ -942,7 +942,7 @@
          </div>
 
          <div tal:define="animal heb/heb_animal"
-s              tal:condition="python:animal!='oui'"
+              tal:condition="python:animal!='oui'"
               class="floatleft">
             <img src="c_nochien.png"
                  title="Pas d'animal de compagnie"

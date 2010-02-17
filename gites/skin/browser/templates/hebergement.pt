@@ -19,9 +19,10 @@
       <div id="description">
          <div metal:use-macro="here/hebergement_macro/macros/hebEnTete" />
          <br/>
-      <div metal:use-macro="here/document_actions/macros/document_actions">
+      <!--<div metal:use-macro="here/document_actions/macros/document_actions">
         Document actions (print, sendto etc)
-      </div>
+      </div>-->
+      <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
          <table id="table-description">
             <tr>
                <td id="col-gauche">

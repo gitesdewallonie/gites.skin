@@ -199,7 +199,13 @@ padding:1em 0em 1em 0em;
 }
 
 .documentActions {
-display: none;
+border-top: none;
+float: right;
+}
+
+.documentActions li {
+margin: 0;
+padding: 0 0.1;
 }
 
 #content {

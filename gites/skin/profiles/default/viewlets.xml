@@ -28,4 +28,12 @@
         <viewlet name="gites.footer" />
     </order>
 
+    <hidden manager="plone.belowcontentbody" skinname="GitesSkin">
+        <viewlet name="plone.abovecontenttitle.documentactions" />
+    </hidden>
+
+    <order manager="plone.abovecontenttitle" skinname="GitesSkin">
+        <viewlet name="plone.abovecontenttitle.documentactions" />
+    </order>
+
 </object>
