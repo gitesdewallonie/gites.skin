@@ -7,10 +7,6 @@
 <div metal:fill-slot="main" tal:define="errors options/state/getErrors; text python: here.getMmListIntro()"
       i18n:domain="mailmansubform">
 
-    <div metal:use-macro="here/document_actions/macros/document_actions">
-        Document actions (print, sendto etc)
-    </div>
-
     <!-- ADDED FOR GITES -->
     <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
 

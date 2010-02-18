@@ -7,9 +7,6 @@
 
 <div metal:fill-slot="main">
   <tal:main tal:define="view context/@@derniere_minute_view">
-    <div metal:use-macro="here/document_actions/macros/document_actions">
-        Document Actions
-    </div>
 
     <h1 i18n:translate="dernieres_minutes">
         Dernières minutes

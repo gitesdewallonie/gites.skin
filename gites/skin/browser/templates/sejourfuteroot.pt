@@ -12,10 +12,6 @@
     <h1 i18n:translate="sejours_futes">
         Sejours futés
     </h1>
-    <div metal:use-macro="here/document_actions/macros/document_actions">
-        Document Actions
-    </div>
-
     <!-- div class="stx"
          tal:define="text python: here.CookedBody(stx_level=2)"
          tal:condition="text"

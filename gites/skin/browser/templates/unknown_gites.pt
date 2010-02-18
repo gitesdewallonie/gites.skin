@@ -6,9 +6,7 @@
 <body>
 
 <div metal:fill-slot="main">
-    <div metal:use-macro="here/document_actions/macros/document_actions">
-        Document Actions
-    </div>
+
     <img src="o_alerte.png"/>
     <span class="unknown_gites" 
           i18n:translate="unknown_gites">La référence de l'hébergement 
