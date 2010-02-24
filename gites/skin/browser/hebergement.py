@@ -518,8 +518,8 @@ class HebergementInfo(BrowserView):
                                         heb_maj_tarif_divers=fields.get('heb_maj_tarif_divers'),\
                                         heb_maj_descriptif_fr=fields.get('heb_maj_descriptif_fr'),\
                                         heb_maj_pointfort_fr=fields.get('heb_maj_pointfort_fr'),\
-                                        heb_maj_fumeur=fields.get('heb_maj_fumeur'),\
-                                        heb_maj_animal=fields.get('heb_maj_animal'),\
+                                        heb_maj_fumeur=fields.get('heb_maj_fumeur', 'non'),\
+                                        heb_maj_animal=fields.get('heb_maj_animal', 'non'),\
                                         heb_maj_tenis_distance=fields.get('heb_maj_tenis_distance'),\
                                         heb_maj_nautisme_distance=fields.get('heb_maj_nautisme_distance'),\
                                         heb_maj_sky_distance=fields.get('heb_maj_sky_distance'),\
