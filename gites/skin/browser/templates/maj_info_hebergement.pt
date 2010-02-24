@@ -382,17 +382,7 @@
                             checked=""
                             value="oui"
                             tal:attributes="checked python:heb.heb_animal=='oui'
-                                            and heb.heb_animal=='oui' or None;" />
-                    <!--
-                     <input type="checkbox"
-                                 name="heb_maj_confort_seche_linge"
-                                 checked=""
-                                 value="oui"
-                                 tal:attributes="checked python:heb.heb_confort_seche_linge=='oui'
-                                                 and
-                                                 heb.heb_confort_seche_linge=='oui'
-                                                 or None" />
-                        -->
+                                            and 'CHECKED' or '';" />
                     <img src="c_chien.png">
                     &nbsp;&nbsp;&nbsp;
                     </td>
@@ -405,7 +395,7 @@
                             checked=""
                             value="oui"
                             tal:attributes="checked python:heb.heb_fumeur=='oui'
-                                            and heb.heb_fumeur=='oui' or None;" />
+                                            and 'CHECKED' or '';" />
                        <img src="c_fumeur.png">
                        &nbsp;&nbsp;&nbsp;
                     </td>
