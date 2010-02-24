@@ -124,16 +124,18 @@
                 <tr>
                     <td class="maj-etiquette">Code postal - Localité</td>
                     <td>
-                        <div tal:define="communes python:view.getAllCommunes()">
-                        <select name="pro_maj_com_fk">
-                            <span tal:repeat="commune communes">
-                                <option value=""
-                                        tal:attributes="value commune/com_pk">
-                                    <span tal:content="commune/com_cp" /> -
-                                    <span tal:content="commune/com_nom" />
-                                </option>
-                            </span>
-                        </select>
+                        <div>
+                            <select name="pro_maj_com_fk"
+                                    tal:define="communes python:view.getAllCommunes()">
+                                <span tal:repeat="commune communes">
+                                    <option value=""
+                                            tal:attributes="value commune/com_pk;
+                                                            selected python:proprio.pro_com_fk == commune.com_pk or None">
+                                        <span tal:content="commune/com_cp" /> -
+                                        <span tal:content="commune/com_nom" />
+                                    </option>
+                                </span>
+                            </select>
                         </div>
                     </td>
                 </tr>
@@ -153,7 +155,6 @@
                         <input type="text"
                                name="pro_maj_tel_priv"
                                value=""
-                               size="15"
                                tal:attributes="value proprio/pro_tel_priv" />
                     </td>
                 </tr>
@@ -163,7 +164,6 @@
                         <input type="text"
                                name="pro_maj_fax_priv"
                                value=""
-                               size="15"
                                tal:attributes="value proprio/pro_fax_priv" />
                     </td>
                 </tr>
