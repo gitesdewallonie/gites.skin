@@ -153,7 +153,7 @@
                         <input type="text"
                                name="pro_maj_tel_priv"
                                value=""
-                               size="10"
+                               size="15"
                                tal:attributes="value proprio/pro_tel_priv" />
                     </td>
                 </tr>
@@ -163,7 +163,7 @@
                         <input type="text"
                                name="pro_maj_fax_priv"
                                value=""
-                               size="10"
+                               size="15"
                                tal:attributes="value proprio/pro_fax_priv" />
                     </td>
                 </tr>
