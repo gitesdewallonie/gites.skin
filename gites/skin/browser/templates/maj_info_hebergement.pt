@@ -654,7 +654,7 @@
                                    name="heb_maj_charge_fk"
                                    checked=""
                                    value=""
-                                   tal:attributes="value heb/heb_charge_fk;
+                                   tal:attributes="value charge/cha_pk;
                                                    checked python:charge.cha_pk==heb.heb_charge_fk
                                                    and charge.cha_pk==heb.heb_charge_fk or None" />
                             <span tal:content="charge/cha_type_fr" /><br />
