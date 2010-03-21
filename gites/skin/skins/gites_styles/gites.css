@@ -984,3 +984,11 @@ vertical-align:top;
 }
 
 /*** FIN PROPRIO MAJ INFO ***/
+
+
+
+/**** MODIF FOOTER PORTLET POUR BNB ***/
+/* masquage du footer des portlets affichés dans bnb */
+.bnbportletFooter{
+visibility:hidden;
+}
