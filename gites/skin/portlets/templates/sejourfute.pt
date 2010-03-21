@@ -10,11 +10,17 @@
 
 <dl class="portlet" id="portlet-sejours-fute">
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
-            <span i18n:translate="sejours_futes">Séjours Futés</span>
-        <span class="portletTopRight"></span>
-    </dt>
+    <span class="masquer-titre"><!-- masquer titre lorsque affichage dans bnb-->
+        <dt class="portletHeader">
+            <span class="portletTopLeft"></span>
+                <span i18n:translate="sejours_futes">Séjours Futés</span>
+            <span class="portletTopRight"></span>
+        </dt>
+    </span>
+    
+    <div id="bnb-portlet-title">
+        <img src="titre_sejours-futes.png" />
+    </div>
 
     <tal:sejours tal:repeat="obj results">
     <dd class="portletItemSingle"
@@ -29,7 +35,8 @@
             <span class="portletItemDetails"
                   tal:define="vignettes python:view.getRandomVignette(obj.getPath())">
                   <tal:vign tal:repeat="vignette vignettes">
-                    <img src=""
+                    <img class="bnb-porlet-image"
+                         src=""
                          tal:attributes="src string:${vignette/getURL}/image_thumb"
                          class="img-portlet" /><br />
                   </tal:vign>
@@ -46,10 +53,13 @@
         <span class="portletBottomLeft"></span>
         <span class="portletBottomRight"></span>
     </dd>
-
 </dl>
-
-
+<div class="bnbportletFooter">
+        <a href=""
+           tal:attributes="href sejours_link">
+           <span i18n:translate="all_sejour_fute">Tous</span></a>
+           <img src="fleche_grise.png" border="0" />
+</div>
 </div>
 </body>
 </html>

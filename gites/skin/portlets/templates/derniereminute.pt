@@ -3,18 +3,24 @@
       i18n:domain="gites">
 <body>
 <div metal:define-macro="portlet"
-            tal:define="results view/getRandomDerniereMinute;
-                        sejours_link view/getAllDerniereMinuteLink;"
+     tal:define="results view/getRandomDerniereMinute;
+                 sejours_link view/getAllDerniereMinuteLink;"
      tal:condition="results">
 
 <dl class="portlet" id="portlet-sejours-fute">
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
-            <span i18n:translate="derniere_minutes">Dernière minute</span>
-        <span class="portletTopRight"></span>
-    </dt>
-
+    <span class="masquer-titre"><!-- masquer titre lorsque affichage dans bnb-->
+        <dt class="portletHeader">
+            <span class="portletTopLeft"></span>
+                <span i18n:translate="derniere_minutes">Dernière minute</span>
+            <span class="portletTopRight"></span>
+        </dt>
+    </span>
+    
+    <div id="bnb-portlet-title">
+        <img src="titre_dernieres-minutes.png" />
+    </div>
+    
     <tal:sejours tal:repeat="obj results">
     <dd class="portletItemSingle"
         tal:define="oddrow repeat/obj/odd;
@@ -34,6 +40,7 @@
             <div class="portletItemDetails">
                 <div>
                     <img id="derniere-minute-vignette"
+                         class="bnb-porlet-image"
                          src=""
                          tal:attributes="src string:${context/portal_url}/photos_heb/${hebergement/getVignette}" />
                 </div>
@@ -64,6 +71,13 @@
         <span class="portletBottomRight"></span>
     </dd>
 </dl>
+<div class="bnbportletFooter">
+          <a href=""
+           tal:attributes="href sejours_link">
+           <span i18n:translate="all_sejour_fute">Tous</span></a>
+           <img src="fleche_grise.png" 
+                border="0" />
+</div>
 
 
 </div>
