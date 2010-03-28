@@ -531,6 +531,13 @@ font-size:0.8em;
 .texte-feder{
 font-size:0.7em;
 }
+
+/* masquage des titres des porlets de bnb */
+#bnb-portlet-title{
+display:none;
+}
+
+
 /*** FIN GESTION PORTLETS ***/
 
 /*** DEBUT PORLET JE SUIS ***/
