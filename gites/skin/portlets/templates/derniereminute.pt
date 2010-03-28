@@ -18,7 +18,10 @@
     </span>
     
     <div id="bnb-portlet-title">
-        <img src="titre_dernieres-minutes.png" />
+        <img src=""
+             tal:attributes="src python:'titre_dernieres_minutes_%s.png' % request.LANGUAGE"
+             alt="BnB Dernière minute"
+             title="BnB Dernière minute" />
     </div>
     
     <tal:sejours tal:repeat="obj results">
