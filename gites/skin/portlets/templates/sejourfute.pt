@@ -19,7 +19,10 @@
     </span>
     
     <div id="bnb-portlet-title">
-        <img src="titre_sejours-futes.png" />
+        <img src=""
+             tal:attributes="src python:'titre_sejours_futes_%s.png' % request.LANGUAGE"
+             alt="BnB Séjour futé"
+             title="BnB Séjour futé" />
     </div>
 
     <tal:sejours tal:repeat="obj results">

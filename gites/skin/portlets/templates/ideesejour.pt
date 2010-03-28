@@ -16,7 +16,10 @@
              </dt>
          </span>
          <div id="bnb-portlet-title">
-             <img src="titre_idees-sejours.png" />
+             <img src=""
+                  tal:attributes="src python:'titre_idees_sejours_%s.png' % request.LANGUAGE"
+                  alt="BnB Idées séjour"
+                  title="BnB Idées séjour" />
          </div>
          <dd class="portletItemSingle">
            <a href="#"
