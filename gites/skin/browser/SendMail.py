@@ -67,27 +67,28 @@ class SendMail(BrowserView):
         mailer = Mailer("localhost", fromMail)
         mailer.setSubject("[DEMANDE D'INFORMATION PAR LE SITE]")
         mailer.setRecipients(proprioMail)
-        mail = u"""<font color='#FF0000'><b>:: DEMANDE D'INFORMATION ::</b></font><br /><br />
-              Une demande d'information vient d'être réalisée via le site pour %s référence %s.<br/>
-              Il s'agit de :<br />
-              <ul>
-              <li>Civilité : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Nom : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Prénom : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Adresse : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Localit&eacute; : <font color='#ff9c1b'><b>%s</b> <b>%s</b></font></li>
-              <li>Pays : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Langue : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Téléphone : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Fax : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>E-mail : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Date début séjour  : <font color='#ff9c1b'><b>%s</b>-<b>%s</b>-<b>%s</b></font></li>
-              <li>Date fin séjour  : <font color='#ff9c1b'><b>%s</b>-<b>%s</b>-<b>%s</b></font></li>
-              <li>Nombre de personne : <font color='#ff9c1b'><b>%s</b></font></li>
-              <li>Remarque : <font color='#ff9c1b'><b>%s</b></font></li>
-              </ul>
-              """ \
-              %(hebNom, \
+        mail = u""":: DEMANDE D'INFORMATION ::
+
+Une demande d'information vient d'être réalisée via le site pour %s référence %s.
+
+Il s'agit de :
+
+    * Civilité : %s
+    * Nom : %s
+    * Prénom : %s
+    * Adresse : %s
+    * Localité : %s %s
+    * Pays : %s
+    * Langue : %s
+    * Téléphone : %s
+    * Fax : %s
+    * E-mail : %s
+    * Date début séjour  : %s-%s-%s
+    * Date fin séjour  : %s-%s-%s
+    * Nombre de personne : %s
+    * Remarque : %s
+""" \
+              % (hebNom, \
                 hebPk, \
                 contactCivilite, \
                 unicode(contactNom, 'utf-8'), \
@@ -108,7 +109,7 @@ class SendMail(BrowserView):
                 finAn, \
                 nombrePersonne,\
                 unicode(remarque, 'utf-8'))
-        mailer.sendAllMail(mail.encode('utf-8'))
+        mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
 
         translate = queryMultiAdapter((self.context, self.request),
                                        name='getTranslatedObjectUrl')
