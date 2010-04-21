@@ -19,6 +19,7 @@
     
     <div id="bnb-portlet-title"><!-- masquer titre lorsque affichage dans gdw-->
         <img src=""
+             tal:condition="view/inBnB"
              tal:attributes="src python:'titre_dernieres_minutes_%s.png' % request.LANGUAGE"
              alt="BnB Dernière minute"
              title="BnB Dernière minute" />

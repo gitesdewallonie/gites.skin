@@ -16,6 +16,7 @@ from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from z3c.sqlalchemy import getSAWrapper
 import random
+from bnbelgium.skin.browser.interfaces import IBNBelgiumTheme
 
 
 class IIdeeSejour(IPortletDataProvider):
@@ -62,6 +63,12 @@ class Renderer(base.Renderer):
         """By default, portlets are available
         """
         return True
+
+    def inBnB(self):
+        """
+        Permet de checker si on est dans BNB ou dans GDW
+        """
+        return IBNBelgiumTheme.providedBy(self.request)
 
     def getIdeesTypes(self):
         """

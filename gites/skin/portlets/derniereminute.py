@@ -19,6 +19,7 @@ from z3c.sqlalchemy import getSAWrapper
 from sqlalchemy import desc
 from DateTime import DateTime
 import random
+from bnbelgium.skin.browser.interfaces import IBNBelgiumTheme
 
 
 class IDerniereMinute(IPortletDataProvider):
@@ -60,9 +61,16 @@ class Renderer(base.Renderer):
 
     @property
     def available(self):
-        """By default, portlets are available
+        """
+        By default, portlets are available
         """
         return True
+        
+    def inBnB(self):
+        """
+        Permet de checker si on est dans BNB ou dans GDW
+        """
+        return IBNBelgiumTheme.providedBy(self.request)
 
     def _getValidDerniereMinute(self):
         """
