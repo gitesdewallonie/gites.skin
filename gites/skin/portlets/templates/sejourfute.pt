@@ -20,6 +20,7 @@
     
     <div id="bnb-portlet-title"><!-- masquer titre lorsque affichage dans gdw-->
         <img src=""
+             tal:condition="view/inBnB"
              tal:attributes="src python:'titre_sejours_futes_%s.png' % request.LANGUAGE"
              alt="BnB Séjour futé"
              title="BnB Séjour futé" />

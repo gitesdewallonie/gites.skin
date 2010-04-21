@@ -17,6 +17,7 @@
          </span>
          <div id="bnb-portlet-title"><!-- masquer titre lorsque affichage dans gdw-->
              <img src=""
+                  tal:condition="view/inBnB"
                   tal:attributes="src python:'titre_idees_sejours_%s.png' % request.LANGUAGE"
                   alt="BnB Idées séjour"
                   title="BnB Idées séjour" />
