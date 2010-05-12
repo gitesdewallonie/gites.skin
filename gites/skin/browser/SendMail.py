@@ -20,6 +20,33 @@ class SendMail(BrowserView):
     """
     implements(ISendMail)
 
+    def sendBlogSubscriptionMail(self):
+        """
+        envoi des informations d'inscription à la newsletter du blog
+        """
+        nom = self.request.get('nom', '')
+        email = self.request.get('email', '')
+        fromMail = "info@gitesdewallonie.be"
+        if not email:
+            return
+        try:
+            checkEmailAddress(email)
+        except EmailAddressInvalid:
+            return
+        mailer = Mailer("localhost", fromMail)
+        mailer.setSubject("[INSCRIPTION NEWSLETTER BLOG]")
+        mailer.setRecipients("michael@gitesdewallonie.be")
+        mail = u""":: INSCRIPTION ::
+
+Une demande d'inscription a été envoyée via le blog :
+
+    * Nom : %s
+    * Email : %s
+""" \
+           %(unicode(nom, 'utf-8'), \
+             unicode(email, 'utf-8'))
+        mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
+
     def sendMailToProprio(self):
         """
         envoi d'un mail au proprio suite a un contact via hebergement description
