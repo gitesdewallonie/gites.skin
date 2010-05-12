@@ -97,6 +97,15 @@
       />
 
    <browser:page
+      for="*"
+      name="blog_newsletter_subscribe"
+      permission="zope.Public"
+      allowed_interface=".interfaces.ISendMail"
+      class=".SendMail.SendMail"
+      attribute="sendBlogSubscriptionMail"
+      />
+
+   <browser:page
       name="sejourfute_root"
       for="gites.skin.interfaces.ISejourFuteRootFolder"
       class=".sejourfute.SejourFuteRootFolder"
