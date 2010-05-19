@@ -401,6 +401,16 @@ color:#bc0000;
 div.formHelp {
 display: none;
 }
+
+label[for="form.seeResults"] {
+vertical-align: top;
+color: Red;
+}
+
+input[id="form.seeResults"] {
+margin-bottom: 20px;
+}
+
 /*** FIN GESTION MOTEUR RECHERCHE ***/
 
 /*** DEBUT GESTION DES PORTLETS ***/
