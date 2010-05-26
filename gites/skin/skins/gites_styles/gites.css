@@ -791,21 +791,56 @@ text-align: center;
 margin:3px 6px;
 }
 
+/*** calendrier ***/
+#calendar-proprio{
+border:1px solid #83aa67;  /*#8CACBB*/
+margin:10px auto;
+padding:3px 0px;
+width:250px;
+background-color:#EEFFEE;
+}
+
+#legend-calendar{
+margin-top:5px;
+border-top:1px solid #ccc;
+padding:9px 0px;
+}
+
+#calendar-sup{
+border:0px;
+background-color:#CCCCCC;
+position:relative;
+left:30px;
+top:50px;
+width:239px;
+height:1px;
+}
+
 /*** tarification ***/
+#heb_tarification{
+margin:auto;
+width:250px;
+}
+
 #tarification-chambre{
 background-color:#ced8e2;
 border-collapse: collapse;
 border:1px solid #4f658e;
+width:100%;
 }
 
-#tarification-chambre td.empty-cell { background-color: #FFF; }
+#tarification-chambre td.empty-cell { 
+background-color: #FFF;
+}
 
 #tarification-chambre td {
 border:1px solid #4f658e;
 background-color: #CED8E2;
 }
 
-#tarification-chambre tr.bg-chambre td, #tarification-chambre td.bg-chambre { background-color: #82A7EA; }
+#tarification-chambre tr.bg-chambre td, #tarification-chambre td.bg-chambre {
+background-color: #82A7EA;
+}
 
 .bg-chambre{
 background-color:#82a7ea;
@@ -816,6 +851,7 @@ height:40px;
 background-color:#EEFFEE;
 border-collapse: collapse;
 border:1px solid #83aa67;
+width:100%;
 }
 
 #tarification-gite td{

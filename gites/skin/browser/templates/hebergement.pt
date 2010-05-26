@@ -29,12 +29,19 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebCoordonneeGite" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
-
-                  <div id="calendar_form">
-                    <div id="calendars"></div>
-                    <input type="hidden" id="reset"/>
-                    <input type="hidden" name="start" value="" id="start"/>
-                    <input type="hidden" name="end" value="" id="end"/>
+                  
+                  <hr id="calendar-sup" /><!-- ligne en dessous des btns vert de nav :( -->
+                  <div id="calendar-proprio"
+                       tal:condition="view/showCalendar">
+                      <div id="calendar_form">
+                        <div id="calendars"></div>
+                        <input type="hidden" id="reset"/>
+                        <input type="hidden" name="start" value="" id="start"/>
+                        <input type="hidden" name="end" value="" id="end"/>
+                      </div>
+                      <div id="legend-calendar">
+                          <img src="carre_rouge.gif" /> nuits indisponibles
+                      </div>
                   </div>
 
                </td><!-- col gauche-->
