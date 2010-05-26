@@ -37,23 +37,33 @@ Contactez le propriétaire
         </tr>
         <tr>
             <td align="right">
+                <span class="fieldRequired" 
+                      title="Required"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
                 <label for="contactNom" i18n:translate="nom">Nom</label>
             </td>
             <td>
                 <input type="text"
                        name="contactNom"
                        size="30"
+                       class="required"
                        value="" />
             </td>
         </tr>
         <tr>
             <td align="right">
+                <span class="fieldRequired" 
+                      title="Required"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
                 <label for="contactPrenom" i18n:translate="prenom">Prénom</label>
             </td>
             <td>
                 <input type="text"
                        name="contactPrenom"
                        size="30"
+                       class="required"
                        value="" />
             </td>
         </tr>
