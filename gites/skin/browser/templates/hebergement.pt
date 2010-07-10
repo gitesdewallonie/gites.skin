@@ -30,7 +30,7 @@
                   <div metal:use-macro="here/hebergement_macro/macros/hebBoutonOutil" />
                   <div metal:use-macro="here/hebergement_macro/macros/hebTarification" />
                   
-                  <hr id="calendar-sup" /><!-- ligne en dessous des btns vert de nav :( -->
+                  <hr id="calendar-sup" tal:condition="view/showCalendar" />
                   <div id="calendar-proprio"
                        tal:condition="view/showCalendar">
                       <div id="calendar_form">
