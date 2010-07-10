@@ -18,9 +18,7 @@ from gites.skin.browser.interfaces import (IHebergementView,
                                            IHebergementInfo)
 from Products.CMFCore.utils import getToolByName
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
-from sqlalchemy import select, func
 from z3c.sqlalchemy import getSAWrapper
-from datetime import datetime
 from mailer import Mailer
 
 
@@ -34,13 +32,6 @@ class HebergementView(BrowserView):
     def __init__(self, context, request):
         super(HebergementView, self).__init__(context, request)
         super(BrowserView, self).__init__(context, request)
-
-    def _getLastAddedReservation(self):
-        wrapper = getSAWrapper('gites_wallons')
-        session = wrapper.session
-        ReservationProprio = wrapper.getMapper('reservation_proprio')
-        return select([func.max(ReservationProprio.res_date_cre).label('maxcre')],
-                      ReservationProprio.heb_fk == self.context.heb_pk).execute().fetchone()
 
     def calendarJS(self):
         """
@@ -67,24 +58,11 @@ class HebergementView(BrowserView):
 
     def showCalendar(self):
         """
-        Should we show this calendar ?
-
-            * is it activated ?
-            * did the proprio edited its calendar recently ?
+        Is the calendar activated for showing in description ?
+        (if the calendar has been blocked due to inactivity, it will not
+        appear because heb_calendrier_proprio will be 'bloque' by cron)
         """
-        if self.context.heb_calendrier_proprio != 'actif':
-            return False
-        lastReservation = self._getLastAddedReservation()
-        if lastReservation is not None:
-            lastReservation = lastReservation.maxcre
-            if lastReservation is None:
-                return False
-        else: # pas de reservation
-            return False
-        delta = datetime.now() - lastReservation
-        if delta.days > 40:
-            return False
-        return True
+        return (self.context.heb_calendrier_proprio == 'actif')
 
     def redirectInactive(self):
         """
@@ -438,7 +416,7 @@ class HebergementInfo(BrowserView):
 
     def insertTypeTableHoteOfHebergementMaj(self, hebPk, tableHotePk):
         """
-        ajoute les infos de mise à jour des tables d'hote d'un hebergement 
+        ajoute les infos de mise à jour des tables d'hote d'un hebergement
         par le proprio
         table heb_tab_hote_maj
         """
@@ -453,7 +431,7 @@ class HebergementInfo(BrowserView):
 
     def deleteTypeTableHoteOfHebergementMajByHebPk(self, hebPk):
         """
-        supprime les infos de mise à jour des tables d'hote d'un hebergement 
+        supprime les infos de mise à jour des tables d'hote d'un hebergement
         selon la pk de l'heb
         table heb_tab_hote_maj
         """
@@ -468,7 +446,7 @@ class HebergementInfo(BrowserView):
 
     def deleteHebergementMajByHebPk(self, hebPk):
         """
-        supprime les infos de mise à jour d'un hebergement 
+        supprime les infos de mise à jour d'un hebergement
         selon la pk de l'heb
         table hebebergement_maj
         """
@@ -579,7 +557,7 @@ class HebergementInfo(BrowserView):
         hebPk = fields.get('heb_maj_hebpk')
         hebNom = fields.get('heb_maj_nom')
         tableHotePk=fields.get('hebhot_tabhot_fk', None)
-        
+
         hebergement = self.getHebergementByHebPk(hebPk)
         for elem in hebergement:
             hebergementPk = elem.heb_pk
