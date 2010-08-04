@@ -261,6 +261,12 @@ margin-top:15px;
 }
 
 /*** DEBUT GESTION MOTEUR RECHERCHE ***/
+.moteur-box{
+margin:0px 0px 5px Opx;
+padding: 4px 0px 3px 0px;
+border: 1px dashed #d7c7ab; /*#e59c09;*/
+}
+
 #moteur-recherche{
 clear:both;
 margin: 0px 0px 5px 0px;
@@ -280,9 +286,13 @@ border: 1px dashed #d7c7ab; /*#e59c09;*/
 }
 
 #moteur-ref{
-margin:5px 0px 0px 0px;
+margin:0px 0px 5px Opx;
 padding: 4px 0px 3px 0px;
 border: 1px dashed #d7c7ab;  /*#e59c09;*/
+}
+
+#moteur-facebook{
+margin:10px 0px 10px 0px;
 }
 
 .label-recherche{
