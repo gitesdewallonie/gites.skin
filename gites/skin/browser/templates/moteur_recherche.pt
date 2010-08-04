@@ -122,20 +122,15 @@
                     </form>
                 </div>
          </td>
-         <td align="center" valign="middle">
-            <div id="moteur-carte">
-               <div id="btn-carto1">
-                  
-                  <a href=""
-                     i18n:translate="recherche_cartographique"
-                     tal:attributes="href string:${context/absolute_url}/map">
-                     recherche cartographique
-                  </a>
-               </div>
+         <td rowspan="5" valign="top">
+            <div id="moteur-facebook" align="center">
+              <iframe src="http://www.facebook.com/plugins/likebox.php?id=378914593933&amp;width=420&amp;connections=14&amp;stream=false&amp;header=false&amp;height=255"
+                      scrolling="no" frameborder="0" style="border:1px solid #476D84; overflow:hidden; width:420px; height:255px;" allowTransparency="false">
+              </iframe>
             </div>
          </td>
       </tr>
-      <tr bgcolor="#f9e7c6">
+      <tr bgcolor="#f9e7c6" height="32px;">
          <td>
            <div id="moteur-ref">
                 <form action=""
@@ -153,12 +148,35 @@
                </form>
            </div>
          </td>
+      </tr>
+      <tr bgcolor="#f9e7c6" height="107px">
+         <td align="center" valign="middle">
+          <div class="moteur-box">
+            <div id="moteur-carte">
+               <div id="btn-carto1">
+                  
+                  <a href=""
+                     i18n:translate="recherche_cartographique"
+                     tal:attributes="href string:${context/absolute_url}/map">
+                     recherche cartographique
+                  </a>
+               </div>
+            </div>
+           </div>
+         </td>
+      </tr>
+      <tr bgcolor="#f9e7c6" height="32px;">
          <td align="center">
+          <div class="moteur-box">
             <div id="moteur-avance">
                <a href=""
                   i18n:translate="recherche_avancee"
                   tal:attributes="href string:${context/portal_url}/search.html">recherche avancée</a>
            </div>
+          </div>
        </td>
+     </tr>
+      <tr bgcolor="#f9e7c6">
+         <td>&nbsp;</td>
      </tr>
 </table>
