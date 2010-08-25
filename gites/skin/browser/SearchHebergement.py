@@ -113,7 +113,7 @@ class SearchHebergement(formbase.PageForm):
         query = query.filter(hebergementTable.heb_site_public == '1')
         query = query.filter(proprioTable.pro_etat == True)
 
-        if communeLocalite and communeLocalite != '-1':
+        if communeLocalite and str(communeLocalite) != '-1':
             relatedCommune = self.getCommuneForLocalite(communeLocalite)
             if relatedCommune:
                 query = query.filter(and_(hebergementTable.heb_com_fk == communeTable.com_pk,
@@ -122,17 +122,17 @@ class SearchHebergement(formbase.PageForm):
             else:
                 query = query.filter(and_(hebergementTable.heb_com_fk == communeTable.com_pk,
                                           communeTable.com_nom == communeLocalite))
-        elif provinces and provinces != '-1':
+        elif provinces and str(provinces) != '-1':
             # on prend en compte la province que si aucune commune n'est 
             # renseignée
             query = query.filter(provincesTable.prov_pk == provinces)
-        if hebergementType and hebergementType != -1:
+        if hebergementType and str(hebergementType) != '-1':
             if hebergementType in [-2, -3]:
                 groupedHebergementTypes = self.translateGroupedType(hebergementType)
                 query = query.filter(hebergementTable.heb_typeheb_fk.in_(groupedHebergementTypes))
             else:
                 query = query.filter(hebergementTable.heb_typeheb_fk == hebergementType)
-        if classification and classification != -1:
+        if classification and str(classification) != '-1':
             query = query.filter(and_(episTable.heb_nombre_epis == classification,
                                       hebergementTable.heb_pk==episTable.heb_pk))
         if checkAnimals:
