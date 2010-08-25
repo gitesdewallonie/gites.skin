@@ -706,7 +706,7 @@ msgstr "Je recherche"
 #. Default: "Référence :"
 #: browser/templates/moteur_recherche.pt:111
 msgid "label_reference"
-msgstr "Référence"
+msgstr "Nom ou référence"
 
 #. Default: "(Required)"
 #: browser/templates/form_contact_proprio.pt:139
@@ -862,7 +862,7 @@ msgstr "Nombre de chambres"
 msgid "nombre_personnes"
 msgstr "Nombre de personne"
 
-#. Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
+#. Default: "Il n'y a aucun h&eacute;bergement correspondant &agrave; ces crit&egrave;res"
 msgid "not_hebergement_correspondant"
 msgstr "Il n'y a pas d'hébergement correspondant correspondant à ces critères"
 

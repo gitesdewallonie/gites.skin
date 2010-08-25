@@ -135,14 +135,14 @@
            <div id="moteur-ref">
                 <form action=""
                       method="post"
-                      tal:attributes="action string:${context/portal_url}/moteur_recherche_view/getHebergementByPk">
+                      tal:attributes="action string:${context/portal_url}/moteur_recherche_view/getHebergementByNameOrPk">
                   <div id="ref_pk">
                       <label i18n:translate="label_reference"
                              class="label-recherche">Référence :</label>
                       <input type="text"
-                             name="heb_pk"
+                             name="reference"
                              value=""
-                             size="4" />
+                             size="14" />
                       <input type="submit" value="GO" />
                   </div>
                </form>

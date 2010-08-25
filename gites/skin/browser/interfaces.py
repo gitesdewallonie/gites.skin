@@ -38,9 +38,9 @@ class ILogoView(Interface):
 
 class IMoteurRecherche(Interface):
 
-    def getHebergementByPk(heb_pk):
+    def getHebergementByNameOrPk(reference):
         """
-        Get the url of the hebergement by Pk
+        Get the url of the hebergement by Pk or part of the name
         """
 
     def getHebergementTypes():
@@ -407,10 +407,12 @@ class IProprioInfo(Interface):
         ajoute les infos mise à jour du proprio par le prorpio dans la table provisoire
         """
 
+
 class IHebergementInfo(Interface):
     """
     mise à jour info hebergement
     """
+
     def addHebergementMaj(self):
         """
         ajoute les infos mise à jour par de l'hébergement le prorpio dans la table provisoire
