@@ -186,6 +186,12 @@ class ISearchHebergement(Interface):
             required=True,
             vocabulary="gitescontent.provinces")
 
+    communes = schema.Choice(
+            title=_('Commune'),
+            description=_("Select a commune"),
+            required=True,
+            vocabulary="gitescontent.communes")
+
     classification = schema.Choice(
             title=_('Classification'),
             description=_("Select a classification"),
@@ -233,6 +239,12 @@ class IBasicSearchHebergement(Interface):
         description=_("Select a province"),
         required=True,
         vocabulary="gitescontent.provinces")
+
+    communes = schema.Choice(
+        title=_('Commune'),
+        description=_("Select a commune"),
+        required=True,
+        vocabulary="gitescontent.communes")
 
     classification = schema.Choice(
         title=_('Classification'),
@@ -285,6 +297,12 @@ class IBasicSearchHebergementTooMuch(Interface):
         required=True,
         vocabulary="gitescontent.provinces")
 
+    communes = schema.Choice(
+        title=_('Commune'),
+        description=_("Select a commune"),
+        required=True,
+        vocabulary="gitescontent.communes")
+
     classification = schema.Choice(
         title=_('Classification'),
         description=_("Select a classification"),
@@ -336,6 +354,12 @@ class ISearchHebergementTooMuch(Interface):
         description=_("Select a province"),
         required=True,
         vocabulary="gitescontent.provinces")
+
+    communes = schema.Choice(
+        title=_('Commune'),
+        description=_("Select a commune"),
+        required=True,
+        vocabulary="gitescontent.communes")
 
     classification = schema.Choice(
         title=_('Classification'),
