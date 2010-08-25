@@ -429,7 +429,7 @@ msgstr "E-mail"
 #. Default: "Encoder la r&eacute;f&eacute;rence de la chambre d'hôtes"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:100
 msgid "encoder_reference"
-msgstr "Enter the reference of the guestroom"
+msgstr "Enter the name of the reference of the guestroom"
 
 #. Default: "Envoyer votre demande"
 #: browser/templates/form_contact_proprio.pt:244
