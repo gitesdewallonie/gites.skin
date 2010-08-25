@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from datetime import date
 from dateutil.relativedelta import relativedelta
 from Products.Five.formlib import formbase
@@ -63,6 +65,22 @@ class SearchHebergement(formbase.PageForm):
         typeHebTable = wrapper.getMapper('type_heb')
         typeList = session.query(typeHebTable).filter(typeHebTable.type_heb_code.in_(types))
         return [typeHeb.type_heb_pk for typeHeb in typeList]
+
+    def sortSearchResults(self, results, communeLocalite):
+        """
+        les hébergements de la commune / localité recherchée doivent
+        apparaître en premier
+        """
+        sortedResults = []
+        firstResults = []
+        nextResults = []
+        for heb in results:
+            if heb.heb_localite == communeLocalite:
+                firstResults.append(heb)
+            else:
+                nextResults.append(heb)
+        sortedResults = firstResults + nextResults
+        return sortedResults
 
     @form.action(localTranslate(u"Search"))
     def action_search(self, action, data):
@@ -170,7 +188,9 @@ class SearchHebergement(formbase.PageForm):
             query = query.filter(hebergementTable.heb_pk.in_(filteredHebergements))
 
         query = query.order_by(hebergementTable.heb_nom)
-        self.selectedHebergements = [hebergement.__of__(self.context.hebergement) for hebergement in query.all()]
+        results = query.all()
+        results = self.sortSearchResults(results, communeLocalite)
+        self.selectedHebergements = [hebergement.__of__(self.context.hebergement) for hebergement in results]
 
         nbResults = len(self.selectedHebergements)
         if nbResults > 50 and not seeResults:   #il faut affiner la recherche
