@@ -97,6 +97,9 @@
                                        name="form.provinces" 
                                        value="-1"/>
                                 <input type="hidden" 
+                                       name="form.communes" 
+                                       value="-1"/>
+                                <input type="hidden" 
                                        name="form.classification" 
                                        value="-1"/>
                                 <input type="hidden" 

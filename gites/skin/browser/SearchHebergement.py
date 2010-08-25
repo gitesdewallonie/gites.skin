@@ -33,6 +33,17 @@ class SearchHebergement(formbase.PageForm):
         self.request.locale = plone.z3cform.z2.setup_locale(self.request)
         super(SearchHebergement, self).update()
 
+    def getCommuneForLocalite(self, localite):
+        wrapper = getSAWrapper('gites_wallons')
+        session = wrapper.session
+        hebergementTable = wrapper.getMapper('hebergement')
+        communeTable = wrapper.getMapper('commune')
+        query = session.query(communeTable).join('relatedHebergement')
+        query = query.filter(and_(hebergementTable.heb_com_fk == communeTable.com_pk,
+                                  hebergementTable.heb_localite == localite))
+        commune = query.first()
+        return commune
+
     def translateGroupedType(self, groupedType):
         """
         Translate a grouped type to a list of types
@@ -61,9 +72,11 @@ class SearchHebergement(formbase.PageForm):
         proprioTable = wrapper.getMapper('proprio')
         reservationsTable = wrapper.getMapper('reservation_proprio')
         provincesTable = wrapper.getMapper('province')
+        communeTable = wrapper.getMapper('commune')
         episTable = wrapper.getMapper('link_hebergement_epis')
         hebergementType = data.get('hebergementType')
         provinces = data.get('provinces')
+        communeLocalite = data.get('communes')
         classification = data.get('classification')
         capacityMin = data.get('capacityMin')
         roomAmount = data.get('roomAmount')
@@ -82,7 +95,18 @@ class SearchHebergement(formbase.PageForm):
         query = query.filter(hebergementTable.heb_site_public == '1')
         query = query.filter(proprioTable.pro_etat == True)
 
-        if provinces and provinces != -1:
+        if communeLocalite and communeLocalite != '-1':
+            relatedCommune = self.getCommuneForLocalite(communeLocalite)
+            if relatedCommune:
+                query = query.filter(and_(hebergementTable.heb_com_fk == communeTable.com_pk,
+                                          or_(communeTable.com_nom == communeLocalite,
+                                              communeTable.com_nom == relatedCommune.com_nom)))
+            else:
+                query = query.filter(and_(hebergementTable.heb_com_fk == communeTable.com_pk,
+                                          communeTable.com_nom == communeLocalite))
+        elif provinces and provinces != '-1':
+            # on prend en compte la province que si aucune commune n'est 
+            # renseignée
             query = query.filter(provincesTable.prov_pk == provinces)
         if hebergementType and hebergementType != -1:
             if hebergementType in [-2, -3]:
@@ -158,6 +182,7 @@ class SearchHebergement(formbase.PageForm):
             self.widgets['smokers'].setRenderedValue(checkSmokers)
             self.widgets['hebergementType'].setRenderedValue(hebergementType)
             self.widgets['provinces'].setRenderedValue(provinces)
+            self.widgets['communes'].setRenderedValue(communeLocalite)
             self.widgets['classification'].setRenderedValue(classification)
             self.widgets['fromDate'].setRenderedValue(fromDate)
             self.widgets['toDate'].setRenderedValue(toDate)
