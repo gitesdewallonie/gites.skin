@@ -710,7 +710,7 @@ msgstr "Ik zoek"
 #. Default: "Référence :"
 #: browser/templates/moteur_recherche.pt:111
 msgid "label_reference"
-msgstr "Referentie"
+msgstr "Naam of referentie"
 
 #. Default: "(Required)"
 #: browser/templates/form_contact_proprio.pt:139
@@ -866,7 +866,7 @@ msgstr "Aantal kamers"
 msgid "nombre_personnes"
 msgstr "Aantal personen"
 
-#. Default: "Il n'y a aucun h\303\251bergement correspondant &agrave; ces crit&egrave;res"
+#. Default: "Il n'y a aucun h&eacute;bergement correspondant &agrave; ces crit&egrave;res"
 msgid "not_hebergement_correspondant"
 msgstr "Er is geen logeeradres dat beantwoordt aan uw criteria"
 
