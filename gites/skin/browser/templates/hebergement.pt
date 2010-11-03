@@ -40,7 +40,7 @@
                         <input type="hidden" name="end" value="" id="end"/>
                       </div>
                       <div id="legend-calendar">
-                          <img src="carre_rouge.gif" /> nuits indisponibles
+                          <img src="carre_rouge.gif" /> <tal:trans i18n:translate="nuits_indisponibles">nuits indisponibles</tal:trans>
                       </div>
                   </div>
 

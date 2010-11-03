@@ -1177,3 +1177,8 @@ msgstr "VTT"
 #: skins/gites_templates/hebergement_macro.pt:540
 msgid "week-end"
 msgstr "WE"
+
+#. Default: "nuits indisponibles"
+#: ./browser/templates/hebergement.pt:43
+msgid "nuits_indisponibles"
+msgstr "nuits indisponibles"
