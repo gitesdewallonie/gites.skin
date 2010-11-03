@@ -560,7 +560,7 @@ msgstr "Alloggio rurale"
 
 #. Default: "${number} Gites et Chambres d'h\303\264tes \303\240 proximit\303\251"
 msgid "gites_a_proximite"
-msgstr "${number} Alloggi e Camere per gli ospiti nelle vicinanze"
+msgstr "${number} Alloggi e Camere per gli ospiti"
 
 #. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
 #: browser/templates/footer_gites.pt:10
