@@ -1177,3 +1177,7 @@ msgstr ""
 msgid "week-end"
 msgstr ""
 
+#. Default: "nuits indisponibles"
+#: ./browser/templates/hebergement.pt:43
+msgid "nuits_indisponibles"
+msgstr ""
