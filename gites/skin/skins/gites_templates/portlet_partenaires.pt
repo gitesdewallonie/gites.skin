@@ -6,7 +6,7 @@
     <div id="portlet-partenaires">
         <div id="logo_eurogites">
             <span i18n:translate="membre_eurogites">Membre d'Eurog&icirc;tes</span><br/>
-            <a href="http://www.eurogites.org" target="_blank"><img src="logo_eurogit.png" /></a>
+            <a href="http://www.eurogites.org" target="_blank" title="Rural and Country Tourism in Europe"><img src="logo_eurogit.png" /></a>
         </div>
 
         <div id="logo-europe-travel">
