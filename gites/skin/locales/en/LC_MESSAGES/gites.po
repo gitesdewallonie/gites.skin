@@ -52,7 +52,7 @@ msgid "Classification"
 msgstr "Classification"
 
 msgid "Gites et Meubles"
-msgstr "Gites and Furnished Accommodation"
+msgstr "Gîtes and Furnished Accommodation"
 
 msgid "GitesContent_help_category"
 msgstr "Last minute type"
@@ -489,7 +489,7 @@ msgstr "Station"
 #. Default: "Gîte à la ferme"
 #: skins/gites_templates/portlet_menu_gites_meubles.pt:29
 msgid "gite_a_la_ferme"
-msgstr "Farm gite"
+msgstr "Farm gîte"
 
 #. Default: "${number} Gite ou Chambre d'h\303\264tes \303\240 proximit\303\251"
 msgid "gite_a_proximite"
@@ -523,7 +523,7 @@ msgstr "Cuddly Baby Gite"
 #. Default: "Gîte citadin"
 #: skins/gites_templates/portlet_menu_gites_meubles.pt:23
 msgid "gite_citadin"
-msgstr "City gite"
+msgstr "City gîte"
 
 #. Default: "Gite ecologique"
 #: skins/gites_templates/hebergement_macro.pt:196
@@ -553,7 +553,7 @@ msgstr "Fishing Gite"
 #. Default: "Gîte rural"
 #: skins/gites_templates/portlet_menu_gites_meubles.pt:17
 msgid "gite_rural"
-msgstr "Rural gite"
+msgstr "Rural gîte"
 
 #. Default: "${number} Gites et Chambres d'h\303\264tes \303\240 proximit\303\251"
 msgid "gites_a_proximite"
@@ -567,7 +567,7 @@ msgstr ""
 #. Default: "Gites et Meublés"
 #: skins/gites_templates/portlet_menu_gites_meubles.pt:11
 msgid "gites_et_meubles"
-msgstr "Gites and Furnished Accommodation"
+msgstr "Gîtes and Furnished Accommodation"
 
 #. Default: "Gites Meubles"
 #: skins/gites_templates/portlet_gites_meubles.pt:8
