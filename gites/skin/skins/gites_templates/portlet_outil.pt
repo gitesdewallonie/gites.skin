@@ -7,13 +7,6 @@
          tal:define="view context/@@logo_view">
        <div>
            <a href=""
-              tal:attributes="href string:${portal_url}/newsletter">
-               <img src=""
-                    tal:replace="structure python:view.getButton('outil_news_letter.gif')"/>
-           </a>
-       </div>
-       <div>
-           <a href=""
               tal:attributes="href string:${portal_url}/preparer-sejour">
                <img src=""
                     tal:replace="structure python:view.getButton('outil_preparer_sejour.gif')"/>
