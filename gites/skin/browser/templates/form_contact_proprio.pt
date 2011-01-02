@@ -22,7 +22,8 @@ Contactez le propriétaire
 <form action="form_contact_proprio/sendMailToProprio"
       onsubmit="return validate(this);"
       method="post">
-    <table width="95%" border="0">
+    <table width="95%" border="0"
+           tal:define="captchaView nocall:context/@@captcha">
         <tr>
            <td Align="right">
                <label for="contactCivilite" i18n:translate="civilite">Civilité</label>
@@ -48,7 +49,9 @@ Contactez le propriétaire
                        name="contactNom"
                        size="30"
                        class="required"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactNom | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -64,7 +67,9 @@ Contactez le propriétaire
                        name="contactPrenom"
                        size="30"
                        class="required"
-                       value="" />
+                       value="" 
+                       tal:attributes="value request/contactPrenom | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -75,7 +80,9 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactAdresse"
                        size="30"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactAdresse | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -86,7 +93,9 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactCp"
                        size="7"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactCp | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -97,7 +106,10 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactLocalite"
                        size="30"
-                       value="" /></td>
+                       value=""
+                       tal:attributes="value request/contactLocalite | nothing"
+                       />
+            </td>
         </tr>
         <tr>
             <td align="right">
@@ -107,7 +119,9 @@ Contactez le propriétaire
                 <input type="text"
                        name="contactPays"
                        size="30"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactPays | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -130,7 +144,9 @@ Contactez le propriétaire
             <td>
                 <input type="text"
                        name="contactTelephone"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactTelephone | nothing"
+                       />
             </td>
         </tr>
         <tr>
@@ -140,7 +156,9 @@ Contactez le propriétaire
             <td>
                 <input type="text"
                        name="contactFax"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactFax | nothing"
+                       />
             </td>
         </tr>
                
@@ -158,7 +176,9 @@ Contactez le propriétaire
                        name="contactEmail"
                        size="30"
                        class="email required"
-                       value="" />
+                       value=""
+                       tal:attributes="value request/contactEmail | nothing"
+                       />
             </td>
         </tr>
         
@@ -220,7 +240,9 @@ Contactez le propriétaire
                <input type="text"
                       name="nombrePersonne"
                       size="4"
-                      value="" />
+                      value=""
+                      tal:attributes="value request/nombrePersonne | nothing"
+                      />
             </td>
         </tr>
         <tr>
@@ -229,7 +251,9 @@ Contactez le propriétaire
             </td>
             <td>
                 <textarea name="remarque"
-                          value=""></textarea>
+                          value=""
+                          tal:attributes="value request/remarque | nothing"
+                          ><span tal:replace="request/remarque | nothing"/></textarea>
             </td>
         </tr>
         <tr>
@@ -241,6 +265,32 @@ Contactez le propriétaire
                       name="newsletter" />
             </td>
         </tr>
+
+        <tr>
+            <td align="right">
+                <span class="fieldRequired" 
+                      title="Required"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
+                <label for="captcha" i18n:translate="help_captcha">
+                    Enter the exact word in the image. This is used to fight robots. 
+                </label>
+            </td>
+            <td>
+                <div class="error"
+                     tal:condition="request/captcha | nothing"
+                     i18n:translate="invalid_captcha">
+                    Invalid captcha
+                </div>
+                <span tal:replace="structure captchaView/image_tag" /> 
+                <input type="text" 
+                       class="required"
+                       name="captcha"
+                       value=""
+                       /> 
+            </td>
+        </tr>
+
         <tr>
             <td colspan="2" align="center">
                 <br />
@@ -248,7 +298,7 @@ Contactez le propriétaire
                        name="vecteur"
                        value="" />
                 <input type="hidden"
-                       name="hebPk"
+                       name="heb_pk"
                        value=""
                        tal:attributes="value request/heb_pk">
                 <input type="submit"

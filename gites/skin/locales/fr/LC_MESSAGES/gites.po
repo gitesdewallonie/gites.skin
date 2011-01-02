@@ -1182,3 +1182,15 @@ msgstr "WE"
 #: ./browser/templates/hebergement.pt:43
 msgid "nuits_indisponibles"
 msgstr "nuits indisponibles"
+
+# Default: "Enter the exact word in the image. This is used to fight robots."
+#: ./browser/templates/form_contact_proprio.pt:275
+msgid "help_captcha"
+msgstr ""
+"Recopier exactement le texte présent dans l'image. Ce procédé est "
+"utilisé pour éviter les inscriptions automatiques."
+
+# Default: "Invalid captcha"
+#: ./browser/templates/form_contact_proprio.pt:282
+msgid "invalid_captcha"
+msgstr "Vous n'avez pas recopié correctement le texte de l'image."

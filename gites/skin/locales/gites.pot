@@ -1181,3 +1181,13 @@ msgstr ""
 #: ./browser/templates/hebergement.pt:43
 msgid "nuits_indisponibles"
 msgstr ""
+
+# Default: "Enter the exact word in the image. This is used to fight robots."
+#: ./browser/templates/form_contact_proprio.pt:275
+msgid "help_captcha"
+msgstr ""
+
+# Default: "Invalid captcha"
+#: ./browser/templates/form_contact_proprio.pt:282
+msgid "invalid_captcha"
+msgstr ""
