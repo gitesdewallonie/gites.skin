@@ -1189,3 +1189,13 @@ msgstr "Wochenende"
 #: ./browser/templates/hebergement.pt:43
 msgid "nuits_indisponibles"
 msgstr "Übernachtung erforderlich"
+
+# Default: "Enter the exact word in the image. This is used to fight robots."
+#: ./browser/templates/form_contact_proprio.pt:275
+msgid "help_captcha"
+msgstr "Geben Sie die Buchstabenfolge ein, die auf dem Bild zu sehen ist. Sie helfen uns damit, Suchroboter davon abzuhalten, Konten anzulegen und Spam zu generieren."
+
+# Default: "Invalid captcha"
+#: ./browser/templates/form_contact_proprio.pt:282
+msgid "invalid_captcha"
+msgstr ""

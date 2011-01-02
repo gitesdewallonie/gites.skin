@@ -1185,3 +1185,16 @@ msgstr "Fine settimana"
 #: ./browser/templates/hebergement.pt:43
 msgid "nuits_indisponibles"
 msgstr "Notti non disponibili"
+
+# Default: "Enter the exact word in the image. This is used to fight robots."
+#: ./browser/templates/form_contact_proprio.pt:275
+msgid "help_captcha"
+msgstr ""
+"Digitare i caratteri che appaiono nell’immagine. In questo modo ci aiutate "
+"ad impedire a dei robot di creare dei conti e di generare dei messaggi "
+"indesiderati."
+
+# Default: "Invalid captcha"
+#: ./browser/templates/form_contact_proprio.pt:282
+msgid "invalid_captcha"
+msgstr "I dati di controllo non corrispondono all’immagine."

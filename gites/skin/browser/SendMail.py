@@ -5,6 +5,8 @@ from z3c.sqlalchemy import getSAWrapper
 from Products.CMFDefault.utils import checkEmailAddress
 from Products.CMFDefault.exceptions import EmailAddressInvalid
 from Products.Five import BrowserView
+from collective.captcha.browser.captcha import Captcha
+
 from interfaces import ISendMail
 from mailer import Mailer
 
@@ -51,7 +53,13 @@ Une demande d'inscription a été envoyée via le blog :
         """
         envoi d'un mail au proprio suite a un contact via hebergement description
         """
-        hebPk = self.request.get('hebPk')
+        hebPk = self.request.get('heb_pk')
+        captcha = self.request.get('captcha', '')
+        captchaView = Captcha(self.context, self.request)
+        isCorrectCaptcha = captchaView.verify(captcha)
+        if not isCorrectCaptcha:
+            return self()
+
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         Hebergement = wrapper.getMapper('hebergement')
