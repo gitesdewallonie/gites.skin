@@ -719,6 +719,7 @@ border:none;
 vertical-align: top;
 text-align: center;
 border:none;
+width:305px;
 }
 
 #col-centre{
@@ -829,14 +830,13 @@ height:1px;
 /*** tarification ***/
 #heb_tarification{
 margin:auto;
-width:250px;
 }
 
 #tarification-chambre{
 background-color:#ced8e2;
 border-collapse: collapse;
 border:1px solid #4f658e;
-width:100%;
+width:300px;
 }
 
 #tarification-chambre td.empty-cell { 
