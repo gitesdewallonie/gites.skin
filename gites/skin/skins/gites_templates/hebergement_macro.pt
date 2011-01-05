@@ -421,22 +421,22 @@
          <table id="tarification-chambre">
             <tr class="bg-chambre">
                <td>&nbsp;</td>
-               <td align="center"><span i18n:translate="1_personne"> 1 personne</span></td>
-               <td align="center"><span i18n:translate="2_personne"> 2 personnes</span></td>
+               <td align="center"><span>1 p.</span></td>
+               <td align="center"><span>2 p.</span></td>
                <td align="center"><span i18n:translate="personne_supplementaire"> Personne suppl&eacute;mentaire</span></td>
             </tr>
             <tr>
                <td class="bg-chambre">
-               <span i18n:translate="nuit_avec_petit_dejeuner">Nuit&eacute;e avec petit d&eacute;jeuner</span>
+                    <span i18n:translate="nuit_avec_petit_dejeuner">Nuit&eacute;e avec petit d&eacute;jeuner</span>
                </td>
                <td align="center">
-               <span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />
+                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />&nbsp;
                </td>
                <td align="center">
-               <span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />
+                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />&nbsp;
                </td>
                <td align="center">
-               <span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />
+                    &nbsp;<span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />&nbsp;
                </td>
             </tr>
             <tr>
