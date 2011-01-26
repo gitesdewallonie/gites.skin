@@ -141,8 +141,8 @@ Il s'agit de :
                 contactTelephone, \
                 contactFax, \
                 unicode(contactEmail, 'utf-8'), \
-                dateDebut, \
-                dateFin, \
+                dateDebutStr, \
+                dateFinStr, \
                 nombrePersonne,\
                 unicode(remarque, 'utf-8'))
         mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
