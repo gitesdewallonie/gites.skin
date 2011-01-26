@@ -184,52 +184,46 @@ Contactez le propriétaire
         
         <tr>
             <td align="right">
-                <label for="debutJour" i18n:translate="date_debut_sejour">Date début de séjour</label>
+                <label for="fromDate" i18n:translate="date_debut_sejour">Date début de séjour</label>
             </td>
             <td>
-                <select name="debutJour">
-                    <span tal:repeat="jour python:range(1,32)">
-                        <option value=""
-                                tal:attributes="value jour"><span tal:content="jour" /></option>
-                    </span>
-                </select> /
-                <select name="debutMois">
-                    <span tal:repeat="mois python:range(1,13)">
-                        <option value=""
-                                tal:attributes="value mois"><span tal:content="mois" /></option>
-                    </span>
-                </select> /
-                <select name="debutAn">
-                    <span tal:repeat="an python:range(2005,2025)">
-                        <option value=""
-                                tal:attributes="value an"><span tal:content="an" /></option>
-                    </span>
-                </select>
+                <input id="fromDate" 
+                       class="textType" 
+                       type="text" 
+                       value=""
+                       tal:attributes="value request/fromDate | nothing"
+                       size="12" 
+                       name="fromDate"/>
+                <input id="fromDate_trigger" type="button" value="..."/>
+                <script type="text/javascript">
+                    Calendar.setup({
+                    inputField: 'fromDate',
+                    button: 'fromDate_trigger',
+                    ifFormat: '%d/%m/%Y'
+                    });
+                </script>
             </td>
         </tr>
         <tr>
             <td align="right">
-                <label for="finJour" i18n:translate="date_fin_sejour">Date fin de séjour</label>
+                <label for="toDate" i18n:translate="date_fin_sejour">Date fin de séjour</label>
             </td>
             <td>
-                <select name="finJour">
-                    <span tal:repeat="jour python:range(1,32)">
-                        <option value=""
-                                tal:attributes="value jour"><span tal:content="jour" /></option>
-                    </span>
-                </select> /
-                <select name="finMois">
-                    <span tal:repeat="mois python:range(1,13)">
-                        <option value=""
-                                tal:attributes="value mois"><span tal:content="mois" /></option>
-                    </span>
-                </select> /
-                <select name="finAn">
-                    <span tal:repeat="an python:range(2005,2025)">
-                        <option value=""
-                                tal:attributes="value an"><span tal:content="an" /></option>
-                    </span>
-                </select>
+                <input id="toDate" 
+                       class="textType" 
+                       type="text" 
+                       value=""
+                       tal:attributes="value request/toDate | nothing"
+                       size="12" 
+                       name="toDate"/>
+                <input id="toDate_trigger" type="button" value="..."/>
+                <script type="text/javascript">
+                    Calendar.setup({
+                    inputField: 'toDate',
+                    button: 'toDate_trigger',
+                    ifFormat: '%d/%m/%Y'
+                    });
+                </script>
             </td>
         </tr>
         <tr>
