@@ -187,11 +187,16 @@ Contactez le propriétaire
                 <label for="fromDate" i18n:translate="date_debut_sejour">Date début de séjour</label>
             </td>
             <td>
+                <div class="error"
+                     tal:condition="python: request.get('fromDate') == 'error'"
+                     i18n:translate="invalid_date">
+                    Remplissez correctement la date de début et de fin du séjour.
+                </div>
                 <input id="fromDate" 
                        class="textType" 
                        type="text" 
                        value=""
-                       tal:attributes="value request/fromDate | nothing"
+                       tal:attributes="value python:request.get('fromDate', '') != 'error' and request.get('fromDate', None) or None"
                        size="12" 
                        name="fromDate"/>
                 <input id="fromDate_trigger" type="button" value="..."/>
