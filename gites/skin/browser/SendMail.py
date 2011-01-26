@@ -64,12 +64,28 @@ Une demande d'inscription a été envoyée via le blog :
 
         dateDebutStr = self.request.get('fromDate')
         dateFinStr = self.request.get('toDate')
-        dateDebut = date.fromtimestamp(time.mktime(time.strptime(dateDebutStr, '%d/%m/%Y')))
-        dateFin = date.fromtimestamp(time.mktime(time.strptime(dateFinStr, '%d/%m/%Y')))
-        if dateDebut >= dateFin:
-            self.request['toDate'] = ''
-            self.request['captcha'] = ''
-            return self()
+        if dateDebutStr and dateFinStr:
+            try:
+                dateDebut = date.fromtimestamp(time.mktime(time.strptime(dateDebutStr, '%d/%m/%Y')))
+                dateFin = date.fromtimestamp(time.mktime(time.strptime(dateFinStr, '%d/%m/%Y')))
+            except ValueError:
+                self.request['fromDate'] = 'error'
+                self.request['toDate'] = ''
+                self.request['captcha'] = ''
+                return self()
+            else:
+                if dateDebut >= dateFin:
+                    self.request['fromDate'] = 'error'
+                    self.request['toDate'] = ''
+                    self.request['captcha'] = ''
+                    return self()
+        else:
+            if dateDebutStr or dateFinStr:
+                # une seule date a été remplie
+                self.request['fromDate'] = 'error'
+                self.request['toDate'] = ''
+                self.request['captcha'] = ''
+                return self()
 
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
