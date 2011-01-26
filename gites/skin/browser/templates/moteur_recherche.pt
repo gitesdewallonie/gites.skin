@@ -55,7 +55,7 @@
                                         class="textType" 
                                         type="text" 
                                         value="" 
-                                        size="10" 
+                                        size="12" 
                                         name="form.fromDate"/>
                                  <input id="form.fromDate_trigger" type="button" value="..."/>
                                  <script type="text/javascript">
@@ -76,7 +76,7 @@
                                          class="textType" 
                                          type="text" 
                                          value="" 
-                                         size="10" 
+                                         size="12" 
                                          name="form.toDate"/>
                                   <input id="form.toDate_trigger" 
                                          type="button" 

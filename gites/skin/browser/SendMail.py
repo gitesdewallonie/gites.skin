@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import time
+from datetime import date
 from zope.component import queryMultiAdapter
 from zope.interface import implements
 from z3c.sqlalchemy import getSAWrapper
@@ -60,6 +62,15 @@ Une demande d'inscription a été envoyée via le blog :
         if not isCorrectCaptcha:
             return self()
 
+        dateDebutStr = self.request.get('fromDate')
+        dateFinStr = self.request.get('toDate')
+        dateDebut = date.fromtimestamp(time.mktime(time.strptime(dateDebutStr, '%d/%m/%Y')))
+        dateFin = date.fromtimestamp(time.mktime(time.strptime(dateFinStr, '%d/%m/%Y')))
+        if dateDebut >= dateFin:
+            self.request['toDate'] = ''
+            self.request['captcha'] = ''
+            return self()
+
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         Hebergement = wrapper.getMapper('hebergement')
@@ -82,12 +93,6 @@ Une demande d'inscription a été envoyée via le blog :
         contactTelephone = self.request.get('contactTelephone', '')
         contactFax = self.request.get('contactFax', '')
         contactEmail = self.request.get('contactEmail', None)
-        debutJour = self.request.get('debutJour')
-        debutMois = self.request.get('debutMois')
-        debutAn = self.request.get('debutAn')
-        finJour = self.request.get('finJour')
-        finMois = self.request.get('finMois')
-        finAn = self.request.get('finAn')
         nombrePersonne = self.request.get('nombrePersonne')
         remarque = self.request.get('remarque', '')
 
@@ -118,8 +123,8 @@ Il s'agit de :
     * Téléphone : %s
     * Fax : %s
     * E-mail : %s
-    * Date début séjour  : %s-%s-%s
-    * Date fin séjour  : %s-%s-%s
+    * Date début séjour  : %s
+    * Date fin séjour  : %s
     * Nombre de personne : %s
     * Remarque : %s
 """ \
@@ -136,12 +141,8 @@ Il s'agit de :
                 contactTelephone, \
                 contactFax, \
                 unicode(contactEmail, 'utf-8'), \
-                debutJour, \
-                debutMois, \
-                debutAn, \
-                finJour, \
-                finMois, \
-                finAn, \
+                dateDebut, \
+                dateFin, \
                 nombrePersonne,\
                 unicode(remarque, 'utf-8'))
         mailer.sendAllMail(mail.encode('utf-8'), plaintext=True)
