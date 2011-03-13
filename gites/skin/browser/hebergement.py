@@ -7,6 +7,7 @@ Copyright by Affinitic sprl
 
 $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 """
+from plone.memoize.instance import memoize
 from zope.app.traversing.browser.interfaces import IAbsoluteURL
 from Products.Five import BrowserView
 from Acquisition import aq_inner, aq_parent
@@ -87,6 +88,7 @@ class HebergementView(BrowserView):
         language = self.request.get('LANGUAGE', 'en')
         return self.context.getSituation(language)
 
+    @memoize
     def getHebergementDescription(self):
         """
         Get the hebergement type title translated
@@ -94,6 +96,7 @@ class HebergementView(BrowserView):
         language = self.request.get('LANGUAGE', 'en')
         return self.context.getDescription(language)
 
+    @memoize
     def getHebergementCharge(self):
         """
         Get the hebergement type title translated
@@ -124,6 +127,7 @@ class HebergementView(BrowserView):
         urlList.pop()
         return '/'.join(urlList)
 
+    @memoize
     def getRelatedSejourFute(self):
         """
         Get Sejour Fute related to this hebergement
@@ -135,20 +139,9 @@ class HebergementView(BrowserView):
                                               'range': 'min'},
                                          review_state='published')
         relatedSejour = []
-        wrapper = getSAWrapper('gites_wallons')
-        session = wrapper.session
-        MaisonTourisme = wrapper.getMapper('maison_tourisme')
         for result in results:
             sejour = result.getObject()
-            hebs = [int(heb_pk) for heb_pk in sejour.getHebergementsConcernes()]
-            maisonTourismes = [int(i) for i in sejour.getMaisonsTourisme()]
-            hebergements = []
-            for maisonTourisme in maisonTourismes:
-                maison = session.query(MaisonTourisme).get(maisonTourisme)
-                for commune in maison.commune:
-                    hebergements += list(commune.relatedHebergement)
-            hebs += [heb.heb_pk for heb in hebergements]
-            if pk in hebs:
+            if pk in sejour.getHebPks():
                 relatedSejour.append(sejour)
         return relatedSejour
 
@@ -468,7 +461,6 @@ class HebergementInfo(BrowserView):
         fields = self.context.REQUEST
         chargeFk=fields.get('heb_maj_charge_fk')
         hebPk=fields.get('heb_maj_hebpk')
-        hebNom=fields.get('heb_maj_nom')
         wrapper = getSAWrapper('gites_wallons')
         session = wrapper.session
         insertHebergementMaj = wrapper.getMapper('hebergement_maj')
