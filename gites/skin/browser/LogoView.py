@@ -34,9 +34,12 @@ class LogoView(BrowserView):
         """
         Return correct button regarding language
         """
-        image = self.safe_getattr(self.context, image, None)
-        if image:
-            image_translation = image.getTranslation()
-            if image_translation:
-                image = image_translation
-            return image.tag()
+	try:
+            image = self.safe_getattr(self.context, image, None)
+            if image:
+                image_translation = image.getTranslation()
+                if image_translation:
+                    image = image_translation
+                return image.tag()
+        except:
+	    return ''
