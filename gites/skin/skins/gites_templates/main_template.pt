@@ -31,8 +31,6 @@
 
     <meta name="generator" content="Plone - http://plone.org" />
 
-    <script
-        type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.2/prototype.js"></script>
     <div tal:replace="structure provider:plone.htmlhead" />
 
     <meta tal:define="metatags python:putils.listMetaTags(here).items()"
