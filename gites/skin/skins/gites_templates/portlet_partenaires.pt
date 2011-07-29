@@ -33,6 +33,32 @@
                 dans votre avenir.
             </span>
         </div>
+        <div id="logo-wallonie">
+            <a href="http://www.tourismewallonie.be/"
+               target="_blank"
+               title="Tourisme en Wallonie">
+                <img src="logo_wallonie.png"
+                     alt="logo_wallonie.png"
+                     title="" />
+            </a>
+            <span class="titre-feder">
+                Commissariat g&eacute;n&eacute;ral<br >
+                au Tourisme<br />
+                de la R&eacute;gion wallonne<br />
+            </span>
+        </div>
+        <div id="logo-wallonie">
+            <a href="http://www.wallonietourisme.be/"
+               target="_blank"
+               title="Wallonie-Bruxelles tourisme">
+                <img src="logo_wallonie_bruxelles_tourisme.png"
+                     alt="logo_wallonie_bruxelles_tourisme.png"
+                     title="" />
+            </a>
+            <span class="titre-feder">
+                Wallonie-Bruxelles tourisme.
+            </span>
+        </div>
     </div>
 </div>
 </body>
