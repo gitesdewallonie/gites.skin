@@ -22,8 +22,10 @@ Contactez le propriétaire
 <form action="form_contact_proprio/sendMailToProprio"
       onsubmit="return validate(this);"
       method="post">
-    <table width="95%" border="0"
-           tal:define="captchaView nocall:context/@@captcha">
+    <table width="95%" 
+           border="0"
+           tal:define="captchaView nocall:context/@@captcha"
+           id="table-contact-proprio-form">
         <tr>
            <td Align="right">
                <label for="contactCivilite" i18n:translate="civilite">Civilité</label>
@@ -267,13 +269,15 @@ Contactez le propriétaire
 
         <tr>
             <td align="right">
-                <span class="fieldRequired" 
-                      title="Required"
-                      i18n:attributes="title title_required;"
-                      i18n:translate="label_required">(Required)</span>
-                <label for="captcha" i18n:translate="help_captcha">
-                    Enter the exact word in the image. This is used to fight robots. 
-                </label>
+                <div  id="help-captcha">
+                    <span class="fieldRequired" 
+                          title="Required"
+                          i18n:attributes="title title_required;"
+                          i18n:translate="label_required">(Required)</span>
+                    <label for="captcha" i18n:translate="help_captcha">
+                        Enter the exact word in the image. This is used to fight robots. 
+                    </label>
+                </div>
             </td>
             <td>
                 <div class="error"
@@ -281,7 +285,7 @@ Contactez le propriétaire
                      i18n:translate="invalid_captcha">
                     Invalid captcha
                 </div>
-                <span tal:replace="structure captchaView/image_tag" /> 
+                <span tal:replace="structure captchaView/image_tag" />
                 <input type="text" 
                        class="required"
                        name="captcha"
