@@ -1058,3 +1058,24 @@ width:85px;
 .bnbportletFooter{
 visibility:hidden;
 }
+
+
+
+/**** FORM CONTACT PROPRIO ****/
+#table-contact-proprio-form td{
+line-height:2em;
+vertical-align:top;
+}
+
+#help-captcha{
+width:250px;
+font-size:0.9em;
+color:#888;
+line-height:1.3em;
+}
+
+.fieldRequired {
+background: url("required.gif") no-repeat scroll right center transparent;
+color:#fff;
+padding: 0 6px 0 9px;
+}
