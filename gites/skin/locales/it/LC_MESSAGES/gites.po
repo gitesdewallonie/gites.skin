@@ -1190,7 +1190,7 @@ msgstr "Notti non disponibili"
 #: ./browser/templates/form_contact_proprio.pt:275
 msgid "help_captcha"
 msgstr ""
-"Digitare i caratteri che appaiono nell’immagine. In questo modo ci aiutate "
+"Digitare i caratteri che appaiono nell’immagine.<br/>In questo modo ci aiutate "
 "ad impedire a dei robot di creare dei conti e di generare dei messaggi "
 "indesiderati."
 

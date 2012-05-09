@@ -72,7 +72,7 @@ class HebergementView(BrowserView):
         if self.context.heb_site_public == '0' or \
            self.context.proprio.pro_etat == False:
             url = getToolByName(self.context, 'portal_url')()
-            return self.request.response.redirect("%s/unknown_gites" % url)
+            return self.request.response.redirect(url)
 
     def getTypeHebergement(self):
         """

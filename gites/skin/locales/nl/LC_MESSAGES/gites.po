@@ -1191,7 +1191,7 @@ msgstr "Niet-beschikbare nachten"
 #: ./browser/templates/form_contact_proprio.pt:275
 msgid "help_captcha"
 msgstr ""
-"Tik de letters in die in het beeld verschijnen. Zo helpt u verhinderen dat "
+"Tik de letters in die in het beeld verschijnen.<br/>Zo helpt u verhinderen dat "
 "spammers accounts aanmaken en ongewenste mail versturen."
 
 # Default: "Invalid captcha"

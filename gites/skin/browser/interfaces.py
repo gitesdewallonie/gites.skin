@@ -48,7 +48,7 @@ class IMoteurRecherche(Interface):
         retourne les types d hebergements
         """
 
-    def getGroupedHebergementTypes(self):
+    def getGroupedHebergementTypes():
         """
         retourne les deux groupes de types d hebergements
         """
@@ -84,7 +84,7 @@ class IHebergementView(Interface):
         Get the hebergement type title translated
         """
 
-    def getHebergementSeminaireVert(self):
+    def getHebergementSeminaireVert():
         """
         Get the hebergement seminaire vert information translated
         """
@@ -110,9 +110,14 @@ class IHebergementGallery(Interface):
     Affichage de la galerie
     """
 
-    def getVignettesUrl(self):
+    def getVignettesUrl():
         """
         Get the vignette of an hebergement
+        """
+
+    def redirectInactive():
+        """
+        Redirect if gites / proprio is not active
         """
 
 
@@ -421,12 +426,12 @@ class IProprioInfo(Interface):
         Selectionne les infos d'un hébergement selon hebpk
         """
 
-    def getAllProprioMaj(self):
+    def getAllProprioMaj():
         """
         recupère tous les proprio en attente de modification
         """
 
-    def addProprioMaj(self):
+    def addProprioMaj():
         """
         ajoute les infos mise à jour du proprio par le prorpio dans la table provisoire
         """
@@ -437,7 +442,7 @@ class IHebergementInfo(Interface):
     mise à jour info hebergement
     """
 
-    def addHebergementMaj(self):
+    def addHebergementMaj():
         """
         ajoute les infos mise à jour par de l'hébergement le prorpio dans la table provisoire
         """
