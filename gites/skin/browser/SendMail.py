@@ -125,7 +125,7 @@ Une demande d'inscription a été envoyée via le blog :
         mailer.setRecipients(proprioMail)
         mail = u""":: DEMANDE D'INFORMATION ::
 
-Une demande d'information vient d'être réalisée via le site pour %s référence %s.
+Une demande d'information vient d'être réalisée via le site des Gîtes de Wallonie pour %s (référence %s).
 
 Il s'agit de :
 
