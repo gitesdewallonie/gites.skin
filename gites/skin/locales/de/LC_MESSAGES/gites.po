@@ -7,7 +7,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Code: de\n"
 "Domain: gites\n"
 "Language-Code: de\n"
 "Language-Name: Deutsch\n"
@@ -1193,7 +1192,7 @@ msgstr "Übernachtung erforderlich"
 # Default: "Enter the exact word in the image. This is used to fight robots."
 #: ./browser/templates/form_contact_proprio.pt:275
 msgid "help_captcha"
-msgstr "Geben Sie die Buchstabenfolge ein, die auf dem Bild zu sehen ist. Sie helfen uns damit, Suchroboter davon abzuhalten, Konten anzulegen und Spam zu generieren."
+msgstr "Geben Sie die Buchstabenfolge ein, die auf dem Bild zu sehen ist.<br/>Sie helfen uns damit, Suchroboter davon abzuhalten, Konten anzulegen und Spam zu generieren."
 
 # Default: "Invalid captcha"
 #: ./browser/templates/form_contact_proprio.pt:282

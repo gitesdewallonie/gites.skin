@@ -1187,7 +1187,7 @@ msgstr "nuits indisponibles"
 #: ./browser/templates/form_contact_proprio.pt:275
 msgid "help_captcha"
 msgstr ""
-"Recopier exactement le texte présent dans l'image. Ce procédé est "
+"Recopier exactement le texte présent dans l'image.<br/>Ce procédé est "
 "utilisé pour éviter les inscriptions automatiques."
 
 # Default: "Invalid captcha"
