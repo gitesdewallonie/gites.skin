@@ -7,6 +7,7 @@ Copyright by Affinitic sprl
 
 $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 """
+from urlparse import urljoin
 from plone.memoize.instance import memoize
 from zope.app.traversing.browser.interfaces import IAbsoluteURL
 from Products.Five import BrowserView
@@ -64,6 +65,15 @@ class HebergementView(BrowserView):
         appear because heb_calendrier_proprio will be 'bloque' by cron)
         """
         return (self.context.heb_calendrier_proprio == 'actif')
+
+    def getCustomStylesheet(self):
+        """
+        Returns referer stylesheet URL where proprio can customize calendar
+        CSS
+        """
+        referer = self.request.get('HTTP_REFERER', None)
+        customCssUrl = urljoin(referer, 'calendar-custom.css')
+        return customCssUrl
 
     def redirectInactive(self):
         """
