@@ -109,7 +109,7 @@ class SearchHebergement(formbase.PageForm):
         utranslate = translation_service.utranslate
         lang = self.request.get('LANGUAGE', 'en')
 
-        query = session.query(hebergementTable).join('province').join('proprio').outerjoin('reservations')
+        query = session.query(hebergementTable).join('province').join('proprio')
         query = query.filter(hebergementTable.heb_site_public == '1')
         query = query.filter(proprioTable.pro_etat == True)
 
@@ -175,7 +175,6 @@ class SearchHebergement(formbase.PageForm):
                 self.status = " "
                 return self.template()
 
-            busyHebQuery = session.query(reservationsTable)
             busyHeb = select([reservationsTable.heb_fk],
                              and_(reservationsTable.res_date >= beginDate,
                                   reservationsTable.res_date < endDate)).distinct().execute().fetchall()
