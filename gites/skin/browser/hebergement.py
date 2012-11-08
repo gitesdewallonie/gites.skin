@@ -9,7 +9,7 @@ $Id: event.py 67630 2006-04-27 00:54:03Z jfroche $
 """
 from urlparse import urljoin
 from plone.memoize.instance import memoize
-from zope.app.traversing.browser.interfaces import IAbsoluteURL
+from zope.traversing.browser.interfaces import IAbsoluteURL
 from Products.Five import BrowserView
 from Acquisition import aq_inner, aq_parent
 from zope.interface import implements

@@ -7,7 +7,7 @@ Copyright by Affinitic sprl
 
 $Id: searchPk.py 1901 2008-03-14 14:24:46Z jfroche $
 """
-from Products.Five.formlib import formbase
+from five.formlib import formbase
 from gites.skin import GitesMessage as _
 from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile

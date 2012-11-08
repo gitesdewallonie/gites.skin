@@ -2,7 +2,7 @@
 
 from datetime import date
 from dateutil.relativedelta import relativedelta
-from Products.Five.formlib import formbase
+from five.formlib import formbase
 from Products.CMFCore.utils import getToolByName
 from gites.skin import GitesMessage as _
 from gites.skin import GitesLocalesMessage as localTranslate

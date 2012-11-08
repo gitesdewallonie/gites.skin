@@ -28,7 +28,7 @@
       name="url"
       class=".hebergement.HebergementAbsoluteURL"
       permission="zope.Public"
-      allowed_interface="zope.app.traversing.browser.interfaces.IAbsoluteURL"
+      allowed_interface="zope.traversing.browser.interfaces.IAbsoluteURL"
       />
 
   <view
@@ -36,7 +36,7 @@
       factory=".hebergement.HebergementAbsoluteURL"
       type="zope.publisher.interfaces.http.IHTTPRequest"
       permission="zope.Public"
-      provides="zope.app.traversing.browser.interfaces.IAbsoluteURL"
+      provides="zope.traversing.browser.interfaces.IAbsoluteURL"
       />
 
 </configure>
