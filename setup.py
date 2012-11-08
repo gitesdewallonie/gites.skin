@@ -26,9 +26,7 @@ setup(name='gites.skin',
       install_requires=[
           'setuptools',
           'gites.core',
-          'zc.table==0.5.1-getpaid',
-          'collective.captcha'
-      ],
-      entry_points="""
-      # -*- Entry points: -*-
-      """)
+          'zc.table',
+          'collective.captcha',
+          'Products.LocalFS',
+          'z3c.jbot'])
