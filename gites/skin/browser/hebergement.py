@@ -56,7 +56,7 @@ class HebergementView(BrowserView):
         //]]>
 
         """ % (self.context.heb_pk,
-               self.context.request.get('LANGUAGE', 'en'))
+               self.request.get('LANGUAGE', 'en'))
 
     def showCalendar(self):
         """
