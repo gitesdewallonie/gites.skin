@@ -30,4 +30,5 @@ setup(name='gites.skin',
           'collective.captcha',
           'Products.LocalFS',
           'zc.datetimewidget',
+          'Products.MailmanSubForm',
           'z3c.jbot'])
