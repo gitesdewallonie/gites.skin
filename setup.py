@@ -29,4 +29,5 @@ setup(name='gites.skin',
           'zc.table',
           'collective.captcha',
           'Products.LocalFS',
+          'zc.datetimewidget',
           'z3c.jbot'])
