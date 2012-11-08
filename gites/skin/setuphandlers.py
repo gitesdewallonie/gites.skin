@@ -106,7 +106,6 @@ def movePortlet(folder, name, column, position):
     assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
 
     keys = list(assignments.keys())
-    idx = keys.index(name)
     keys.remove(name)
     keys.insert(position, name)
     assignments.updateOrder(keys)
@@ -163,8 +162,6 @@ def setupPortletsInZoneMembre(folder):
 def setupPortletsInAssociation(folder):
     blockParentPortlets(folder)
     setupRightColumnPortlets(folder)
-    manager = getManager(folder, 'left')
-    assignments = getMultiAdapter((folder, manager), IPortletAssignmentMapping)
     setupClassicPortlet(folder, 'portlet_menu_association', 'left')
     setupClassicPortlet(folder, 'portlet_outil', 'left')
     setupClassicPortlet(folder, 'portlet_partenaires', 'left')
@@ -191,10 +188,12 @@ def createContent(portal):
     #Create empty documents and folders
 
     # XXX see ticket http://trac.affinitic.be/trac/ticket/1466
-    return
-
     ideesSejourFolder = createFolder(portal, "idee-sejour", "Idées Séjours",
                                      True)
+    associationFolder = createFolder(portal, "association", "Association",
+                                     True)
+    return
+
     sejourPage = createPage(ideesSejourFolder, "idees-sejours", "Idées Séjours")
     ideesSejourFolder.setDefaultPage('idees-sejours')
     ideesSejourFolder.setConstrainTypesMode(1)
@@ -212,8 +211,6 @@ def createContent(portal):
     createPage(chambresHotesFolder, "chambres-hotes", "Chambres d'Hôtes")
     chambresHotesFolder.setDefaultPage('chambres-hotes')
 
-    associationFolder = createFolder(portal, "association", "Association",
-                                     True)
     createPage(associationFolder, "association", "Association")
     associationFolder.setDefaultPage("association")
 
