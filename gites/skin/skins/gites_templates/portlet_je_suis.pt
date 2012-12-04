@@ -16,7 +16,7 @@
             <p>
                <a href=""
                   i18n:translate="un_couple"
-                  tal:attributes="href string:$portal_url/couple"
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/couple"
                   class="bouton-je-suis"><span><span><span>Un couple</span></span></span>
                </a>
             </p>
@@ -25,7 +25,7 @@
             <p>
                <a href=""
                   i18n:translate="une_famille"
-                  tal:attributes="href string:$portal_url/famille"
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/famille"
                   class="bouton-je-suis"><span><span><span>Une famille</span></span></span>
                </a>
             </p>
@@ -34,7 +34,7 @@
             <p>
                <a href=""
                   i18n:translate="un_groupe"
-                  tal:attributes="href string:$portal_url/groupe"
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/groupe"
                   class="bouton-je-suis"><span><span><span>Un groupe</span></span></span>
                </a>
             </p>
@@ -43,7 +43,7 @@
             <p>
                <a href=""
                   i18n:translate="une_societe"
-                  tal:attributes="href string:$portal_url/societe"
+                  tal:attributes="href string:${context/@@plone_portal_state/portal_url}/societe"
                   class="bouton-je-suis"><span><span><span>Une soci&eacute;t&eacute;</span></span></span>
                </a>
             </p>

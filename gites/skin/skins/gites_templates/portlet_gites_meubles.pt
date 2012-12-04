@@ -14,7 +14,7 @@
          </dd>
 
          <dd class="portletItemLast">
-            <a href="" tal:attributes="href string:${portal_url}/gites-meubles" i18n:translate="tout_voir">Tout voir</a>
+            <a href="" tal:attributes="href string:${context/@@plone_portal_state/portal_url}/gites-meubles" i18n:translate="tout_voir">Tout voir</a>
          </dd>
       </dl>
    </div>

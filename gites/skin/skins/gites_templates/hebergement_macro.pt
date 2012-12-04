@@ -39,7 +39,7 @@
                                   hebergement promotion/getHebergement"
                       tal:condition="hebergement"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
-                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
+                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
                     <td><a href="" tal:attributes="href hebergement/@@url" tal:content="hebergement/heb_nom"></a></td>
                     <td tal:define="hebergementView nocall:hebergement/@@hebergement_view;"
                         tal:content="hebergementView/getTypeHebergement"/>
@@ -102,7 +102,7 @@
                                   hebergement lastminute/getHebergement"
                       tal:condition="hebergement"
                       tal:attributes="class python:test(oddrow, 'draggable even', 'draggable odd');">
-                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
+                    <td><a href="" tal:attributes="href hebergement/@@url"> <img src="" border="0" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/vignettes_heb/${hebergement/getVignette}" /></a></td>
                     <td><a href="" tal:attributes="href hebergement/@@url" tal:content="hebergement/heb_nom"></a></td>
                     <td tal:define="hebergementView nocall:hebergement/@@hebergement_view"
                         tal:content="hebergementView/getTypeHebergement"/>
@@ -397,7 +397,7 @@
               i18n:attributes="alt question; title question" /></a>
 
       <a href=""
-         tal:attributes="href string:${portal_url}/map/hebergement_map?lat=${heb/heb_gps_lat}&long=${heb/heb_gps_long}&pk=${heb/heb_pk}">
+         tal:attributes="href string:${context/@@plone_portal_state/portal_url}/map/hebergement_map?lat=${heb/heb_gps_lat}&long=${heb/heb_gps_long}&pk=${heb/heb_pk}">
          <img src="o_carte.png"
               border="0"
               alt="carte"
@@ -1160,7 +1160,7 @@
                </span>
                <div id="contact-proprio">
                   <a href=""
-                     tal:attributes="href string:${portal_url}/form_contact_proprio?heb_pk=${heb/heb_pk}">
+                     tal:attributes="href string:${context/@@plone_portal_state/portal_url}/form_contact_proprio?heb_pk=${heb/heb_pk}">
                   <b><span i18n:translate="contactez_le_proprietaire">Contactez le propri&eacute;taire</span></b></a>
                </div>
             </td>

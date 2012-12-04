@@ -28,7 +28,7 @@
          <dd class="portletItemSingle">
             <a href=""
                i18n:translate="acces_membre"
-               tal:attributes="href string:$portal_url/zone-membre"
+               tal:attributes="href string:${context/@@plone_portal_state/portal_url}/zone-membre"
                class="">Accès membre</a>
          </dd>
          <dd class="portletItemSingle">

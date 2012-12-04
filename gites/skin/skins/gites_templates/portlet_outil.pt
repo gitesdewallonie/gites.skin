@@ -7,28 +7,28 @@
          tal:define="view context/@@logo_view">
        <div>
            <a href=""
-              tal:attributes="href string:${portal_url}/preparer-sejour">
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/preparer-sejour">
                <img src=""
                     tal:replace="structure python:view.getButton('outil_preparer_sejour.gif')"/>
            </a>
        </div>
        <div>
            <a href=""
-              tal:attributes="href string:${portal_url}/decouvrir-wallonie">
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/decouvrir-wallonie">
                <img src=""
                     tal:replace="structure python:view.getButton('outil_decouvrir_wallonie.gif')"/>
            </a>
        </div>
        <div>
            <a href=""
-              tal:attributes="href string:${portal_url}/association/devenir-membre">
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/association/devenir-membre">
                <img src=""
                     tal:replace="structure python:view.getButton('outil_proposer_hebergement.gif')"/>
            </a>
        </div>
        <div>
            <a href=""
-              tal:attributes="href string:${portal_url}/coin-presse">
+              tal:attributes="href string:${context/@@plone_portal_state/portal_url}/coin-presse">
                <img src=""
                     tal:replace="structure python:view.getButton('outil_coin_presse.gif')"/>
            </a>

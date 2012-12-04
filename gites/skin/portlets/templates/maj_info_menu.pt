@@ -16,7 +16,7 @@
                 <div id="maj-info-menu">
                     <a href="#"
                        class="tile"
-                       tal:attributes="href string:${portal_url}/zone-membre/proprio-info">
+                       tal:attributes="href string:${context/@@plone_portal_state/portal_url}/zone-membre/proprio-info">
                        <b>Mes données personnelles</b>
                     </a>
                 </div>
@@ -27,7 +27,7 @@
                      tal:repeat="gite view/getGitesForProprio">
                     <a href="#"
                        class="tile"
-                       tal:attributes="href string:${portal_url}/zone-membre/hebergement-info?hebPk=${gite/token};
+                       tal:attributes="href string:${context/@@plone_portal_state/portal_url}/zone-membre/hebergement-info?hebPk=${gite/token};
                                        title gite/title">
                        <b tal:replace="gite/title">heb du proprio</b>
                     </a>
