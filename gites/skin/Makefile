@@ -11,7 +11,7 @@ translations: extract-translations update-translations compile-translations
 
 .PHONY: extract-translations
 extract-translations:
-	../../../../i18n/bin/i18ndude rebuild-pot --pot locales/gites.pot --create gites . ./../../gites.core/gites/core/ ../../../bnbelgium.skin/bnbelgium/skin/ ../../../gites.calendar/gites/calendar/
+	../../../../i18n/bin/i18ndude rebuild-pot --pot locales/gites.pot --create gites . ../../../gites.core/gites/core/ ../../../bnbelgium.skin/bnbelgium/skin/ ../../../gites.calendar/gites/calendar/ ../../../gites.map/src/gites/map/
 
 .PHONY: update-translations
 update-translations:
