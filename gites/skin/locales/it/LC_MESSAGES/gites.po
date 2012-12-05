@@ -1,9 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1 build 10\n"
-"POT-Creation-Date: 2009-12-16 10:26+0000\n"
+"POT-Creation-Date: 2012-12-05 15:43+0000\n"
 "Last-Translator: Affinitic <info@affinitic.be>\n"
 "Language-Team: <info@affinitic.be>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,45 +14,38 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: it-ch it-it\n"
 
-#. Default: "1 personne"
-#: skins/gites_templates/hebergement_macro.pt:422
-msgid "1_personne"
-msgstr "1 persona"
-
-#. Default: "2 personnes"
-#: skins/gites_templates/hebergement_macro.pt:423
-msgid "2_personne"
-msgstr "2 persone"
-
-# /skins/GitesContent/hebergement_macro.pt:650
-#. Default: "3 nuits"
-#: skins/gites_templates/hebergement_macro.pt:604
-msgid "3_nuits"
-msgstr "Week-end festivi 3 notti"
-
-#. Default: "4 nuits"
-#: skins/gites_templates/hebergement_macro.pt:616
-msgid "4_nuits"
-msgstr "Week-end festivi 4 notti"
-
-#: browser/interfaces.py:192
+#: browser/interfaces.py:215
 msgid "Animals authorized"
 msgstr "Animali autorizzati su richiesta"
 
-#: browser/interfaces.py:193
+#: browser/interfaces.py:216
 msgid "Are animals authorized in the Hebergement"
 msgstr "Gli animali sono autorizzati nell'abitazione?"
 
-#: browser/interfaces.py:197
+#: browser/interfaces.py:220
 msgid "Are people allowed to smoke in the Hebergement"
 msgstr "L'abitazione è per fumatori?"
 
 msgid "Chambre d'hote"
 msgstr "Camera per gli ospiti"
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:84
+#: gites/map/browser/templates/hebergements_map.pt:25
+#, fuzzy
+msgid "Chambres"
+msgstr "Camera per gli ospiti"
+
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:102
+#: browser/interfaces.py:202
 msgid "Classification"
 msgstr "Classifica"
+
+#: browser/interfaces.py:196
+msgid "Commune"
+msgstr ""
+
+#: gites/map/browser/templates/hebergements_map.pt:22
+msgid "Gites"
+msgstr ""
 
 msgid "Gites et Meubles"
 msgstr "Alloggi"
@@ -123,13 +117,29 @@ msgstr "Data d'attivazione"
 msgid "GitesContent_label_text"
 msgstr "Testo"
 
-#: browser/interfaces.py:365
+#: browser/interfaces.py:406
 msgid "Heb Pk"
 msgstr ""
 
-#: browser/interfaces.py:167
+#: browser/interfaces.py:184
 msgid "Hebergement Type"
 msgstr "Tipo di abitazione"
+
+#. Default: "Infos pratiques"
+#: gites/map/browser/templates/hebergements_map.pt:31
+#, fuzzy
+msgid "Infos_pratiques"
+msgstr "Informazioni Turistiche"
+
+#. Default: "Infos touristiques"
+#: gites/map/browser/templates/hebergements_map.pt:28
+#, fuzzy
+msgid "Infos_touristiques"
+msgstr "Informazioni Turistiche"
+
+#: monkey.py:37
+msgid "Invalid datetime data"
+msgstr ""
 
 msgid ""
 "La recherche a renvoy&eacute; ${nbr} r&eacute;sultats. <br /> Il serait "
@@ -141,23 +151,31 @@ msgstr ""
 msgid "La recherche n'a pas renvoy&eacute; de r&eacute;sultats."
 msgstr "Nessun risultato trovato."
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:88
+#. Default: "Maison du tourisme"
+#: gites/map/browser/templates/hebergements_map.pt:34
+#, fuzzy
+msgid "Maison_du_tourisme"
+msgstr "Casa del Turismo"
+
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:106
+#: browser/interfaces.py:207
 msgid "Minimum Capacity"
 msgstr "Capacità minima"
 
-#: browser/interfaces.py:188
+#: browser/interfaces.py:211
 msgid "Number of rooms"
 msgstr "Numero di camere"
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:79
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:97
 msgid "Price"
 msgstr "Prezzo"
 
-#: browser/interfaces.py:173
+#: browser/interfaces.py:190
 msgid "Province"
 msgstr "Provincia"
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/SearchHebergement.py:24
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/SearchHebergement.py:27
+#: browser/SearchHebergement.py:26
 msgid "Search Hebergement"
 msgstr "Ricercare un'abitazione"
 
@@ -165,89 +183,82 @@ msgstr "Ricercare un'abitazione"
 msgid "Search Hebergement by Pk in website"
 msgstr "Ricercare un'abitazione"
 
-#. Default: "Sejour au"
-#: browser/templates/moteur_recherche.pt:53
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:113
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:84
+#: browser/interfaces.py:227
 msgid "Sejour au"
 msgstr "Partenza"
 
-#. Default: "Sejour du"
-#: browser/templates/moteur_recherche.pt:40
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:109
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:61
+#: browser/interfaces.py:223
 msgid "Sejour du"
 msgstr "Arrivo"
 
-#: browser/interfaces.py:180
+#: browser/interfaces.py:203
 msgid "Select a classification"
 msgstr "Selezionare una classifica"
 
-#: browser/interfaces.py:174
+#: browser/interfaces.py:197
+#, fuzzy
+msgid "Select a commune"
+msgstr "Selezionare una provincia"
+
+#: browser/interfaces.py:191
 msgid "Select a province"
 msgstr "Selezionare una provincia"
 
-#: browser/interfaces.py:168
+#: browser/interfaces.py:185
 msgid "Select a type of Hebergement"
 msgstr "Selezionare un tipo di alloggio"
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:96
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:122
+#: browser/interfaces.py:290
 msgid "Show results even if more than 50"
 msgstr "Mostrare i risultati anche se sono più di 50"
 
-#: browser/interfaces.py:262
+#: browser/interfaces.py:291
 msgid "Show results even if there are more than 50"
 msgstr "Mostrare i risultati anche se sono più di 50"
 
-#: browser/interfaces.py:196
+#: browser/interfaces.py:219
 msgid "Smoking allowed"
 msgstr "Fumatori autorizzati"
 
-#: browser/interfaces.py:201
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:110
+#: browser/interfaces.py:224
 msgid "Stay from"
 msgstr "Arrivo"
 
-#: browser/interfaces.py:205
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:114
+#: browser/interfaces.py:228
 msgid "Stay to"
 msgstr "Partenza"
 
-#: browser/interfaces.py:185
+#: browser/interfaces.py:208
 msgid "The minimum capacity of your hebergement"
 msgstr "Capacità minima dell'abitazione"
 
-#: browser/interfaces.py:189
+#: browser/interfaces.py:212
 msgid "The number of rooms in hebergement"
 msgstr "Numero di camere nell'abitazione"
 
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:74
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/interfaces.py:92
 msgid "Town"
 msgstr "Località"
 
-#. Default: "Accès membre"
-#: skins/gites_templates/portlet_menu_association.pt:29
-msgid "acces_membre"
-msgstr "Accesso membro"
-
 #. Default: "Rechercher"
-#: browser/templates/moteur_recherche.pt:82
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:112
+#: browser/templates/moteur_recherche.pt:115
 msgid "action_search"
 msgstr "Ricercare"
 
-#. Default: "Adresse"
-#: browser/templates/form_contact_proprio.pt:62
-msgid "adresse"
-msgstr "Indirizzo"
-
 #. Default: "Tous"
-#: portlets/templates/derniereminute.pt:59
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/boutique.pt:39
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/derniereminute.pt:61
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/ideesejour.pt:39
 msgid "all_sejour_fute"
 msgstr "Tutti"
-
-#. Default: "Anglais"
-#: browser/templates/form_contact_proprio.pt:112
-msgid "anglais"
-msgstr "Inglese"
-
-#. Default: "Animaux de compagnie accept&eacute;s"
-#: skins/gites_templates/hebergement_macro.pt:935
-msgid "animaux_de_compagnie_acceptes"
-msgstr "Animali di compagnia autorizzati"
 
 #. Default: "Annonces GOOGLE"
 #: skins/gites_templates/portlet_google.pt:8
@@ -259,39 +270,16 @@ msgstr "Annunci GOOGLE"
 msgid "association"
 msgstr "Associazione"
 
-#. Default: "Autorisation de fumer"
-#: skins/gites_templates/hebergement_macro.pt:954
-msgid "autorisation_de_fumer"
-msgstr "Abitazione fumatori"
-
-#  "Autres ${type_hebergement}\n"
-#  "                             \303\240 ${commune}"
-#. Default: "Autres ${type_hebergement} à ${commune}"
-#: browser/templates/hebergement.pt:128
-msgid "autres_a"
-msgstr "Altri ${type_hebergement} a ${commune}"
-
-#. Default: "Basse Saison"
-#: skins/gites_templates/hebergement_macro.pt:544
-msgid "basse_saison"
-msgstr "Bassa stagione"
-
-#. Default: "Capacit&eacute;"
-#: skins/gites_templates/hebergement_macro.pt:20
+#. Default: "Capacité"
+#: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:15
 msgid "capacite"
 msgstr "Capacità"
-
-#. Default: "carte"
-#: skins/gites_templates/hebergement_macro.pt:399
-msgid "carte"
-msgstr "carta"
 
 #. Default: "${number} Chambre d'h\303\264tes \303\240 proximit\303\251"
 msgid "chambre_a_proximite"
 msgstr "${number} Camera per gli ospiti nelle vicinanze"
 
-#. Default: "Chambre d'hôtes"
-#: skins/gites_templates/portlet_menu_chambres_hotes.pt:17
+#. Default: "Chambre d'h\303\264tes"
 msgid "chambre_hotes"
 msgstr "Camera per gli ospiti"
 
@@ -299,198 +287,23 @@ msgstr "Camera per gli ospiti"
 msgid "chambres_a_proximite"
 msgstr "${number} Camere per gli ospiti nelle vicinanze"
 
-#. Default: "Chambres d'hôtes"
-#: skins/gites_templates/portlet_menu_chambres_hotes.pt:11
-msgid "chambres_hotes"
-msgstr "Camere per gli ospiti"
-
-#. Default: "Charge"
-#: skins/gites_templates/hebergement_macro.pt:657
-msgid "charge"
-msgstr "Spese"
-
-#. Default: "Civilité"
-#: browser/templates/form_contact_proprio.pt:28
-msgid "civilite"
-msgstr "Titolo"
-
-#. Default: "Code postal"
-#: browser/templates/form_contact_proprio.pt:73
-msgid "code_postal"
-msgstr "C.A.P."
-
 #. Default: "Commande"
-#: portlets/templates/boutiquefolder.pt:33
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/boutiquefolder.pt:33
+#: portlets/templates/boutiquefolder.pt:31
 msgid "commande"
 msgstr "Ordine"
 
-#. Default: "Commerce"
-#: skins/gites_templates/hebergement_macro.pt:808
-msgid "commerce"
-msgstr "Negozio"
-
-#. Default: "CONFORT"
-#: skins/gites_templates/hebergement_macro.pt:931
-msgid "confort"
-msgstr "Comfort"
-
-#. Default: "Congelateur"
-#: skins/gites_templates/hebergement_macro.pt:1019
-msgid "congelateur"
-msgstr "Congelatore"
-
-#. Default: "Contact"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:30
-msgid "contact"
-msgstr "Contatti"
-
-#. Default: "Contactez le propriétaire"
-#: browser/templates/form_contact_proprio.pt:16
-msgid "contactez_le_proprietaire"
-msgstr "Contattare il proprietario"
-
 #. Default: "DANS LA REGION"
-#: browser/templates/hebergement.pt:65
+#: browser/templates/hebergement.pt:71
 msgid "dans_la_region"
 msgstr "Nella regione"
 
-#. Default: "Date d'ouverture :"
-#: skins/gites_templates/hebergement_macro.pt:865
-msgid "date_d_ouverture"
-msgstr "Data d'apertura prevista:"
-
-#. Default: "Date de d&eacute;but"
-#: skins/gites_templates/hebergement_macro.pt:31
-msgid "date_debut"
-msgstr "Data d'inizio"
-
-#. Default: "Date début de séjour"
-#: browser/templates/form_contact_proprio.pt:157
-msgid "date_debut_sejour"
-msgstr "Data d'inizio del soggiorno"
-
-#. Default: "Date de fin"
-#: skins/gites_templates/hebergement_macro.pt:32
-msgid "date_fin"
-msgstr "Data di fine"
-
-#. Default: "Date fin de séjour"
-#: browser/templates/form_contact_proprio.pt:182
-msgid "date_fin_sejour"
-msgstr "Data di fine soggiorno"
-
-#. Default: "Découvrir la Wallonie"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:18
-msgid "decouvrir_wallonie"
-msgstr "Scoprire la Vallonia"
-
-#. Default: "D&eacute;duction si pas petit d&eacute;jeuner"
-#: skins/gites_templates/hebergement_macro.pt:442
-msgid "deduction_si_pas_petit_dejeuner"
-msgstr "Deduzione se senza prima colazione"
-
-#. Default: "Dernière minute"
-#: portlets/templates/derniereminute.pt:14
-msgid "derniere_minutes"
-msgstr "Ultima ora"
-
-#. Default: "Dernières minutes"
-#: portlets/templates/derniereminutefolder.pt:14
-msgid "dernieres_minutes"
-msgstr "Ultima ora"
-
-#. Default: "DESCRIPTION"
-#: skins/gites_templates/hebergement_macro.pt:843
-msgid "description"
-msgstr "Descrizione"
-
-#. Default: "Devenir membre"
-#: skins/gites_templates/portlet_menu_association.pt:35
-msgid "devenir_membre"
-msgstr "Diventare membro"
-
-#. Default: "DISTRIBUTION"
-#: skins/gites_templates/hebergement_macro.pt:852
-msgid "distribution"
-msgstr "Disposizione"
-
-#. Default: "Divers"
-#: skins/gites_templates/hebergement_macro.pt:472
-msgid "divers"
-msgstr "Varie"
-
-#. Default: "Ecran"
-#: skins/gites_templates/hebergement_macro.pt:1053
-msgid "ecran"
-msgstr "Schermo"
-
-#. Default: "E-mail"
-#: browser/templates/form_contact_proprio.pt:143
-msgid "email"
-msgstr "e-mail"
-
-#. Default: "Encoder la r&eacute;f&eacute;rence de la chambre d'hôtes"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:100
-msgid "encoder_reference"
-msgstr "Scegliete il nome o il riferimento della camera di ospiti"
-
-#. Default: "Envoyer votre demande"
-#: browser/templates/form_contact_proprio.pt:244
-msgid "envoyer_demande"
-msgstr "Inviare la domanda"
-
 #. Default: "Classification"
-#: skins/gites_templates/hebergement_macro.pt:17
+#: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:11
 msgid "epis_hebergement"
 msgstr "Classifica"
 
-#. Default: "Equitation"
-#: skins/gites_templates/hebergement_macro.pt:758
-msgid "equitation"
-msgstr "Equitazione"
-
-#. Default: "Fax"
-#: browser/templates/form_contact_proprio.pt:128
-msgid "fax"
-msgstr "Fax"
-
-#. Default: "Feu ouvert"
-#: skins/gites_templates/hebergement_macro.pt:979
-msgid "feu_ouvert"
-msgstr "Caminetto"
-
-#. Default: "Fin d'ann&eacute;e"
-#: skins/gites_templates/hebergement_macro.pt:631
-msgid "fin_d_annee"
-msgstr "Fine anno"
-
-#. Default: "Flipchart"
-#: skins/gites_templates/hebergement_macro.pt:1069
-msgid "flipchart"
-msgstr "Flipchart"
-
-#. Default: "Français"
-#: browser/templates/form_contact_proprio.pt:110
-msgid "francais"
-msgstr "Francese"
-
-#. Default: "galerie"
-#: skins/gites_templates/hebergement_macro.pt:407
-msgid "galerie"
-msgstr "galleria"
-
-#. Default: "Garantie"
-#: skins/gites_templates/hebergement_macro.pt:646
-msgid "garantie"
-msgstr "Garanzia"
-
-#. Default: "Gare"
-#: skins/gites_templates/hebergement_macro.pt:799
-msgid "gare"
-msgstr "Stazione"
-
-#. Default: "Gîte à la ferme"
-#: skins/gites_templates/portlet_menu_gites_meubles.pt:29
+#. Default: "G\303\256te \303\240 la ferme"
 msgid "gite_a_la_ferme"
 msgstr "Alloggio in fattoria"
 
@@ -498,63 +311,11 @@ msgstr "Alloggio in fattoria"
 msgid "gite_a_proximite"
 msgstr "${number} Alloggio o Camera per gli ospiti nelle vicinanze"
 
-#. Default: "Gîte accessible à tous"
-#: skins/gites_templates/hebergement_macro.pt:173
-msgid "gite_accessible_a_tous"
-msgstr "Alloggio Accessibile a Tutti"
-
-#. Default: "Gîte Activit&eacute;s d&eacute;couverte nature"
-#: skins/gites_templates/hebergement_macro.pt:206
-msgid "gite_activite_decouverte_nature"
-msgstr "Alloggio Attività Scoperta della Natura"
-
-#. Default: "Gîte anti-allergique"
-#: skins/gites_templates/hebergement_macro.pt:180
-msgid "gite_anti_allergique"
-msgstr "Alloggio Antiallergico"
-
-#. Default: "Gîte au jardin"
-#: skins/gites_templates/hebergement_macro.pt:188
-msgid "gite_au_jardin"
-msgstr "Alloggio in Giardino"
-
-#. Default: "Gîte b&eacute;b&eacute; tendresse"
-#: skins/gites_templates/hebergement_macro.pt:166
-msgid "gite_bebe_tendresse"
-msgstr "Alloggio Dolce Bebè"
-
-#. Default: "Gîte citadin"
-#: skins/gites_templates/portlet_menu_gites_meubles.pt:23
+#. Default: "G\303\256te citadin"
 msgid "gite_citadin"
 msgstr "Alloggio in città"
 
-#. Default: "Gite ecologique"
-#: skins/gites_templates/hebergement_macro.pt:196
-msgid "gite_eco"
-msgstr ""
-
-#. Default: "Gîte &eacute;questre"
-#: skins/gites_templates/hebergement_macro.pt:220
-msgid "gite_equestre"
-msgstr "Alloggio Equitazione"
-
-#. Default: "Gîte Panda"
-#: skins/gites_templates/hebergement_macro.pt:213
-msgid "gite_panda"
-msgstr "Alloggio Panda"
-
-#. Default: "Gîte patrimoine"
-#: skins/gites_templates/hebergement_macro.pt:234
-msgid "gite_patrimoine"
-msgstr "Alloggio Patrimonio Storico"
-
-#. Default: "Gîte pêche"
-#: skins/gites_templates/hebergement_macro.pt:227
-msgid "gite_peche"
-msgstr "Alloggio Pesca"
-
-#. Default: "Gîte rural"
-#: skins/gites_templates/portlet_menu_gites_meubles.pt:17
+#. Default: "G\303\256te rural"
 msgid "gite_rural"
 msgstr "Alloggio rurale"
 
@@ -562,13 +323,7 @@ msgstr "Alloggio rurale"
 msgid "gites_a_proximite"
 msgstr "${number} Alloggi e Camere per gli ospiti"
 
-#. Default: "-  All rights reserved. - avenue Prince de Liège, 1/21 - B5100 Jambes (Namur) <br /> <a href=\"contact-info\">info@gitesdewallonie.be</a> <br /> Tel: 32(0) 81 311 800 - Fax: 32(0) 81 310 200"
-#: browser/templates/footer_gites.pt:10
-msgid "gites_copyright"
-msgstr ""
-
-#. Default: "Gites et Meublés"
-#: skins/gites_templates/portlet_menu_gites_meubles.pt:11
+#. Default: "Gites et Meubl\303\251s"
 msgid "gites_et_meubles"
 msgstr "Alloggi"
 
@@ -578,51 +333,27 @@ msgid "gites_meubles"
 msgstr "Alloggi Ammobiliati"
 
 #. Default: "Up one level"
-#: portlets/templates/boutiquefolder.pt:16
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/ideesejour.pt:19
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/boutiquefolder.pt:16
+#: ../../../gites.core/gites/core/browser/templates/ideesejour.pt:19
 msgid "go_to_parent_url"
 msgstr "Andare al livello superiore"
 
-#. Default: "Haut de la page"
-#: browser/templates/hebergement.pt:143
-msgid "haut_de_la_page"
-msgstr "Inizio pagina"
-
-#. Default: "Haute Saison"
-#: skins/gites_templates/hebergement_macro.pt:582
-msgid "haute_saison"
-msgstr "Alta stazione"
-
-#. Default: "Checkout"
-#: portlets/templates/boutiquefolder.pt:46
-msgid "heading_checkout"
-msgstr "Acquista"
-
-#. Default: "Carte des Hébergements"
-#: browser/templates/hebergement_map.pt:14
-msgid "heading_map"
-msgstr "<span>Cartina dei vari alloggi</span>"
-
-#. Default: "hébergement correspond à votre recherche."
-#: browser/templates/search_results_hebergement.pt:13
+#. Default: "h&eacute;bergement correspond &agrave; votre recherche."
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/search_results_BNB.pt:14
+#: browser/templates/search_results_hebergement.pt:14
 msgid "hebergement_correspond"
 msgstr "abitazione corrisponde alla vostra ricerca."
 
-#. Default: "hébergements correspondent à votre recherche."
-#: browser/templates/search_results_hebergement.pt:12
+#. Default: "h&eacute;bergements correspondent &agrave; votre recherche."
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/search_results_BNB.pt:13
+#: browser/templates/search_results_hebergement.pt:13
 msgid "hebergements_correspondent"
 msgstr "abitazioni corrispondono alla vostra ricerca"
 
-#. Default: "Home"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:6
-msgid "home"
-msgstr ""
-
-#. Default: "Idées séjours"
-#: browser/templates/ideesejourroot.pt:10
-msgid "idees_sejours"
-msgstr "Idee Soggiorno"
-
 #. Default: "Il existe"
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/ideesejour.pt:36
+#: ../../../gites.core/gites/core/browser/templates/ideesejour.pt:36
 msgid "il_existe"
 msgstr "Esiste"
 
@@ -631,50 +362,16 @@ msgstr "Esiste"
 msgid "in_location"
 msgstr "in"
 
-#. Default: "Infos Touristiques"
-#: browser/templates/hebergement.pt:106
-msgid "infos_touristiques"
-msgstr "Informazioni Turistiche"
-
-#. Default: "Interdit de fumer"
-#: skins/gites_templates/hebergement_macro.pt:963
-msgid "interdit_de_fumer"
-msgstr "Vietato fumare"
-
-#. Default: "Internet"
-#: skins/gites_templates/hebergement_macro.pt:1027
-msgid "internet"
-msgstr "Internet"
-
-#. Default: "Jaccuzzi"
-#: skins/gites_templates/hebergement_macro.pt:1101
-msgid "jacuzzi"
-msgstr "Jacuzzi"
-
-#. Default: "Jardin"
-#: skins/gites_templates/hebergement_macro.pt:1085
-msgid "jardin"
-msgstr "Giardino"
-
 #. Default: "Je suis"
 #: skins/gites_templates/portlet_je_suis.pt:10
 msgid "je_suis"
 msgstr "Siamo"
 
 #. Default: "La boutique"
+#: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/boutique.pt:13
 #: portlets/templates/boutique.pt:13
 msgid "la_boutique_portlet_title"
 msgstr "La boutique"
-
-#. Default: "Add to Cart"
-#: portlets/templates/boutiquefolder.pt:43
-msgid "label_add_to_cart"
-msgstr ""
-
-#. Default: "<img src=\"affinitic_powered.gif\" />"
-#: browser/templates/footer_gites.pt:31
-msgid "label_affinitic"
-msgstr ""
 
 #. Default: "Lieu :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:13
@@ -687,99 +384,29 @@ msgid "label_confort"
 msgstr "Classifica :"
 
 #. Default: "Nombre de personnes :"
-#: browser/templates/moteur_recherche.pt:31
+#: browser/templates/moteur_recherche.pt:39
 msgid "label_nombre_personnes"
 msgstr "Numero di persone"
 
-#. Default: "<img src=\"plone_powered.gif\" />"
-#: browser/templates/footer_gites.pt:22
-msgid "label_powered_by_plone"
-msgstr ""
-
-#. Default: "Label de qualité"
-#: skins/gites_templates/portlet_menu_association.pt:17
-msgid "label_qualite"
-msgstr "Label di qualità"
-
 #. Default: "Je cherche"
-#: browser/templates/moteur_recherche.pt:14
+#: browser/templates/moteur_recherche.pt:19
 msgid "label_recherche"
 msgstr "Ricerco"
 
-#. Default: "Référence :"
-#: browser/templates/moteur_recherche.pt:111
+#. Default: "Recherche rapide"
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:127
 msgid "label_reference"
 msgstr "Nome o riferimento"
-
-#. Default: "(Required)"
-#: browser/templates/form_contact_proprio.pt:139
-msgid "label_required"
-msgstr ""
 
 #. Default: "Tarifs :"
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/moteur_recherche.pt:29
 msgid "label_tarifs"
 msgstr "Prezzo :"
 
-#. Default: "Langue"
-#: browser/templates/form_contact_proprio.pt:105
-msgid "langue"
-msgstr "Lingua"
-
-#. Default: "Lave-linge"
-#: skins/gites_templates/hebergement_macro.pt:1003
-msgid "lave_linge"
-msgstr "Lavatrice"
-
-#. Default: "Lave-vaisselle"
-#: skins/gites_templates/hebergement_macro.pt:987
-msgid "lave_vaisselle"
-msgstr "Lavastoviglie"
-
-#. Default: "Lit 1 personne"
-#: skins/gites_templates/hebergement_macro.pt:886
-msgid "lit_1_personne"
-msgstr "Letto 1 piazza"
-
-#. Default: "Lit 2 personnes"
-#: skins/gites_templates/hebergement_macro.pt:896
-msgid "lit_2_personne"
-msgstr "Letto 2 piazze"
-
-#. Default: "Lit enfant"
-#: skins/gites_templates/hebergement_macro.pt:916
-msgid "lit_enfant"
-msgstr "Lettino bimbo"
-
-#. Default: "Lit superpos&eacute;"
-#: skins/gites_templates/hebergement_macro.pt:906
-msgid "lit_superpose"
-msgstr "Letto a castello"
-
-#. Default: "LITERIE"
-#: skins/gites_templates/hebergement_macro.pt:874
-msgid "literie"
-msgstr "Letti"
-
-#. Default: "Localité"
-#: browser/templates/form_contact_proprio.pt:84
-msgid "localite"
-msgstr "Località"
-
 #. Default: "Localit&eacute;"
-#: skins/gites_templates/hebergement_macro.pt:16
+#: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:10
 msgid "localite_hebergement"
 msgstr "Località"
-
-#. Default: "Madame"
-#: browser/templates/form_contact_proprio.pt:33
-msgid "madame"
-msgstr "Signora"
-
-#. Default: "Maison du Tourisme"
-#: browser/templates/hebergement.pt:91
-msgid "maison_du_tourisme"
-msgstr "Casa del Turismo"
 
 #. Default: "Maison d'h\303\264tes"
 msgid "maison_hotes"
@@ -790,249 +417,29 @@ msgstr "Casa per gli ospiti"
 msgid "membre_eurogites"
 msgstr "Membro di Eurogîtes"
 
-#. Default: "<br />L'association"
-#: browser/templates/header_gites.pt:25
-msgid "menu_association"
-msgstr "L'associazione"
-
-#. Default: "<br />Chambres d'Hôtes"
-#: browser/templates/header_gites.pt:21
-msgid "menu_chambres_hotes"
-msgstr "Camere per gli ospiti"
-
-#. Default: "<br />Contacts"
-#: browser/templates/header_gites.pt:29
-msgid "menu_contacts"
-msgstr "Contatti"
-
-#. Default: "<br />Gîtes et Meublés"
-#: browser/templates/header_gites.pt:17
-msgid "menu_gites_meubles"
-msgstr "Alloggi"
-
-#. Default: "<br />Idées Séjours"
-#: browser/templates/header_gites.pt:13
-msgid "menu_idee_sejour"
-msgstr "Idee Soggiorno"
-
-#. Default: "Meublé"
-#: skins/gites_templates/portlet_menu_gites_meubles.pt:35
+#. Default: "Meubl\303\251"
 msgid "meuble"
 msgstr "Alloggio Ammobiliato"
 
-#. Default: "Micro-onde"
-#: skins/gites_templates/hebergement_macro.pt:995
-msgid "micro_onde"
-msgstr "Microonde"
-
-#. Default: "Monsieur"
-#: browser/templates/form_contact_proprio.pt:34
-msgid "monsieur"
-msgstr "Signore"
-
-#. Default: "Moyenne Saison"
-#: skins/gites_templates/hebergement_macro.pt:563
-msgid "moyenne_saison"
-msgstr "Media stagione"
-
-#. Default: "Néerlandais"
-#: browser/templates/form_contact_proprio.pt:111
-msgid "neerlandais"
-msgstr "Olandese"
-
 #. Default: "Nom"
-#: browser/templates/form_contact_proprio.pt:40
-msgid "nom"
-msgstr "Cognome"
-
-#. Default: "Nom"
-#: skins/gites_templates/hebergement_macro.pt:14
+#: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:9
 msgid "nom_hebergement"
 msgstr "Cognome"
-
-#. Default: "Nombre de chambres"
-#: skins/gites_templates/hebergement_macro.pt:26
-msgid "nombre-chambres"
-msgstr "Numero di camere"
-
-#. Default: "Nombre de chambres"
-#: skins/gites_templates/hebergement_macro.pt:876
-msgid "nombre_de_chambre"
-msgstr "Numero di camere"
-
-#. Default: "Nombre de personne"
-#: browser/templates/form_contact_proprio.pt:207
-msgid "nombre_personnes"
-msgstr "Numero di persone"
 
 #. Default: "Il n'y a aucun h&eacute;bergement correspondant &agrave; ces crit&egrave;res"
 msgid "not_hebergement_correspondant"
 msgstr "Non ci sono alloggi corrispondenti a questi criteri"
 
-#. Default: "Il n'y a aucune derni&egrave;re minute"
-#: skins/gites_templates/hebergement_macro.pt:126
-msgid "not_lastminute_correspondant"
-msgstr "Nessuna ultima ora per il momento"
+#. Default: "nuits indisponibles"
+#: browser/templates/hebergement.pt:42
+msgid "nuits_indisponibles"
+msgstr "Notti non disponibili"
 
-#. Default: "Il n'y a aucune promotion"
-#: skins/gites_templates/hebergement_macro.pt:64
-msgid "not_promotion_correspondant"
-msgstr "Nessuna promozione per il momento"
-
-#. Default: "Nouveaux hebergements"
-#: portlets/templates/derniereminutefolder.pt:46
-msgid "nouveaux_hebergements"
-msgstr "Nuovi alloggi"
-
-#. Default: "Nuit&eacute;e avec petit d&eacute;jeuner"
-#: skins/gites_templates/hebergement_macro.pt:428
-msgid "nuit_avec_petit_dejeuner"
-msgstr "Pernottamento con prima colazione"
-
-#. Default: "Objectifs"
-#: skins/gites_templates/portlet_menu_association.pt:23
-msgid "objectifs"
-msgstr "Obiettivi"
-
-#. Default: "Pas d'animal de compagnie"
-#: skins/gites_templates/hebergement_macro.pt:945
-msgid "pas_d_animal_de_compagnie"
-msgstr "Animali di compagnia non ammessi"
-
-#. Default: "Pays"
-#: browser/templates/form_contact_proprio.pt:94
-msgid "pays"
-msgstr "Paese"
-
-#. Default: "Pêche"
-#: skins/gites_templates/hebergement_macro.pt:749
-msgid "peche"
-msgstr "Pesca"
-
-#. Default: "P&eacute;riode"
-#: skins/gites_templates/hebergement_macro.pt:539
-msgid "periode"
-msgstr "Periodo"
-
-#. Default: "Personne suppl&eacute;mentaire"
-#: skins/gites_templates/hebergement_macro.pt:424
-msgid "personne_supplementaire"
-msgstr "Persona supplementare"
-
-#. Default: "Piscine"
-#: skins/gites_templates/hebergement_macro.pt:740
-msgid "piscine"
-msgstr "Piscina"
-
-#. Default: "Prénom"
-#: browser/templates/form_contact_proprio.pt:51
-msgid "prenom"
-msgstr "Nome"
-
-#. Default: "Projecteurs"
-#: skins/gites_templates/hebergement_macro.pt:1061
-msgid "projecteur"
-msgstr "Proiettore"
-
-#. Default: "Promotions"
-#: portlets/templates/derniereminutefolder.pt:37
-msgid "promotions"
-msgstr "Promozioni"
-
-#. Default: "Proposer votre hébergement"
-#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/menu_sup.pt:24
-msgid "proposer_hebergement"
-msgstr "Proponete il vostro allogio"
-
-#. Default: "PROPRIETAIRE"
-#: skins/gites_templates/hebergement_macro.pt:1131
-msgid "proprietaire"
-msgstr "Proprietario"
-
-#. Default: "question"
-#: skins/gites_templates/hebergement_macro.pt:391
-msgid "question"
-msgstr "domanda"
-
-#. Default: "Randonn&eacute;e"
-#: skins/gites_templates/hebergement_macro.pt:731
-msgid "randonnee"
-msgstr "Gita"
-
-#. Default: "RAVEL"
-#: skins/gites_templates/hebergement_macro.pt:785
-msgid "ravel"
-msgstr "Ravel"
-
-#. Default: "recherche avancée"
-#: browser/templates/moteur_recherche.pt:124
-msgid "recherche_avancee"
-msgstr "Ricerca avanzata"
-
-#. Default: "recherche cartographique"
-#: browser/templates/moteur_recherche.pt:95
-msgid "recherche_cartographique"
-msgstr "Ricerca sulla cartina"
-
-#. Default: "REMARQUE"
-#: skins/gites_templates/hebergement_macro.pt:862
-msgid "remarque"
-msgstr "Osservazione"
-
-#. Default: "Remarques"
-#: browser/templates/form_contact_proprio.pt:218
-msgid "remarques"
-msgstr "Osservazioni"
-
-#. Default: "Restaurant"
-#: skins/gites_templates/hebergement_macro.pt:817
-msgid "restaurant"
-msgstr "Ristorante"
-
-#. Default: "Retour à la page précédente"
-#: browser/templates/hebergement.pt:147
-msgid "retour_page_precedente"
-msgstr "Ritorno alla pagina precedente"
-
-#. Default: "Sauna"
-#: skins/gites_templates/hebergement_macro.pt:1109
-msgid "sauna"
-msgstr "Sauna"
-
-#. Default: "Sèche-linge"
-#: skins/gites_templates/hebergement_macro.pt:1011
-msgid "seche_linge"
-msgstr "Asciugabiancheria"
-
-#. Default: "Séjours Futés"
-#: browser/templates/hebergement.pt:74
-msgid "sejours_futes"
-msgstr "Soggiorni Intelligenti"
-
-#. Default: "Sélectionnez le titre d'une colonne pour trier les résultats."
-#: browser/templates/search_results_hebergement.pt:16
+#. Default: "S&eacute;lectionnez le titre d'une colonne pour trier les r&eacute;sultats."
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/search_results_BNB.pt:17
+#: browser/templates/search_results_hebergement.pt:17
 msgid "selectionnez_titre_pour_trier"
 msgstr "Selezionare il titolo di una colonna per smistare i risultati."
-
-#. Default: "Semaine"
-#: skins/gites_templates/hebergement_macro.pt:541
-msgid "semaine"
-msgstr "Settimana"
-
-#. Default: "SEMINAIRE"
-#: skins/gites_templates/hebergement_macro.pt:1042
-msgid "seminaire"
-msgstr "Seminario"
-
-#. Default: "SITUATION"
-#: skins/gites_templates/hebergement_macro.pt:834
-msgid "situation"
-msgstr "Situazione"
-
-#. Default: "Ski"
-#: skins/gites_templates/hebergement_macro.pt:722
-msgid "sky"
-msgstr "Sci"
 
 #. Default: "Avec le soutien du Commissariat g\303\251n\303\251ral"
 msgid "soutien_commissariat_ligne_1"
@@ -1042,23 +449,7 @@ msgstr "Con il sostegno del Commissariato Generale"
 msgid "soutien_commissariat_ligne_2"
 msgstr "del Turismo del Ministero della Regione Vallona"
 
-#. Default: "Sports nautiques"
-#: skins/gites_templates/hebergement_macro.pt:713
-msgid "sports-nautiques"
-msgstr "Sport nautici"
-
-#. Default: "Inscription à la newsletter"
-#: browser/templates/form_contact_proprio.pt:227
-msgid "subscribe_to_newsletter"
-msgstr "Iscrizione alla newsletter"
-
-#. Default: "Table d'h&ocirc;te"
-#: skins/gites_templates/hebergement_macro.pt:490
-msgid "table_d_hote"
-msgstr "Tavola per gli ospiti"
-
-#. Default: "Table d'hôtes"
-#: skins/gites_templates/portlet_menu_chambres_hotes.pt:23
+#. Default: "Table d'h\303\264tes"
 msgid "table_hotes"
 msgstr "Tavola per gli ospiti"
 
@@ -1067,75 +458,10 @@ msgstr "Tavola per gli ospiti"
 msgid "tarif_hebergement"
 msgstr "pernottamento (2 p. + pr. col.)"
 
-#. Default: "Taxe de s&eacute;jour"
-#: skins/gites_templates/hebergement_macro.pt:669
-msgid "taxe_sejour"
-msgstr "Tassa di soggiorno"
-
-#. Default: "Taxes de s&eacute;jour"
-#: skins/gites_templates/hebergement_macro.pt:457
-msgid "taxes_sejour"
-msgstr "Tassa di soggiorno"
-
-#. Default: "Téléphone"
-#: browser/templates/form_contact_proprio.pt:118
-msgid "telephone"
-msgstr "Telefono"
-
-#. Default: "T&eacute;l&eacute;vision"
-#: skins/gites_templates/hebergement_macro.pt:971
-msgid "television"
-msgstr "Televisione"
-
-#. Default: "Tennis"
-#: skins/gites_templates/hebergement_macro.pt:704
-msgid "tennis"
-msgstr "Tennis"
-
-#. Default: "Terrasse"
-#: skins/gites_templates/hebergement_macro.pt:1077
-msgid "terrasse"
-msgstr "Terrazza"
-
-#. Default: "Price: ${value_price} €"
-#: portlets/templates/boutiquefolder.pt:35
-msgid "text_price"
-msgstr "Prezzi: ${value_price} €"
-
-#. Default: "Promotion"
-#: skins/gites_templates/hebergement_macro.pt:33
-msgid "texte_promotion"
-msgstr "Promozione"
-
-#. Default: "This site was built using Plone CMS, the Open Source Content Management System. Click for more information."
-#: browser/templates/footer_gites.pt:22
-msgid "title_built_with_plone"
-msgstr ""
-
-#. Default: "This site has been developed and is hosted by Affinitic."
-#: browser/templates/footer_gites.pt:31
-msgid "title_developed_affinitic"
-msgstr ""
-
-#. Default: "Required"
-#: browser/templates/form_contact_proprio.pt:139
-msgid "title_required"
-msgstr ""
-
 #. Default: "Tout voir"
 #: skins/gites_templates/portlet_gites_meubles.pt:17
 msgid "tout_voir"
 msgstr "Vedere tutto"
-
-#. Default: "Type"
-#: skins/gites_templates/hebergement_macro.pt:498
-msgid "type"
-msgstr "Tipo"
-
-#. Default: "Type"
-#: skins/gites_templates/hebergement_macro.pt:15
-msgid "type_hebergement"
-msgstr "Tipo"
 
 #. Default: "<span><span><span>Un couple</span></span></span>"
 #: skins/gites_templates/portlet_je_suis.pt:17
@@ -1157,44 +483,436 @@ msgstr "<span><span><span>Una famiglia</span></span></span>"
 msgid "une_societe"
 msgstr "<span><span><span>Una società</span></span></span>"
 
-#. Default: "La référence de l'hébergement ${heb_pk} n'est pas valide"
-#: browser/templates/unknown_gites.pt:15
-msgid "unknown_gites"
-msgstr "Il riferimento dell'alloggio ${heb_pk} non è valido."
-
-#. Default: "V&eacute;lo"
-#: skins/gites_templates/hebergement_macro.pt:767
-msgid "velo"
-msgstr "Bicicletta"
-
 #. Default: "Voir la liste"
+#: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/ideesejour.pt:38
+#: ../../../gites.core/gites/core/browser/templates/ideesejour.pt:38
 msgid "voir_la_liste"
 msgstr "Vedere la lista"
 
-#. Default: "VTT"
-#: skins/gites_templates/hebergement_macro.pt:776
-msgid "vtt"
-msgstr "Mountain bike"
+#~ msgid "1_personne"
+#~ msgstr "1 persona"
 
-#. Default: "WE"
-#: skins/gites_templates/hebergement_macro.pt:540
-msgid "week-end"
-msgstr "Fine settimana"
+#~ msgid "2_personne"
+#~ msgstr "2 persone"
 
-#. Default: "nuits indisponibles"
-#: ./browser/templates/hebergement.pt:43
-msgid "nuits_indisponibles"
-msgstr "Notti non disponibili"
+# /skins/GitesContent/hebergement_macro.pt:650
+#~ msgid "3_nuits"
+#~ msgstr "Week-end festivi 3 notti"
+
+#~ msgid "4_nuits"
+#~ msgstr "Week-end festivi 4 notti"
+
+#~ msgid "acces_membre"
+#~ msgstr "Accesso membro"
+
+#~ msgid "adresse"
+#~ msgstr "Indirizzo"
+
+#~ msgid "anglais"
+#~ msgstr "Inglese"
+
+#~ msgid "animaux_de_compagnie_acceptes"
+#~ msgstr "Animali di compagnia autorizzati"
+
+#~ msgid "autorisation_de_fumer"
+#~ msgstr "Abitazione fumatori"
+
+#  "Autres ${type_hebergement}\n"
+#  "                             \303\240 ${commune}"
+#~ msgid "autres_a"
+#~ msgstr "Altri ${type_hebergement} a ${commune}"
+
+#~ msgid "basse_saison"
+#~ msgstr "Bassa stagione"
+
+#~ msgid "carte"
+#~ msgstr "carta"
+
+#~ msgid "chambres_hotes"
+#~ msgstr "Camere per gli ospiti"
+
+#~ msgid "charge"
+#~ msgstr "Spese"
+
+#~ msgid "civilite"
+#~ msgstr "Titolo"
+
+#~ msgid "code_postal"
+#~ msgstr "C.A.P."
+
+#~ msgid "commerce"
+#~ msgstr "Negozio"
+
+#~ msgid "confort"
+#~ msgstr "Comfort"
+
+#~ msgid "congelateur"
+#~ msgstr "Congelatore"
+
+#~ msgid "contact"
+#~ msgstr "Contatti"
+
+#~ msgid "contactez_le_proprietaire"
+#~ msgstr "Contattare il proprietario"
+
+#~ msgid "date_d_ouverture"
+#~ msgstr "Data d'apertura prevista:"
+
+#~ msgid "date_debut"
+#~ msgstr "Data d'inizio"
+
+#~ msgid "date_debut_sejour"
+#~ msgstr "Data d'inizio del soggiorno"
+
+#~ msgid "date_fin"
+#~ msgstr "Data di fine"
+
+#~ msgid "date_fin_sejour"
+#~ msgstr "Data di fine soggiorno"
+
+#~ msgid "decouvrir_wallonie"
+#~ msgstr "Scoprire la Vallonia"
+
+#~ msgid "deduction_si_pas_petit_dejeuner"
+#~ msgstr "Deduzione se senza prima colazione"
+
+#~ msgid "derniere_minutes"
+#~ msgstr "Ultima ora"
+
+#~ msgid "dernieres_minutes"
+#~ msgstr "Ultima ora"
+
+#~ msgid "description"
+#~ msgstr "Descrizione"
+
+#~ msgid "devenir_membre"
+#~ msgstr "Diventare membro"
+
+#~ msgid "distribution"
+#~ msgstr "Disposizione"
+
+#~ msgid "divers"
+#~ msgstr "Varie"
+
+#~ msgid "ecran"
+#~ msgstr "Schermo"
+
+#~ msgid "email"
+#~ msgstr "e-mail"
+
+#~ msgid "encoder_reference"
+#~ msgstr "Scegliete il nome o il riferimento della camera di ospiti"
+
+#~ msgid "envoyer_demande"
+#~ msgstr "Inviare la domanda"
+
+#~ msgid "equitation"
+#~ msgstr "Equitazione"
+
+#~ msgid "fax"
+#~ msgstr "Fax"
+
+#~ msgid "feu_ouvert"
+#~ msgstr "Caminetto"
+
+#~ msgid "fin_d_annee"
+#~ msgstr "Fine anno"
+
+#~ msgid "flipchart"
+#~ msgstr "Flipchart"
+
+#~ msgid "francais"
+#~ msgstr "Francese"
+
+#~ msgid "galerie"
+#~ msgstr "galleria"
+
+#~ msgid "garantie"
+#~ msgstr "Garanzia"
+
+#~ msgid "gare"
+#~ msgstr "Stazione"
+
+#~ msgid "gite_accessible_a_tous"
+#~ msgstr "Alloggio Accessibile a Tutti"
+
+#~ msgid "gite_activite_decouverte_nature"
+#~ msgstr "Alloggio Attività Scoperta della Natura"
+
+#~ msgid "gite_anti_allergique"
+#~ msgstr "Alloggio Antiallergico"
+
+#~ msgid "gite_au_jardin"
+#~ msgstr "Alloggio in Giardino"
+
+#~ msgid "gite_bebe_tendresse"
+#~ msgstr "Alloggio Dolce Bebè"
+
+#~ msgid "gite_equestre"
+#~ msgstr "Alloggio Equitazione"
+
+#~ msgid "gite_panda"
+#~ msgstr "Alloggio Panda"
+
+#~ msgid "gite_patrimoine"
+#~ msgstr "Alloggio Patrimonio Storico"
+
+#~ msgid "gite_peche"
+#~ msgstr "Alloggio Pesca"
+
+#~ msgid "haut_de_la_page"
+#~ msgstr "Inizio pagina"
+
+#~ msgid "haute_saison"
+#~ msgstr "Alta stazione"
+
+#~ msgid "heading_checkout"
+#~ msgstr "Acquista"
+
+#~ msgid "heading_map"
+#~ msgstr "<span>Cartina dei vari alloggi</span>"
+
+#~ msgid "idees_sejours"
+#~ msgstr "Idee Soggiorno"
+
+#~ msgid "interdit_de_fumer"
+#~ msgstr "Vietato fumare"
+
+#~ msgid "internet"
+#~ msgstr "Internet"
+
+#~ msgid "jacuzzi"
+#~ msgstr "Jacuzzi"
+
+#~ msgid "jardin"
+#~ msgstr "Giardino"
+
+#~ msgid "label_qualite"
+#~ msgstr "Label di qualità"
+
+#~ msgid "langue"
+#~ msgstr "Lingua"
+
+#~ msgid "lave_linge"
+#~ msgstr "Lavatrice"
+
+#~ msgid "lave_vaisselle"
+#~ msgstr "Lavastoviglie"
+
+#~ msgid "lit_1_personne"
+#~ msgstr "Letto 1 piazza"
+
+#~ msgid "lit_2_personne"
+#~ msgstr "Letto 2 piazze"
+
+#~ msgid "lit_enfant"
+#~ msgstr "Lettino bimbo"
+
+#~ msgid "lit_superpose"
+#~ msgstr "Letto a castello"
+
+#~ msgid "literie"
+#~ msgstr "Letti"
+
+#~ msgid "localite"
+#~ msgstr "Località"
+
+#~ msgid "madame"
+#~ msgstr "Signora"
+
+#~ msgid "menu_association"
+#~ msgstr "L'associazione"
+
+#~ msgid "menu_chambres_hotes"
+#~ msgstr "Camere per gli ospiti"
+
+#~ msgid "menu_contacts"
+#~ msgstr "Contatti"
+
+#~ msgid "menu_gites_meubles"
+#~ msgstr "Alloggi"
+
+#~ msgid "menu_idee_sejour"
+#~ msgstr "Idee Soggiorno"
+
+#~ msgid "micro_onde"
+#~ msgstr "Microonde"
+
+#~ msgid "monsieur"
+#~ msgstr "Signore"
+
+#~ msgid "moyenne_saison"
+#~ msgstr "Media stagione"
+
+#~ msgid "neerlandais"
+#~ msgstr "Olandese"
+
+#~ msgid "nom"
+#~ msgstr "Cognome"
+
+#~ msgid "nombre-chambres"
+#~ msgstr "Numero di camere"
+
+#~ msgid "nombre_de_chambre"
+#~ msgstr "Numero di camere"
+
+#~ msgid "nombre_personnes"
+#~ msgstr "Numero di persone"
+
+#~ msgid "not_lastminute_correspondant"
+#~ msgstr "Nessuna ultima ora per il momento"
+
+#~ msgid "not_promotion_correspondant"
+#~ msgstr "Nessuna promozione per il momento"
+
+#~ msgid "nouveaux_hebergements"
+#~ msgstr "Nuovi alloggi"
+
+#~ msgid "nuit_avec_petit_dejeuner"
+#~ msgstr "Pernottamento con prima colazione"
+
+#~ msgid "objectifs"
+#~ msgstr "Obiettivi"
+
+#~ msgid "pas_d_animal_de_compagnie"
+#~ msgstr "Animali di compagnia non ammessi"
+
+#~ msgid "pays"
+#~ msgstr "Paese"
+
+#~ msgid "peche"
+#~ msgstr "Pesca"
+
+#~ msgid "periode"
+#~ msgstr "Periodo"
+
+#~ msgid "personne_supplementaire"
+#~ msgstr "Persona supplementare"
+
+#~ msgid "piscine"
+#~ msgstr "Piscina"
+
+#~ msgid "prenom"
+#~ msgstr "Nome"
+
+#~ msgid "projecteur"
+#~ msgstr "Proiettore"
+
+#~ msgid "promotions"
+#~ msgstr "Promozioni"
+
+#~ msgid "proposer_hebergement"
+#~ msgstr "Proponete il vostro allogio"
+
+#~ msgid "proprietaire"
+#~ msgstr "Proprietario"
+
+#~ msgid "question"
+#~ msgstr "domanda"
+
+#~ msgid "randonnee"
+#~ msgstr "Gita"
+
+#~ msgid "ravel"
+#~ msgstr "Ravel"
+
+#~ msgid "recherche_avancee"
+#~ msgstr "Ricerca avanzata"
+
+#~ msgid "recherche_cartographique"
+#~ msgstr "Ricerca sulla cartina"
+
+#~ msgid "remarque"
+#~ msgstr "Osservazione"
+
+#~ msgid "remarques"
+#~ msgstr "Osservazioni"
+
+#~ msgid "restaurant"
+#~ msgstr "Ristorante"
+
+#~ msgid "retour_page_precedente"
+#~ msgstr "Ritorno alla pagina precedente"
+
+#~ msgid "sauna"
+#~ msgstr "Sauna"
+
+#~ msgid "seche_linge"
+#~ msgstr "Asciugabiancheria"
+
+#~ msgid "sejours_futes"
+#~ msgstr "Soggiorni Intelligenti"
+
+#~ msgid "semaine"
+#~ msgstr "Settimana"
+
+#~ msgid "seminaire"
+#~ msgstr "Seminario"
+
+#~ msgid "situation"
+#~ msgstr "Situazione"
+
+#~ msgid "sky"
+#~ msgstr "Sci"
+
+#~ msgid "sports-nautiques"
+#~ msgstr "Sport nautici"
+
+#~ msgid "subscribe_to_newsletter"
+#~ msgstr "Iscrizione alla newsletter"
+
+#~ msgid "table_d_hote"
+#~ msgstr "Tavola per gli ospiti"
+
+#~ msgid "taxe_sejour"
+#~ msgstr "Tassa di soggiorno"
+
+#~ msgid "taxes_sejour"
+#~ msgstr "Tassa di soggiorno"
+
+#~ msgid "telephone"
+#~ msgstr "Telefono"
+
+#~ msgid "television"
+#~ msgstr "Televisione"
+
+#~ msgid "tennis"
+#~ msgstr "Tennis"
+
+#~ msgid "terrasse"
+#~ msgstr "Terrazza"
+
+#~ msgid "text_price"
+#~ msgstr "Prezzi: ${value_price} €"
+
+#~ msgid "texte_promotion"
+#~ msgstr "Promozione"
+
+#~ msgid "type"
+#~ msgstr "Tipo"
+
+#~ msgid "type_hebergement"
+#~ msgstr "Tipo"
+
+#~ msgid "unknown_gites"
+#~ msgstr "Il riferimento dell'alloggio ${heb_pk} non è valido."
+
+#~ msgid "velo"
+#~ msgstr "Bicicletta"
+
+#~ msgid "vtt"
+#~ msgstr "Mountain bike"
+
+#~ msgid "week-end"
+#~ msgstr "Fine settimana"
 
 # Default: "Enter the exact word in the image. This is used to fight robots."
-#: ./browser/templates/form_contact_proprio.pt:275
-msgid "help_captcha"
-msgstr ""
-"Digitare i caratteri che appaiono nell’immagine.<br/>In questo modo ci aiutate "
-"ad impedire a dei robot di creare dei conti e di generare dei messaggi "
-"indesiderati."
+#~ msgid "help_captcha"
+#~ msgstr ""
+#~ "Digitare i caratteri che appaiono nell’immagine.<br/>In questo modo ci "
+#~ "aiutate ad impedire a dei robot di creare dei conti e di generare dei "
+#~ "messaggi indesiderati."
 
 # Default: "Invalid captcha"
-#: ./browser/templates/form_contact_proprio.pt:282
-msgid "invalid_captcha"
-msgstr "I dati di controllo non corrispondono all’immagine."
+#~ msgid "invalid_captcha"
+#~ msgstr "I dati di controllo non corrispondono all’immagine."
