@@ -25,10 +25,12 @@ setup(name='gites.skin',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'gites.core',
           'zc.table',
+          'zc.datetimewidget',
+          'z3c.jbot',
           'collective.captcha',
           'Products.LocalFS',
-          'zc.datetimewidget',
           'Products.MailmanSubForm',
-          'z3c.jbot'])
+          'gites.core',
+          'bnbelgium.skin',
+      ])
