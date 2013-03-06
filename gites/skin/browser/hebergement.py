@@ -15,20 +15,23 @@ from Acquisition import aq_inner, aq_parent
 from zope.interface import implements
 from zope.component import queryMultiAdapter
 from DateTime import DateTime
-from gites.skin.browser.interfaces import (IHebergementView,
-                                           IHebergementIconsView,
-                                           IHebergementInfo)
 from Products.CMFCore.utils import getToolByName
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 from z3c.sqlalchemy import getSAWrapper
 from mailer import Mailer
+
+from gites.map.browser.interfaces import IMappableView
+from gites.map.adapters import IHebergementsFetcher
+from gites.skin.browser.interfaces import (IHebergementView,
+                                           IHebergementIconsView,
+                                           IHebergementInfo)
 
 
 class HebergementView(BrowserView):
     """
     View for the full description of an hebergement
     """
-    implements(IHebergementView)
+    implements(IHebergementView, IMappableView)
     template = ViewPageTemplateFile("templates/hebergement.pt")
 
     def __init__(self, context, request):
