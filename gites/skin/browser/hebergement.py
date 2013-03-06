@@ -155,8 +155,18 @@ class HebergementView(BrowserView):
                 relatedSejour.append(sejour)
         return relatedSejour
 
+    def getHebMetadatasByType(self, metadataType):
+        """
+        Return all metadata objects corresponding on metadataType
+        cf: table metadata column metadata_type_id
+        """
+        heb = self.context
+        return [md for md in heb.activeMetadatas if md.metadata_type_id == metadataType]
+
+
     def render(self):
         return self.template()
+
 
 
 class HebergementExternCalendarView(HebergementView):
