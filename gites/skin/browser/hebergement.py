@@ -164,8 +164,26 @@ class HebergementView(BrowserView):
         cf: table metadata column metadata_type_id
         """
         heb = self.context
-        return [md for md in heb.activeMetadatas if md.metadata_type_id == metadataType]
+        dics = []
+        language = self.request.get('LANGUAGE')
+        for md in heb.activeMetadatas:
+            if md.metadata_type_id == metadataType:
+                dics.append({"id":md.met_id,"title":md.getTitre(language)})
+        return dics
 
+    def getAnimal(self):
+        list = self.getHebMetadatasByType('autorisations')
+        for item in list:
+            if item['id'] == 'heb_animal':
+                return item
+        return {"id":"heb_no_animal","title":"NON CHIEN"}
+
+    def getFumeur(self):
+        list = self.getHebMetadatasByType('autorisations')
+        for item in list:
+            if item['id'] == 'heb_fumeur':
+                return item
+        return {"id":"heb_no_fumeur","title":"NON FUMEUR"}
 
     def render(self):
         return self.template()
