@@ -12,7 +12,7 @@
           tal:content="view/calendarJS"/>
 </metal:block>
 
-<div metal:fill-slot="main">
+<div metal:fill-slot="content-core">
    <div tal:define="heb context;
                     hebergementIcons context/@@hebergement_icons;
                     redirection view/redirectInactive;">
