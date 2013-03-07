@@ -1,3 +1,7 @@
+- Transformer en egg PloneZCDatetimeWidget (cf setup.py de gites.app)
+    - Ou plutot integrer le code de ce 'paquet' dans gites.calendar
+        - Aller retirer le XXX de gites.app quand c est fait
+
 - Ajouter la map dans la page de description d'hebergement (hebergement.pt)
     CF complements d information de cachier de charges géoloc
 
