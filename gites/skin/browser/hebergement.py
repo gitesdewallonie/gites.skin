@@ -21,7 +21,6 @@ from z3c.sqlalchemy import getSAWrapper
 from mailer import Mailer
 
 from gites.map.browser.interfaces import IMappableView
-from gites.map.adapters import IHebergementsFetcher
 from gites.skin.browser.interfaces import (IHebergementView,
                                            IHebergementIconsView,
                                            IHebergementInfo)
