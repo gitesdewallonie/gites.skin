@@ -188,6 +188,21 @@ class HebergementView(BrowserView):
     def render(self):
         return self.template()
 
+    def getVignettesUrl(self):
+        """
+        Get the vignette of an hebergement
+        """
+        vignettes=[]
+        codeGDW = self.context.heb_code_gdw
+        listeImage = self.context.photos_heb.fileIds()
+        for i in range(15):
+            if i < 10:
+                photo="%s0%s.jpg"%(codeGDW,i)
+            else:
+                photo="%s%s.jpg"%(codeGDW, i)
+            if photo in listeImage:
+                vignettes.append(photo)
+        return vignettes
 
 
 class HebergementExternCalendarView(HebergementView):
