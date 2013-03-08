@@ -11,15 +11,22 @@
             media="screen"
             title="timeframe"
             charset="utf-8" />
+
+      <script type="text/javascript"
+              charset="utf-8"
+              src="++resource++prototype16.js"></script>
+
       <script type="text/javascript"
               charset="utf-8"
               src="++resource++gitetimeframe.js"></script>
+
       <script type="text/javascript"
               charset="utf-8"
               tal:condition="view/showCalendar"
               tal:content="view/calendarJS" />
+
     </metal:block>
-    <div metal:fill-slot="main">
+    <div metal:fill-slot="content-core">
       <div tal:define="heb context; hebergementIcons context/@@hebergement_icons; redirection view/redirectInactive;">
 
         <!-- Bannière titre + info -->
