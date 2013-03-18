@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-03-07 08:41+0000\n"
+"POT-Creation-Date: 2013-03-18 09:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: gites\n"
+
+#. Default: "3 nuits"
+#: ./skins/gites_templates/hebergement_macro.pt:379
+msgid "3_nuits"
+msgstr ""
+
+#. Default: "4 nuits"
+#: ./skins/gites_templates/hebergement_macro.pt:391
+msgid "4_nuits"
+msgstr ""
 
 #: ./browser/interfaces.py:215
 msgid "Animals authorized"
@@ -162,14 +172,23 @@ msgstr ""
 msgid "association"
 msgstr ""
 
+#. Default: "Basse Saison"
+#: ./skins/gites_templates/hebergement_macro.pt:319
+msgid "basse_saison"
+msgstr ""
+
 #. Default: "Capacité"
-#: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:15
-#: ./browser/templates/hebergement.pt:80
+#: ./skins/gites_templates/hebergement_macro.pt:20
 msgid "capacite"
 msgstr ""
 
-#: ./browser/templates/hebergement.pt:183
+#: ./skins/gites_templates/hebergement_macro.pt:174
 msgid "carte"
+msgstr ""
+
+#. Default: "Charge"
+#: ./skins/gites_templates/hebergement_macro.pt:432
+msgid "charge"
 msgstr ""
 
 #. Default: "Commande"
@@ -179,14 +198,69 @@ msgstr ""
 msgid "commande"
 msgstr ""
 
+#. Default: "CONFORT"
+#: ./skins/gites_templates/hebergement_macro.pt:707
+msgid "confort"
+msgstr ""
+
+#. Default: "Contactez le propri&eacute;taire"
+#: ./skins/gites_templates/hebergement_macro.pt:940
+msgid "contactez_le_proprietaire"
+msgstr ""
+
+#. Default: "Date d'ouverture :"
+#: ./skins/gites_templates/hebergement_macro.pt:641
+msgid "date_d_ouverture"
+msgstr ""
+
+#. Default: "Date de d&eacute;but"
+#: ./skins/gites_templates/hebergement_macro.pt:31
+msgid "date_debut"
+msgstr ""
+
+#. Default: "Date de fin"
+#: ./skins/gites_templates/hebergement_macro.pt:32
+msgid "date_fin"
+msgstr ""
+
+#. Default: "D&eacute;duction si pas petit d&eacute;jeuner"
+#: ./skins/gites_templates/hebergement_macro.pt:217
+msgid "deduction_si_pas_petit_dejeuner"
+msgstr ""
+
+#. Default: "DESCRIPTION"
+#: ./skins/gites_templates/hebergement_macro.pt:619
+msgid "description"
+msgstr ""
+
+#. Default: "DISTRIBUTION"
+#: ./skins/gites_templates/hebergement_macro.pt:628
+msgid "distribution"
+msgstr ""
+
+#. Default: "Divers"
+#: ./skins/gites_templates/hebergement_macro.pt:247
+msgid "divers"
+msgstr ""
+
 #. Default: "Classification"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:11
 #: ./skins/gites_templates/hebergement_macro.pt:17
 msgid "epis_hebergement"
 msgstr ""
 
-#: ./browser/templates/hebergement.pt:192
+#. Default: "Fin d'ann&eacute;e"
+#: ./skins/gites_templates/hebergement_macro.pt:406
+msgid "fin_d_annee"
+msgstr ""
+
+#: ./skins/gites_templates/hebergement_macro.pt:182
 msgid "galerie"
+msgstr ""
+
+#. Default: "Garantie"
+#: ./skins/gites_templates/hebergement_macro.pt:421
+msgid "garantie"
 msgstr ""
 
 #. Default: "Gites Meubles"
@@ -199,6 +273,11 @@ msgstr ""
 #: ../../../bnbelgium.skin/bnbelgium/skin/portlets/templates/boutiquefolder.pt:16
 #: ../../../gites.core/gites/core/browser/templates/boutique_item_view.pt:13
 msgid "go_to_parent_url"
+msgstr ""
+
+#. Default: "Haute Saison"
+#: ./skins/gites_templates/hebergement_macro.pt:357
+msgid "haute_saison"
 msgstr ""
 
 #. Default: "h&eacute;bergement correspond &agrave; votre recherche."
@@ -265,6 +344,31 @@ msgstr ""
 msgid "label_tarifs"
 msgstr ""
 
+#. Default: "Lit 1 personne"
+#: ./skins/gites_templates/hebergement_macro.pt:662
+msgid "lit_1_personne"
+msgstr ""
+
+#. Default: "Lit 2 personnes"
+#: ./skins/gites_templates/hebergement_macro.pt:672
+msgid "lit_2_personne"
+msgstr ""
+
+#. Default: "Lit enfant"
+#: ./skins/gites_templates/hebergement_macro.pt:692
+msgid "lit_enfant"
+msgstr ""
+
+#. Default: "Lit superposé"
+#: ./skins/gites_templates/hebergement_macro.pt:682
+msgid "lit_superpose"
+msgstr ""
+
+#. Default: "LITERIE"
+#: ./skins/gites_templates/hebergement_macro.pt:650
+msgid "literie"
+msgstr ""
+
 #. Default: "Localit&eacute;"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:10
 #: ./skins/gites_templates/hebergement_macro.pt:16
@@ -276,14 +380,64 @@ msgstr ""
 msgid "membre_eurogites"
 msgstr ""
 
+#. Default: "Moyenne Saison"
+#: ./skins/gites_templates/hebergement_macro.pt:338
+msgid "moyenne_saison"
+msgstr ""
+
 #. Default: "Nom"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:9
 #: ./skins/gites_templates/hebergement_macro.pt:14
 msgid "nom_hebergement"
 msgstr ""
 
-#: ./browser/templates/hebergement.pt:174
+#. Default: "Nombre de chambres"
+#: ./skins/gites_templates/hebergement_macro.pt:26
+msgid "nombre-chambres"
+msgstr ""
+
+#. Default: "Nombre de chambres"
+#: ./skins/gites_templates/hebergement_macro.pt:652
+msgid "nombre_de_chambre"
+msgstr ""
+
+#. Default: "Il n'y a aucune derni&egrave;re minute"
+#: ./skins/gites_templates/hebergement_macro.pt:128
+msgid "not_lastminute_correspondant"
+msgstr ""
+
+#. Default: "Il n'y a aucune promotion"
+#: ./skins/gites_templates/hebergement_macro.pt:65
+msgid "not_promotion_correspondant"
+msgstr ""
+
+#. Default: "Nuit&eacute;e avec petit d&eacute;jeuner"
+#: ./skins/gites_templates/hebergement_macro.pt:203
+msgid "nuit_avec_petit_dejeuner"
+msgstr ""
+
+#. Default: "P&eacute;riode"
+#: ./skins/gites_templates/hebergement_macro.pt:314
+msgid "periode"
+msgstr ""
+
+#. Default: "Personne suppl&eacute;mentaire"
+#: ./skins/gites_templates/hebergement_macro.pt:199
+msgid "personne_supplementaire"
+msgstr ""
+
+#. Default: "PROPRIETAIRE"
+#: ./skins/gites_templates/hebergement_macro.pt:909
+msgid "proprietaire"
+msgstr ""
+
+#: ./skins/gites_templates/hebergement_macro.pt:166
 msgid "question"
+msgstr ""
+
+#. Default: "REMARQUE"
+#: ./skins/gites_templates/hebergement_macro.pt:638
+msgid "remarque"
 msgstr ""
 
 #. Default: "S&eacute;lectionnez le titre d'une colonne pour trier les r&eacute;sultats."
@@ -292,14 +446,49 @@ msgstr ""
 msgid "selectionnez_titre_pour_trier"
 msgstr ""
 
+#. Default: "Semaine"
+#: ./skins/gites_templates/hebergement_macro.pt:316
+msgid "semaine"
+msgstr ""
+
+#. Default: "SITUATION"
+#: ./skins/gites_templates/hebergement_macro.pt:610
+msgid "situation"
+msgstr ""
+
+#. Default: "Table d'h&ocirc;te"
+#: ./skins/gites_templates/hebergement_macro.pt:265
+msgid "table_d_hote"
+msgstr ""
+
 #. Default: "Tarif 2p d&eacute;j"
 #: ../../../bnbelgium.skin/bnbelgium/skin/skins/bnbelgium_templates/hebergement_table.pt:12
 msgid "tarif_hebergement"
 msgstr ""
 
+#. Default: "Taxe de s&eacute;jour"
+#: ./skins/gites_templates/hebergement_macro.pt:444
+msgid "taxe_sejour"
+msgstr ""
+
+#. Default: "Taxes de s&eacute;jour"
+#: ./skins/gites_templates/hebergement_macro.pt:232
+msgid "taxes_sejour"
+msgstr ""
+
+#. Default: "Promotion"
+#: ./skins/gites_templates/hebergement_macro.pt:33
+msgid "texte_promotion"
+msgstr ""
+
 #. Default: "Tout voir"
 #: ./skins/gites_templates/portlet_gites_meubles.pt:17
 msgid "tout_voir"
+msgstr ""
+
+#. Default: "Type"
+#: ./skins/gites_templates/hebergement_macro.pt:273
+msgid "type"
 msgstr ""
 
 #. Default: "Type"
@@ -331,5 +520,10 @@ msgstr ""
 #: ../../../bnbelgium.skin/bnbelgium/skin/browser/templates/ideesejour.pt:38
 #: ../../../gites.core/gites/core/browser/templates/ideesejour.pt:38
 msgid "voir_la_liste"
+msgstr ""
+
+#. Default: "WE"
+#: ./skins/gites_templates/hebergement_macro.pt:315
+msgid "week-end"
 msgstr ""
 
