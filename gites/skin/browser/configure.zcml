@@ -4,12 +4,6 @@
     i18n_domain="gites">
 
   <!-- 'Gites Skin' Zope 3 browser layer -->
-  <interface
-      interface=".interfaces.IGitesTheme"
-      type="zope.publisher.interfaces.browser.IBrowserSkinType"
-      name="GitesSkin"
-      />
-
   <include package="plone.app.portlets" />
   <include file="hebergement.zcml"/>
 
