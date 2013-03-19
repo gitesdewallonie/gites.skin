@@ -11,799 +11,287 @@
             media="screen"
             title="timeframe"
             charset="utf-8" />
+
+      <script type="text/javascript"
+              charset="utf-8"
+              src="++resource++prototype16.js"></script>
+
       <script type="text/javascript"
               charset="utf-8"
               src="++resource++gitetimeframe.js"></script>
+
       <script type="text/javascript"
               charset="utf-8"
               tal:condition="view/showCalendar"
               tal:content="view/calendarJS" />
+
     </metal:block>
     <div metal:fill-slot="content-core">
       <div tal:define="heb context; hebergementIcons context/@@hebergement_icons; redirection view/redirectInactive;">
 
-        <div id="description">
-          <tal:main metal:define-macro="hebEnTete">
-            <div id="des-zone1">
-              <!-- ======================================================================================== -->
-              <!--        CAS DE LA CHAMBRE                                                                 -->
-              <!-- =======================================================================================  -->
-              <div class="bg-chambre"
-                   tal:condition="python:heb.type.type_heb_code in 'CH,MH,CHECR'">
+        <!-- Bannière titre + info -->
+        <div style="display:table; table-layout:fixed;">
+        <span tal:content="heb/heb_nom" />| 
+        <div style="display: table-cell;"
+             tal:condition="python:heb.type.type_heb_code == 'MV'">
+             Clés | 
+        <br />
+        <tal:for repeat="epis heb/epis">
+          <span tal:content="epis/heb_nombre_epis" />
+        </tal:for>
+        <tal:if tal:condition="python:len(heb.epis)==0">
+          <span>-</span>
+        </tal:if></div>
+        <div style="display: table-cell;"
+             tal:condition="python:heb.type.type_heb_code != 'MV'">
+             Epis | 
+        <br />
+        <tal:for repeat="epis heb/epis">
+          <span tal:content="epis/heb_nombre_epis" />
+        </tal:for>
+        <tal:if tal:condition="python:len(heb.epis)==0">
+          <span>-</span>
+        </tal:if></div>
+        <div style="display: table-cell;">Personnes | 
+        <br />
+        <span tal:content="string: ${heb/heb_cgt_cap_min}/${heb/heb_cgt_cap_max}" /></div>
+        <div style="display: table-cell;">Chambres | 
+        <br />
+        <span tal:content="heb/heb_cgt_nbre_chmbre" /></div>
+        <div style="display: table-cell;">Lit 1 personne | 
+        <br />
+        <span tal:content="heb/heb_lit_1p" /></div>
+        <div style="display: table-cell;">Lit 2 personnes | 
+        <br />
+        <span tal:content="heb/heb_lit_2p" /></div>
+        <div style="display: table-cell;">Lits supérposés | 
+        <br />
+        <span tal:content="heb/heb_lit_sup" /></div>
+        <div style="display: table-cell;">Lit enfant | 
+        <br />
+        <span tal:content="heb/heb_lit_enf" /></div>
+        <div style="display: table-cell;">N° 
+        <br />
+        <span tal:content="heb/heb_pk" /></div></div>
+        <br />
+        <br />
+        <!-- Div ACCUEIL -->
+        <h2>Accueil</h2>
+        <div style="display:table; table-layout:fixed;">
+          <div style="display: table-cell;">
+            <img src=""
+                 tal:attributes="src string:${here/photos_heb/absolute_url}/${heb/heb_code_gdw}00.jpg" />
+          </div>
+          <div style="display: table-cell;"
+               tal:condition="view/showCalendar">
+            <div id="calendars"></div>
+            <input type="hidden"
+                   id="reset" />
+            <input type="hidden"
+                   name="start"
+                   value=""
+                   id="start" />
+            <input type="hidden"
+                   name="end"
+                   value=""
+                   id="end" />
+          </div>
+          <div style="display: table-cell;"
+               tal:condition="python:heb.type.type_heb_code not in 'CH, MH, CHECR'">
 
-                <div id="type_heb"
-                     tal:condition="python:heb.type.type_heb_code in 'CH, CHECR'">
+            <div style="display: table-cell;">Période
+            <br />Basse Saison
+            <br />Moyenne Saison
+            <br />Haute Saison
+            <br />3 nuits
+            <br />4 nuits
+            <br />Fin d'année
+            <br />Garantie
+            <br />Charge
+            <br />Taxe de séjour
+            <br />Divers
+            <br /></div>
+            <div style="display: table-cell;">| WE
+            <br />| 
+            <span tal:content="heb/heb_tarif_we_bs" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_we_ms" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_we_hs" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_we_3n" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_we_4n" />
+            <br />| ---
+            <br />| 
+            <span tal:content="heb/heb_tarif_garantie" />
+            <br />
+            <span tal:condition="exists: heb/heb_tarif_charge">| 
+            <span tal:content="heb/heb_iarif_charge" />
+            <span tal:content="view/getHebergementCharge" />
+            <br /></span>
+            <span tal:condition="not: exists: heb/heb_tarif_charge">
+            | ---
+            <br /></span>| 
+            <span tal:content="heb/heb_taxe_montant" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_divers" />
+            <br /></div>
+            <div style="display: table-cell;">| Semaine
+            <br />| 
+            <span tal:content="heb/heb_tarif_sem_bs" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_sem_ms" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_sem_hs" />
+            <br />| ---
+            <br />| ---
+            <br />| 
+            <span tal:content="heb/heb_tarif_semaine_fin_annee" />
+            <br /></div>
+          </div>
+          <div style="display: table-cell;"
+               tal:condition="python:heb.type.type_heb_code in 'CH, MH, CHECR'">
 
-                  <span tal:content="view/getTypeHebergement" />
-                  <br />
-                  <div id="heb_ref">n° : 
-                  <span tal:content="heb/heb_pk" /></div>
-                </div>
-                <!--div type_heb-->
-                <div id="type_heb"
-                     tal:condition="python:heb.type.type_heb_code == 'MH'">
-
-                  <span tal:content="view/getTypeHebergement">
-                  Maison d'hôtes</span>
-                  <br />
-                  <div id="heb_ref">n : 
-                  <span tal:content="heb/heb_pk" /></div>
-                </div>
-                <!--div type_heb-->
-                <div id="heb_epis"
-                     tal:content="structure hebergementIcons/getEpis">
-                     
-                  <span i18n:translate="epis">Epis</span>
-                </div>
-                <!--div epis-->
-                <div id="heb_gites_plus">
-                  <tal:for repeat="metadata python:view.getHebMetadatasByType('gitesplus')">
-
-                    <img src=""
-                         title=""
-                         alt=""
-                         tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title" />
-                  </tal:for>
-                </div>
-                <!-- div gitesplus-->
-                <div id="heb_theme">
-                  <tal:for repeat="metadata python:view.getHebMetadatasByType('themes')">
-
-                    <img src=""
-                         title=""
-                         alt=""
-                         tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title" />
-                  </tal:for>
-                </div>
-                <!--div theme>-->
-                <div id="heb_capacite">
-                  <img src="capacite.png"
-                       title="Capacité"
-                       alt="Capacité"
-                       i18n:attributes="alt capacite; title capacite" />
-                  <span tal:content="string: ${heb/heb_cgt_cap_min}/${heb/heb_cgt_cap_max}" />
-                </div>
-                <!--div capacite-->
-              </div>
-              <!--div bg-chambre-->
-              <!-- ======================================================================================== -->
-              <!--        CAS DE TOUS LES HEBERGEMENTS SAUF UNE CHAMBRE                                     -->
-              <!-- ======================================================================================== -->
-              <div class="bg-gite"
-                   tal:condition="python:heb.type.type_heb_code not in 'CH, MH, CHECR'">
-
-                <div id="type_heb">
-                  <span tal:content="view/getTypeHebergement" />
-                  <br />
-                  <div id="heb_ref">n° : 
-                  <span tal:content="heb/heb_pk" /></div>
-                </div>
-                <!--div type-heb-->
-                <div id="heb_epis"
-                     tal:content="structure hebergementIcons/getEpis">
-                     
-                  <span i18n:translate="epis">Epis</span>
-                </div>
-                <!--div epis-->
-                <div id="heb_gites_plus">
-                  <tal:for repeat="metadata python:view.getHebMetadatasByType('gitesplus')">
-
-                    <img src=""
-                         title=""
-                         alt=""
-                         tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title" />
-                  </tal:for>
-                </div>
-                <!-- div gitesplus-->
-                <div id="heb_theme">
-                  <tal:for repeat="metadata python:view.getHebMetadatasByType('themes')">
-
-                    <img src=""
-                         title=""
-                         alt=""
-                         tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title" />
-                  </tal:for>
-                </div>
-                <!--div theme>-->
-                <div id="heb_capacite">
-                  <img src="capacite.png"
-                       alt="Capacité"
-                       title="Capacité"
-                       i18n:attributes="alt capacite; title capacite" />
-                  <span tal:content="string: ${heb/heb_cgt_cap_min}/${heb/heb_cgt_cap_max}" />
-                </div>
-              </div>
-              <!--div bg-gite-->
-            </div>
-            <!--div zone1-->
-          </tal:main>
-          <br />
-          <div id="viewlet-above-content"
-               tal:content="structure provider:plone.abovecontenttitle" />
-          <table id="table-description">
-            <tr>
-              <td id="col-gauche">
-                <div>
-                  <img src=""
-                       tal:attributes="src string:${here/photos_heb/absolute_url}/${heb/heb_code_gdw}00.jpg" />
-                </div>
-                <div id="heb_coordonnee_chambre"
-                     tal:condition="python:heb.type.type_heb_code in 'CH,MH,CHECR'">
-                <h1 tal:content="heb/heb_nom"
-                    id="heb_nom" />
-                <br />
-                <span tal:content="heb/heb_adresse" />
-                <br />
-                <span tal:content="heb/commune/com_cp" />
-                <span tal:content="heb/heb_localite" />( 
-                <span tal:content="heb/commune/com_nom" />)</div>
-                <div id="heb_coordonnee_gite"
-                     tal:condition="python:heb.type.type_heb_code not in 'CH, MH, CHECR'">
-                <span tal:content="heb/heb_nom"
-                      id="heb_nom" />
-                <br />
-                <span tal:content="heb/heb_adresse" />
-                <br />
-                <span tal:content="heb/commune/com_cp" />
-                <span tal:content="heb/heb_localite" />( 
-                <span tal:content="heb/commune/com_nom" />)</div>
-                <div id="btn_outil">
-                  <a href="signaletiques"
-                     tal:attributes="href hebergementIcons/getSignaletiqueUrl">
-
-                    <img src="o_question.png"
-                         border="0"
-                         alt="question"
-                         title="question"
-                         i18n:attributes="alt question; title question" />
-                  </a>
-                  <a href=""
-                     tal:attributes="href string:${context/@@plone_portal_state/portal_url}/map/hebergement_map?lat=${heb/heb_gps_lat}&amp;long=${heb/heb_gps_long}&amp;pk=${heb/heb_pk}">
-
-                    <img src="o_carte.png"
-                         border="0"
-                         alt="carte"
-                         title="carte"
-                         i18n:attributes="alt carte; title carte" />
-                  </a>
-                  <a href=""
-                     tal:attributes="href string:${heb/@@url}/gallery">
-
-                    <img src="o_photo.png"
-                         border="0"
-                         alt="galerie"
-                         title="galerie"
-                         i18n:attributes="alt galerie; title galerie" />
-                  </a>
-                </div>
-                <div id="heb_tarification">
-                  <!--DEBUT TABLE TARIFICATION CHAMBRE-->
-                  <span tal:condition="python:heb.type.type_heb_code in 'CH, MH, CHECR'">
-
-                    <table id="tarification-chambre">
-                      <tr class="bg-chambre">
-                        <td>&#160;</td>
-                        <td align="center">
-                          <span>1 p.</span>
-                        </td>
-                        <td align="center">
-                          <span>2 p.</span>
-                        </td>
-                        <td align="center">
-                          <span i18n:translate="personne_supplementaire">
-                          Personne supplémentaire</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="bg-chambre">
-                          <span i18n:translate="nuit_avec_petit_dejeuner">
-                          Nuitée avec petit déjeuner</span>
-                        </td>
-                        <td align="center">&#160; 
-                        <span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />&#160;</td>
-                        <td align="center">&#160; 
-                        <span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />&#160;</td>
-                        <td align="center">&#160; 
-                        <span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />&#160;</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-chambre">
-                          <span i18n:translate="deduction_si_pas_petit_dejeuner">
-                          Déduction si pas petit déjeuner</span>
-                        </td>
-                        <td align="center">
-                          <span tal:condition="exists:heb/heb_tarif_chmbr_sans_dej_1p">
-
-                            <span tal:content="heb/heb_tarif_chmbr_sans_dej_1p" />
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_chmbr_sans_dej_1p">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            class="empty-cell"></td>
-                        <td align="center"
-                            class="empty-cell"></td>
-                      </tr>
-                      <tr>
-                        <td class="bg-chambre">
-                          <span i18n:translate="taxes_sejour">Taxes
-                          de séjour</span>
-                        </td>
-                        <td align="center">
-                          <span tal:condition="exists:heb/heb_taxe_montant">
-
-                            <span tal:content="heb/heb_taxe_montant" />
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_chmbr_dej_1p">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            class="empty-cell">&#160;</td>
-                        <td align="center"
-                            class="empty-cell">&#160;</td>
-                      </tr>
-                      <tr>
-                        <td class="bg-chambre">
-                          <span i18n:translate="divers">
-                          Divers</span>
-                        </td>
-                        <td align="center">
-                          <span tal:condition="heb/heb_tarif_chmbr_autre_1p">
-
-                            <span tal:content="heb/heb_tarif_chmbr_autre_1p">
-                            €</span>
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_chmbr_autre_1p">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            class="empty-cell">&#160;</td>
-                        <td align="center"
-                            class="empty-cell">&#160;</td>
-                      </tr>
-                    </table>
-                    <br />
-                    <div tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p&gt;''">
-
-                      <table id="tarification-chambre">
-                        <tr align="center">
-                          <td class="bg-chambre">
-                            <span i18n:translate="table_d_hote">
-                            Table d'hôte</span>
-                          </td>
-                          <td>
-                            <span tal:condition="python:heb.heb_tarif_chmbr_table_hote_1p&gt;0">
-
-                              <span tal:content="heb/heb_tarif_chmbr_table_hote_1p" />
-                            </span>
-                          </td>
-                        </tr>
-                        <!--               <tr align="center">-->
-                        <!--                  <td class="bg-chambre"><span i18n:translate="type">Type</span></td>-->
-                        <!--                  <td>-->
-                        <!--                  <span tal:define="table heb/tableHote">-->
-                        <!--                     <tal:boucle tal:repeat="elem table">-->
-                        <!--                     <span tal:condition="python: elem.tabho_pk==1">-->
-                        <!--                           <img src="assiette_1.png"-->
-                        <!--                              alt=""-->
-                        <!--                              title=""-->
-                        <!--                              tal:attributes="alt elem/tabho_type_fr;-->
-                        <!--                                              title elem/tabho_type_fr">-->
-                        <!--                           <br />-->
-                        <!--                     </span>-->
-                        <!--                     <span tal:condition="python: elem.tabho_pk==2">-->
-                        <!--                           <img src="assiette_2.png"-->
-                        <!--                              alt=""-->
-                        <!--                              title=""-->
-                        <!--                              tal:attributes="alt elem/tabho_type_fr;-->
-                        <!--                                               title elem/tabho_type_fr">-->
-                        <!--                             <br />-->
-                        <!--                     </span>-->
-                        <!--                     <span tal:condition="python: elem.tabho_pk==3">-->
-                        <!--                           <img src="assiette_3.png"-->
-                        <!--                              alt=""-->
-                        <!--                              title=""-->
-                        <!--                              tal:attributes="alt elem/tabho_type_fr;-->
-                        <!--                                             title elem/tabho_type_fr">-->
-                        <!--                           <br />-->
-                        <!--                     </span>-->
-                        <!--                     </tal:boucle>-->
-                        <!--                  </span>-->
-                        <!--                  </td>-->
-                        <!--               </tr>-->
-                      </table>
-                    </div>
-                  </span>
-                  <!--FIN TABLE TARIFICATION CHAMBRE-->
-                  <!--DEBUT TARIFICATION <> CHAMBRE-->
-                  <span tal:condition="python:heb.type.type_heb_code not in 'CH, MH, CHECR'">
-
-                    <table id="tarification-gite">
-                      <tr bgcolor="#CCFFCC">
-                        <td align="center">
-                          <span i18n:translate="periode">
-                          Période</span>
-                        </td>
-                        <td align="center">
-                          <span i18n:translate="week-end">WE</span>
-                        </td>
-                        <td align="center">
-                          <span i18n:translate="semaine">
-                          Semaine</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="basse_saison">Basse
-                        Saison</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">
-                          <span tal:condition="exists:heb/heb_tarif_we_bs">
-
-                            <span tal:content="heb/heb_tarif_we_bs" />
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_we_bs">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            bgcolor="#8BBE67">
-                          <span tal:condition="exists:heb/heb_tarif_sem_bs">
-
-                            <span tal:content="heb/heb_tarif_sem_bs" />
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_sem_bs">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="moyenne_saison">
-                        Moyenne Saison</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">
-                          <span tal:condition="exists: heb/heb_tarif_we_ms">
-
-                            <span tal:content="heb/heb_tarif_we_ms" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_we_ms">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            bgcolor="#8BBE67">
-                          <span tal:condition="exists: heb/heb_tarif_sem_ms">
-
-                            <span tal:content="heb/heb_tarif_sem_ms" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_sem_ms">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="haute_saison">Haute
-                        Saison</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">
-                          <span tal:condition="exists: heb/heb_tarif_we_hs">
-
-                            <span tal:content="heb/heb_tarif_we_hs" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_we_hs">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            bgcolor="#8BBE67">
-                          <span tal:condition="exists: heb/heb_tarif_sem_hs">
-
-                            <span tal:content="heb/heb_tarif_sem_hs" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_sem_hs">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td colspan="3">&#160;</td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="3_nuits">3
-                        nuits</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">
-                          <span tal:condition="exists: heb/heb_tarif_we_3n">
-
-                            <span tal:content="heb/heb_tarif_we_3n" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_we_3n">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            bgcolor="#8BBE67">-</td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="4_nuits">4
-                        nuits</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">
-                          <span tal:condition="exists:heb/heb_tarif_we_4n">
-
-                            <span tal:content="heb/heb_tarif_we_4n" />
-                          </span>
-                          <span tal:condition="not: exists:heb/heb_tarif_we_4n">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                        <td align="center"
-                            bgcolor="#8BBE67">-</td>
-                      </tr>
-                      <tr>
-                        <td colspan="3">&#160;</td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="fin_d_annee">Fin
-                        d'année</span></td>
-                        <td align="center"
-                            bgcolor="#ACE087">-</td>
-                        <td align="center"
-                            bgcolor="#8BBE67">
-                          <span tal:condition="exists: heb/heb_tarif_semaine_fin_annee">
-
-                            <span tal:content="heb/heb_tarif_semaine_fin_annee" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_semaine_fin_annee">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td colspan="3">&#160;</td>
-                      </tr>
-                      <tr bgcolor="#ceddce">
-                        <td>&#160;&#160; 
-                        <span i18n:translate="garantie">
-                        Garantie</span></td>
-                        <td colspan="2"
-                            align="left">
-                          <span tal:condition="exists: heb/heb_tarif_garantie">
-
-                            <span tal:content="heb/heb_tarif_garantie" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_garantie">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="charge">
-                        Charge</span></td>
-                        <td colspan="2"
-                            align="left">
-                          <span tal:condition="exists: heb/heb_tarif_charge">
-
-                            <span tal:content="heb/heb_tarif_charge" />
-                            <span tal:content="view/getHebergementCharge" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_charge">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr bgcolor="#ceddce">
-                        <td>&#160;&#160; 
-                        <span i18n:translate="taxe_sejour">Taxe de
-                        séjour</span></td>
-                        <td colspan="2"
-                            align="left">
-                          <span tal:condition="exists: heb/heb_taxe_montant">
-
-                            <span tal:content="heb/heb_taxe_montant" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_taxe_montant">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>&#160;&#160; 
-                        <span i18n:translate="divers">
-                        Divers</span></td>
-                        <td colspan="2"
-                            align="left">
-                          <span tal:condition="exists: heb/heb_tarif_divers">
-
-                            <span tal:content="heb/heb_tarif_divers" />
-                          </span>
-                          <span tal:condition="not: exists: heb/heb_tarif_divers">
-
-                            <span class="tiret_None">-</span>
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-                  </span>
-                  <!--FIN TARIFICATION <> CHAMBRE-->
-                </div>
-                <div id="calendar-proprio"
-                     tal:condition="view/showCalendar">
-                  <div id="calendar_form">
-                    <div id="calendars"></div>
-                    <input type="hidden"
-                           id="reset" />
-                    <input type="hidden"
-                           name="start"
-                           value=""
-                           id="start" />
-                    <input type="hidden"
-                           name="end"
-                           value=""
-                           id="end" />
-                  </div>
-                  <div id="legend-calendar">
-                    <img src="carre_rouge.gif" />
-                    <tal:trans i18n:translate="nuits_indisponibles">
-                    nuits indisponibles</tal:trans>
-                  </div>
-                </div>
-              </td>
-              <!-- col gauche-->
-              <td id="col-centre">
-                <!--                  <div metal:use-macro="here/hebergement_macro/macros/hebActivite" />-->
-                <div id="heb_activite_icone">
-                  <!-- DEBUT TABLE DES PICTO-->
-                  <table border="0"
-                         width="29"
-                         align="center">
-                    <tr>
-                      <!--              <td>-->
-                      <!--                        <tal:for repeat="metadata python:view.getHebMetadatasByType('activites')">-->
-                      <!--                            |+ XXXnext +|-->
-                      <!--                            <img src=""-->
-                      <!--                                 title=""-->
-                      <!--                                 alt=""-->
-                      <!--                                 tal:attributes="src string:${metadata/id}.png;-->
-                      <!--                                                 alt metadata/title;-->
-                      <!--                                                 title metadata/title" />-->
-                      <!--                            <br/>-->
-                      <!--                        </tal:for>-->
-                      <!--                        </td>-->
-                      <!--                        </tr>-->
-                      <!--                        <tr>-->
-                      <!--                        <td>-->
-                      <!--                        <tal:for repeat="metadata python:view.getHebMetadatasByType('informations')">-->
-                      <!--                            |+ XXXnext +|-->
-                      <!--                            <img src=""-->
-                      <!--                                 title=""-->
-                      <!--                                 alt=""-->
-                      <!--                                 tal:attributes="src string:${metadata/id}.png;-->
-                      <!--                                                 alt metadata/title;-->
-                      <!--                                                 title metadata/title" />-->
-                      <!--                            <br/>-->
-                      <!--                        </tal:for>-->
-                      <!--                        </td>-->
-                      <!--                        </tr>-->
-                      <!--               </td>|+ td col-centre+|-->
-                      <td id="col-droite">
-                        <div metal:use-macro="here/hebergement_macro/macros/hebPointFort" />
-                        <div metal:use-macro="here/hebergement_macro/macros/hebDescrptif" />
-                        <div metal:use-macro="here/hebergement_macro/macros/hebDistribution" />
-                        <div metal:use-macro="here/hebergement_macro/macros/hebECR" />
-                        <div metal:use-macro="here/hebergement_macro/macros/hebLiterie" />
-                        <div id="heb_confort">
-                          <fieldset>
-                            <legend class="leg-des">
-                              <span i18n:translate="confort">
-                              CONFORT</span>
-                            </legend>
-                            <tal tal:define="metadata python:view.getAnimal()">
-
-                              <div class="floatleft">
-                                <img src=""
-                                     title=""
-                                     alt=""
-                                     tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
-                                     class="picto" />
-                              </div>
-                            </tal>
-                            <tal tal:define="metadata python:view.getFumeur()">
-
-                              <div class="floatleft">
-                                <img src=""
-                                     title=""
-                                     alt=""
-                                     tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
-                                     class="picto" />
-                              </div>
-                            </tal>
-                            <tal:for repeat="metadata python:view.getHebMetadatasByType('confort')">
-
-                              <!-- XXXnext -->
-                              <div class="floatleft">
-                                <img src=""
-                                     title=""
-                                     alt=""
-                                     tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
-                                     class="picto" />
-                              </div>
-                            </tal:for>
-                          </fieldset>
-                        </div>
-                      </td>
-                      <!-- col droite-->
-                    </tr>
-                  </table>
-                  <!--table-description-->
-                  <!-- infos proprios-->
-                  <div metal:use-macro="here/hebergement_macro/macros/infoProprio" />
-                  <!-- infos touristiques -->
-                  <div id="heb_info_trouristique"
-                       tal:define="maisonTourisme heb/getMaisonTourisme">
-
-                    <fieldset>
-                      <legend class="leg-des"
-                              i18n:translate="dans_la_region">DANS
-                              LA REGION</legend>
-                      <table id="dans-la-region">
-                        <tr>
-                          <td>
-                            <!--sejour fute-->
-                            <div id="region-sejour-fute"
-                                 tal:define="sejourFute view/getRelatedSejourFute"
-                                 tal:condition="python: sejourFute">
-                                 
-                              <img src="o_alerte.png"
-                                   border="0" />
-                              <span class="region-titre"
-                                    i18n:translate="sejours_futes">
-                                    Séjours Futés</span>
-                              <br />
-                              <tal:bcl tal:repeat="elem sejourFute">
-                              &#160;&#160;&#160;&#160;&#160; 
-                              <a href=""
-                                 tal:attributes="href elem/absolute_url"
-                                 tal:content="elem/Title"></a>
-                              <br /></tal:bcl>
-                              <br />
-                              <br />
-                            </div>
-                            <!--region-sejour-fute-->
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <!-- maison tourisme-->
-                            <div id="region-maison-trourisme">
-                            <img src="o_info.png"
-                                 border="0" />
-                            <span class="region-titre"
-                                  i18n:translate="maison_du_tourisme">
-                                  Maison du Tourisme</span>
-                            <br />&#160;&#160;&#160;&#160;&#160; 
-                            <a href=""
-                               tal:attributes="href string:http://${maisonTourisme/mais_url}"
-                               target="_blank">
-                              <span tal:content="maisonTourisme/mais_nom" />
-                            </a>
-                            <br />
-                            <br /></div>
-                            <!--region-maison-tourisme-->
-                            <!--infos touristiques-->
-                            <div id="region-info-tourisme"
-                                 tal:define="info maisonTourisme/infosTouristique"
-                                 tal:condition="python: info">
-                              <img src="o_info_tour.png"
-                                   border="0" />
-                              <span class="region-titre"
-                                    i18n:translate="infos_touristiques">
-                                    Infos Touristiques</span>
-                              <br />
-                              <tal:bcl tal:repeat="elem info">
-                              &#160;&#160;&#160;&#160;&#160; 
-                              <a href=""
-                                 tal:attributes="href string:http://${elem/infotour_url}"
-                                 tal:content="elem/infotour_nom"
-                                 target="_blank" />
-                              <br /></tal:bcl>
-                            </div>
-                            <!--region-info-tourisme-->
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <!-- autres hebergement-->
-                            <div id="region-autre-heb">
-                              <a href=""
-                                 tal:attributes="href view/getTypeHebInCommuneURL">
-
-                                <span i18n:translate="autres_a">
-                                Autres 
-                                <span i18n:name="type_hebergement"
-                                      tal:content="view/getTypeHebergement" />à
-                                      
-                                <span i18n:name="commune"
-                                      tal:content="heb/commune/com_nom" /></span>
-                                <img src="flechebulle_bleue.png"
-                                     border="0" />
-                              </a>
-                            </div>
-                            <!--region-autre-heb-->
-                          </td>
-                        </tr>
-                      </table>
-                      <!-- dans-la-region -->
-                    </fieldset>
-                  </div>
-                  <!-- info touristique -->
-                  <br />
-                  <br />
-                  <br />
-                  <div id="navigation_bas">
-                  <a href=""
-                     tal:attributes="href string:${heb/@@url}/#top"
-                     i18n:translate="haut_de_la_page">Haut de la
-                     page</a>
-                  <!--a name dans GiteSkin>main_template li 63-->
-                  &#160;&#160; | &#160;&#160; 
-                  <a href="javascript:history.go(-1)"
-                     i18n:translate="retour_page_precedente">Retour
-                     à la page précédente</a></div>
-                  <!--div navigation_bas-->
-                </div>
-                <!--div description-->
-              </td>
-            </tr>
-          </table>
+            <div style="display: table-cell;">Nombre de personnes
+            <br />1 personne
+            <br />2 personnes
+            <br />Personne supplémentaire
+            <br />
+            <br />Taxes de séjour
+            <br />Divers
+            <br />Chambre d'hôte
+            <br /></div>
+            <div style="display: table-cell;">| Nuitée avec petit
+            déjeuner
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_avec_dej_1p" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_avec_dej_2p" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_avec_dej_3p" />
+            <br />
+            <br />| 
+            <span tal:content="heb/heb_taxe_montant" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_autre_1p" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_table_hote_1p" />
+            <br /></div>
+            <div style="display: table-cell;">| Déduction si pas
+            petit déjeuner
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_sans_dej_1p" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_sans_dej_2p" />
+            <br />| 
+            <span tal:content="heb/heb_tarif_chmbr_sans_dej_3p" />
+            <br /></div>
+          </div>
         </div>
-        <!--heb context-->
+        <br />
+        <!-- Div DESCRIPTION -->
+        <h2>Description</h2>
+        <div style="display:table; table-layout:fixed;">
+          <div style="display: table-cell;">
+            <h3>Description</h3>
+            <br />
+            <span tal:content="view/getHebergementDescription" />
+          </div>
+          <div style="display: table-cell;">
+            <h3>Situation</h3>
+            <br />
+            <span tal:content="view/getHebergementSituation" />
+          </div>
+          <div style="display: table-cell;">
+            <h3>Distribution</h3>
+            <br />
+            <span tal:content="view/getHebergementDistribution" />
+            <br />
+            <tal tal:define="metadata python:view.getAnimal()">
+              <img src=""
+                   title=""
+                   alt=""
+                   tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
+                   class="picto" />
+            </tal>
+            <tal tal:define="metadata python:view.getFumeur()">
+              <img src=""
+                   title=""
+                   alt=""
+                   tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
+                   class="picto" />
+            </tal>
+            <tal:for repeat="metadata python:view.getHebMetadatasByType('confort')">
+
+              <img src=""
+                   title=""
+                   alt=""
+                   tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
+                   class="picto" />
+            </tal:for>
+          </div>
+        </div>
+        <br />
+        <!-- Div DISPONIBILITE -->
+        <h2>Disponibilité</h2>
+        <div>
+        </div>
+        <br />
+        <!-- Div PHOTOS -->
+        <h2>Photos</h2>
+        <div>
+          <tal:loop tal:repeat="vignetteUrl view/getVignettesUrl">
+            <img src=""
+                 alt=""
+                 title=""
+                 tal:attributes="src string:photos_heb/${vignetteUrl}; alt context/heb_nom; title context/heb_nom"
+                 class="photo_gallery" />
+          </tal:loop>
+        </div>
+        <br />
+        <!-- Div LOCALISATION -->
+        <h2>Localisation</h2>
+        <div></div>
+        <br />
+        <!-- Div CONTACT -->
+        <h2>Contact</h2>
+        <div>
+          <span tal:content="heb/proprio/civilite/civ_titre" />
+          <span tal:replace="heb/proprio/pro_prenom1" />
+          <span tal:replace="heb/proprio/pro_prenom2" />
+          <span tal:replace="heb/proprio/pro_nom1" />
+          <span tal:replace="heb/proprio/pro_nom2" />
+          <br />
+          <span tal:replace="heb/proprio/pro_langue" />
+          <br />
+          <img src="telephone.gif" />
+          <span tal:replace="heb/proprio/pro_tel_priv" />
+          <br />
+          <img src="fax.gif" />
+          <span tal:replace="heb/proprio/pro_fax_priv" />
+          <br />
+          <img src="gsm.gif" />
+          <span tal:replace="heb/proprio/pro_gsm1" />
+          <br />
+          <img src="email.gif" />
+          <span tal:replace="heb/proprio/pro_email" />
+          <br />
+          <span tal:condition="python: heb.proprio.pro_url!=''">
+            <img src="lien.gif" />
+            <a href=""
+               tal:attributes="href string: http://${heb/proprio/pro_url}"
+               tal:content="string: http://${heb/proprio/pro_url}"
+               target="_blank" />
+          </span>
+          <div>
+            <a href=""
+               tal:attributes="href string:${context/@@plone_portal_state/portal_url}/form_contact_proprio?heb_pk=${heb/heb_pk}">
+              <span>Contactez le propriétaire</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <!--div metal-->
     </div>
   </body>
 </html>
