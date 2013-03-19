@@ -436,14 +436,3 @@ class IProprioInfo(Interface):
         """
         ajoute les infos mise à jour du proprio par le prorpio dans la table provisoire
         """
-
-
-class IHebergementInfo(Interface):
-    """
-    mise à jour info hebergement
-    """
-
-    def addHebergementMaj():
-        """
-        ajoute les infos mise à jour par de l'hébergement le prorpio dans la table provisoire
-        """
