@@ -11,7 +11,7 @@ from urlparse import urljoin
 from plone.memoize.instance import memoize
 from zope.traversing.browser.interfaces import IAbsoluteURL
 from Products.Five import BrowserView
-from Acquisition import aq_inner, aq_parent
+from Acquisition import aq_inner
 from zope.interface import implements
 from zope.component import queryMultiAdapter
 from DateTime import DateTime
@@ -19,6 +19,7 @@ from Products.CMFCore.utils import getToolByName
 from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
 from z3c.sqlalchemy import getSAWrapper
 from mailer import Mailer
+from plone import api
 
 from gites.map.browser.interfaces import IMappableView
 from gites.skin.browser.interfaces import (IHebergementView,
@@ -287,7 +288,8 @@ class HebergementAbsoluteURL(BrowserView):
 
     def __str__(self):
         context = aq_inner(self.context)
-        container = aq_parent(context)
+        portal = api.portal.get()
+        container = portal.hebergement
         commune = context.commune.com_id
         language = self.request.get('LANGUAGE', 'en')
         typeHeb = context.type.getId(language)
