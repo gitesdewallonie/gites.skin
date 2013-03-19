@@ -12,7 +12,7 @@
          <span class="masquer-titre"><!-- masquer titre lorsque affichage dans bnb-->
              <dt class="portletHeader"
                  i18n:translate="idees_sejours">
-               Idées Séjour
+               Id&eacute;es S&eacute;jour
              </dt>
          </span>
          <div id="bnb-portlet-title"><!-- masquer titre lorsque affichage dans gdw-->

@@ -10,7 +10,7 @@
 
     <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontenttitle" />
     <h1 i18n:translate="sejours_futes">
-        Sejours futés
+        Sejours fut&eacute;s
     </h1>
     <!-- div class="stx"
          tal:define="text python: here.CookedBody(stx_level=2)"

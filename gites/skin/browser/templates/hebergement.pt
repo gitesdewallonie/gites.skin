@@ -235,7 +235,8 @@
         <br />
         <!-- Div DISPONIBILITE -->
         <h2>Disponibilité</h2>
-        <div></div>
+        <div>
+        </div>
         <br />
         <!-- Div PHOTOS -->
         <h2>Photos</h2>
