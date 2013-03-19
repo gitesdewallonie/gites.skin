@@ -303,40 +303,6 @@ class HebergementAbsoluteURL(BrowserView):
     __call__ = __str__
 
 
-class HebergementMapView(BrowserView):
-    """
-    Methods useful for the maps
-    """
-
-    def getJs(self):
-        """
-        return the js code to set the longitude in the map
-        """
-        language = self.request.get('LANGUAGE', 'en')
-        long = self.request.form.get('long', None)
-        lat = self.request.form.get('lat', None)
-        pk = self.request.form.get('pk', None)
-        url = getToolByName(self.context, 'portal_url')()
-        if long and lat and pk:
-            js = """
-              var so = new SWFObject("gitesmap.swf","Gites","934","549","9","#ffffff");
-              so.addVariable("externalLanguage", "%s");
-              so.addVariable("externalLat", "%s");
-              so.addVariable("externalLon", "%s");
-              so.addVariable("externalPk", "%s");
-              so.addVariable("externalURL","%s")
-              so.write("flashcontent");
-          """ % (language, long, lat, pk, url)
-        else:
-            js = """
-              var so = new SWFObject("gitesmap.swf","Gites","934","549","9","#ffffff");
-              so.addVariable("externalLanguage", "%s");
-              so.addVariable("externalURL","%s")
-              so.write("flashcontent");
-          """ % (language, url)
-        return js
-
-
 class HebergementInfo(BrowserView):
     """
     mise à jour des infos de l'hébergement
