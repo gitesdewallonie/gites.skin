@@ -144,15 +144,6 @@
       layer=".interfaces.IGitesTheme"
       />
 
-   <browser:page
-        for="*"
-        class=".hebergement.HebergementMapView"
-        name="hebergement_map"
-        template="templates/hebergement_map.pt"
-        permission="zope.Public"
-        />
-
-
 <!-- GALERIE HBE-->
    <browser:page
         for="*"
