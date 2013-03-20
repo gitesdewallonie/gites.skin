@@ -39,7 +39,7 @@
         <tal:for repeat="epis heb/epis">
           <span tal:content="epis/heb_nombre_epis" />
         </tal:for>
-        <tal:if tal:condition="python:len(heb.epis)==0">
+        <tal:if condition="python:len(heb.epis)==0">
           <span>-</span>
         </tal:if></div>
         <div style="display: table-cell;"
@@ -49,7 +49,7 @@
         <tal:for repeat="epis heb/epis">
           <span tal:content="epis/heb_nombre_epis" />
         </tal:for>
-        <tal:if tal:condition="python:len(heb.epis)==0">
+        <tal:if condition="python:len(heb.epis)==0">
           <span>-</span>
         </tal:if></div>
         <div style="display: table-cell;">Personnes | 
@@ -208,20 +208,20 @@
             <br />
             <span tal:content="view/getHebergementDistribution" />
             <br />
-            <tal tal:define="metadata python:view.getAnimal()">
+            <tal:block define="metadata python:view.getAnimal()">
               <img src=""
                    title=""
                    alt=""
                    tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
                    class="picto" />
-            </tal>
-            <tal tal:define="metadata python:view.getFumeur()">
+            </tal:block>
+            <tal:block define="metadata python:view.getFumeur()">
               <img src=""
                    title=""
                    alt=""
                    tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
                    class="picto" />
-            </tal>
+            </tal:block>
             <tal:for repeat="metadata python:view.getHebMetadatasByType('confort')">
 
               <img src=""
@@ -240,7 +240,7 @@
         <!-- Div PHOTOS -->
         <h2>Photos</h2>
         <div>
-          <tal:loop tal:repeat="vignetteUrl view/getVignettesUrl">
+          <tal:loop repeat="vignetteUrl view/getVignettesUrl">
             <img src=""
                  alt=""
                  title=""
