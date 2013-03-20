@@ -4,12 +4,6 @@
     i18n_domain="gites">
 
   <!-- 'Gites Skin' Zope 3 browser layer -->
-  <interface
-      interface=".interfaces.IGitesTheme"
-      type="zope.publisher.interfaces.browser.IBrowserSkinType"
-      name="GitesSkin"
-      />
-
   <include package="plone.app.portlets" />
   <include file="hebergement.zcml"/>
 
@@ -150,15 +144,6 @@
       layer=".interfaces.IGitesTheme"
       />
 
-   <browser:page
-        for="*"
-        class=".hebergement.HebergementMapView"
-        name="hebergement_map"
-        template="templates/hebergement_map.pt"
-        permission="zope.Public"
-        />
-
-
 <!-- GALERIE HBE-->
    <browser:page
         for="*"
@@ -197,22 +182,6 @@
         />
 
 <!-- MAJ HEBERGEMENT -->
-    <browser:page
-         for="*"
-         name="hebergementInfo"
-         class=".hebergement.HebergementInfo"
-         allowed_interface=".hebergement.IHebergementInfo"
-         permission="zope.Public"
-         />
-         
-   <browser:page
-        for="*"
-        name="hebergement-info"
-        template="templates/maj_info_hebergement.pt"
-        class=".hebergement.HebergementInfo"
-        allowed_interface=".interfaces.IHebergementInfo"
-        permission="zope.Public"
-        />
 
    <browser:page
         for="*"
@@ -223,15 +192,6 @@
         template="templates/externcalendar.pt"
         />
 
-   <browser:page
-        for="*"
-        name="maj-hebergement-insertion"
-        template="templates/maj_info_hebergement_insert.pt"
-        class=".hebergement.HebergementInfo"
-        allowed_interface=".interfaces.IHebergementInfo"
-        permission="zope.Public"
-        />
-        
 <!-- Moved document actions -->
     <browser:viewlet
         name="plone.abovecontenttitle.documentactions"

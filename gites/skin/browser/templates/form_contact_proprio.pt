@@ -14,7 +14,7 @@
 <div metal:fill-slot="main">
 
 <h1 i18n:translate="contactez_le_proprietaire">
-Contactez le propriétaire
+Contactez le propri&eacute;taire
 </h1>
 
 <div align="center">
