@@ -39,7 +39,7 @@
         <tal:for repeat="epis heb/epis">
           <span tal:content="epis/heb_nombre_epis" />
         </tal:for>
-        <tal:if tal:condition="python:len(heb.epis)==0">
+        <tal:if condition="python:len(heb.epis)==0">
           <span>-</span>
         </tal:if></div>
         <div style="display: table-cell;"
@@ -49,7 +49,7 @@
         <tal:for repeat="epis heb/epis">
           <span tal:content="epis/heb_nombre_epis" />
         </tal:for>
-        <tal:if tal:condition="python:len(heb.epis)==0">
+        <tal:if condition="python:len(heb.epis)==0">
           <span>-</span>
         </tal:if></div>
         <div style="display: table-cell;">Personnes | 
@@ -70,9 +70,16 @@
         <div style="display: table-cell;">Lit enfant | 
         <br />
         <span tal:content="heb/heb_lit_enf" /></div>
-        <div style="display: table-cell;">N° 
+        <div style="display: table-cell;">N° | 
         <br />
-        <span tal:content="heb/heb_pk" /></div></div>
+        <span tal:content="heb/heb_pk" /></div>
+        <br />
+        <div style="display: table-cell;">Thèmes  
+        <br />
+        <tal:repeat repeat="theme python:view.getHebMetadatasByType('themes')">
+            <span tal:content="theme/title" /> 
+        </tal:repeat>
+        </div></div>
         <br />
         <br />
         <!-- Div ACCUEIL -->
@@ -208,20 +215,20 @@
             <br />
             <span tal:content="view/getHebergementDistribution" />
             <br />
-            <tal tal:define="metadata python:view.getAnimal()">
+            <tal:block define="metadata python:view.getAnimal()">
               <img src=""
                    title=""
                    alt=""
                    tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
                    class="picto" />
-            </tal>
-            <tal tal:define="metadata python:view.getFumeur()">
+            </tal:block>
+            <tal:block define="metadata python:view.getFumeur()">
               <img src=""
                    title=""
                    alt=""
                    tal:attributes="src string:${metadata/id}.png; alt metadata/title; title metadata/title"
                    class="picto" />
-            </tal>
+            </tal:block>
             <tal:for repeat="metadata python:view.getHebMetadatasByType('confort')">
 
               <img src=""
@@ -241,7 +248,7 @@
         <!-- Div PHOTOS -->
         <h2>Photos</h2>
         <div>
-          <tal:loop tal:repeat="vignetteUrl view/getVignettesUrl">
+          <tal:loop repeat="vignetteUrl view/getVignettesUrl">
             <img src=""
                  alt=""
                  title=""
