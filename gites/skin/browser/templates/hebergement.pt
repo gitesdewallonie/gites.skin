@@ -70,9 +70,16 @@
         <div style="display: table-cell;">Lit enfant | 
         <br />
         <span tal:content="heb/heb_lit_enf" /></div>
-        <div style="display: table-cell;">N° 
+        <div style="display: table-cell;">N° | 
         <br />
-        <span tal:content="heb/heb_pk" /></div></div>
+        <span tal:content="heb/heb_pk" /></div>
+        <br />
+        <div style="display: table-cell;">Thèmes  
+        <br />
+        <tal:repeat repeat="theme python:view.getHebMetadatasByType('themes')">
+            <span tal:content="theme/title" /> 
+        </tal:repeat>
+        </div></div>
         <br />
         <br />
         <!-- Div ACCUEIL -->
@@ -235,7 +242,8 @@
         <br />
         <!-- Div DISPONIBILITE -->
         <h2>Disponibilité</h2>
-        <div></div>
+        <div>
+        </div>
         <br />
         <!-- Div PHOTOS -->
         <h2>Photos</h2>

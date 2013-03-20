@@ -651,7 +651,7 @@
          <div class="chambre">
             <img src="c_chambre.png"
                title="Nombre de chambres"
-               alt="Nombre de chambre"
+               alt="Nombre de chambres"
                class="picto"
                i18n:attributes="alt nombre_de_chambre; title nombre_de_chambre" />
             <br />
