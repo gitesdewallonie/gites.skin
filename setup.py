@@ -31,5 +31,4 @@ setup(name='gites.skin',
           'Products.LocalFS',
           'Products.MailmanSubForm',
           'gites.core',
-          'bnbelgium.skin',
           'plone.api'])
