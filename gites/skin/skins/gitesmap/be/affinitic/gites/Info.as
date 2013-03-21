@@ -1,1 +1,0 @@
-﻿package be.affinitic.gites{	import flash.display.MovieClip;	public class Info extends MovieClip{		public function Info()		{			}			}}

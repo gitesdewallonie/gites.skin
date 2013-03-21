@@ -1,8 +1,0 @@
-[default]
-title=Mailman List Subscribe/Unsubscribe Form
-
-[validators]
-validators = mmSubForm_validate
-
-[actions]
-action.success = traverse_to:string:mmSubForm_action
