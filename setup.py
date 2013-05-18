@@ -23,12 +23,5 @@ setup(name='gites.skin',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          'zc.table',
-          'zc.datetimewidget',
-          'z3c.jbot',
-          'collective.captcha',
-          'Products.LocalFS',
-          'Products.MailmanSubForm',
-          'gites.core',
-          'plone.api'])
+          'setuptools'
+      ])
