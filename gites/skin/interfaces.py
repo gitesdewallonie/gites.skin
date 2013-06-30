@@ -14,6 +14,12 @@ class IDerniereMinuteRootFolder(Interface):
     """
 
 
+class IBoutiqueRootFolder(Interface):
+    """
+    Marker interface for BoutiqueRootFolder root folder
+    """
+
+
 class ISejourFuteRootFolder(Interface):
     """
     Marker interface for Sejour Fute root folder
