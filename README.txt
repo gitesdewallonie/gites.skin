@@ -1,54 +1,5 @@
 Introduction
 ============
 
-
-TODO
-====
-
-- Transformer en egg PloneZCDatetimeWidget (cf setup.py de gites.app)
-    - Ou plutot integrer le code de ce 'paquet' dans gites.calendar
-        - Aller retirer le XXX de gites.app quand c est fait
-
-- Ajouter la map dans la page de description d'hebergement (hebergement.pt)
-    CF complements d information de cachier de charges géoloc (dropbox)
-
-    - page descriptive d un hebergement
-        - zoom fixe défini a la base
-        - points à afficher:
-            - l hebergement (nb: du coup pas hesiter a faire une icone qui ressort des autres types de points d interet)
-
-            - infos pratiques (DB gites)
-                - tous les afficher sur la carte
-
-            - infos touristiques (DB gites)
-                - tous les afficher sur la carte
-
-            - restaurants (resto.be)
-                - tous les afficher sur la carte
-
-            - evenements (quefaire.be)
-                - tous les afficher sur la carte
-
-            - points d interets google (voir plus bas pour la liste des types)
-                - par defaut n afficher aucun point d interet google (types sont décochés)
-                - lorsqu'un type est coché, requete vers google suivant le centre de la carte actuellement affichée
-                - lors d un déplacement de carte, une requete est de nouveau effectuée vers google
-
-        - cases a cocher permettent de cacher par type de points d interets:
-            - infos pratiques (DB gites)
-            - infos touristiques (DB gites)
-            - restaurants (resto.be)
-            - evenements (quefaire.be)
-            - points d interets google (voir plus bas pour la liste des types)
-
-        - cacher les informations a un certain niveau de dezoom, informations à cacher:
-            - les informations en provenance de google
-            ( changer mon code pour que les infos google ne soient du coup carement pas requetées a un certain niveau de dezoom? est ce que ca vaut le coup?)
-
-
-
-- Charger dans hebergement_macro automatiquement les metadata vu que les colonnes n existent plus dans la table hebergement
-    - poser la question a alain pour savoir que faire avec les pictos?
-    - !!! Traductions (cf gites.db content herbergement faire le meme dans metadata)
-    - Ne plus utiliser hebergement_macro (en tout cas dans hebergement.pt pour l instant)
-        - migrer hebEnTete vers la vue hebergement.pt
+This is a deprecated package, used only for interfaces already marked on
+existing folders.
