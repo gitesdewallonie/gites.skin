@@ -1151,11 +1151,11 @@
                <span tal:replace="heb/proprio/pro_gsm1" /><br />
                <img src="email.gif" />
                <span tal:replace="heb/proprio/pro_email" /><br>
-               <span tal:condition="python: heb.proprio.pro_url!=''">
+               <span tal:condition="heb/heb_url">
                   <img src="lien.gif" />
                   <a href=""
-                        tal:attributes="href string: http://${heb/proprio/pro_url}"
-                        tal:content="string: http://${heb/proprio/pro_url}"
+                        tal:attributes="href string: http://${heb/heb_url}"
+                        tal:content="string: http://${heb/heb_url}"
                         target="_blank" />
                </span>
                <div id="contact-proprio">

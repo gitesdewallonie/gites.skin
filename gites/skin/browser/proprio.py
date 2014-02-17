@@ -151,7 +151,6 @@ class ProprioInfo(BrowserView):
         record.pro_maj_tel_priv = fields.get('pro_maj_tel_priv')
         record.pro_maj_fax_priv = fields.get('pro_maj_fax_priv')
         record.pro_maj_gsm1 = fields.get('pro_maj_gsm1')
-        record.pro_maj_url = fields.get('pro_maj_url')
         record.pro_maj_tva = fields.get('pro_maj_tva')
         record.pro_maj_langue = fields.get('pro_maj_langue')
         record.pro_maj_info_etat = unicode(fields.get('pro_maj_info_etat', ''), 'utf-8')
@@ -180,7 +179,6 @@ class ProprioInfo(BrowserView):
                                     pro_maj_tel_priv = fields.get('pro_maj_tel_priv'),\
                                     pro_maj_fax_priv = fields.get('pro_maj_fax_priv'),\
                                     pro_maj_gsm1 = fields.get('pro_maj_gsm1'),\
-                                    pro_maj_url = fields.get('pro_maj_url'),\
                                     pro_maj_tva = fields.get('pro_maj_tva'),\
                                     pro_maj_langue = fields.get('pro_maj_langue'),\
                                     pro_maj_info_etat = fields.get('pro_maj_info_etat'))

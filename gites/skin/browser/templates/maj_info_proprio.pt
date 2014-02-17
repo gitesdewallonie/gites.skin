@@ -178,16 +178,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="maj-etiquette">URL du site personnel</td>
-                    <td>
-                        <input type="text"
-                               name="pro_maj_url"
-                               value=""
-                               tal:attributes="value proprio/pro_url" />
-                               <span tal:content="proprio/pro_url" />
-                    </td>
-                </tr>
-                <tr>
                     <td class="maj-etiquette">Numéro de TVA</td>
                     <td>
                         <input type="text"
